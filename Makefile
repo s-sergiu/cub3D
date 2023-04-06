@@ -21,7 +21,7 @@ $(MLX42):
 
 bonus:
 	@echo "bonus"
-build/%.o: src/%.c
+build/%.o: src/%.c $(OBJ_DIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
 $(OBJ_DIR):
