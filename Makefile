@@ -7,7 +7,7 @@ OBJ = $(SRC:src/%.c=build/%.o)
 OBJ_DIR = build
 INC = include/cub3D.h
 MLX42 = libs/MLX42/build/libmlx42.a
-MLX_DIR = libs/MLX42
+MLX_DIR = libs/MLX42/include
 
 all:$(NAME)
 
@@ -26,6 +26,7 @@ $(MLX_DIR):
 
 bonus:
 	@echo "bonus"
+
 build/%.o: src/%.c $(OBJ_DIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
