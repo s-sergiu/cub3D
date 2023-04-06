@@ -7,6 +7,7 @@ OBJ = $(SRC:src/%.c=build/%.o)
 OBJ_DIR = build
 INC = include/cub3D.h
 MLX42 = libs/MLX42/build/libmlx42.a
+MLX_DIR = libs/MLX42
 
 all:$(NAME)
 
@@ -16,8 +17,12 @@ $(NAME): $(MLX42) $(OBJ)
 	-ldl -lglfw -pthread -lm \
 	-o $@
 
-$(MLX42):
+$(MLX42): $(MLX_DIR)
 	@cd libs/MLX42; cmake -B build; cmake --build build -j4
+
+$(MLX_DIR):
+	git submodule init
+	git submodule update
 
 bonus:
 	@echo "bonus"
