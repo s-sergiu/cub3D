@@ -10,5 +10,6 @@
 # include <stdlib.h>
 
 int			get_total_bytes(char *filename);
+char		*read_map(char *file);
 
 #endif

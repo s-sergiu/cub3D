@@ -3,6 +3,8 @@
 
 int	main(int argc, char **argv)
 {
+	char *map;
+
 	(void)argc;
 	(void)argv;
 	if (argc != 2)
@@ -10,7 +12,9 @@ int	main(int argc, char **argv)
 	else
 	{
 		write(1, "success\n", 8);
-		printf("bytes: %d\n", (get_total_bytes(argv[1])));
+		map = read_map(argv[1]);
+		printf("map: %s\n", map);
 	}
+	free(map);
 	return (0);
 }
