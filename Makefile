@@ -23,18 +23,19 @@ $(MLX42): $(MLX_DIR)
 	@cd libs/MLX42; cmake -B build; cmake --build build -j4
 
 $(MLX_DIR):
-	git submodule init
-	git submodule update
+	@git submodule init
+	@git submodule update
 
 bonus:
 	@echo "bonus"
 
-build/%.o: src/%.c $(OBJ_DIR)
-	$(CC) $(FLAGS) -c $< -o $@
+build/%.o: src/%.c # $(OBJ_DIR)
+
+	@$(CC) $(FLAGS) -c $< -o $@
 
 $(OBJ_DIR):
-	mkdir $(OBJ_DIR)
-	mkdir docs external tests data examples extras tools;
+	@mkdir $(OBJ_DIR)
+	@mkdir docs external tests data examples extras tools;
 
 clean: 
 	@$(RM) $(OBJ)
