@@ -11,8 +11,17 @@
 # include "libft.h"
 # include "../libs/MLX42/include/MLX42/MLX42.h"
 
-char		*read_map(char *file);
-void		get_width_and_height(char **map);
-void		draw_map(void);
+typedef struct s_map_data t_map_data;
+
+struct	s_map_data 
+{
+	char	**map;
+	int		height;
+	int		width;
+};
+
+char					*read_map(char *file);
+struct s_map_data		*get_width_and_height(char **map);
+void					draw_map(char **map);
 
 #endif
