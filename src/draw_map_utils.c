@@ -11,14 +11,15 @@ int	get_height(char **map)
 	return (i);
 }
 
-void	get_width_and_height(char **map)
+struct s_map_data	*get_width_and_height(char **map)
 {
-	int	width;
-	int	height;
+	struct s_map_data	*data;
 
-	width = ft_strlen(map[0]);
-	height = get_height(map);
-	printf("Width: %d\n", width);
-	printf("Height: %d\n", height);
-	printf("Area: %d\n", height * width);
+	data = malloc(sizeof(struct s_map_data));
+	data->width = ft_strlen(map[0]) * 32;
+	data->height = get_height(map) * 32;
+	printf("Width: %d\n", data->width);
+	printf("Height: %d\n", data->height);
+	printf("Area: %d\n", data->height * data->width);
+	return (data);
 }

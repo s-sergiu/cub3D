@@ -28,8 +28,7 @@ int	main(int argc, char **argv)
 		if (map_string)
 		{
 			map = ft_split(map_string, '\n');
-			get_width_and_height(map);
-			draw_map();
+			draw_map(map);
 			free_split(map);
 		}
 		free(map_string);
