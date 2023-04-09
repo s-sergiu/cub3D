@@ -10,7 +10,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		write(1, "success\n", 8);
-		return (get_total_bytes(argv[1]));
+		printf("bytes: %d\n", (get_total_bytes(argv[1])));
 	}
 	return (0);
 }

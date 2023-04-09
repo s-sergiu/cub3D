@@ -12,17 +12,27 @@ int	get_total_bytes(char *filename)
 	bytes = 0;
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
+	{
 		printf("strerror: %s\n", strerror(errno));
-	buffer = (char *)malloc(sizeof(char) * 1);
+		return (0);
+	}
+	buffer = (char *)malloc(sizeof(char) * 100);
 	if (!buffer)
+	{
+		close(fd);
 		return (0);
-	bytes = read(fd, buffer, 1);
+	}
+	bytes = read(fd, buffer, 100);
+	if (bytes == 0)
+	{
+		close(fd);
+		free(buffer);
+		return (0);
+	}
 	total_bytes += bytes;
-	if (total_bytes == 0)
-		return (0);
 	while (bytes > 0)
 	{
-		bytes = read(fd, buffer, 1);
+		bytes = read(fd, buffer, 100);
 		total_bytes += bytes;
 	}
 	close(fd);
