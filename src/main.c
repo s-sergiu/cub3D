@@ -14,8 +14,11 @@ int	main(int argc, char **argv)
 	{
 		write(1, "success\n", 8);
 		map_string = read_map(argv[1]);
-		map = ft_split(map_string, '\n');
-		get_width_and_height(map);
+		if (map_string)
+		{
+			map = ft_split(map_string, '\n');
+			get_width_and_height(map);
+		}
 	}
 	free(map);
 	return (0);
