@@ -3,7 +3,8 @@
 
 int	main(int argc, char **argv)
 {
-	char *map;
+	char *map_string;
+	char **map;
 
 	(void)argc;
 	(void)argv;
@@ -12,8 +13,9 @@ int	main(int argc, char **argv)
 	else
 	{
 		write(1, "success\n", 8);
-		map = read_map(argv[1]);
-		printf("map: %s\n", map);
+		map_string = read_map(argv[1]);
+		map = ft_split(map_string, '\n');
+		get_width_and_height(map);
 	}
 	free(map);
 	return (0);
