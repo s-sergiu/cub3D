@@ -13,5 +13,6 @@
 
 char		*read_map(char *file);
 void		get_width_and_height(char **map);
+void		draw_map(void);
 
 #endif

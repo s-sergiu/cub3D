@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 		{
 			map = ft_split(map_string, '\n');
 			get_width_and_height(map);
+			draw_map();
 			free_split(map);
 		}
 		free(map_string);
