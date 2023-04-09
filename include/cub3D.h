@@ -15,13 +15,15 @@ typedef struct s_map_data t_map_data;
 
 struct	s_map_data 
 {
+	char	*map_string;
 	char	**map;
 	int		height;
 	int		width;
 };
 
 char					*read_map(char *file);
-struct s_map_data		*get_width_and_height(char **map);
-void					draw_map(char **map);
+void					draw_map(struct s_map_data *data);
+void					init_map_data(struct s_map_data **data, char *map_file);
+void					destroy_map_data(struct s_map_data **data);
 
 #endif

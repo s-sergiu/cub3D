@@ -1,14 +1,20 @@
 
 #include "../include/cub3D.h"
 
-void	draw_map(char **map)
+void ft_hook(void* param)
+{
+	mlx_t* mlx = param;
+
+	if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
+		mlx_close_window(mlx);
+}
+
+void	draw_map(struct s_map_data *data)
 {
 	mlx_image_t* image;
-	struct	s_map_data *data;
 	mlx_t* mlx;
 
 
-	data = get_width_and_height(map);	
 	// Gotta error check this stuff
 	if (!(mlx = mlx_init(data->width, data->height, "MLX42", true)))
 	{
@@ -25,6 +31,7 @@ void	draw_map(char **map)
 		puts(mlx_strerror(mlx_errno));
 	}
 	memset(image->pixels, 255, data->width * data->height * 4);
+	mlx_loop_hook(mlx, ft_hook, mlx);
 	mlx_loop(mlx);
 	mlx_terminate(mlx);
 }
