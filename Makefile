@@ -4,14 +4,16 @@ FLAGS = -Wall -Werror -Wextra
 
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/%.o)
+
 OBJ_DIR = build
 INC = include/cub3D.h
+
 MLX42 = libs/MLX42/build/libmlx42.a
 MLX_DIR = libs/MLX42/include
 
 all:$(NAME)
 
-$(NAME): $(MLX42) $(OBJ)
+$(NAME): $(MLX42) $(OBJ) $(INC)
 	$(CC) $(FLAGS) $(OBJ) \
 	$(MLX42) -Iinclude \
 	-ldl -lglfw -pthread -lm \
