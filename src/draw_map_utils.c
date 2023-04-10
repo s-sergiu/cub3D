@@ -21,12 +21,25 @@ int	get_height(char **map)
 	return (i);
 }
 
+/*
+	init_map_data:
+	Initializes the s_map_data structure;
+*/
+
 void	init_map_data(struct s_map_data **data, char *map_file)
 {
+	int	filename_length;
+
+	filename_length = ft_strlen(map_file);
+	if (ft_strncmp(map_file + (filename_length - 4), ".cub\0", 5))
+	{
+		printf("map is not of correct format\n");
+		return ;
+	}
 	(*data) = malloc(sizeof(struct s_map_data));
 	(*data)->map_string = read_map(map_file);
 	printf("map string %s\n", (*data)->map_string);
-	if ((*data)->map_string != NULL)
+	if ((*data)->map_string)
 	{
 		(*data)->map = ft_split((*data)->map_string, '\n');
 		(*data)->width = ft_strlen((*data)->map[0]) * 32;
@@ -35,10 +48,15 @@ void	init_map_data(struct s_map_data **data, char *map_file)
 	
 }
 
+/*
+	destroy_map_data:
+	Destroys the s_map_data structure;
+*/
+
 void	destroy_map_data(struct s_map_data **data)
 {
 	free((*data)->map_string);
-	if ((*data)->map_string != NULL)
+	if ((*data)->map_string)
 		free_split((*data)->map);
 	free((*data));
 }

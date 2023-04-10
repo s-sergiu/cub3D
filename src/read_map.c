@@ -15,6 +15,11 @@ int	print_error(int error_number)
 	return (0);
 }
 
+/*
+	get_total_bytes:
+	This function returns the total number of bytes in a file.
+*/
+
 int	get_total_bytes(char *filename)
 {
 	int		fd;
@@ -40,6 +45,12 @@ int	get_total_bytes(char *filename)
 	return (return_close_and_free(total_bytes, fd, buffer));
 }
 
+/*
+	read_map:
+	This function reads a file and returns its 
+	contents in a string;
+*/
+
 char	*read_map(char *file)
 {
 	int fd;
@@ -48,7 +59,7 @@ char	*read_map(char *file)
 
 	bytes = get_total_bytes(file);
 	printf("bytes: %d\n", bytes);
-	if (bytes == 0)
+	if (bytes < 1)
 		return (NULL);
 	buffer = (char *)malloc(sizeof(char) * bytes + 1);
 	if (!buffer)
