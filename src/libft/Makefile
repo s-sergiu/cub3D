@@ -9,7 +9,7 @@ OBJ = $(SRC:src/%.c=build/%.o)
 OBJ_DIR = build
 INC = ../../include/libft/libft.h
 
-all:$(NAME)
+all: $(OBJ_DIR) $(NAME) 
 
 $(NAME): $(OBJ) $(INC)
 	@$(AR) $(NAME) $^
