@@ -1,5 +1,5 @@
 
-#include "../../../include/libft.h"
+#include "../../../include/libft/libft.h"
 
 size_t	ft_strlen(const char *str)
 {

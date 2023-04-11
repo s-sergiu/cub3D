@@ -8,8 +8,10 @@
 # include <fcntl.h>
 # include <string.h>
 # include <stdlib.h>
-# include "libft.h"
-# include "../libs/MLX42/include/MLX42/MLX42.h"
+# include "libft/libft.h"
+# include "../external/MLX42/include/MLX42/MLX42.h"
+# define TRUE 1
+# define FALSE 0
 
 typedef struct s_map_data t_map_data;
 
@@ -21,9 +23,9 @@ struct	s_map_data
 	int		width;
 };
 
-char					*read_map(char *file);
 void					draw_map(struct s_map_data *data);
-void					init_map_data(struct s_map_data **data, char *map_file);
+int						init_map_data(struct s_map_data **data, char *map_file);
 void					destroy_map_data(struct s_map_data **data);
+int						filename_is_valid(char *filename);
 
 #endif

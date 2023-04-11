@@ -5,19 +5,22 @@ FLAGS = -g -Wall -Werror -Wextra
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/%.o)
 
+MAPSRC = $(wildcard src/map_utils/*.c)
+MAPOBJ = $(MAPSRC:src/map_utils/%.c=build/map_utils/%.o)
+
 OBJ_DIR = build
 INC = include/cub3D.h
 
-MLX42 = libs/MLX42/build/libmlx42.a
+MLX42 = external/MLX42/build/libmlx42.a
 LIBFT = build/libft/libft.a
 
-MLX_DIR = libs/MLX42/include
+MLX_DIR = external/MLX42/include
 LIBFT_DIR = src/libft
 
 all:$(NAME)
 
-$(NAME): $(MLX42) $(OBJ) $(INC) $(LIBFT)
-	$(CC) $(FLAGS) $(OBJ) build/libft.a \
+$(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(MAPOBJ) $(INC) $(LIBFT)
+	$(CC) $(MAPOBJ) $(FLAGS) $(OBJ) build/libft.a \
 	$(MLX42) -Iinclude \
 	-ldl -lglfw -pthread -lm \
 	-o $@
@@ -25,9 +28,10 @@ $(NAME): $(MLX42) $(OBJ) $(INC) $(LIBFT)
 $(LIBFT): 
 	@make -C $(LIBFT_DIR)
 	@mv src/libft/libft.a $(OBJ_DIR)
+	@rm -rf src/libft/build
 
 $(MLX42): $(MLX_DIR)
-	@cd libs/MLX42; cmake -B build; cmake --build build -j4
+	@cd external/MLX42; cmake -B build; cmake --build build -j4
 
 $(MLX_DIR):
 	@git submodule init
@@ -36,24 +40,29 @@ $(MLX_DIR):
 bonus:
 	@echo "bonus"
 
-build/%.o: src/%.c # $(OBJ_DIR)
+build/%.o: src/%.c 
+
+	@$(CC) $(FLAGS) -c $< -o $@
+
+build/map_utils/%.o: src/map_utils/%.c 
 
 	@$(CC) $(FLAGS) -c $< -o $@
 
 $(OBJ_DIR):
-	@mkdir $(OBJ_DIR)
-	@mkdir docs external tests data examples extras tools;
+	@mkdir $(OBJ_DIR) 
+	@mkdir -p build/map_utils
+	@mkdir docs external tests data examples tools;
 
 clean: 
-	@$(RM) $(OBJ)
-	@echo "Removing $(OBJ)"
-	@cmake --build libs/MLX42/build --target clean
+	@$(RM) $(OBJ) $(MAPOBJ) build/libft.a
+	@echo "Removing $(OBJ) $(MAPOBJ)"
+	@cmake --build external/MLX42/build --target clean
 	@echo "Removing MLX42 build objects..."
 
 fclean: clean 
 	@$(RM) $(NAME)
 	@echo "Removing $(NAME)..."
-	@$(RM) -rf libs/MLX42/build
+	@$(RM) -rf external/MLX42/build
 	@echo "Removing MLX42 build directory..."
 
 re: clean all

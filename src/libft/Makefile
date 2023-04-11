@@ -7,7 +7,7 @@ SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/%.o)
 
 OBJ_DIR = build
-INC = ../../include/libft.h
+INC = ../../include/libft/libft.h
 
 all:$(NAME)
 

@@ -1,5 +1,5 @@
 
-#include "../../../include/libft.h"
+#include "../../../include/libft/libft.h"
 
 static char	*trim_string(char *s, char c)
 {
