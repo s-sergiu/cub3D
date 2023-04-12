@@ -11,12 +11,19 @@ INC = include/cub3D.h
 MLX42 = libs/MLX42/build/libmlx42.a
 MLX_DIR = libs/MLX42/include
 
+ifeq ($(UNAME_S),Linux)
+MLX_FLAGS= -ldl -lglfw -pthread -lm
+endif
+ifeq ($(UNAME_S),Darwin)
+MLX_FLAGS= -lglfw -L ~/.brew/Cellar/glfw/3.3.8/lib
+endif
+
 all:$(NAME)
 
 $(NAME): $(MLX42) $(OBJ) $(INC)
 	$(CC) $(FLAGS) $(OBJ) \
 	$(MLX42) -Iinclude \
-	-ldl -lglfw -pthread -lm \
+	$(MLX_FLAGS) \
 	-o $@
 
 $(MLX42): $(MLX_DIR)
