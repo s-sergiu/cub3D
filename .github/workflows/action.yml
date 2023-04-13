@@ -1,0 +1,27 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install GLFW
+      run: sudo apt-get install libglfw3-dev valgrind
+    - name: Initialize submodule
+      run: git submodule update --init --recursive
+    - name: Build dependency
+      working-directory: external/MLX42
+      run: |
+        cmake -B build
+        cmake --build build -j4
+    - name: Build and run C project
+      run: |
+        make
+    - name: Check for memory leaks
+      run: |
+        valgrind --leak-check=full ./cub3D data/maps/default.cub
+        valgrind --leak-check=full ./cub3D data/maps/empty.cub
