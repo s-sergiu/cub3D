@@ -22,7 +22,7 @@ ifeq ($(UNAME),Linux)
 MLX_FLAGS = -ldl -lglfw -pthread -lm
 endif
 ifeq ($(UNAME),Darwin)
-MLX_FLAGS = -lglfw -L ~/.brew/Cellar/glfw/3.3.8/lib
+MLX_FLAGS = -lglfw -L"/opt/homebrew/Cellar/glfw/3.3.8/lib/"
 endif
 
 all:$(NAME)
