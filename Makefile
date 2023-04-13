@@ -23,7 +23,7 @@ MLX_FLAGS = -ldl -lglfw -pthread -lm
 endif
 
 ifeq ($(UNAME),Darwin)
-FLAGS += "-mmacosx-version-min=12.06" "-arch" "arm64"
+FLAGS += "-mmacosx-version-min=12.06" "-arch" "x86_64"
 MLX_FLAGS = -lglfw -L"/usr/local/Cellar/glfw/3.3.8/lib"
 endif
 
