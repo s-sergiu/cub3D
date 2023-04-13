@@ -27,6 +27,7 @@ jobs:
     - name: Valgrind memory leak check #2
       run: |
         valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps/empty.cub
+
   build on mac:
 
     runs-on: macos-latest
