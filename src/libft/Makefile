@@ -14,9 +14,9 @@ OBJ = $(SRC:src/%.c=build/%.o)
 OBJ_DIR = build
 INC = ../../include/libft/libft.h
 
-all: $(OBJ_DIR) $(NAME) 
+all: $(OBJ_DIR) $(NAME) $(INC)
 
-$(NAME): $(OBJ) $(INC)
+$(NAME): $(OBJ)
 	@$(AR) $(NAME) $^
 
 build/%.o: src/%.c
