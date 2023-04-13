@@ -1,18 +1,37 @@
 
 #include "../../include/map_utils/map_utils.h"
 
-int	return_close_and_free(int return_value, int fd, char *buffer)
+void	print_error(int error_number)
 {
-	close(fd);
-	if (buffer != NULL)
-		free(buffer);
-	return (return_value);
+	write(2, "Error: ", 7);
+	ft_putstr_fd(strerror(error_number), 2);
+	write(2, "\n", 1);
 }
 
-int	print_error(int error_number)
+int	handle_error(int error_number)
 {
-	printf("Error: %s\n", strerror(error_number));
-	return (-1);
+	if (error_number == EMPTY_MAP)
+	{
+		write(2, "Error: Empty map\n", 17);
+		exit(EXIT_FAILURE);
+	}
+	if (error_number == BAD_MAP_FILE)
+	{
+		write(2, "Error: Bad map file\n", 20);
+		exit(EXIT_FAILURE);
+	}
+	print_error(error_number);
+	exit(error_number);
+}
+
+void	cleanup_and_exit(int error_number, int fd, char *buffer)
+{
+	if (fd > 0)
+		close(fd);
+	if (buffer != NULL)
+		free(buffer);
+	print_error(error_number);
+	exit(error_number);
 }
 
 /*
@@ -29,20 +48,24 @@ int	get_total_bytes(char *filename)
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		return (print_error(errno));
+		handle_error(errno);
 	buffer = (char *)malloc(sizeof(char) * 100);
 	if (!buffer)
-		return (return_close_and_free(0, fd, NULL));
+		cleanup_and_exit(errno, fd, NULL);
 	bytes = read(fd, buffer, 100);
-	if (bytes == 0)
-		return_close_and_free(0, fd, NULL);
+	if (bytes == -1)
+		cleanup_and_exit(errno, fd, buffer);
 	total_bytes = bytes;
 	while (bytes > 0)
 	{
 		bytes = read(fd, buffer, 100);
+		if (bytes == -1)
+			cleanup_and_exit(errno, fd, buffer);
 		total_bytes += bytes;
 	}
-	return (return_close_and_free(total_bytes, fd, buffer));
+	close(fd);
+	free(buffer);
+	return (total_bytes);
 }
 
 /*
@@ -58,29 +81,17 @@ char	*read_map(char *file)
 	char *buffer;
 
 	bytes = get_total_bytes(file);
-	if (bytes == -1)
-		return (NULL);
-	if (bytes == 0)
-	{
-		printf("Error: Empty map\n");
-		return (NULL);
-	}
+	if (!bytes)
+		handle_error(EMPTY_MAP);
 	buffer = (char *)malloc(sizeof(char) * bytes + 1);
 	if (!buffer)
 		return (NULL);
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
-	{
-		free(buffer);
-		return (NULL);
-	}
+		cleanup_and_exit(errno, 0, buffer);
 	if (read(fd, buffer, bytes) == -1)
-	{
-		close(fd);
-		free(buffer);
-		return(NULL);
-	}
-	buffer[bytes] = 0;
+		cleanup_and_exit(errno, fd, buffer);
+	buffer[bytes] = '\0';
 	close(fd);
 	return (buffer);
 }
@@ -96,9 +107,6 @@ int	filename_is_valid(char *filename)
 
 	filename_length = ft_strlen(filename);
 	if (ft_strncmp(filename + (filename_length - 4), ".cub\0", 5))
-	{
-		printf("Error: Bad map file\n");
-		return (FALSE);
-	}
+		handle_error(BAD_MAP_FILE);
 	return (TRUE);
 }

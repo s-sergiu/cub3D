@@ -26,21 +26,23 @@ int	get_height(char **map)
 	Initializes the s_map_data structure;
 */
 
-int	init_map_data(struct s_map_data **data, char *map_file)
+void	init_map_data(struct s_map_data **data, char *map_file)
 {
+	char	*map;
+
+	map = read_map(map_file);
 	(*data) = malloc(sizeof(struct s_map_data));
 	if (!(*data))
-		return (FALSE);
-	(*data)->map_string = read_map(map_file);
+		handle_error(errno);
+	(*data)->map_string = map;
 	if ((*data)->map_string == NULL)
-		return (FALSE);
+		cleanup_and_exit(errno, 0, NULL);
 	if ((*data)->map_string)
 	{
 		(*data)->map = ft_split((*data)->map_string, '\n');
 		(*data)->width = ft_strlen((*data)->map[0]) * 32;
 		(*data)->height = get_height((*data)->map) * 32;
 	}
-	return (TRUE);	
 }
 
 /*

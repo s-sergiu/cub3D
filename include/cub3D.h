@@ -24,7 +24,7 @@ struct	s_map_data
 };
 
 void					draw_map(struct s_map_data *data);
-int						init_map_data(struct s_map_data **data, char *map_file);
+void					init_map_data(struct s_map_data **data, char *map_file);
 void					destroy_map_data(struct s_map_data **data);
 int						filename_is_valid(char *filename);
 
