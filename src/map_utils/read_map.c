@@ -13,12 +13,12 @@ int	handle_error(int error_number)
 	if (error_number == EMPTY_MAP)
 	{
 		write(2, "Error: Empty map\n", 17);
-		exit(EXIT_FAILURE);
+		exit(error_number);
 	}
 	if (error_number == BAD_MAP_FILE)
 	{
 		write(2, "Error: Bad map file\n", 20);
-		exit(EXIT_FAILURE);
+		exit(error_number);
 	}
 	print_error(error_number);
 	exit(error_number);
