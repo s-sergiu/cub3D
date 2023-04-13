@@ -32,7 +32,7 @@ all:$(NAME)
 $(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(MAPOBJ) $(INC) $(LIBFT)
 	$(CC) $(MAPOBJ) $(FLAGS) $(OBJ) build/libft.a \
 	$(MLX42) -Iinclude \
-	$(MLX_FLAGS) -o $@
+	$(MLX_FLAGS) -o $@ -v
 
 $(LIBFT): 
 	@make -C $(LIBFT_DIR)
