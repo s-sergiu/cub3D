@@ -1,9 +1,9 @@
-name: Ubuntu test
+name: test
 
 on: [push]
 
 jobs:
-  build:
+  build on ubuntu:
 
     runs-on: ubuntu-latest
 
@@ -27,3 +27,22 @@ jobs:
     - name: Valgrind memory leak check #2
       run: |
         valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps/empty.cub
+		
+  build on mac:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install GLFW
+      run: brew install glfw
+    - name: Initialize submodule
+      run: git submodule update --init --recursive
+    - name: Build dependency
+      working-directory: external/MLX42
+      run: |
+        cmake -B build
+        cmake --build build -j4
+    - name: Build and run C project
+      run: |
+        make
