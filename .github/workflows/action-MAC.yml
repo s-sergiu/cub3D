@@ -21,3 +21,5 @@ jobs:
     - name: Build and run C project
       run: |
         make
+		file build/libft.a
+		file build/main.o
