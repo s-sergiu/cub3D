@@ -1,0 +1,9 @@
+digraph "LodePNGColorMode"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [shape=record,label="{LodePNGColorMode\n|+ colortype\l+ bitdepth\l+ palette\l+ palettesize\l+ key_defined\l+ key_r\l+ key_g\l+ key_b\l|}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+}

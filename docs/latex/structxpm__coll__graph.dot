@@ -1,0 +1,11 @@
+digraph "xpm"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [shape=record,label="{xpm\n|+ color_count\l+ cpp\l+ mode\l|}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",style="solid",label=" +texture" ,arrowhead="odiamond"];
+  Node2 [shape=record,label="{mlx_texture\n|+ width\l+ height\l+ bytes_per_pixel\l+ pixels\l|}",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structmlx__texture.html",tooltip=" "];
+}

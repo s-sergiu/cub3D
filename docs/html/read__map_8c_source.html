@@ -102,12 +102,12 @@ $(function() {
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    exit(error_number);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="map__utils_8h.html#aabc8b9c956e025066b300e71e80f2590">   27</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="read__map_8c.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(<span class="keywordtype">int</span> error_number, <span class="keywordtype">int</span> fd, <span class="keywordtype">char</span> *buffer)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="map__utils_8h.html#aabc8b9c956e025066b300e71e80f2590">   27</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="read__map_8c.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(<span class="keywordtype">int</span> error_number, <span class="keywordtype">int</span> fd, <span class="keywordtype">char</span> *<a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>)</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (fd &gt; 0)</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        close(fd);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span> (buffer != NULL)</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        free(buffer);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span> (<a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a> != NULL)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        free(<a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_function" href="read__map_8c.html#af5c60b16fc036394aa182bd09cc16e5d">print_error</a>(error_number);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    exit(error_number);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
@@ -115,29 +115,29 @@ $(function() {
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="map__utils_8h.html#a973f5273453bacdf37c27ef24bdd540d">   37</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d">get_total_bytes</a>(<span class="keywordtype">char</span> *filename)</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">int</span>     fd;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">char</span>    *buffer;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">char</span>    *<a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">int</span>     total_bytes;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">int</span>     bytes;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    fd = open(filename, O_RDONLY);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (fd == -1)</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_function" href="read__map_8c.html#af11ad10198633d526882d9ebabf21042">handle_error</a>(errno);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    buffer = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * 100);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (!buffer)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a> = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * 100);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (!<a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>)</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_function" href="read__map_8c.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, fd, NULL);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    bytes = read(fd, buffer, 100);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    bytes = read(fd, <a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>, 100);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (bytes == -1)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_function" href="read__map_8c.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, fd, buffer);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_function" href="read__map_8c.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, fd, <a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    total_bytes = bytes;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">while</span> (bytes &gt; 0)</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        bytes = read(fd, buffer, 100);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        bytes = read(fd, <a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>, 100);</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">if</span> (bytes == -1)</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <a class="code hl_function" href="read__map_8c.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, fd, buffer);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <a class="code hl_function" href="read__map_8c.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, fd, <a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>);</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        total_bytes += bytes;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    close(fd);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    free(buffer);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    free(<a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> (total_bytes);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
@@ -145,22 +145,22 @@ $(function() {
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">int</span> fd;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">int</span> bytes;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">char</span> *buffer;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">char</span> *<a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    bytes = <a class="code hl_function" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d">get_total_bytes</a>(file);</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">if</span> (!bytes)</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <a class="code hl_function" href="read__map_8c.html#af11ad10198633d526882d9ebabf21042">handle_error</a>(<a class="code hl_define" href="map__utils_8h.html#a4635f2163efe937e76598aff306d35d1">EMPTY_MAP</a>);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    buffer = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * bytes + 1);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">if</span> (!buffer)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a> = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * bytes + 1);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">if</span> (!<a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>)</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    fd = open(file, O_RDONLY);</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span> (fd == -1)</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <a class="code hl_function" href="read__map_8c.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, 0, buffer);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">if</span> (read(fd, buffer, bytes) == -1)</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_function" href="read__map_8c.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, fd, buffer);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    buffer[bytes] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <a class="code hl_function" href="read__map_8c.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, 0, <a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">if</span> (read(fd, <a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>, bytes) == -1)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_function" href="read__map_8c.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, fd, <a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>[bytes] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    close(fd);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> (buffer);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> (<a class="code hl_typedef" href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a>);</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="cub3D_8h.html#a287e1eb420c186ddb3ca11b0d5b6cab4">   88</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="read__map_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4">filename_is_valid</a>(<span class="keywordtype">char</span> *filename)</div>
@@ -173,6 +173,7 @@ $(function() {
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="cub3D_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
 <div class="ttc" id="acub3D_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="cub3D_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00011">cub3D.h:11</a></div></div>
+<div class="ttc" id="aglad_8h_html_a3667f558219c90437106b544a3ca00b8"><div class="ttname"><a href="glad_8h.html#a3667f558219c90437106b544a3ca00b8">buffer</a></div><div class="ttdeci">GLenum GLfloat * buffer</div><div class="ttdef"><b>Definition:</b> <a href="glad_8h_source.html#l02634">glad.h:2634</a></div></div>
 <div class="ttc" id="alibft_8h_html_a828402378653640f545a4be2e00e92f9"><div class="ttname"><a href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *str)</div><div class="ttdoc">Calculates the length of a string.</div><div class="ttdef"><b>Definition:</b> <a href="ft__strlen_8c_source.html#l00004">ft_strlen.c:4</a></div></div>
 <div class="ttc" id="alibft_8h_html_a9d2fe792187aa4ed08e5864fb2c4d6dc"><div class="ttname"><a href="libft_8h.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a></div><div class="ttdeci">int ft_strncmp(const char *s1, const char *s2, size_t n)</div><div class="ttdoc">Compare the first n bytes of two strings.</div><div class="ttdef"><b>Definition:</b> <a href="ft__strncmp_8c_source.html#l00004">ft_strncmp.c:4</a></div></div>
 <div class="ttc" id="alibft_8h_html_acefce9ac519f8f8b7d3fde33dbafe469"><div class="ttname"><a href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a></div><div class="ttdeci">void ft_putstr_fd(char *s, int fd)</div><div class="ttdef"><b>Definition:</b> <a href="ft__putstring__fd_8c_source.html#l00004">ft_putstring_fd.c:4</a></div></div>

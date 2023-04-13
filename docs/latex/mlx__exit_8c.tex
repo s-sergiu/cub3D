@@ -1,0 +1,71 @@
+\hypertarget{mlx__exit_8c}{}\doxysection{/home/ssergiu/projects/cub3d/external/\+MLX42/src/mlx\+\_\+exit.c File Reference}
+\label{mlx__exit_8c}\index{/home/ssergiu/projects/cub3d/external/MLX42/src/mlx\_exit.c@{/home/ssergiu/projects/cub3d/external/MLX42/src/mlx\_exit.c}}
+{\ttfamily \#include \char`\"{}MLX42/\+MLX42\+\_\+\+Int.\+h\char`\"{}}\newline
+Include dependency graph for mlx\+\_\+exit.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__exit_8c_a5234b5f5d093fa79366df2f94c9bcb28}{mlx\+\_\+close\+\_\+window}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} $\ast$\mbox{\hyperlink{structmlx}{mlx}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__exit_8c_afa6aa2f79f9fc81735bdf3b92421f9ca}{mlx\+\_\+terminate}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} $\ast$\mbox{\hyperlink{structmlx}{mlx}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mlx__exit_8c_a5234b5f5d093fa79366df2f94c9bcb28}\label{mlx__exit_8c_a5234b5f5d093fa79366df2f94c9bcb28}} 
+\index{mlx\_exit.c@{mlx\_exit.c}!mlx\_close\_window@{mlx\_close\_window}}
+\index{mlx\_close\_window@{mlx\_close\_window}!mlx\_exit.c@{mlx\_exit.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_close\_window()}{mlx\_close\_window()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+close\+\_\+window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} $\ast$}]{mlx }\end{DoxyParamCaption})}
+
+Notifies MLX that it should stop rendering and exit the main loop. This is not the same as terminate, this simply tells MLX to close the window.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mlx__exit_8c_source_l00026}{26}} of file \mbox{\hyperlink{mlx__exit_8c_source}{mlx\+\_\+exit.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00029\ \ \ \ \ glfwSetWindowShouldClose(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{mlx__exit_8c_afa6aa2f79f9fc81735bdf3b92421f9ca}\label{mlx__exit_8c_afa6aa2f79f9fc81735bdf3b92421f9ca}} 
+\index{mlx\_exit.c@{mlx\_exit.c}!mlx\_terminate@{mlx\_terminate}}
+\index{mlx\_terminate@{mlx\_terminate}!mlx\_exit.c@{mlx\_exit.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_terminate()}{mlx\_terminate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+terminate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} $\ast$}]{mlx }\end{DoxyParamCaption})}
+
+All of glfw \& glads resources are cleaned up by the terminate function. Now it\textquotesingle{}s time to clean up our own mess. 
+
+Definition at line \mbox{\hyperlink{mlx__exit_8c_source_l00036}{36}} of file \mbox{\hyperlink{mlx__exit_8c_source}{mlx\+\_\+exit.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}\ *\textcolor{keyword}{const}\ mlxctx\ =\ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ glfwTerminate();}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a7b443d2be908f580e504765e3ed2ba78}{mlx\_lstclear}}((\mbox{\hyperlink{structmlx__list}{mlx\_list\_t}}**)(\&mlxctx-\/>\mbox{\hyperlink{structmlx__ctx_ac400f7d2927ae26c310535e9b0ed91d2}{hooks}}),\ \&free);}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a7b443d2be908f580e504765e3ed2ba78}{mlx\_lstclear}}((\mbox{\hyperlink{structmlx__list}{mlx\_list\_t}}**)(\&mlxctx-\/>\mbox{\hyperlink{structmlx__ctx_ab534d0d4d74f8654dd885071642f964d}{render\_queue}}),\ \&free);}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a7b443d2be908f580e504765e3ed2ba78}{mlx\_lstclear}}((\mbox{\hyperlink{structmlx__list}{mlx\_list\_t}}**)(\&mlxctx-\/>\mbox{\hyperlink{structmlx__ctx_a99035083550f1e75b61062f9e8f7ef8f}{images}}),\ \&mlx\_free\_image);}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a93b4ce5ceae0d22c22c6c9125c052616}{mlx\_freen}}(2,\ mlxctx,\ \mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3

@@ -1,0 +1,50 @@
+digraph "mlx_error"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="mlx_error",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="mlx_create_cursor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__cursor_8c.html#a655522e3e1ad1c0eb10ffe798ab0f383",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="mlx_create_std_cursor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__cursor_8c.html#a758301bb6abb5a1320fd8f00c51e626e",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="mlx_image_to_window",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__images_8c.html#a06dbfde4fce913678e09b0af263b0c06",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="draw_map",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map_8c.html#a1dd6a7f325ca5e8aafa0fe462209b4bb",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node4 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="mlx_put_string",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__font_8c.html#a3c7e4790683c2dbc5159cb3a18c22e0b",tooltip=" "];
+  Node4 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$tests_8cpp.html#a91cc672d0a00ed4c9c957a7403d10c52",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="mlx_init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__init_8c.html#a32988a5ce7aaa25a448b61b0ac410cec",tooltip=" "];
+  Node9 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node9 -> Node10 [dir="back",color="steelblue1",style="solid"];
+  Node10 [label="Window::SetUp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classWindow.html#a853c1fb2e3d27366fb37892161d17014",tooltip=" "];
+  Node9 -> Node11 [dir="back",color="steelblue1",style="solid"];
+  Node11 [label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$tests_8cpp.html#a3e69cb2acfdf4102ece9c9a2927d8e84",tooltip=" "];
+  Node1 -> Node12 [dir="back",color="steelblue1",style="solid"];
+  Node12 [label="mlx_load_png",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__png_8c.html#a010df0dc1115d0904bbe370cc51c7a56",tooltip=" "];
+  Node1 -> Node13 [dir="back",color="steelblue1",style="solid"];
+  Node13 [label="mlx_load_xpm42",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__xpm42_8c.html#a4e43a95dd957b6771633389dc650003d",tooltip=" "];
+  Node1 -> Node14 [dir="back",color="steelblue1",style="solid"];
+  Node14 [label="mlx_loop_hook",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__loop_8c.html#afc772cc4204df8de0388e9bb38768d10",tooltip=" "];
+  Node14 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node14 -> Node15 [dir="back",color="steelblue1",style="solid"];
+  Node15 [label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$tests_8cpp.html#a0bea0b82a8268d65dc6d1a6f5a55750f",tooltip=" "];
+  Node1 -> Node16 [dir="back",color="steelblue1",style="solid"];
+  Node16 [label="mlx_new_image",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__images_8c.html#abe515cadb9b88a9d064383da276c2467",tooltip=" "];
+  Node16 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node16 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node16 -> Node17 [dir="back",color="steelblue1",style="solid"];
+  Node17 [label="mlx_texture_to_image",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__texture_8c.html#a140fd59feca1fefb31944cf074fc4c87",tooltip=" "];
+  Node16 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node18 [dir="back",color="steelblue1",style="solid"];
+  Node18 [label="mlx_resize_image",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__images_8c.html#a38c0b46353a7c9a1e2b6222f2d7126eb",tooltip=" "];
+}

@@ -91,10 +91,13 @@ Include dependency graph for main.c:</div>
 <area shape="rect" title=" " alt="" coords="179,174,237,199"/>
 <area shape="rect" title=" " alt="" coords="262,174,327,199"/>
 <area shape="rect" href="libft_8h.html" title=" " alt="" coords="351,174,430,199"/>
-<area shape="rect" title=" " alt="" coords="455,167,625,207"/>
-<area shape="rect" title=" " alt="" coords="263,255,332,280"/>
-<area shape="rect" title=" " alt="" coords="357,255,425,280"/>
-<area shape="rect" title=" " alt="" coords="449,255,513,280"/>
+<area shape="rect" href="MLX42_8h.html" title=" " alt="" coords="495,167,665,207"/>
+<area shape="rect" title=" " alt="" coords="217,255,287,280"/>
+<area shape="rect" title=" " alt="" coords="311,255,379,280"/>
+<area shape="rect" title=" " alt="" coords="404,255,468,280"/>
+<area shape="rect" title=" " alt="" coords="493,255,558,280"/>
+<area shape="rect" title=" " alt="" coords="583,255,657,280"/>
+<area shape="rect" href="MLX42__Input_8h.html" title=" " alt="" coords="682,255,793,280"/>
 </map>
 </div>
 </div>
@@ -134,9 +137,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00004">4</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>{</div>
-<div class="line"><span class="lineno">    6</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structs__map__data.html">s_map_data</a>   *data;</div>
+<div class="line"><span class="lineno">    6</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structs__map__data.html">s_map_data</a>   *<a class="code hl_typedef" href="glad_8h.html#a77bef421a06300ba60fc8c18453bcaef">data</a>;</div>
 <div class="line"><span class="lineno">    7</span> </div>
-<div class="line"><span class="lineno">    8</span>    data = NULL;</div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_typedef" href="glad_8h.html#a77bef421a06300ba60fc8c18453bcaef">data</a> = NULL;</div>
 <div class="line"><span class="lineno">    9</span>    <span class="keywordflow">if</span> (argc != 2)</div>
 <div class="line"><span class="lineno">   10</span>        write(1, <span class="stringliteral">&quot;usage: \n&quot;</span>, 8);</div>
 <div class="line"><span class="lineno">   11</span>    <span class="keywordflow">else</span></div>
@@ -145,39 +148,62 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   14</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="cub3D_8h.html#a287e1eb420c186ddb3ca11b0d5b6cab4">filename_is_valid</a>(argv[1]))</div>
 <div class="line"><span class="lineno">   15</span>        {</div>
 <div class="line"><span class="lineno">   16</span>            write(1, <span class="stringliteral">&quot;succes1\n&quot;</span>, 8);</div>
-<div class="line"><span class="lineno">   17</span>            <a class="code hl_function" href="cub3D_8h.html#a3efc0a465ac3693c6748963564a7dc0e">init_map_data</a>(&amp;data, argv[1]);</div>
+<div class="line"><span class="lineno">   17</span>            <a class="code hl_function" href="cub3D_8h.html#a3efc0a465ac3693c6748963564a7dc0e">init_map_data</a>(&amp;<a class="code hl_typedef" href="glad_8h.html#a77bef421a06300ba60fc8c18453bcaef">data</a>, argv[1]);</div>
 <div class="line"><span class="lineno">   18</span>        }</div>
-<div class="line"><span class="lineno">   19</span><span class="comment">//          draw_map(data);</span></div>
-<div class="line"><span class="lineno">   20</span>        <span class="keywordflow">if</span> (data)</div>
-<div class="line"><span class="lineno">   21</span>            <a class="code hl_function" href="cub3D_8h.html#ac0e0d1411c5e6e51f7bb4b854217d40c">destroy_map_data</a>(&amp;data);</div>
+<div class="line"><span class="lineno">   19</span>            <a class="code hl_function" href="cub3D_8h.html#a1dd6a7f325ca5e8aafa0fe462209b4bb">draw_map</a>(<a class="code hl_typedef" href="glad_8h.html#a77bef421a06300ba60fc8c18453bcaef">data</a>);</div>
+<div class="line"><span class="lineno">   20</span>        <span class="keywordflow">if</span> (<a class="code hl_typedef" href="glad_8h.html#a77bef421a06300ba60fc8c18453bcaef">data</a>)</div>
+<div class="line"><span class="lineno">   21</span>            <a class="code hl_function" href="cub3D_8h.html#ac0e0d1411c5e6e51f7bb4b854217d40c">destroy_map_data</a>(&amp;<a class="code hl_typedef" href="glad_8h.html#a77bef421a06300ba60fc8c18453bcaef">data</a>);</div>
 <div class="line"><span class="lineno">   22</span>    }</div>
 <div class="line"><span class="lineno">   23</span>    <span class="keywordflow">return</span> (0);</div>
 <div class="line"><span class="lineno">   24</span>}</div>
+<div class="ttc" id="acub3D_8h_html_a1dd6a7f325ca5e8aafa0fe462209b4bb"><div class="ttname"><a href="cub3D_8h.html#a1dd6a7f325ca5e8aafa0fe462209b4bb">draw_map</a></div><div class="ttdeci">void draw_map(struct s_map_data *data)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00012">draw_map.c:12</a></div></div>
 <div class="ttc" id="acub3D_8h_html_a287e1eb420c186ddb3ca11b0d5b6cab4"><div class="ttname"><a href="cub3D_8h.html#a287e1eb420c186ddb3ca11b0d5b6cab4">filename_is_valid</a></div><div class="ttdeci">int filename_is_valid(char *filename)</div><div class="ttdoc">Checks if the given filename is valid and ends with &quot;.cub&quot;.</div><div class="ttdef"><b>Definition:</b> <a href="read__map_8c_source.html#l00088">read_map.c:88</a></div></div>
 <div class="ttc" id="acub3D_8h_html_a3efc0a465ac3693c6748963564a7dc0e"><div class="ttname"><a href="cub3D_8h.html#a3efc0a465ac3693c6748963564a7dc0e">init_map_data</a></div><div class="ttdeci">void init_map_data(struct s_map_data **data, char *map_file)</div><div class="ttdoc">Initializes map data.</div><div class="ttdef"><b>Definition:</b> <a href="draw__map__utils_8c_source.html#l00024">draw_map_utils.c:24</a></div></div>
 <div class="ttc" id="acub3D_8h_html_ac0e0d1411c5e6e51f7bb4b854217d40c"><div class="ttname"><a href="cub3D_8h.html#ac0e0d1411c5e6e51f7bb4b854217d40c">destroy_map_data</a></div><div class="ttdeci">void destroy_map_data(struct s_map_data **data)</div><div class="ttdoc">Destroys map data.</div><div class="ttdef"><b>Definition:</b> <a href="draw__map__utils_8c_source.html#l00043">draw_map_utils.c:43</a></div></div>
+<div class="ttc" id="aglad_8h_html_a77bef421a06300ba60fc8c18453bcaef"><div class="ttname"><a href="glad_8h.html#a77bef421a06300ba60fc8c18453bcaef">data</a></div><div class="ttdeci">GLboolean * data</div><div class="ttdef"><b>Definition:</b> <a href="glad_8h_source.html#l02049">glad.h:2049</a></div></div>
 <div class="ttc" id="astructs__map__data_html"><div class="ttname"><a href="structs__map__data.html">s_map_data</a></div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00016">cub3D.h:17</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#amain_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="amain_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="amain_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,56,81"/>
-<area shape="rect" href="draw__map__utils_8c.html#ac0e0d1411c5e6e51f7bb4b854217d40c" title="Destroys map data." alt="" coords="104,5,233,31"/>
-<area shape="rect" href="read__map_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid and ends with &quot;.cub&quot;." alt="" coords="412,31,535,56"/>
-<area shape="rect" href="draw__map__utils_8c.html#a3efc0a465ac3693c6748963564a7dc0e" title="Initializes map data." alt="" coords="117,232,220,257"/>
-<area shape="rect" href="draw__map__utils_8c.html#a73200bd9a8be60a2e2f5eb2528293a8f" title="Frees memory allocated for a string array." alt="" coords="285,5,360,31"/>
-<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title="Calculates the length of a string." alt="" coords="609,105,679,131"/>
-<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title="Compare the first n bytes of two strings." alt="" coords="602,31,686,56"/>
-<area shape="rect" href="read__map_8c.html#af11ad10198633d526882d9ebabf21042" title="Handles the given error number, prints an error message to the standard error output,..." alt="" coords="597,283,691,308"/>
-<area shape="rect" href="read__map_8c.html#af5c60b16fc036394aa182bd09cc16e5d" title="Prints an error message to the standard error output." alt="" coords="753,333,833,359"/>
-<area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="881,333,969,359"/>
-<area shape="rect" href="read__map_8c.html#aabc8b9c956e025066b300e71e80f2590" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="583,359,705,384"/>
-<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title="Splits a string into an array of strings based on a given delimiter." alt="" coords="292,131,353,156"/>
-<area shape="rect" href="draw__map__utils_8c.html#ad624da07f82233cb9bf10960641f9fec" title="Gets the height of a map." alt="" coords="281,485,364,511"/>
-<area shape="rect" href="read__map_8c.html#a4262bf4509b96716171e25f0f9f0644e" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="283,308,362,333"/>
-<area shape="rect" href="ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc" title="Copy a string to a destination buffer with a specified maximum size." alt="" coords="435,80,511,105"/>
-<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="418,333,529,359"/>
+<area shape="rect" title=" " alt="" coords="5,531,56,556"/>
+<area shape="rect" href="draw__map__utils_8c.html#ac0e0d1411c5e6e51f7bb4b854217d40c" title="Destroys map data." alt="" coords="104,132,233,157"/>
+<area shape="rect" href="draw__map_8c.html#a1dd6a7f325ca5e8aafa0fe462209b4bb" title=" " alt="" coords="127,356,210,381"/>
+<area shape="rect" href="read__map_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid and ends with &quot;.cub&quot;." alt="" coords="493,656,616,681"/>
+<area shape="rect" href="draw__map__utils_8c.html#a3efc0a465ac3693c6748963564a7dc0e" title="Initializes map data." alt="" coords="117,808,220,833"/>
+<area shape="rect" href="draw__map__utils_8c.html#a73200bd9a8be60a2e2f5eb2528293a8f" title="Frees memory allocated for a string array." alt="" coords="321,5,396,31"/>
+<area shape="rect" href="draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e" title=" " alt="" coords="326,405,391,431"/>
+<area shape="rect" href="mlx__exit_8c.html#a5234b5f5d093fa79366df2f94c9bcb28" title=" " alt="" coords="489,456,621,481"/>
+<area shape="rect" href="mlx__images_8c.html#a06dbfde4fce913678e09b0af263b0c06" title=" " alt="" coords="281,281,436,307"/>
+<area shape="rect" href="mlx__error_8c.html#a2d365ea2e3844959187b6978c6e05171" title=" " alt="" coords="689,405,780,431"/>
+<area shape="rect" href="mlx__init_8c.html#a32988a5ce7aaa25a448b61b0ac410cec" title=" " alt="" coords="325,107,392,132"/>
+<area shape="rect" href="mlx__exit_8c.html#afa6aa2f79f9fc81735bdf3b92421f9ca" title=" " alt="" coords="503,7,607,32"/>
+<area shape="rect" href="mlx__loop_8c.html#ac4bd53ff1f88113c67d2b020f1809512" title=" " alt="" coords="321,507,396,532"/>
+<area shape="rect" href="mlx__loop_8c.html#afc772cc4204df8de0388e9bb38768d10" title=" " alt="" coords="304,156,413,181"/>
+<area shape="rect" href="mlx__images_8c.html#abe515cadb9b88a9d064383da276c2467" title=" " alt="" coords="301,207,417,232"/>
+<area shape="rect" href="mlx__keys_8c.html#aeca3680814ced1c4e67603419a2b3b8e" title=" " alt="" coords="491,407,618,432"/>
+<area shape="rect" href="mlx__error_8c.html#a3b5d95cdf353faaaa691ef8b2041b94f" title=" " alt="" coords="517,105,593,131"/>
+<area shape="rect" href="mlx__utils_8c.html#a93b4ce5ceae0d22c22c6c9125c052616" title=" " alt="" coords="695,156,774,181"/>
+<area shape="rect" href="mlx__images_8c.html#a8191539ebf00b641dee5842619d95845" title=" " alt="" coords="484,357,625,383"/>
+<area shape="rect" href="mlx__list_8c.html#a3526094b6976d5e65ade883d3ed3d522" title=" " alt="" coords="495,256,614,281"/>
+<area shape="rect" href="mlx__list_8c.html#acdd55bf29013651c970a5858f2d1dcfd" title=" " alt="" coords="511,207,599,232"/>
+<area shape="rect" href="mlx__list_8c.html#a7b443d2be908f580e504765e3ed2ba78" title=" " alt="" coords="689,7,781,32"/>
+<area shape="rect" href="mlx__images_8c.html#a1ed852c03c55e288332fed9019ce0fc0" title=" " alt="" coords="496,505,613,531"/>
+<area shape="rect" href="mlx__window_8c.html#ac0ef34ce56a68a37051d555c1478d7d5" title=" " alt="" coords="489,555,621,580"/>
+<area shape="rect" href="mlx__list_8c.html#af1d87a93eba3b5bb7cc57ff8ea2e5ae8" title=" " alt="" coords="495,56,615,81"/>
+<area shape="rect" href="mlx__list_8c.html#a0e833de4c4de8a1e06a313514f82eba3" title=" " alt="" coords="692,56,777,81"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title="Calculates the length of a string." alt="" coords="700,732,769,757"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title="Compare the first n bytes of two strings." alt="" coords="693,656,777,681"/>
+<area shape="rect" href="read__map_8c.html#af11ad10198633d526882d9ebabf21042" title="Handles the given error number, prints an error message to the standard error output,..." alt="" coords="688,909,781,935"/>
+<area shape="rect" href="read__map_8c.html#af5c60b16fc036394aa182bd09cc16e5d" title="Prints an error message to the standard error output." alt="" coords="844,960,924,985"/>
+<area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="972,960,1060,985"/>
+<area shape="rect" href="read__map_8c.html#aabc8b9c956e025066b300e71e80f2590" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="673,985,796,1011"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title="Splits a string into an array of strings based on a given delimiter." alt="" coords="328,759,389,784"/>
+<area shape="rect" href="draw__map__utils_8c.html#ad624da07f82233cb9bf10960641f9fec" title="Gets the height of a map." alt="" coords="317,808,400,833"/>
+<area shape="rect" href="read__map_8c.html#a4262bf4509b96716171e25f0f9f0644e" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="319,935,398,960"/>
+<area shape="rect" href="ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc" title="Copy a string to a destination buffer with a specified maximum size." alt="" coords="517,757,593,783"/>
+<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="499,960,610,985"/>
 </map>
 </div>
 

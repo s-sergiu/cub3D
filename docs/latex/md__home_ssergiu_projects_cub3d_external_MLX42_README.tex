@@ -1,0 +1,303 @@
+    \textsubscript{Written by \href{https://portfolio.w2wizard.dev/}{\texttt{ W2.\+Wizard}} for the 42 Network}          
+
+MLX42 is a performant, easy to use, cross-\/platform, minimal windowing graphics library to create graphical applications without having to work directly with the native windowing framework of the given operating system.
+
+It provides primitive tools to draw textures onto the window as well as modifying them at runtime as they get displayed on the window.\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md89}{}\doxysection{Features ✨}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md89}
+MLX42 comes with a plethora of features that make using it actually a joy instead of a chore.\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md90}{}\doxysubsection{Cross-\/\+Platform 🖥️}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md90}
+Run it on your grandma\textquotesingle{}s Windows\+XP, on your uncle\textquotesingle{}s debian or on a hipster\textquotesingle{}s Mac\+OS! No matter what the platform, if MLX42 can build on it, it will run on its native windowing system.
+
+This allows you to work on your project no matter which machine it is on.\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md91}{}\doxysubsection{Documented 📚}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md91}
+MLX42 cares about good documentation, every function, usage and even some internal workings are documented! No more guessing and searching how something functions or is supposed to work.\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md92}{}\doxysubsection{Performance 🚀}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md92}
+It is built on Open\+GL and uses batched rendering to speed up the rendering process compared to other libraries.\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md93}{}\doxysubsection{Open source \&\& Community driven 🌐}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md93}
+This project is being actively maintained by Codam as well as students from the 42 Network. This gives students the direct opportunity to learn more about the library itself as well as fix any potential bugs instead of merely accepting them.
+
+\DoxyHorRuler{0}
+\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md95}{}\doxysubsection{Installation 🏗️}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md95}
+\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md96}{}\doxysubsubsection{General compilation.}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md96}
+Overall the building of this project is as follows for ALL systems. As long as CMake can make sense of it.
+
+
+\begin{DoxyEnumerate}
+\item Download and build MLX42
+\end{DoxyEnumerate}
+
+In case your system doesn\textquotesingle{}t have \href{https://github.com/glfw/glfw}{\texttt{ glfw}} installed cmake will detect this and download it for you. You can then run {\ttfamily sudo make install} in the {\ttfamily \+\_\+deps} directory of glfw. If you\textquotesingle{}re using a 42 Computer (Mac\+OS, Linux), ask your favourite sysadmin to install it. Same goes for CMake or any other dependencies you might need for your system.
+
+However if you can\textquotesingle{}t do either CMake will still be able to fetch GLFW and build it. You can then statically link it from the {\ttfamily \+\_\+deps} folder.
+
+\begin{quote}
+{\bfseries{Note}}\+: For Codam, GLFW is already installed on the Macs. \end{quote}
+\begin{quote}
+{\bfseries{Note}}\+: During the linking stage, the flag to link GLFW can either be\+: -\/lglfw3 or -\/lglfw depending on your system. \end{quote}
+
+\begin{DoxyEnumerate}
+\item Compile your program with the library\+:
+\begin{DoxyItemize}
+\item For\+: Mac\+OS
+\item For\+: Linux
+\item For\+: Windows
+\end{DoxyItemize}
+\item Profit!
+\end{DoxyEnumerate}\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md97}{}\doxysubsubsection{Unit tests}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md97}
+MLX42 comes with some unit tests to ensure the integrity of the library, to build them run the following command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/DBUILD\_TESTS=ON\ -\/B\ build\ \&\&\ cmake\ -\/-\/build\ build\ -\/-\/parallel}
+
+\end{DoxyCode}
+
+
+Then simply run them with\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ctest\ -\/-\/output-\/on-\/failure\ -\/-\/test-\/dir\ build}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md99}{}\doxysubsection{Download and build -\/ MLX42}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md99}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{➜\ \ \string~\ git\ clone\ https://github.com/codam-\/coding-\/college/MLX42.git}
+\DoxyCodeLine{➜\ \ \string~\ cd\ MLX42}
+\DoxyCodeLine{➜\ \ \string~\ cmake\ -\/B\ build\ \#\ build\ here\ refers\ to\ the\ outputfolder.}
+\DoxyCodeLine{➜\ \ \string~\ cmake\ -\/-\/build\ build\ -\/j4\ \#\ or\ do\ make\ -\/C\ build\ -\/j4}
+
+\end{DoxyCode}
+
+
+The output library file is called {\ttfamily libmlx42.\+a} and is located in the {\ttfamily build} folder that you specified.\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md100}{}\doxysubsubsection{Available Options}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md100}
+You can pass build \href{./docs/index.md\#available-options}{\texttt{ options}} to cmake, e.\+g\+: {\ttfamily cmake -\/DDEBUG=1 -\/DGLFW\+\_\+\+FETCH=0...}. These will for instance let you build it in DEBUG mode or alter any sort of behaviour at build-\/time.
+
+You can find an example makefile in the documentation \href{https://github.com/codam-coding-college/MLX42/blob/master/docs/Basics.md}{\texttt{ here}}.
+
+\DoxyHorRuler{0}
+\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md102}{}\doxysubsection{For Mac\+OS\+:}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md102}
+\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md103}{}\doxysubsubsection{Installing the dependencies}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md103}
+If your system has neither GLFW nor CMake its highly recommended you use brew to install those missing dependencies.
+
+For 42 Campuses you can use\+: \href{https://github.com/kube/42homebrew}{\texttt{ 42Homebrew}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ This\ will\ also\ install\ CMake.}
+\DoxyCodeLine{\#\ Be\ aware\ that\ this\ may\ take\ a\ while\ so\ be\ patient.}
+\DoxyCodeLine{➜\ \ \string~\ brew\ install\ glfw}
+
+\end{DoxyCode}
+
+
+For Mac\+OS you need to use the following flags to compile your program with the library in order to link the program with the correct frameworks\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{-\/framework\ Cocoa\ -\/framework\ OpenGL\ -\/framework\ IOKit}
+
+\end{DoxyCode}
+
+
+Normally if you simply installed / built {\ttfamily glfw} from source or already have it installed the compilation should be\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{➜\ \ \string~\ gcc\ main.c\ ...\ libmlx42.a\ -\/Iinclude\ -\/lglfw}
+
+\end{DoxyCode}
+\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md104}{}\doxyparagraph{Via $<$a href=\char`\"{}https\+://brew.\+sh/\char`\"{} $>$\+Homebrew$<$/a$>$ / $<$a href=\char`\"{}https\+://github.\+com/kube/42homebrew\char`\"{} $>$42\+Homebrew$<$/a$>$}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md104}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Homebrew}
+\DoxyCodeLine{➜\ \ \string~\ gcc\ main.c\ ...\ libmlx42.a\ -\/Iinclude\ -\/lglfw\ -\/L"{}/opt/homebrew/Cellar/glfw/3.3.8/lib/"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ 42Homebrew}
+\DoxyCodeLine{➜\ \ \string~\ gcc\ main.c\ ...\ libmlx42.a\ -\/Iinclude\ -\/lglfw\ -\/L"{}/Users/\$USER/.brew/opt/glfw/lib/"{}}
+
+\end{DoxyCode}
+\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md105}{}\doxyparagraph{Mac\+OS Security\+:}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md105}
+When running your program in Mac\+OS it may complain, because with Macs you just gotta think differently. In case of any security warnings or Mac\+OS telling you it can\textquotesingle{}t verify the author/developer, go to {\ttfamily Settings \texorpdfstring{$>$}{>} Security \& Privacy}.
+
+There will be a pop-\/up at the bottom telling you that an application tried to run, click the option to let it run.
+
+\DoxyHorRuler{0}
+\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md107}{}\doxysubsection{For Linux\+:}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md107}
+
+\begin{DoxyEnumerate}
+\item Install the necessary packages\+:
+\end{DoxyEnumerate}
+
+For Debian like (Ubuntu, Mint, Pop OS...)\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{➜\ \ \string~\ sudo\ apt\ update}
+\DoxyCodeLine{➜\ \ \string~\ sudo\ apt\ install\ build-\/essential\ libx11-\/dev\ libglfw3-\/dev\ libglfw3\ xorg-\/dev}
+
+\end{DoxyCode}
+
+
+For Arch-\/linux (Manjaro, Endeavor, Garuda)\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{➜\ \ \string~\ sudo\ pacman\ -\/S\ glfw-\/x11}
+
+\end{DoxyCode}
+ OR (if you use sway/wlroots compositor or other wayland compositor)
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{➜\ \ \string~\ sudo\ pacman\ -\/S\ glfw-\/wayland}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Download and build MLX42
+\item Compile your program with the library\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{➜\ \ \string~\ gcc\ main.c\ ...\ libmlx42.a\ -\/Iinclude\ -\/ldl\ -\/lglfw\ -\/pthread\ -\/lm}
+
+\end{DoxyCode}
+
+\begin{DoxyEnumerate}
+\item Profit!
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md109}{}\doxysubsection{For Windows (with Windows Subsystem for Linux 2 (\+WSL2))}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md109}
+
+\begin{DoxyEnumerate}
+\item Set these variables in your {\ttfamily .zshrc} or {\ttfamily .bashrc}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{export\ DISPLAY=\$(ip\ route\ list\ default\ |\ awk\ '\{print\ \$3\}'):0}
+\DoxyCodeLine{export\ LIBGL\_ALWAYS\_INDIRECT=0}
+
+\end{DoxyCode}
+ (If the DISPLAY export command is failing, see this \href{https://stackoverflow.com/a/61110604}{\texttt{ Stack\+Overflow}} post for alternatives)
+\item Download and install an XServer application with extended configuration (XMing does not qualify) Vc\+Xsrv works\+: \href{https://sourceforge.net/projects/vcxsrv/}{\texttt{ https\+://sourceforge.\+net/projects/vcxsrv/}}
+\item Open Windows Defender Firewall, and follow these steps\+:
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item Go to \textquotesingle{}Allow an app or feature through Windows Defender Firewall\textquotesingle{}
+\item Change Settings
+\item Find the installed XServer, for Vc\+Xsrv that\textquotesingle{}s \textquotesingle{}Vc\+Xsrv windows server\textquotesingle{}
+\item Enable communication over Private {\bfseries{and}} Public network Optionally you might be able to provide these settings on first launch of the XServer application, and they might not even show up in the list until the first time you start the app.
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item Start the XLaunch application (for Vc\+Xsrv) and provide these configuration settings\+:
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item Leave Display number on auto
+\item Start no client
+\item {\bfseries{UNTICK}} {\ttfamily Native opengl} option
+\item {\bfseries{TICK}} {\ttfamily Disable access control}
+\item Finish starting the server
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item Probably all the other steps for Linux apply, just clone, build and run.
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md111}{}\doxysubsection{For Windows Native\+:}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md111}
+\begin{quote}
+{\bfseries{Warning}}\+: Be aware that Visual Studio (2022) is required for this. Developing on Windows can be somewhat frustrating. \end{quote}
+We highly recommend you simply use WSL2 to make this as painless as possible. However if you insist on building for windows natively then all you need in terms of dependencies is\+:
+
+
+\begin{DoxyItemize}
+\item \href{https://cmake.org/download/}{\texttt{ CMake}}
+\item \href{https://www.glfw.org/download.html}{\texttt{ GLFW}}
+\end{DoxyItemize}
+
+Once you have all the dependencies correctly installed {\ttfamily CMake} will generate the visual studio project files. Simply build it and once you have a {\ttfamily .lib} file move them to your actual project and install them as you would with any other library.
+
+Just in case here\textquotesingle{}s a \href{https://youtu.be/or1dAmUO8k0?t=494}{\texttt{ video}} showing you how this can be done. Conveniently this video also covers how you can link {\ttfamily glfw}.
+
+Of course it\textquotesingle{}s up to you to make sure that the code you write is portable. Things that exist on {\ttfamily Unix} don\textquotesingle{}t necessarily exist on {\ttfamily Win32}.\hypertarget{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md112}{}\doxysubsection{Example}\label{md__home_ssergiu_projects_cub3d_external_MLX42_README_autotoc_md112}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{//\ Codam\ Coding\ College,\ Amsterdam\ @\ 2022-\/2023\ by\ W2Wizard.}}
+\DoxyCodeLine{\textcolor{comment}{//\ See\ README\ in\ the\ root\ project\ for\ more\ information.}}
+\DoxyCodeLine{\textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{MLX42_8h}{MLX42/MLX42.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ WIDTH\ 512}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ HEIGHT\ 512}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \mbox{\hyperlink{structmlx__image}{mlx\_image\_t}}*\ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{int32\_t\ ft\_pixel(int32\_t\ \mbox{\hyperlink{glad_8h_abe08814c2f72843fde4d8df41440d5a0}{r}},\ int32\_t\ \mbox{\hyperlink{glad_8h_a9cd653b1648845554169fbc3a3f6d37a}{g}},\ int32\_t\ \mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}},\ int32\_t\ \mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_abe08814c2f72843fde4d8df41440d5a0}{r}}\ <<\ 24\ |\ \mbox{\hyperlink{glad_8h_a9cd653b1648845554169fbc3a3f6d37a}{g}}\ <<\ 16\ |\ \mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}\ <<\ 8\ |\ \mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ ft\_randomize(\textcolor{keywordtype}{void}*\ \mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (int32\_t\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}-\/>width;\ ++i)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (int32\_t\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ =\ 0;\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ <\ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}-\/>height;\ ++\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{glad_8h_a69995a929d818b8b467d4593c24d98bc}{color}}\ =\ ft\_pixel(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rand()\ \%\ 0xFF,\ \textcolor{comment}{//\ R}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rand()\ \%\ 0xFF,\ \textcolor{comment}{//\ G}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rand()\ \%\ 0xFF,\ \textcolor{comment}{//\ B}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rand()\ \%\ 0xFF\ \ \textcolor{comment}{//\ A}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a78f7c8664a6b71d4265dbcf4962ba9d4}{mlx\_put\_pixel}}(\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}},\ i,\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}},\ \mbox{\hyperlink{glad_8h_a69995a929d818b8b467d4593c24d98bc}{color}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\_hook}}(\textcolor{keywordtype}{void}*\ \mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}}\ =\ \mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{MLX42_8h_aeca3680814ced1c4e67603419a2b3b8e}{mlx\_is\_key\_down}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{MLX42__Input_8h_a3121b5e20cccb8e49edcbd3e9ac77712ae1b8fe20de932e4ebf04bef2e54356da}{MLX\_KEY\_ESCAPE}}))}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a5234b5f5d093fa79366df2f94c9bcb28}{mlx\_close\_window}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{MLX42_8h_aeca3680814ced1c4e67603419a2b3b8e}{mlx\_is\_key\_down}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{MLX42__Input_8h_a3121b5e20cccb8e49edcbd3e9ac77712a329d6d5e1c9635af759bbae64dc7fcdb}{MLX\_KEY\_UP}}))}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}-\/>instances[0].y\ -\/=\ 5;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{MLX42_8h_aeca3680814ced1c4e67603419a2b3b8e}{mlx\_is\_key\_down}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{MLX42__Input_8h_a3121b5e20cccb8e49edcbd3e9ac77712a35f5f1a2773587dfbfd02df617733ac6}{MLX\_KEY\_DOWN}}))}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}-\/>instances[0].y\ +=\ 5;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{MLX42_8h_aeca3680814ced1c4e67603419a2b3b8e}{mlx\_is\_key\_down}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{MLX42__Input_8h_a3121b5e20cccb8e49edcbd3e9ac77712abc6a35fcc2ce76a4a90fea02829dd4a9}{MLX\_KEY\_LEFT}}))}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}-\/>instances[0].x\ -\/=\ 5;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{MLX42_8h_aeca3680814ced1c4e67603419a2b3b8e}{mlx\_is\_key\_down}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{MLX42__Input_8h_a3121b5e20cccb8e49edcbd3e9ac77712a76117e4808257aaaef080011d3ab9ef5}{MLX\_KEY\_RIGHT}}))}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}-\/>instances[0].x\ +=\ 5;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{int32\_t\ \mbox{\hyperlink{CMakeCCompilerId_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}}(int32\_t\ argc,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ argv[])}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Gotta\ error\ check\ this\ stuff}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{structmlx}{mlx}}\ =\ \mbox{\hyperlink{MLX42_8h_a32988a5ce7aaa25a448b61b0ac410cec}{mlx\_init}}(WIDTH,\ HEIGHT,\ \textcolor{stringliteral}{"{}MLX42"{}},\ \textcolor{keyword}{true})))}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ puts(\mbox{\hyperlink{MLX42_8h_a2d365ea2e3844959187b6978c6e05171}{mlx\_strerror}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}(EXIT\_FAILURE);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}\ =\ \mbox{\hyperlink{MLX42_8h_abe515cadb9b88a9d064383da276c2467}{mlx\_new\_image}}(\mbox{\hyperlink{structmlx}{mlx}},\ 128,\ 128)))}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a5234b5f5d093fa79366df2f94c9bcb28}{mlx\_close\_window}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ puts(\mbox{\hyperlink{MLX42_8h_a2d365ea2e3844959187b6978c6e05171}{mlx\_strerror}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}(EXIT\_FAILURE);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{MLX42_8h_a06dbfde4fce913678e09b0af263b0c06}{mlx\_image\_to\_window}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}},\ 0,\ 0)\ ==\ -\/1)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a5234b5f5d093fa79366df2f94c9bcb28}{mlx\_close\_window}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ puts(\mbox{\hyperlink{MLX42_8h_a2d365ea2e3844959187b6978c6e05171}{mlx\_strerror}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}(EXIT\_FAILURE);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{MLX42_8h_afc772cc4204df8de0388e9bb38768d10}{mlx\_loop\_hook}}(\mbox{\hyperlink{structmlx}{mlx}},\ ft\_randomize,\ \mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{MLX42_8h_afc772cc4204df8de0388e9bb38768d10}{mlx\_loop\_hook}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\_hook}},\ \mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{MLX42_8h_ac4bd53ff1f88113c67d2b020f1809512}{mlx\_loop}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{MLX42_8h_afa6aa2f79f9fc81735bdf3b92421f9ca}{mlx\_terminate}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ (EXIT\_SUCCESS);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

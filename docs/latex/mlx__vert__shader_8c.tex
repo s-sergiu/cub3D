@@ -1,0 +1,44 @@
+\hypertarget{mlx__vert__shader_8c}{}\doxysection{/home/ssergiu/projects/cub3d/external/\+MLX42/build/mlx\+\_\+vert\+\_\+shader.c File Reference}
+\label{mlx__vert__shader_8c}\index{/home/ssergiu/projects/cub3d/external/MLX42/build/mlx\_vert\_shader.c@{/home/ssergiu/projects/cub3d/external/MLX42/build/mlx\_vert\_shader.c}}
+{\ttfamily \#include \char`\"{}MLX42/\+MLX42\+\_\+\+Int.\+h\char`\"{}}\newline
+Include dependency graph for mlx\+\_\+vert\+\_\+shader.\+c\+:
+% FIG 0
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{mlx__vert__shader_8c_ab7dfbd72052a2e0eeba9d018d2c63ec8}{vert\+\_\+shader}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mlx__vert__shader_8c_ab7dfbd72052a2e0eeba9d018d2c63ec8}\label{mlx__vert__shader_8c_ab7dfbd72052a2e0eeba9d018d2c63ec8}} 
+\index{mlx\_vert\_shader.c@{mlx\_vert\_shader.c}!vert\_shader@{vert\_shader}}
+\index{vert\_shader@{vert\_shader}!mlx\_vert\_shader.c@{mlx\_vert\_shader.c}}
+\doxysubsubsection{\texorpdfstring{vert\_shader}{vert\_shader}}
+{\footnotesize\ttfamily const char$\ast$ vert\+\_\+shader}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{stringliteral}{"{}\#version\ 330\ core\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}layout(location\ =\ 0)\ in\ vec3\ aPos;"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}layout(location\ =\ 1)\ in\ vec2\ aTexCoord;"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}layout(location\ =\ 2)\ in\ int\ aTexIndex;"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}out\ vec2\ TexCoord;"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}flat\ out\ int\ TexIndex;"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}uniform\ mat4\ ProjMatrix;"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}void\ main()"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\{"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\ \ \ gl\_Position\ =\ ProjMatrix\ *\ vec4(aPos,\ 1.0);"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\ \ \ TexCoord\ =\ aTexCoord;"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\ \ \ TexIndex\ =\ aTexIndex;"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\}"{}}}
+
+\end{DoxyCode}
+The shader code is extracted from the shader files and converted to a .c file as a single string at compile time. This keeps shader files external but still integrated into the program letting you use the executable anywhere without having to take the shaders with you.
+
+Most modern frameworks like .NET do this by having resource files instead.
+
+See\+: \href{https://bit.ly/3LJYG0r}{\texttt{ https\+://bit.\+ly/3\+LJYG0r}} 
+
+Definition at line \mbox{\hyperlink{mlx__vert__shader_8c_source_l00010}{10}} of file \mbox{\hyperlink{mlx__vert__shader_8c_source}{mlx\+\_\+vert\+\_\+shader.\+c}}.
+

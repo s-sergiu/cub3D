@@ -1,0 +1,11 @@
+digraph "LodePNGEncoderSettings"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [shape=record,label="{LodePNGEncoderSettings\n|+ auto_convert\l+ filter_palette_zero\l+ filter_strategy\l+ predefined_filters\l+ force_palette\l+ add_id\l+ text_compression\l|}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",style="solid",label=" +zlibsettings" ,arrowhead="odiamond"];
+  Node2 [shape=record,label="{LodePNGCompressSettings\n|+ btype\l+ use_lz77\l+ windowsize\l+ minmatch\l+ nicematch\l+ lazymatching\l+ custom_zlib\l+ custom_deflate\l+ custom_context\l|}",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLodePNGCompressSettings.html",tooltip=" "];
+}

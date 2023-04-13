@@ -1,0 +1,18 @@
+digraph "mlx_delete_image"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="mlx_delete_image",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="mlx_equal_image",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__compare_8c.html#a6bf2c1e0c02394e613d8b61e7ad3d428",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="mlx_equal_inst",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__compare_8c.html#aa16bb5db4bd358d8482ee00b9c19ea6b",tooltip=" "];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="mlx_freen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__utils_8c.html#a93b4ce5ceae0d22c22c6c9125c052616",tooltip=" "];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="mlx_lstremove",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__list_8c.html#a4771a982050b3e2468d6fb4a8de9ab70",tooltip=" "];
+}

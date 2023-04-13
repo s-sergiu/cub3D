@@ -1,0 +1,117 @@
+\hypertarget{mlx__loop_8c}{}\doxysection{/home/ssergiu/projects/cub3d/external/\+MLX42/src/mlx\+\_\+loop.c File Reference}
+\label{mlx__loop_8c}\index{/home/ssergiu/projects/cub3d/external/MLX42/src/mlx\_loop.c@{/home/ssergiu/projects/cub3d/external/MLX42/src/mlx\_loop.c}}
+{\ttfamily \#include \char`\"{}MLX42/\+MLX42\+\_\+\+Int.\+h\char`\"{}}\newline
+Include dependency graph for mlx\+\_\+loop.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{mlx__loop_8c_afc772cc4204df8de0388e9bb38768d10}{mlx\+\_\+loop\+\_\+hook}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} $\ast$\mbox{\hyperlink{structmlx}{mlx}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$\mbox{\hyperlink{glad_8h_a6a8efad2e332fcd916bde9e19ddef215}{f}})(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$), \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__loop_8c_ac4bd53ff1f88113c67d2b020f1809512}{mlx\+\_\+loop}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} $\ast$\mbox{\hyperlink{structmlx}{mlx}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mlx__loop_8c_ac4bd53ff1f88113c67d2b020f1809512}\label{mlx__loop_8c_ac4bd53ff1f88113c67d2b020f1809512}} 
+\index{mlx\_loop.c@{mlx\_loop.c}!mlx\_loop@{mlx\_loop}}
+\index{mlx\_loop@{mlx\_loop}!mlx\_loop.c@{mlx\_loop.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_loop()}{mlx\_loop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} $\ast$}]{mlx }\end{DoxyParamCaption})}
+
+Initializes the rendering of MLX, this function won\textquotesingle{}t return until mlx\+\_\+close\+\_\+window is called, meaning it will loop until the user requests that the window should close.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mlx__loop_8c_source_l00093}{93}} of file \mbox{\hyperlink{mlx__loop_8c_source}{mlx\+\_\+loop.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{glad_8h_ac55adc720a3098c1b454d2a4647f4361}{start}},\ oldstart\ =\ 0;}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{while}\ (!glfwWindowShouldClose(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}}))}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ac55adc720a3098c1b454d2a4647f4361}{start}}\ =\ glfwGetTime();}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a115a945248d641f2a7a8fa3c43e6b79a}{delta\_time}}\ =\ \mbox{\hyperlink{glad_8h_ac55adc720a3098c1b454d2a4647f4361}{start}}\ -\/\ oldstart;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ oldstart\ =\ \mbox{\hyperlink{glad_8h_ac55adc720a3098c1b454d2a4647f4361}{start}};}
+\DoxyCodeLine{00103\ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_a12060509af7dc9c8353810eb8b7f145c}{glClearColor}}(0.2f,\ 0.2f,\ 0.2f,\ 1.0f);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_afc250a2b6bf11f24bb73534a2f053c0d}{glClear}}(\mbox{\hyperlink{glad_8h_a947db9ff944c4b78e652144c3dd1060c}{GL\_COLOR\_BUFFER\_BIT}}\ |\ \mbox{\hyperlink{glad_8h_aef2a9e9a4b130bc4de57514327847b4f}{GL\_DEPTH\_BUFFER\_BIT}});}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ glfwGetWindowSize(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ \&(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a3a11be0a71d7c8dd0c329e1caa230a50}{width}}),\ \&(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_aaad5daa3b9d2466e0de9732f8ff434ee}{height}}));}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a3a11be0a71d7c8dd0c329e1caa230a50}{width}}\ >\ 1\ ||\ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_aaad5daa3b9d2466e0de9732f8ff434ee}{height}}\ >\ 1))}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_ac0ef34ce56a68a37051d555c1478d7d5}{mlx\_update\_matrix}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a3a11be0a71d7c8dd0c329e1caa230a50}{width}},\ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_aaad5daa3b9d2466e0de9732f8ff434ee}{height}});}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ mlx\_exec\_loop\_hooks(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ mlx\_render\_images(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a1ed852c03c55e288332fed9019ce0fc0}{mlx\_flush\_batch}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}});}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ glfwSwapBuffers(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}});}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ glfwPollEvents();}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{mlx__loop_8c_afc772cc4204df8de0388e9bb38768d10}\label{mlx__loop_8c_afc772cc4204df8de0388e9bb38768d10}} 
+\index{mlx\_loop.c@{mlx\_loop.c}!mlx\_loop\_hook@{mlx\_loop\_hook}}
+\index{mlx\_loop\_hook@{mlx\_loop\_hook}!mlx\_loop.c@{mlx\_loop.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_loop\_hook()}{mlx\_loop\_hook()}}
+{\footnotesize\ttfamily bool mlx\+\_\+loop\+\_\+hook (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} $\ast$}]{mlx,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$)(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$)}]{f,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{param }\end{DoxyParamCaption})}
+
+Generic loop hook for any custom hooks to add to the main loop. Executes a function per frame, so be careful.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\mbox{\texttt{ in}}  & {\em f} & The function. \\
+\hline
+\mbox{\texttt{ in}}  & {\em param} & The parameter to pass on to the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether or not the hook was added successfully. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__loop_8c_source_l00070}{70}} of file \mbox{\hyperlink{mlx__loop_8c_source}{mlx\+\_\+loop.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a6a8efad2e332fcd916bde9e19ddef215}{f}});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{structmlx__hook}{mlx\_hook\_t}}*\ hook;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(hook\ =\ malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structmlx__hook}{mlx\_hook\_t}}))))}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980}{MLX\_MEMFAIL}}));}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{structmlx__list}{mlx\_list\_t}}*\ lst;}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(lst\ =\ \mbox{\hyperlink{MLX42__Int_8h_acdd55bf29013651c970a5858f2d1dcfd}{mlx\_lstnew}}(hook)))}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ free(hook);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980}{MLX\_MEMFAIL}}));}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ hook-\/>\mbox{\hyperlink{structmlx__hook_a7fbfd2762f6637ca4f28fcae5d98ef89}{func}}\ =\ \mbox{\hyperlink{glad_8h_a6a8efad2e332fcd916bde9e19ddef215}{f}};}
+\DoxyCodeLine{00086\ \ \ \ \ hook-\/>\mbox{\hyperlink{structmlx__hook_a26251cb8b37e5786c050619f4fb79573}{param}}\ =\ \mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}\ \ \ \ *mlxctx\ =\ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}};}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_af1d87a93eba3b5bb7cc57ff8ea2e5ae8}{mlx\_lstadd\_back}}((\mbox{\hyperlink{structmlx__list}{mlx\_list\_t}}**)(\&mlxctx-\/>\mbox{\hyperlink{structmlx__ctx_ac400f7d2927ae26c310535e9b0ed91d2}{hooks}}),\ lst);}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{true});}
+\DoxyCodeLine{00090\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4

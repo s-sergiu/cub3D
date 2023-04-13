@@ -1,0 +1,32 @@
+digraph "ft_putstr_fd"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="ft_putstr_fd",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="print_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#af5c60b16fc036394aa182bd09cc16e5d",tooltip="Prints an error message to the standard error output."];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="cleanup_and_exit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#aabc8b9c956e025066b300e71e80f2590",tooltip="Frees any allocated memory and exits the program with the given error number."];
+  Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="get_total_bytes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d",tooltip="Returns the total number of bytes in the file with the given filename."];
+  Node4 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="read_map",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#a4262bf4509b96716171e25f0f9f0644e",tooltip="Reads the contents of the file with the given name into a dynamically allocated buffer."];
+  Node5 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="init_map_data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map__utils_8c.html#a3efc0a465ac3693c6748963564a7dc0e",tooltip="Initializes map data."];
+  Node6 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node3 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node3 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node2 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="handle_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#af11ad10198633d526882d9ebabf21042",tooltip="Handles the given error number, prints an error message to the standard error output,..."];
+  Node8 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="filename_is_valid",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4",tooltip="Checks if the given filename is valid and ends with \".cub\"."];
+  Node9 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node8 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node8 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node8 -> Node5 [dir="back",color="steelblue1",style="solid"];
+}

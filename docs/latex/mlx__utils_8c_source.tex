@@ -1,0 +1,102 @@
+\hypertarget{mlx__utils_8c_source}{}\doxysection{mlx\+\_\+utils.\+c}
+\label{mlx__utils_8c_source}\index{/home/ssergiu/projects/cub3d/external/MLX42/src/utils/mlx\_utils.c@{/home/ssergiu/projects/cub3d/external/MLX42/src/utils/mlx\_utils.c}}
+\mbox{\hyperlink{mlx__utils_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ::::::::\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ mlx\_utils.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ W2Wizard\ <w2.wizzard@gmail.com>\ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2022/01/03\ 20:13:17\ by\ W2Wizard\ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2022/11/22\ 10:56:09\ by\ jvan-\/hal\ \ \ \ \ \ \#\#\#\#\#\#\#\#\ \ \ odam.nl\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MLX42__Int_8h}{MLX42/MLX42\_Int.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00015}00015\ \textcolor{comment}{//=\ Private\ =//}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00028}\mbox{\hyperlink{MLX42__Int_8h_afeec80312b6f8a8755b798ed12721cd8}{00028}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{mlx__utils_8c_afeec80312b6f8a8755b798ed12721cd8}{mlx\_getline}}(\textcolor{keywordtype}{char}**\ out,\ \textcolor{keywordtype}{size\_t}*\ out\_size,\ FILE*\ file)}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(out);}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(out\_size);}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(file);}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{char}*\ temp\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ BUFF[\mbox{\hyperlink{MLX42__Int_8h_a6d56ab6e0a51019c64a776aa5ccf0350}{GETLINE\_BUFF}}\ +\ 1];\ \textcolor{comment}{//\ Add\ space\ for\ '\(\backslash\)0'}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (*out)\ *out[0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{while}\ (fgets(BUFF,\ \textcolor{keyword}{sizeof}(BUFF),\ file))}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}}\ +=\ strlen(BUFF);}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(temp\ =\ realloc(*out,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}}\ +\ 1)))}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*out\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ memset(temp,\ \textcolor{charliteral}{'\(\backslash\)0'},\ \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}});}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ temp[\mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}}]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ *out\ =\ temp;}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ *out\_size\ =\ \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}};}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ strncat(*out,\ BUFF,\ \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}});}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strrchr(BUFF,\ \textcolor{charliteral}{'\(\backslash\)n'}))}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ memset(BUFF,\ \textcolor{charliteral}{'\(\backslash\)0'},\ \textcolor{keyword}{sizeof}(BUFF));}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}});}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00068}\mbox{\hyperlink{MLX42__Int_8h_ab31a068c9000789a7999bfc1ea34709b}{00068}}\ uint64\_t\ \mbox{\hyperlink{mlx__utils_8c_ab31a068c9000789a7999bfc1ea34709b}{mlx\_fnv\_hash}}(\textcolor{keywordtype}{char}*\ str,\ \textcolor{keywordtype}{size\_t}\ len)}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{const}\ uint64\_t\ fnv\_prime\ =\ 0x100000001b3;}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{const}\ uint64\_t\ fnv\_offset\ =\ 0xcbf29ce484222325;}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00072}00072\ \ \ \ \ uint64\_t\ hash\ =\ fnv\_offset;}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ len;\ i++)}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00075}00075\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00076}00076\ \ \ \ \ \ \ \ \ hash\ \string^=\ str[i];}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00077}00077\ \ \ \ \ \ \ \ \ hash\ *=\ fnv\_prime;}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{return}\ (hash);}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00089}\mbox{\hyperlink{MLX42__Int_8h_a93b4ce5ceae0d22c22c6c9125c052616}{00089}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{mlx__utils_8c_a93b4ce5ceae0d22c22c6c9125c052616}{mlx\_freen}}(int32\_t\ \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}},\ ...)}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00090}00090\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00091}00091\ \ \ \ \ va\_list\ args;}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00093}00093\ \ \ \ \ va\_start(args,\ \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}});}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{for}\ (int32\_t\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}};\ i++)}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00095}00095\ \ \ \ \ \ \ \ \ free(va\_arg(args,\ \textcolor{keywordtype}{void}*));}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00096}00096\ \ \ \ \ va\_end(args);}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00109}\mbox{\hyperlink{MLX42__Int_8h_ad58d85c71babb51bf426e72a9b87efa0}{00109}}\ uint32\_t\ \mbox{\hyperlink{mlx__utils_8c_ad58d85c71babb51bf426e72a9b87efa0}{mlx\_rgba\_to\_mono}}(uint32\_t\ \mbox{\hyperlink{glad_8h_a69995a929d818b8b467d4593c24d98bc}{color}})}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00110}00110\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00111}00111\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{glad_8h_abe08814c2f72843fde4d8df41440d5a0}{r}}\ =\ 0.299f\ *\ ((\mbox{\hyperlink{glad_8h_a69995a929d818b8b467d4593c24d98bc}{color}}\ >>\ 24)\ \&\ 0xFF);}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00112}00112\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{glad_8h_a9cd653b1648845554169fbc3a3f6d37a}{g}}\ =\ 0.587f\ *\ ((\mbox{\hyperlink{glad_8h_a69995a929d818b8b467d4593c24d98bc}{color}}\ >>\ 16)\ \&\ 0xFF);}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00113}00113\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}\ =\ 0.114f\ *\ ((\mbox{\hyperlink{glad_8h_a69995a929d818b8b467d4593c24d98bc}{color}}\ >>\ 8)\ \&\ 0xFF);}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00114}00114\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ =\ \mbox{\hyperlink{glad_8h_abe08814c2f72843fde4d8df41440d5a0}{r}}\ +\ \mbox{\hyperlink{glad_8h_a9cd653b1648845554169fbc3a3f6d37a}{g}}\ +\ \mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}};}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ <<\ 24\ |\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ <<\ 16\ |\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ <<\ 8\ |\ (\mbox{\hyperlink{glad_8h_a69995a929d818b8b467d4593c24d98bc}{color}}\ \&\ 0xFF));}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00119}00119\ \textcolor{comment}{//=\ Public\ =//}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00121}\mbox{\hyperlink{MLX42_8h_adbaabb0ba6fb3adf119e026bb4a386bf}{00121}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{mlx__utils_8c_adbaabb0ba6fb3adf119e026bb4a386bf}{mlx\_get\_time}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00122}00122\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00123}00123\ \ \ \ \ \textcolor{keywordflow}{return}\ (glfwGetTime());}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00124}00124\ \}}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00126}\mbox{\hyperlink{MLX42_8h_a2cbce835d52e89e37e4bb410ceea776d}{00126}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mlx__utils_8c_a2cbce835d52e89e37e4bb410ceea776d}{mlx\_focus}}(\mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}})}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00127}00127\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00128}00128\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00130}00130\ \ \ \ \ glfwFocusWindow(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}});}
+\DoxyCodeLine{\Hypertarget{mlx__utils_8c_source_l00131}00131\ \}}
+
+\end{DoxyCode}

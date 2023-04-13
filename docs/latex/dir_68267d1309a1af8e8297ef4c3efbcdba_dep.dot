@@ -1,5 +1,6 @@
 digraph "/home/ssergiu/projects/cub3d/src"
 {
+ // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
   bgcolor="transparent";
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
@@ -12,7 +13,7 @@ digraph "/home/ssergiu/projects/cub3d/src"
   dir_a5d8ae9b85f85725a0c4fd3090f05021 [label="map_utils", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_a5d8ae9b85f85725a0c4fd3090f05021.html",tooltip=""];
   }
   dir_d44c64559bbebec7f509842c48db8b23 [label="include", fillcolor="#edf0f7", color="red", style="filled", URL="dir_d44c64559bbebec7f509842c48db8b23.html",tooltip=""];
-  dir_68267d1309a1af8e8297ef4c3efbcdba->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="9", labeldistance=1.5 headhref="dir_000005_000000.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_0875826b1a8f3435681a79fbc69263bd->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="5", labeldistance=1.5 headhref="dir_000002_000000.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_a5d8ae9b85f85725a0c4fd3090f05021->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="3", labeldistance=1.5 headhref="dir_000004_000000.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_68267d1309a1af8e8297ef4c3efbcdba->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="9", labeldistance=1.5 headhref="dir_000029_000013.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_0875826b1a8f3435681a79fbc69263bd->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="5", labeldistance=1.5 headhref="dir_000018_000013.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_a5d8ae9b85f85725a0c4fd3090f05021->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="3", labeldistance=1.5 headhref="dir_000021_000013.html" color="steelblue1" fontcolor="steelblue1"];
 }

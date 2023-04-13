@@ -6,9 +6,9 @@ Include dependency graph for draw\+\_\+map.\+c\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\+\_\+hook}} (void $\ast$param)
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\+\_\+hook}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}})
 \item 
-void \mbox{\hyperlink{draw__map_8c_a1dd6a7f325ca5e8aafa0fe462209b4bb}{draw\+\_\+map}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$data)
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{draw__map_8c_a1dd6a7f325ca5e8aafa0fe462209b4bb}{draw\+\_\+map}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}})
 \end{DoxyCompactItemize}
 
 
@@ -17,7 +17,7 @@ void \mbox{\hyperlink{draw__map_8c_a1dd6a7f325ca5e8aafa0fe462209b4bb}{draw\+\_\+
 \index{draw\_map.c@{draw\_map.c}!draw\_map@{draw\_map}}
 \index{draw\_map@{draw\_map}!draw\_map.c@{draw\_map.c}}
 \doxysubsubsection{\texorpdfstring{draw\_map()}{draw\_map()}}
-{\footnotesize\ttfamily void draw\+\_\+map (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} draw\+\_\+map (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
 
 
 
@@ -26,39 +26,41 @@ Definition at line \mbox{\hyperlink{draw__map_8c_source_l00012}{12}} of file \mb
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00013\ \{}
-\DoxyCodeLine{00014\ \ \ \ \ mlx\_image\_t*\ image;}
-\DoxyCodeLine{00015\ \ \ \ \ mlx\_t*\ mlx;}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{structmlx__image}{mlx\_image\_t}}*\ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}};}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}};}
 \DoxyCodeLine{00016\ }
 \DoxyCodeLine{00017\ }
 \DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Gotta\ error\ check\ this\ stuff}}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(mlx\ =\ mlx\_init(data-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}},\ data-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}},\ \textcolor{stringliteral}{"{}MLX42"{}},\ \textcolor{keyword}{true})))}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{structmlx}{mlx}}\ =\ \mbox{\hyperlink{MLX42_8h_a32988a5ce7aaa25a448b61b0ac410cec}{mlx\_init}}(\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>width,\ \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>height,\ \textcolor{stringliteral}{"{}MLX42"{}},\ \textcolor{keyword}{true})))}
 \DoxyCodeLine{00020\ \ \ \ \ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ puts(mlx\_strerror(mlx\_errno));}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ puts(\mbox{\hyperlink{MLX42_8h_a2d365ea2e3844959187b6978c6e05171}{mlx\_strerror}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}));}
 \DoxyCodeLine{00022\ \ \ \ \ \}}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(image\ =\ mlx\_new\_image(mlx,\ data-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}},\ data-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}})))}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}\ =\ \mbox{\hyperlink{MLX42_8h_abe515cadb9b88a9d064383da276c2467}{mlx\_new\_image}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>\mbox{\hyperlink{structmlx_a3a11be0a71d7c8dd0c329e1caa230a50}{width}},\ \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>height)))}
 \DoxyCodeLine{00024\ \ \ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ puts(mlx\_strerror(mlx\_errno));}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a5234b5f5d093fa79366df2f94c9bcb28}{mlx\_close\_window}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ puts(\mbox{\hyperlink{MLX42_8h_a2d365ea2e3844959187b6978c6e05171}{mlx\_strerror}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}));}
 \DoxyCodeLine{00027\ \ \ \ \ \}}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (mlx\_image\_to\_window(mlx,\ image,\ 0,\ 0)\ ==\ -\/1)}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{MLX42_8h_a06dbfde4fce913678e09b0af263b0c06}{mlx\_image\_to\_window}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}},\ 0,\ 0)\ ==\ -\/1)}
 \DoxyCodeLine{00029\ \ \ \ \ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ puts(mlx\_strerror(mlx\_errno));}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a5234b5f5d093fa79366df2f94c9bcb28}{mlx\_close\_window}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ puts(\mbox{\hyperlink{MLX42_8h_a2d365ea2e3844959187b6978c6e05171}{mlx\_strerror}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}));}
 \DoxyCodeLine{00032\ \ \ \ \ \}}
-\DoxyCodeLine{00033\ \ \ \ \ memset(image-\/>pixels,\ 255,\ data-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}}\ *\ data-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}}\ *\ 4);}
-\DoxyCodeLine{00034\ \ \ \ \ mlx\_loop\_hook(mlx,\ \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\_hook}},\ mlx);}
-\DoxyCodeLine{00035\ \ \ \ \ mlx\_loop(mlx);}
-\DoxyCodeLine{00036\ \ \ \ \ mlx\_terminate(mlx);}
+\DoxyCodeLine{00033\ \ \ \ \ memset(\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}-\/>pixels,\ 255,\ \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>width\ *\ \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>height\ *\ 4);}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{MLX42_8h_afc772cc4204df8de0388e9bb38768d10}{mlx\_loop\_hook}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\_hook}},\ \mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{MLX42_8h_ac4bd53ff1f88113c67d2b020f1809512}{mlx\_loop}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{MLX42_8h_afa6aa2f79f9fc81735bdf3b92421f9ca}{mlx\_terminate}}(\mbox{\hyperlink{structmlx}{mlx}});}
 \DoxyCodeLine{00037\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
 % FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
 \mbox{\Hypertarget{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}\label{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}} 
 \index{draw\_map.c@{draw\_map.c}!ft\_hook@{ft\_hook}}
 \index{ft\_hook@{ft\_hook}!draw\_map.c@{draw\_map.c}}
 \doxysubsubsection{\texorpdfstring{ft\_hook()}{ft\_hook()}}
-{\footnotesize\ttfamily void ft\+\_\+hook (\begin{DoxyParamCaption}\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} ft\+\_\+hook (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{param }\end{DoxyParamCaption})}
 
 
 
@@ -67,10 +69,14 @@ Definition at line \mbox{\hyperlink{draw__map_8c_source_l00004}{4}} of file \mbo
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00005\ \{}
-\DoxyCodeLine{00006\ \ \ \ \ mlx\_t*\ mlx\ =\ param;}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}}\ =\ \mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}};}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (mlx\_is\_key\_down(mlx,\ MLX\_KEY\_ESCAPE))}
-\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{MLX42_8h_aeca3680814ced1c4e67603419a2b3b8e}{mlx\_is\_key\_down}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{MLX42__Input_8h_a3121b5e20cccb8e49edcbd3e9ac77712ae1b8fe20de932e4ebf04bef2e54356da}{MLX\_KEY\_ESCAPE}}))}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a5234b5f5d093fa79366df2f94c9bcb28}{mlx\_close\_window}}(\mbox{\hyperlink{structmlx}{mlx}});}
 \DoxyCodeLine{00010\ \}}
 
 \end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4

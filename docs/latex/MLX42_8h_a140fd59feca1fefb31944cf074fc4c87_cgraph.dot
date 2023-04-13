@@ -1,0 +1,22 @@
+digraph "mlx_texture_to_image"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="mlx_texture_to_image",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="mlx_new_image",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__images_8c.html#abe515cadb9b88a9d064383da276c2467",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="mlx_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__error_8c.html#a3b5d95cdf353faaaa691ef8b2041b94f",tooltip=" "];
+  Node3 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="mlx_strerror",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__error_8c.html#a2d365ea2e3844959187b6978c6e05171",tooltip=" "];
+  Node2 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="mlx_freen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__utils_8c.html#a93b4ce5ceae0d22c22c6c9125c052616",tooltip=" "];
+  Node2 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="mlx_lstadd_front",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__list_8c.html#a3526094b6976d5e65ade883d3ed3d522",tooltip=" "];
+  Node2 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="mlx_lstnew",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__list_8c.html#acdd55bf29013651c970a5858f2d1dcfd",tooltip=" "];
+}

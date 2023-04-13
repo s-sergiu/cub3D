@@ -1,0 +1,82 @@
+\hypertarget{mlx__error_8c}{}\doxysection{/home/ssergiu/projects/cub3d/external/\+MLX42/src/utils/mlx\+\_\+error.c File Reference}
+\label{mlx__error_8c}\index{/home/ssergiu/projects/cub3d/external/MLX42/src/utils/mlx\_error.c@{/home/ssergiu/projects/cub3d/external/MLX42/src/utils/mlx\_error.c}}
+{\ttfamily \#include \char`\"{}MLX42/\+MLX42\+\_\+\+Int.\+h\char`\"{}}\newline
+Include dependency graph for mlx\+\_\+error.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{mlx__error_8c_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\+\_\+error}} (\mbox{\hyperlink{MLX42_8h_a3e74738348a67c05c9b62a904a176042}{mlx\+\_\+errno\+\_\+t}} \mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}})
+\item 
+const char $\ast$ \mbox{\hyperlink{mlx__error_8c_a2d365ea2e3844959187b6978c6e05171}{mlx\+\_\+strerror}} (\mbox{\hyperlink{MLX42_8h_a3e74738348a67c05c9b62a904a176042}{mlx\+\_\+errno\+\_\+t}} \mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mlx__error_8c_a3b5d95cdf353faaaa691ef8b2041b94f}\label{mlx__error_8c_a3b5d95cdf353faaaa691ef8b2041b94f}} 
+\index{mlx\_error.c@{mlx\_error.c}!mlx\_error@{mlx\_error}}
+\index{mlx\_error@{mlx\_error}!mlx\_error.c@{mlx\_error.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_error()}{mlx\_error()}}
+{\footnotesize\ttfamily bool mlx\+\_\+error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_a3e74738348a67c05c9b62a904a176042}{mlx\+\_\+errno\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+Functions to set the error number, simply for convenience.
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The error value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always false 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__error_8c_source_l00043}{43}} of file \mbox{\hyperlink{mlx__error_8c_source}{mlx\+\_\+error.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}\ =\ \mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}};}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ NDEBUG}}
+\DoxyCodeLine{00047\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}MLX42:\ \%s"{}},\ \mbox{\hyperlink{mlx__error_8c_a2d365ea2e3844959187b6978c6e05171}{mlx\_strerror}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}));}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{false});}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{mlx__error_8c_a2d365ea2e3844959187b6978c6e05171}\label{mlx__error_8c_a2d365ea2e3844959187b6978c6e05171}} 
+\index{mlx\_error.c@{mlx\_error.c}!mlx\_strerror@{mlx\_strerror}}
+\index{mlx\_strerror@{mlx\_strerror}!mlx\_error.c@{mlx\_error.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_strerror()}{mlx\_strerror()}}
+{\footnotesize\ttfamily const char $\ast$ mlx\+\_\+strerror (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_a3e74738348a67c05c9b62a904a176042}{mlx\+\_\+errno\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+Gets the english description of the error code.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em val} & The error code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The error string that describes the error code. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__error_8c_source_l00054}{54}} of file \mbox{\hyperlink{mlx__error_8c_source}{mlx\+\_\+error.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_acaa6ebdc9d544398d3ffaa40a75bdfbb}{MLX\_ASSERT}}(\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}}\ >=\ 0,\ \textcolor{stringliteral}{"{}Index\ must\ be\ positive"{}});}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_acaa6ebdc9d544398d3ffaa40a75bdfbb}{MLX\_ASSERT}}(\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}}\ <\ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ad33b66251494a0eddd0416327a95a11b}{MLX\_ERRMAX}},\ \textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{return}\ (mlx\_errors[\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}}]);}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 3

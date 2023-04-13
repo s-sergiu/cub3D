@@ -16,17 +16,17 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{map__utils_8h_af5c60b16fc036394aa182bd09cc16e5d}{print\+\_\+error}} (int error\+\_\+number)
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{map__utils_8h_af5c60b16fc036394aa182bd09cc16e5d}{print\+\_\+error}} (int error\+\_\+number)
 \begin{DoxyCompactList}\small\item\em Prints an error message to the standard error output. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{map__utils_8h_af11ad10198633d526882d9ebabf21042}{handle\+\_\+error}} (int error\+\_\+number)
 \begin{DoxyCompactList}\small\item\em Handles the given error number, prints an error message to the standard error output, and exits the program. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{map__utils_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\+\_\+and\+\_\+exit}} (int error\+\_\+number, int fd, char $\ast$buffer)
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{map__utils_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\+\_\+and\+\_\+exit}} (int error\+\_\+number, int fd, char $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}})
 \begin{DoxyCompactList}\small\item\em Frees any allocated memory and exits the program with the given error number. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{map__utils_8h_a973f5273453bacdf37c27ef24bdd540d}{get\+\_\+total\+\_\+bytes}} (char $\ast$filename)
 \begin{DoxyCompactList}\small\item\em Returns the total number of bytes in the file with the given filename. \end{DoxyCompactList}\item 
 char $\ast$ \mbox{\hyperlink{map__utils_8h_a4262bf4509b96716171e25f0f9f0644e}{read\+\_\+map}} (char $\ast$file)
 \begin{DoxyCompactList}\small\item\em Reads the contents of the file with the given name into a dynamically allocated buffer. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{map__utils_8h_a73200bd9a8be60a2e2f5eb2528293a8f}{free\+\_\+split}} (char $\ast$$\ast$str)
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{map__utils_8h_a73200bd9a8be60a2e2f5eb2528293a8f}{free\+\_\+split}} (char $\ast$$\ast$str)
 \begin{DoxyCompactList}\small\item\em Frees memory allocated for a string array. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{map__utils_8h_ad624da07f82233cb9bf10960641f9fec}{get\+\_\+height}} (char $\ast$$\ast$map)
 \begin{DoxyCompactList}\small\item\em Gets the height of a map. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -60,7 +60,7 @@ Definition at line \mbox{\hyperlink{map__utils_8h_source_l00008}{8}} of file \mb
 \index{map\_utils.h@{map\_utils.h}!cleanup\_and\_exit@{cleanup\_and\_exit}}
 \index{cleanup\_and\_exit@{cleanup\_and\_exit}!map\_utils.h@{map\_utils.h}}
 \doxysubsubsection{\texorpdfstring{cleanup\_and\_exit()}{cleanup\_and\_exit()}}
-{\footnotesize\ttfamily void cleanup\+\_\+and\+\_\+exit (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+number,  }\item[{int}]{fd,  }\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} cleanup\+\_\+and\+\_\+exit (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+number,  }\item[{int}]{fd,  }\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
 
 
 
@@ -87,8 +87,8 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00027}{27}} of file \mb
 \DoxyCodeLine{00028\ \{}
 \DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (fd\ >\ 0)}
 \DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ close(fd);}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (buffer\ !=\ NULL)}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ free(buffer);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}\ !=\ NULL)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ free(\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
 \DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{read__map_8c_af5c60b16fc036394aa182bd09cc16e5d}{print\_error}}(error\_number);}
 \DoxyCodeLine{00034\ \ \ \ \ exit(error\_number);}
 \DoxyCodeLine{00035\ \}}
@@ -96,11 +96,13 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00027}{27}} of file \mb
 \end{DoxyCode}
 Here is the call graph for this function\+:
 % FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
 \mbox{\Hypertarget{map__utils_8h_a73200bd9a8be60a2e2f5eb2528293a8f}\label{map__utils_8h_a73200bd9a8be60a2e2f5eb2528293a8f}} 
 \index{map\_utils.h@{map\_utils.h}!free\_split@{free\_split}}
 \index{free\_split@{free\_split}!map\_utils.h@{map\_utils.h}}
 \doxysubsubsection{\texorpdfstring{free\_split()}{free\_split()}}
-{\footnotesize\ttfamily void free\+\_\+split (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{str }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} free\+\_\+split (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{str }\end{DoxyParamCaption})}
 
 
 
@@ -129,6 +131,8 @@ Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00004}{4}} of fi
 \DoxyCodeLine{00012\ \}}
 
 \end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 4
 \mbox{\Hypertarget{map__utils_8h_ad624da07f82233cb9bf10960641f9fec}\label{map__utils_8h_ad624da07f82233cb9bf10960641f9fec}} 
 \index{map\_utils.h@{map\_utils.h}!get\_height@{get\_height}}
 \index{get\_height@{get\_height}!map\_utils.h@{map\_utils.h}}
@@ -165,6 +169,8 @@ Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00014}{14}} of f
 \DoxyCodeLine{00022\ \}}
 
 \end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 5
 \mbox{\Hypertarget{map__utils_8h_a973f5273453bacdf37c27ef24bdd540d}\label{map__utils_8h_a973f5273453bacdf37c27ef24bdd540d}} 
 \index{map\_utils.h@{map\_utils.h}!get\_total\_bytes@{get\_total\_bytes}}
 \index{get\_total\_bytes@{get\_total\_bytes}!map\_utils.h@{map\_utils.h}}
@@ -191,35 +197,37 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00037}{37}} of file \mb
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00038\ \{}
 \DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ fd;}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *buffer;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}};}
 \DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ total\_bytes;}
 \DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ bytes;}
 \DoxyCodeLine{00043\ }
 \DoxyCodeLine{00044\ \ \ \ \ fd\ =\ open(filename,\ O\_RDONLY);}
 \DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (fd\ ==\ -\/1)}
 \DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map_8c_af11ad10198633d526882d9ebabf21042}{handle\_error}}(errno);}
-\DoxyCodeLine{00047\ \ \ \ \ buffer\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ 100);}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (!buffer)}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ 100);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}})}
 \DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ NULL);}
-\DoxyCodeLine{00050\ \ \ \ \ bytes\ =\ read(fd,\ buffer,\ 100);}
+\DoxyCodeLine{00050\ \ \ \ \ bytes\ =\ read(fd,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}},\ 100);}
 \DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (bytes\ ==\ -\/1)}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ buffer);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
 \DoxyCodeLine{00053\ \ \ \ \ total\_bytes\ =\ bytes;}
 \DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{while}\ (bytes\ >\ 0)}
 \DoxyCodeLine{00055\ \ \ \ \ \{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ bytes\ =\ read(fd,\ buffer,\ 100);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ bytes\ =\ read(fd,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}},\ 100);}
 \DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bytes\ ==\ -\/1)}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ buffer);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
 \DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ total\_bytes\ +=\ bytes;}
 \DoxyCodeLine{00060\ \ \ \ \ \}}
 \DoxyCodeLine{00061\ \ \ \ \ close(fd);}
-\DoxyCodeLine{00062\ \ \ \ \ free(buffer);}
+\DoxyCodeLine{00062\ \ \ \ \ free(\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
 \DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ (total\_bytes);}
 \DoxyCodeLine{00064\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 3
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
 \mbox{\Hypertarget{map__utils_8h_af11ad10198633d526882d9ebabf21042}\label{map__utils_8h_af11ad10198633d526882d9ebabf21042}} 
 \index{map\_utils.h@{map\_utils.h}!handle\_error@{handle\_error}}
 \index{handle\_error@{handle\_error}!map\_utils.h@{map\_utils.h}}
@@ -261,12 +269,14 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00011}{11}} of file \mb
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 4
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
 \mbox{\Hypertarget{map__utils_8h_af5c60b16fc036394aa182bd09cc16e5d}\label{map__utils_8h_af5c60b16fc036394aa182bd09cc16e5d}} 
 \index{map\_utils.h@{map\_utils.h}!print\_error@{print\_error}}
 \index{print\_error@{print\_error}!map\_utils.h@{map\_utils.h}}
 \doxysubsubsection{\texorpdfstring{print\_error()}{print\_error()}}
-{\footnotesize\ttfamily void print\+\_\+error (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+number }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} print\+\_\+error (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+number }\end{DoxyParamCaption})}
 
 
 
@@ -294,7 +304,9 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00004}{4}} of file \mbo
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 5
+% FIG 10
+Here is the caller graph for this function\+:
+% FIG 11
 \mbox{\Hypertarget{map__utils_8h_a4262bf4509b96716171e25f0f9f0644e}\label{map__utils_8h_a4262bf4509b96716171e25f0f9f0644e}} 
 \index{map\_utils.h@{map\_utils.h}!read\_map@{read\_map}}
 \index{read\_map@{read\_map}!map\_utils.h@{map\_utils.h}}
@@ -322,24 +334,26 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00066}{66}} of file \mb
 \DoxyCodeLine{00067\ \{}
 \DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ fd;}
 \DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{int}\ bytes;}
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{char}\ *buffer;}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}};}
 \DoxyCodeLine{00071\ }
 \DoxyCodeLine{00072\ \ \ \ \ bytes\ =\ \mbox{\hyperlink{read__map_8c_a973f5273453bacdf37c27ef24bdd540d}{get\_total\_bytes}}(file);}
 \DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{if}\ (!bytes)}
 \DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map_8c_af11ad10198633d526882d9ebabf21042}{handle\_error}}(\mbox{\hyperlink{map__utils_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}});}
-\DoxyCodeLine{00075\ \ \ \ \ buffer\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ bytes\ +\ 1);}
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (!buffer)}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ bytes\ +\ 1);}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}})}
 \DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
 \DoxyCodeLine{00078\ \ \ \ \ fd\ =\ open(file,\ O\_RDONLY);}
 \DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (fd\ ==\ -\/1)}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ 0,\ buffer);}
-\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (read(fd,\ buffer,\ bytes)\ ==\ -\/1)}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ buffer);}
-\DoxyCodeLine{00083\ \ \ \ \ buffer[bytes]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ 0,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (read(fd,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}},\ bytes)\ ==\ -\/1)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read__map_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}[bytes]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
 \DoxyCodeLine{00084\ \ \ \ \ close(fd);}
-\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ (buffer);}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
 \DoxyCodeLine{00086\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 6
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13

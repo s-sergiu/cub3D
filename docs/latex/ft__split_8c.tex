@@ -6,7 +6,7 @@ Include dependency graph for ft\+\_\+split.\+c\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$$\ast$ \mbox{\hyperlink{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4}{ft\+\_\+split}} (char const $\ast$s, char c)
+char $\ast$$\ast$ \mbox{\hyperlink{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4}{ft\+\_\+split}} (char const $\ast$\mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}}, char c)
 \begin{DoxyCompactList}\small\item\em Splits a string into an array of strings based on a given delimiter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -39,32 +39,34 @@ Definition at line \mbox{\hyperlink{ft__split_8c_source_l00054}{54}} of file \mb
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00055\ \{}
 \DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ **str;}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ index;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}};}
 \DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ lc;}
 \DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s)}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}})}
 \DoxyCodeLine{00061\ \ \ \ \ \{}
 \DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
 \DoxyCodeLine{00063\ \ \ \ \ \}}
-\DoxyCodeLine{00064\ \ \ \ \ str\ =\ (\textcolor{keywordtype}{char}\ **)malloc((get\_words((\textcolor{keywordtype}{char}\ *)s,\ c)\ +\ 1)\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *));}
+\DoxyCodeLine{00064\ \ \ \ \ str\ =\ (\textcolor{keywordtype}{char}\ **)malloc((get\_words((\textcolor{keywordtype}{char}\ *)\mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}},\ c)\ +\ 1)\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *));}
 \DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{if}\ (!str)}
 \DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (free\_rest(str,\ 0));}
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{if}\ (s[0])}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ s\ =\ trim\_string((\textcolor{keywordtype}{char}\ *)s,\ c);}
-\DoxyCodeLine{00069\ \ \ \ \ index\ =\ 0;}
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(s))}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}}[0])}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}}\ =\ trim\_string((\textcolor{keywordtype}{char}\ *)\mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}},\ c);}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}\ =\ 0;}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(\mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}}))}
 \DoxyCodeLine{00071\ \ \ \ \ \{}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ lc\ =\ get\_letters((\textcolor{keywordtype}{char}\ *)s,\ c);}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ str[index]\ =\ (\textcolor{keywordtype}{char}\ *)malloc((lc\ +\ 1)\ *\ \textcolor{keyword}{sizeof}(char));}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!str[index])}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (free\_rest(str,\ index));}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_a12f759eb9793cf306fede66d0b7de0fc}{ft\_strlcpy}}(str[index++],\ s,\ lc\ +\ 1);}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ s\ =\ trim\_string((\textcolor{keywordtype}{char}\ *)s\ +\ lc,\ c);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ lc\ =\ get\_letters((\textcolor{keywordtype}{char}\ *)\mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}},\ c);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ str[\mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}]\ =\ (\textcolor{keywordtype}{char}\ *)malloc((lc\ +\ 1)\ *\ \textcolor{keyword}{sizeof}(char));}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!str[\mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}])}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (free\_rest(str,\ \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}));}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_a12f759eb9793cf306fede66d0b7de0fc}{ft\_strlcpy}}(str[\mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}++],\ \mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}},\ lc\ +\ 1);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}}\ =\ trim\_string((\textcolor{keywordtype}{char}\ *)\mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}}\ +\ lc,\ c);}
 \DoxyCodeLine{00078\ \ \ \ \ \}}
-\DoxyCodeLine{00079\ \ \ \ \ str[index]\ =\ NULL;}
+\DoxyCodeLine{00079\ \ \ \ \ str[\mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}]\ =\ NULL;}
 \DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{return}\ (str);}
 \DoxyCodeLine{00081\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
 % FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
