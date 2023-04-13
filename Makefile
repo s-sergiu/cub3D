@@ -17,9 +17,8 @@ LIBFT = build/libft/libft.a
 MLX_DIR = external/MLX42/include
 LIBFT_DIR = src/libft
 
-ifeq ($(UNAME_S),Linux)
 MLX_FLAGS= -ldl -lglfw -pthread -lm
-endif
+
 ifeq ($(UNAME_S),Darwin)
 MLX_FLAGS= -lglfw -L ~/.brew/Cellar/glfw/3.3.8/lib
 endif
@@ -29,8 +28,7 @@ all:$(NAME)
 $(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(MAPOBJ) $(INC) $(LIBFT)
 	$(CC) $(MAPOBJ) $(FLAGS) $(OBJ) build/libft.a \
 	$(MLX42) -Iinclude \
-	$(MLX_FLAGS) \
-	-o $@
+	$(MLX_FLAGS) -o $@
 
 $(LIBFT): 
 	@make -C $(LIBFT_DIR)
@@ -58,7 +56,7 @@ build/map_utils/%.o: src/map_utils/%.c
 $(OBJ_DIR):
 	@mkdir $(OBJ_DIR) 
 	@mkdir -p build/map_utils
-	@mkdir docs external tests data examples tools;
+	@mkdir tests examples tools;
 
 clean: 
 	@$(RM) $(OBJ) $(MAPOBJ) build/libft.a
