@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
     - name: Install GLFW
       run: sudo apt-get install libglfw3-dev valgrind
     - name: Initialize submodule
@@ -33,7 +32,6 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
     - name: Install GLFW
       run: brew install glfw
     - name: Initialize submodule
