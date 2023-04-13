@@ -1,6 +1,10 @@
 NAME = libft.a
 CC = cc 
+ifeq ($(UNAME),Darwin)
 FLAGS = "-mmacosx-version-min=12.06" -Wall -Werror -Wextra "-arch" "x86_64"
+else
+FLAGS = -Wall -Werror -Wextra
+endif
 
 AR = ar rcs
 

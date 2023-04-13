@@ -20,4 +20,4 @@ jobs:
         cmake --build build -j4
     - name: Build and run C project
       run: |
-        make re
+        make
