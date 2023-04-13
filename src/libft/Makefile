@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = cc 
-FLAGS = -g -Wall -Werror -Wextra
+FLAGS = "-mmacosx-version-min=12.06" -Wall -Werror -Wextra
 AR = ar rcs
 
 SRC = $(wildcard src/*.c)
