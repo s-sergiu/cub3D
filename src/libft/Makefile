@@ -3,6 +3,10 @@ CC = cc
 FLAGS = -g -Wall -Werror -Wextra
 AR = ar rcs
 
+ifeq ($(UNAME),Darwin)
+FLAGS += "-mmacosx-version-min=12.06"
+endif
+
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/%.o)
 
