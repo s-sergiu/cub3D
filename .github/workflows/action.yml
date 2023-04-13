@@ -21,3 +21,7 @@ jobs:
     - name: Build and run C project
       run: |
         make
+    - name: Valgrind memory leak check
+      run: |
+        valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes ./cub3D data/maps/empty.cub
+        valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes ./cub3D data/maps/default.cub
