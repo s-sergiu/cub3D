@@ -3,7 +3,7 @@ name: test
 on: [push]
 
 jobs:
-  build on ubuntu:
+  build-on-ubuntu:
 
     runs-on: ubuntu-latest
 
@@ -28,7 +28,7 @@ jobs:
       run: |
         valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps/empty.cub
 
-  build on mac:
+  build-on-mac:
 
     runs-on: macos-latest
 
