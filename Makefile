@@ -22,6 +22,7 @@ ifeq ($(UNAME),Linux)
 MLX_FLAGS = -ldl -lglfw -pthread -lm
 endif
 ifeq ($(UNAME),Darwin)
+FLAGS += "-mmacosx-version-min=12.06"
 MLX_FLAGS = -lglfw -L"/usr/local/Cellar/glfw/3.3.8/lib"
 
 endif
