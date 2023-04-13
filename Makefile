@@ -17,10 +17,12 @@ LIBFT = build/libft/libft.a
 MLX_DIR = external/MLX42/include
 LIBFT_DIR = src/libft
 
-ifeq ($(OS),Darwin)
-MLX_FLAGS = -lglfw -L ~/.brew/Cellar/glfw/3.3.8/lib
-else
+UNAME = $(shell uname -s)
+ifeq ($(UNAME),Linux)
 MLX_FLAGS = -ldl -lglfw -pthread -lm
+endif
+ifeq ($(UNAME),Darwin)
+MLX_FLAGS = -lglfw -L ~/.brew/Cellar/glfw/3.3.8/lib
 endif
 
 all:$(NAME)
