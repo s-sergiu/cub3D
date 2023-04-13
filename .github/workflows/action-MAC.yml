@@ -13,8 +13,8 @@ jobs:
       run: brew install glfw
     - name: Update xcode
       run: |
-	    rm -rf /Library/Developer/CommandLineTools
-        xcode-select --install
+	   rm -rf /Library/Developer/CommandLineTools
+       xcode-select --install
     - name: Initialize submodule
       run: git submodule update --init --recursive
     - name: Build dependency
