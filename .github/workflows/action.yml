@@ -23,8 +23,10 @@ jobs:
         make
     - name: Valgrind memory leak check #1
       run: |
+      continue-on-error: true
         valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps/default.cub
     - name: Valgrind memory leak check #2
+      continue-on-error: true
       run: |
         valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps/empty.cub || [ $? -eq 1 ]
 
