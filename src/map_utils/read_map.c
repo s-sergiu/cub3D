@@ -34,11 +34,6 @@ void	cleanup_and_exit(int error_number, int fd, char *buffer)
 	exit(error_number);
 }
 
-/*
-	get_total_bytes:
-	This function returns the total number of bytes in a file.
-*/
-
 int	get_total_bytes(char *filename)
 {
 	int		fd;
@@ -68,12 +63,6 @@ int	get_total_bytes(char *filename)
 	return (total_bytes);
 }
 
-/*
-	read_map:
-	This function reads a file and returns its 
-	contents in a string.
-*/
-
 char	*read_map(char *file)
 {
 	int fd;
@@ -95,11 +84,6 @@ char	*read_map(char *file)
 	close(fd);
 	return (buffer);
 }
-
-/*
-	filename_is_valid:
-	Checks if the filename is ending with extension '.cub'.
-*/
 
 int	filename_is_valid(char *filename)
 {

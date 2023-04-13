@@ -9,13 +9,6 @@ void ft_hook(void* param)
 		mlx_close_window(mlx);
 }
 
-/*
-	draw_map:
-	Initializes mlx_init, creates a new image with the width 
-	and height of the map, places the image at the origin (0,0)
-	and uses memset to make it of white color.
-*/
-
 void	draw_map(struct s_map_data *data)
 {
 	mlx_image_t* image;

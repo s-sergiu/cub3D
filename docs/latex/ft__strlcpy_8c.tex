@@ -1,0 +1,58 @@
+\hypertarget{ft__strlcpy_8c}{}\doxysection{/home/ssergiu/projects/cub3d/src/libft/src/ft\+\_\+strlcpy.c File Reference}
+\label{ft__strlcpy_8c}\index{/home/ssergiu/projects/cub3d/src/libft/src/ft\_strlcpy.c@{/home/ssergiu/projects/cub3d/src/libft/src/ft\_strlcpy.c}}
+{\ttfamily \#include \char`\"{}../../../include/libft/libft.\+h\char`\"{}}\newline
+Include dependency graph for ft\+\_\+strlcpy.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{ft__strlcpy_8c_a12f759eb9793cf306fede66d0b7de0fc}{ft\+\_\+strlcpy}} (char $\ast$dst, const char $\ast$src, size\+\_\+t dstsize)
+\begin{DoxyCompactList}\small\item\em Copy a string to a destination buffer with a specified maximum size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ft__strlcpy_8c_a12f759eb9793cf306fede66d0b7de0fc}\label{ft__strlcpy_8c_a12f759eb9793cf306fede66d0b7de0fc}} 
+\index{ft\_strlcpy.c@{ft\_strlcpy.c}!ft\_strlcpy@{ft\_strlcpy}}
+\index{ft\_strlcpy@{ft\_strlcpy}!ft\_strlcpy.c@{ft\_strlcpy.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strlcpy()}{ft\_strlcpy()}}
+{\footnotesize\ttfamily size\+\_\+t ft\+\_\+strlcpy (\begin{DoxyParamCaption}\item[{char $\ast$}]{dst,  }\item[{const char $\ast$}]{src,  }\item[{size\+\_\+t}]{dstsize }\end{DoxyParamCaption})}
+
+
+
+Copy a string to a destination buffer with a specified maximum size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination buffer. \\
+\hline
+{\em src} & The source string. \\
+\hline
+{\em dstsize} & The maximum number of bytes that can be written to dst.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of src. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ft__strlcpy_8c_source_l00004}{4}} of file \mbox{\hyperlink{ft__strlcpy_8c_source}{ft\+\_\+strlcpy.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ i;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ dstsize\ -\/\ 1\ \&\&\ src[i]\ \&\&\ dstsize)}
+\DoxyCodeLine{00010\ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ dst[i]\ =\ (char)src[i];}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (dstsize)}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ dst[i]\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(src));}
+\DoxyCodeLine{00017\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 1

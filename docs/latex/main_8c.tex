@@ -1,0 +1,49 @@
+\hypertarget{main_8c}{}\doxysection{/home/ssergiu/projects/cub3d/src/main.c File Reference}
+\label{main_8c}\index{/home/ssergiu/projects/cub3d/src/main.c@{/home/ssergiu/projects/cub3d/src/main.c}}
+{\ttfamily \#include \char`\"{}../include/cub3\+D.\+h\char`\"{}}\newline
+Include dependency graph for main.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00004}{4}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__map__data}{s\_map\_data}}\ *data;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ data\ =\ NULL;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ !=\ 2)}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ write(1,\ \textcolor{stringliteral}{"{}usage:\ \(\backslash\)n"{}},\ 8);}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ write(1,\ \textcolor{stringliteral}{"{}success\(\backslash\)n"{}},\ 8);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{cub3D_8h_a287e1eb420c186ddb3ca11b0d5b6cab4}{filename\_is\_valid}}(argv[1]))}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ write(1,\ \textcolor{stringliteral}{"{}succes1\(\backslash\)n"{}},\ 8);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a3efc0a465ac3693c6748963564a7dc0e}{init\_map\_data}}(\&data,\ argv[1]);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ draw\_map(data);}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ac0e0d1411c5e6e51f7bb4b854217d40c}{destroy\_map\_data}}(\&data);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00024\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 1

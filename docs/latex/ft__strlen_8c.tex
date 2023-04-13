@@ -1,0 +1,47 @@
+\hypertarget{ft__strlen_8c}{}\doxysection{/home/ssergiu/projects/cub3d/src/libft/src/ft\+\_\+strlen.c File Reference}
+\label{ft__strlen_8c}\index{/home/ssergiu/projects/cub3d/src/libft/src/ft\_strlen.c@{/home/ssergiu/projects/cub3d/src/libft/src/ft\_strlen.c}}
+{\ttfamily \#include \char`\"{}../../../include/libft/libft.\+h\char`\"{}}\newline
+Include dependency graph for ft\+\_\+strlen.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}{ft\+\_\+strlen}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Calculates the length of a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}\label{ft__strlen_8c_a828402378653640f545a4be2e00e92f9}} 
+\index{ft\_strlen.c@{ft\_strlen.c}!ft\_strlen@{ft\_strlen}}
+\index{ft\_strlen@{ft\_strlen}!ft\_strlen.c@{ft\_strlen.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strlen()}{ft\_strlen()}}
+{\footnotesize\ttfamily size\+\_\+t ft\+\_\+strlen (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Calculates the length of a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to calculate the length of.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the string. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ft__strlen_8c_source_l00004}{4}} of file \mbox{\hyperlink{ft__strlen_8c_source}{ft\+\_\+strlen.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{while}\ (str[i])}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{return}\ (i);}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}

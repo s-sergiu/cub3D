@@ -1,0 +1,23 @@
+\hypertarget{ft__strlcpy_8c_source}{}\doxysection{ft\+\_\+strlcpy.\+c}
+\label{ft__strlcpy_8c_source}\index{/home/ssergiu/projects/cub3d/src/libft/src/ft\_strlcpy.c@{/home/ssergiu/projects/cub3d/src/libft/src/ft\_strlcpy.c}}
+\mbox{\hyperlink{ft__strlcpy_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../../../include/libft/libft.h"{}}}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00004}\mbox{\hyperlink{libft_8h_a12f759eb9793cf306fede66d0b7de0fc}{00004}}\ \textcolor{keywordtype}{size\_t}\ \ \mbox{\hyperlink{ft__strlcpy_8c_a12f759eb9793cf306fede66d0b7de0fc}{ft\_strlcpy}}(\textcolor{keywordtype}{char}\ *dst,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *src,\ \textcolor{keywordtype}{size\_t}\ dstsize)}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ i;}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00008}00008\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ dstsize\ -\/\ 1\ \&\&\ src[i]\ \&\&\ dstsize)}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00011}00011\ \ \ \ \ \ \ \ \ dst[i]\ =\ (char)src[i];}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00012}00012\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (dstsize)}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00015}00015\ \ \ \ \ \ \ \ \ dst[i]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(src));}
+\DoxyCodeLine{\Hypertarget{ft__strlcpy_8c_source_l00017}00017\ \}}
+
+\end{DoxyCode}

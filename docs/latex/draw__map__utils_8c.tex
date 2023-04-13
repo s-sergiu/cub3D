@@ -1,0 +1,168 @@
+\hypertarget{draw__map__utils_8c}{}\doxysection{/home/ssergiu/projects/cub3d/src/map\+\_\+utils/draw\+\_\+map\+\_\+utils.c File Reference}
+\label{draw__map__utils_8c}\index{/home/ssergiu/projects/cub3d/src/map\_utils/draw\_map\_utils.c@{/home/ssergiu/projects/cub3d/src/map\_utils/draw\_map\_utils.c}}
+{\ttfamily \#include \char`\"{}../../include/map\+\_\+utils/map\+\_\+utils.\+h\char`\"{}}\newline
+Include dependency graph for draw\+\_\+map\+\_\+utils.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{draw__map__utils_8c_a73200bd9a8be60a2e2f5eb2528293a8f}{free\+\_\+split}} (char $\ast$$\ast$str)
+\begin{DoxyCompactList}\small\item\em Frees memory allocated for a string array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{draw__map__utils_8c_ad624da07f82233cb9bf10960641f9fec}{get\+\_\+height}} (char $\ast$$\ast$map)
+\begin{DoxyCompactList}\small\item\em Gets the height of a map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw__map__utils_8c_a3efc0a465ac3693c6748963564a7dc0e}{init\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$data, char $\ast$map\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Initializes map data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c}{destroy\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$data)
+\begin{DoxyCompactList}\small\item\em Destroys map data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{draw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c}\label{draw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c}} 
+\index{draw\_map\_utils.c@{draw\_map\_utils.c}!destroy\_map\_data@{destroy\_map\_data}}
+\index{destroy\_map\_data@{destroy\_map\_data}!draw\_map\_utils.c@{draw\_map\_utils.c}}
+\doxysubsubsection{\texorpdfstring{destroy\_map\_data()}{destroy\_map\_data()}}
+{\footnotesize\ttfamily void destroy\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Destroys map data. 
+
+This function frees memory allocated for a map\+\_\+data struct and its components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A pointer to the map\+\_\+data struct to be destroyed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00043}{43}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ free((*data)-\/>map\_string);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{draw__map__utils_8c_a73200bd9a8be60a2e2f5eb2528293a8f}{free\_split}}((*data)-\/>map);}
+\DoxyCodeLine{00049\ \ \ \ \ free((*data));}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{draw__map__utils_8c_a73200bd9a8be60a2e2f5eb2528293a8f}\label{draw__map__utils_8c_a73200bd9a8be60a2e2f5eb2528293a8f}} 
+\index{draw\_map\_utils.c@{draw\_map\_utils.c}!free\_split@{free\_split}}
+\index{free\_split@{free\_split}!draw\_map\_utils.c@{draw\_map\_utils.c}}
+\doxysubsubsection{\texorpdfstring{free\_split()}{free\_split()}}
+{\footnotesize\ttfamily void free\+\_\+split (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Frees memory allocated for a string array. 
+
+This function frees the memory that was allocated for a string array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string array to be freed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00004}{4}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{int}\ i;\ \ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ i\ =\ -\/1;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{while}\ (str[++i])}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ free(str[i]);}
+\DoxyCodeLine{00011\ \ \ \ \ free(str);}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{draw__map__utils_8c_ad624da07f82233cb9bf10960641f9fec}\label{draw__map__utils_8c_ad624da07f82233cb9bf10960641f9fec}} 
+\index{draw\_map\_utils.c@{draw\_map\_utils.c}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!draw\_map\_utils.c@{draw\_map\_utils.c}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}}
+{\footnotesize\ttfamily int get\+\_\+height (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{map }\end{DoxyParamCaption})}
+
+
+
+Gets the height of a map. 
+
+This function takes a 2D string array representing a map and returns its height.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & The 2D string array representing the map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The height of the map. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00014}{14}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{while}\ (map[i])}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{return}\ (i);}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{draw__map__utils_8c_a3efc0a465ac3693c6748963564a7dc0e}\label{draw__map__utils_8c_a3efc0a465ac3693c6748963564a7dc0e}} 
+\index{draw\_map\_utils.c@{draw\_map\_utils.c}!init\_map\_data@{init\_map\_data}}
+\index{init\_map\_data@{init\_map\_data}!draw\_map\_utils.c@{draw\_map\_utils.c}}
+\doxysubsubsection{\texorpdfstring{init\_map\_data()}{init\_map\_data()}}
+{\footnotesize\ttfamily void init\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{data,  }\item[{char $\ast$}]{map\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Initializes map data. 
+
+This function initializes a map\+\_\+data struct and sets its map\+\_\+string, width, and height values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A pointer to the map\+\_\+data struct to be initialized. \\
+\hline
+{\em map\+\_\+file} & The file path of the map file to be read. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00024}{24}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *map;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ map\ =\ \mbox{\hyperlink{map__utils_8h_a4262bf4509b96716171e25f0f9f0644e}{read\_map}}(map\_file);}
+\DoxyCodeLine{00029\ \ \ \ \ (*data)\ =\ malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}));}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(*data))}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{map__utils_8h_af11ad10198633d526882d9ebabf21042}{handle\_error}}(errno);}
+\DoxyCodeLine{00032\ \ \ \ \ (*data)-\/>map\_string\ =\ map;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string\ ==\ NULL)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{map__utils_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ 0,\ NULL);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string)}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ (*data)-\/>map\ =\ \mbox{\hyperlink{libft_8h_aa65c9de65051c8c589286cf133c4a1f4}{ft\_split}}((*data)-\/>map\_string,\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ (*data)-\/>width\ =\ \mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}((*data)-\/>map[0])\ *\ 32;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ (*data)-\/>height\ =\ \mbox{\hyperlink{draw__map__utils_8c_ad624da07f82233cb9bf10960641f9fec}{get\_height}}((*data)-\/>map)\ *\ 32;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 2

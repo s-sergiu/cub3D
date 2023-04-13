@@ -23,8 +23,8 @@ static int	get_words(char const *s, char c)
 		{
 			while (s[i] != c && s[i])
 				i++;
-		wc++;
-		i--;
+			wc++;
+			i--;
 		}
 	}
 	return (wc);

@@ -1,0 +1,30 @@
+\hypertarget{main_8c_source}{}\doxysection{main.\+c}
+\label{main_8c_source}\index{/home/ssergiu/projects/cub3d/src/main.c@{/home/ssergiu/projects/cub3d/src/main.c}}
+\mbox{\hyperlink{main_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../include/cub3D.h"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00004}\mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{00004}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ **argv)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00006}00006\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__map__data}{s\_map\_data}}\ *data;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00008}00008\ \ \ \ \ data\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ !=\ 2)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00010}00010\ \ \ \ \ \ \ \ \ write(1,\ \textcolor{stringliteral}{"{}usage:\ \(\backslash\)n"{}},\ 8);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00013}00013\ \ \ \ \ \ \ \ \ write(1,\ \textcolor{stringliteral}{"{}success\(\backslash\)n"{}},\ 8);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{cub3D_8h_a287e1eb420c186ddb3ca11b0d5b6cab4}{filename\_is\_valid}}(argv[1]))}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00015}00015\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ write(1,\ \textcolor{stringliteral}{"{}succes1\(\backslash\)n"{}},\ 8);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a3efc0a465ac3693c6748963564a7dc0e}{init\_map\_data}}(\&data,\ argv[1]);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00018}00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00019}00019\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ draw\_map(data);}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ac0e0d1411c5e6e51f7bb4b854217d40c}{destroy\_map\_data}}(\&data);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00024}00024\ \}}
+
+\end{DoxyCode}

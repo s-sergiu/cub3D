@@ -1,0 +1,76 @@
+\hypertarget{draw__map_8c}{}\doxysection{/home/ssergiu/projects/cub3d/src/map\+\_\+utils/draw\+\_\+map.c File Reference}
+\label{draw__map_8c}\index{/home/ssergiu/projects/cub3d/src/map\_utils/draw\_map.c@{/home/ssergiu/projects/cub3d/src/map\_utils/draw\_map.c}}
+{\ttfamily \#include \char`\"{}../../include/map\+\_\+utils/map\+\_\+utils.\+h\char`\"{}}\newline
+Include dependency graph for draw\+\_\+map.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\+\_\+hook}} (void $\ast$param)
+\item 
+void \mbox{\hyperlink{draw__map_8c_a1dd6a7f325ca5e8aafa0fe462209b4bb}{draw\+\_\+map}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{draw__map_8c_a1dd6a7f325ca5e8aafa0fe462209b4bb}\label{draw__map_8c_a1dd6a7f325ca5e8aafa0fe462209b4bb}} 
+\index{draw\_map.c@{draw\_map.c}!draw\_map@{draw\_map}}
+\index{draw\_map@{draw\_map}!draw\_map.c@{draw\_map.c}}
+\doxysubsubsection{\texorpdfstring{draw\_map()}{draw\_map()}}
+{\footnotesize\ttfamily void draw\+\_\+map (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__map_8c_source_l00012}{12}} of file \mbox{\hyperlink{draw__map_8c_source}{draw\+\_\+map.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ mlx\_image\_t*\ image;}
+\DoxyCodeLine{00015\ \ \ \ \ mlx\_t*\ mlx;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Gotta\ error\ check\ this\ stuff}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(mlx\ =\ mlx\_init(data-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}},\ data-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}},\ \textcolor{stringliteral}{"{}MLX42"{}},\ \textcolor{keyword}{true})))}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ puts(mlx\_strerror(mlx\_errno));}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(image\ =\ mlx\_new\_image(mlx,\ data-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}},\ data-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}})))}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ puts(mlx\_strerror(mlx\_errno));}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (mlx\_image\_to\_window(mlx,\ image,\ 0,\ 0)\ ==\ -\/1)}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ puts(mlx\_strerror(mlx\_errno));}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ memset(image-\/>pixels,\ 255,\ data-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}}\ *\ data-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}}\ *\ 4);}
+\DoxyCodeLine{00034\ \ \ \ \ mlx\_loop\_hook(mlx,\ \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\_hook}},\ mlx);}
+\DoxyCodeLine{00035\ \ \ \ \ mlx\_loop(mlx);}
+\DoxyCodeLine{00036\ \ \ \ \ mlx\_terminate(mlx);}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}\label{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}} 
+\index{draw\_map.c@{draw\_map.c}!ft\_hook@{ft\_hook}}
+\index{ft\_hook@{ft\_hook}!draw\_map.c@{draw\_map.c}}
+\doxysubsubsection{\texorpdfstring{ft\_hook()}{ft\_hook()}}
+{\footnotesize\ttfamily void ft\+\_\+hook (\begin{DoxyParamCaption}\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__map_8c_source_l00004}{4}} of file \mbox{\hyperlink{draw__map_8c_source}{draw\+\_\+map.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ mlx\_t*\ mlx\ =\ param;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (mlx\_is\_key\_down(mlx,\ MLX\_KEY\_ESCAPE))}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
+\DoxyCodeLine{00010\ \}}
+
+\end{DoxyCode}

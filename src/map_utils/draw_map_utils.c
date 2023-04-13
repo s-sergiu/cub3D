@@ -21,11 +21,6 @@ int	get_height(char **map)
 	return (i);
 }
 
-/*
-	init_map_data:
-	Initializes the s_map_data structure;
-*/
-
 void	init_map_data(struct s_map_data **data, char *map_file)
 {
 	char	*map;
@@ -44,11 +39,6 @@ void	init_map_data(struct s_map_data **data, char *map_file)
 		(*data)->height = get_height((*data)->map) * 32;
 	}
 }
-
-/*
-	destroy_map_data:
-	Destroys the s_map_data structure;
-*/
 
 void	destroy_map_data(struct s_map_data **data)
 {
