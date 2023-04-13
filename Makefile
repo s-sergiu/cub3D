@@ -23,8 +23,9 @@ MLX_FLAGS = -ldl -lglfw -pthread -lm
 endif
 
 ifeq ($(UNAME),Darwin)
+BREW = $(shell brew --prefix glfw)
 FLAGS += "-mmacosx-version-min=12.06" "-arch" "x86_64"
-MLX_FLAGS = -lglfw -L"/Users/djmekki/.brew/Cellar/glfw/3.3.8/lib"
+MLX_FLAGS = -lglfw -L"$HOME/$BREW/3.3.8/lib"
 endif
 
 all:$(NAME)
