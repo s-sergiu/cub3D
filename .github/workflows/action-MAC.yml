@@ -11,10 +11,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install GLFW
       run: brew install glfw
-    - name: Update xcode
-      run: |
-       sudo rm -rf /Library/Developer/CommandLineTools
-       xcode-select --install
     - name: Initialize submodule
       run: git submodule update --init --recursive
     - name: Build dependency
