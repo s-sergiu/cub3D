@@ -24,7 +24,7 @@ endif
 
 ifeq ($(UNAME),Darwin)
 FLAGS += "-mmacosx-version-min=12.06" "-arch" "x86_64"
-MLX_FLAGS = -lglfw -L"/usr/local/Cellar/glfw/3.3.8/lib"
+MLX_FLAGS = -lglfw -L"/Users/djmekki/.brew/Cellar/glfw/3.3.8/lib"
 endif
 
 all:$(NAME)
