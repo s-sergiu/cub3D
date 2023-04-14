@@ -33,3 +33,13 @@ void	cleanup_and_exit(int error_number, int fd, char *buffer)
 	print_error(error_number);
 	exit(error_number);
 }
+
+int	filename_is_valid(char *filename)
+{
+	int	filename_length;
+
+	filename_length = ft_strlen(filename);
+	if (ft_strncmp(filename + (filename_length - 4), ".cub\0", 5))
+		handle_error(BAD_MAP_FILE);
+	return (TRUE);
+}

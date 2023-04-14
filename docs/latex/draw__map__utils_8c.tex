@@ -6,13 +6,13 @@ Include dependency graph for draw\+\_\+map\+\_\+utils.\+c\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{draw__map__utils_8c_a73200bd9a8be60a2e2f5eb2528293a8f}{free\+\_\+split}} (char $\ast$$\ast$str)
+void \mbox{\hyperlink{draw__map__utils_8c_a73200bd9a8be60a2e2f5eb2528293a8f}{free\+\_\+split}} (char $\ast$$\ast$str)
 \begin{DoxyCompactList}\small\item\em Frees memory allocated for a string array. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{draw__map__utils_8c_ad624da07f82233cb9bf10960641f9fec}{get\+\_\+height}} (char $\ast$$\ast$map)
 \begin{DoxyCompactList}\small\item\em Gets the height of a map. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{draw__map__utils_8c_a3efc0a465ac3693c6748963564a7dc0e}{init\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, char $\ast$map\+\_\+file)
+void \mbox{\hyperlink{draw__map__utils_8c_a3efc0a465ac3693c6748963564a7dc0e}{init\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$data, char $\ast$map\+\_\+file)
 \begin{DoxyCompactList}\small\item\em Initializes map data. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{draw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c}{destroy\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}})
+void \mbox{\hyperlink{draw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c}{destroy\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$data)
 \begin{DoxyCompactList}\small\item\em Destroys map data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -21,7 +21,7 @@ int \mbox{\hyperlink{draw__map__utils_8c_ad624da07f82233cb9bf10960641f9fec}{get\
 \index{draw\_map\_utils.c@{draw\_map\_utils.c}!destroy\_map\_data@{destroy\_map\_data}}
 \index{destroy\_map\_data@{destroy\_map\_data}!draw\_map\_utils.c@{draw\_map\_utils.c}}
 \doxysubsubsection{\texorpdfstring{destroy\_map\_data()}{destroy\_map\_data()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} destroy\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void destroy\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{data }\end{DoxyParamCaption})}
 
 
 
@@ -45,7 +45,7 @@ Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00043}{43}} of f
 \DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string)}
 \DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map)}
 \DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{draw__map__utils_8c_a73200bd9a8be60a2e2f5eb2528293a8f}{free\_split}}((*data)-\/>map);}
-\DoxyCodeLine{00049\ \ \ \ \ free((*\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}));}
+\DoxyCodeLine{00049\ \ \ \ \ free((*data));}
 \DoxyCodeLine{00050\ \}}
 
 \end{DoxyCode}
@@ -57,7 +57,7 @@ Here is the caller graph for this function\+:
 \index{draw\_map\_utils.c@{draw\_map\_utils.c}!free\_split@{free\_split}}
 \index{free\_split@{free\_split}!draw\_map\_utils.c@{draw\_map\_utils.c}}
 \doxysubsubsection{\texorpdfstring{free\_split()}{free\_split()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} free\+\_\+split (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{str }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void free\+\_\+split (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{str }\end{DoxyParamCaption})}
 
 
 
@@ -130,7 +130,7 @@ Here is the caller graph for this function\+:
 \index{draw\_map\_utils.c@{draw\_map\_utils.c}!init\_map\_data@{init\_map\_data}}
 \index{init\_map\_data@{init\_map\_data}!draw\_map\_utils.c@{draw\_map\_utils.c}}
 \doxysubsubsection{\texorpdfstring{init\_map\_data()}{init\_map\_data()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} init\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{data,  }\item[{char $\ast$}]{map\+\_\+file }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void init\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{data,  }\item[{char $\ast$}]{map\+\_\+file }\end{DoxyParamCaption})}
 
 
 
@@ -156,7 +156,7 @@ Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00024}{24}} of f
 \DoxyCodeLine{00027\ }
 \DoxyCodeLine{00028\ \ \ \ \ map\ =\ \mbox{\hyperlink{cub3D_8h_a4262bf4509b96716171e25f0f9f0644e}{read\_map}}(map\_file);}
 \DoxyCodeLine{00029\ \ \ \ \ (*data)\ =\ malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}));}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(*\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}))}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(*data))}
 \DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_af11ad10198633d526882d9ebabf21042}{handle\_error}}(errno);}
 \DoxyCodeLine{00032\ \ \ \ \ (*data)-\/>map\_string\ =\ map;}
 \DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string\ ==\ NULL)}

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['42_0',['42',['../md__home_ssergiu_projects_cub3d_external_MLX42_docs_42.html',1,'']]],
-  ['42_2emd_1',['42.md',['../42_8md.html',1,'']]]
+  ['bad_5fmap_5ffile_0',['BAD_MAP_FILE',['../cub3D_8h.html#a8e0ad1ba0b05ba2af8e7fcd8f02c12ed',1,'cub3D.h']]]
 ];

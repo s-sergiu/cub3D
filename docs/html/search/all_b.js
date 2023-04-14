@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['j_0',['j',['../glad_8h.html#a1fb4b4dc7b41b62604a44f280bccbd54',1,'glad.h']]],
-  ['j1_1',['j1',['../glad_8h.html#ad542017f1283aa71acb968605407f674',1,'glad.h']]],
-  ['j2_2',['j2',['../glad_8h.html#a7b90ba682e4c88c434f5f2a591eb856b',1,'glad.h']]]
+  ['read_5fmap_0',['read_map',['../cub3D_8h.html#a4262bf4509b96716171e25f0f9f0644e',1,'read_map(char *file):&#160;read_map.c'],['../read__map_8c.html#a4262bf4509b96716171e25f0f9f0644e',1,'read_map(char *file):&#160;read_map.c']]],
+  ['read_5fmap_2ec_1',['read_map.c',['../read__map_8c.html',1,'']]],
+  ['readme_2emd_2',['README.md',['../README_8md.html',1,'']]]
 ];

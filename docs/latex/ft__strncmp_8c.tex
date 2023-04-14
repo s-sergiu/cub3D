@@ -6,7 +6,7 @@ Include dependency graph for ft\+\_\+strncmp.\+c\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{ft__strncmp_8c_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\+\_\+strncmp}} (const char $\ast$s1, const char $\ast$s2, size\+\_\+t \mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}})
+int \mbox{\hyperlink{ft__strncmp_8c_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\+\_\+strncmp}} (const char $\ast$s1, const char $\ast$s2, size\+\_\+t n)
 \begin{DoxyCompactList}\small\item\em Compare the first n bytes of two strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -43,9 +43,9 @@ Definition at line \mbox{\hyperlink{ft__strncmp_8c_source_l00004}{4}} of file \m
 \DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ i;}
 \DoxyCodeLine{00007\ }
 \DoxyCodeLine{00008\ \ \ \ \ i\ =\ 0;}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}})}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (!n)}
 \DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (1);}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{while}\ ((s1[i]\ ||\ s2[i])\ \&\&\ (i++\ <\ \mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}}))}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{while}\ ((s1[i]\ ||\ s2[i])\ \&\&\ (i++\ <\ n))}
 \DoxyCodeLine{00012\ \ \ \ \ \{}
 \DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char})s1[i\ -\/\ 1]\ <\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char})s2[i\ -\/\ 1])}
 \DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (1);}

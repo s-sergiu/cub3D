@@ -6,7 +6,7 @@ Include dependency graph for ft\+\_\+putstring\+\_\+fd.\+c\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{ft__putstring__fd_8c_acefce9ac519f8f8b7d3fde33dbafe469}{ft\+\_\+putstr\+\_\+fd}} (char $\ast$\mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}}, int fd)
+void \mbox{\hyperlink{ft__putstring__fd_8c_acefce9ac519f8f8b7d3fde33dbafe469}{ft\+\_\+putstr\+\_\+fd}} (char $\ast$s, int fd)
 \end{DoxyCompactItemize}
 
 
@@ -15,7 +15,7 @@ Include dependency graph for ft\+\_\+putstring\+\_\+fd.\+c\+:
 \index{ft\_putstring\_fd.c@{ft\_putstring\_fd.c}!ft\_putstr\_fd@{ft\_putstr\_fd}}
 \index{ft\_putstr\_fd@{ft\_putstr\_fd}!ft\_putstring\_fd.c@{ft\_putstring\_fd.c}}
 \doxysubsubsection{\texorpdfstring{ft\_putstr\_fd()}{ft\_putstr\_fd()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} ft\+\_\+putstr\+\_\+fd (\begin{DoxyParamCaption}\item[{char $\ast$}]{s,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void ft\+\_\+putstr\+\_\+fd (\begin{DoxyParamCaption}\item[{char $\ast$}]{s,  }\item[{int}]{fd }\end{DoxyParamCaption})}
 
 Outputs a string to a file descriptor.
 
@@ -35,11 +35,11 @@ Definition at line \mbox{\hyperlink{ft__putstring__fd_8c_source_l00004}{4}} of f
 \DoxyCodeLine{00005\ \{}
 \DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}})}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s)}
 \DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ return\ ;}
 \DoxyCodeLine{00010\ \ \ \ \ i\ =\ 0;}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}}[i])}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ write(fd,\ \&\mbox{\hyperlink{glad_8h_af1b1d5edfea6a34daee7389b1b5810ad}{s}}[i++],\ 1);}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{while}\ (s[i])}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ write(fd,\ \&s[i++],\ 1);}
 \DoxyCodeLine{00013\ \}}
 
 \end{DoxyCode}

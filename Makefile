@@ -58,7 +58,6 @@ build/map_utils/%.o: src/map_utils/%.c
 $(OBJ_DIR):
 	@mkdir $(OBJ_DIR) 
 	@mkdir -p build/map_utils
-	@mkdir tests examples tools;
 
 clean: 
 	@$(RM) $(OBJ) $(MAPOBJ) build/libft.a

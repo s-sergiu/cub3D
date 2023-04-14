@@ -6,12 +6,14 @@ Include dependency graph for error\+\_\+handling.\+c\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}{print\+\_\+error}} (int error\+\_\+number)
+void \mbox{\hyperlink{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}{print\+\_\+error}} (int error\+\_\+number)
 \begin{DoxyCompactList}\small\item\em Prints an error message to the standard error output. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{error__handling_8c_af11ad10198633d526882d9ebabf21042}{handle\+\_\+error}} (int error\+\_\+number)
 \begin{DoxyCompactList}\small\item\em Handles the given error number, prints an error message to the standard error output, and exits the program. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{error__handling_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\+\_\+and\+\_\+exit}} (int error\+\_\+number, int fd, char $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}})
-\begin{DoxyCompactList}\small\item\em Frees any allocated memory and exits the program with the given error number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{error__handling_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\+\_\+and\+\_\+exit}} (int error\+\_\+number, int fd, char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Frees any allocated memory and exits the program with the given error number. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{error__handling_8c_a287e1eb420c186ddb3ca11b0d5b6cab4}{filename\+\_\+is\+\_\+valid}} (char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Checks if the given filename is valid and ends with \char`\"{}.\+cub\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -19,7 +21,7 @@ int \mbox{\hyperlink{error__handling_8c_af11ad10198633d526882d9ebabf21042}{handl
 \index{error\_handling.c@{error\_handling.c}!cleanup\_and\_exit@{cleanup\_and\_exit}}
 \index{cleanup\_and\_exit@{cleanup\_and\_exit}!error\_handling.c@{error\_handling.c}}
 \doxysubsubsection{\texorpdfstring{cleanup\_and\_exit()}{cleanup\_and\_exit()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} cleanup\+\_\+and\+\_\+exit (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+number,  }\item[{int}]{fd,  }\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void cleanup\+\_\+and\+\_\+exit (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+number,  }\item[{int}]{fd,  }\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
 
 
 
@@ -46,8 +48,8 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00027}{27}} of fi
 \DoxyCodeLine{00028\ \{}
 \DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (fd\ >\ 0)}
 \DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ close(fd);}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}\ !=\ NULL)}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ free(\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (buffer\ !=\ NULL)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ free(buffer);}
 \DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}{print\_error}}(error\_number);}
 \DoxyCodeLine{00034\ \ \ \ \ exit(error\_number);}
 \DoxyCodeLine{00035\ \}}
@@ -57,6 +59,44 @@ Here is the call graph for this function\+:
 % FIG 1
 Here is the caller graph for this function\+:
 % FIG 2
+\mbox{\Hypertarget{error__handling_8c_a287e1eb420c186ddb3ca11b0d5b6cab4}\label{error__handling_8c_a287e1eb420c186ddb3ca11b0d5b6cab4}} 
+\index{error\_handling.c@{error\_handling.c}!filename\_is\_valid@{filename\_is\_valid}}
+\index{filename\_is\_valid@{filename\_is\_valid}!error\_handling.c@{error\_handling.c}}
+\doxysubsubsection{\texorpdfstring{filename\_is\_valid()}{filename\_is\_valid()}}
+{\footnotesize\ttfamily int filename\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Checks if the given filename is valid and ends with \char`\"{}.\+cub\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The filename to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE (1) if the filename is valid, FALSE (0) otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{error__handling_8c_source_l00037}{37}} of file \mbox{\hyperlink{error__handling_8c_source}{error\+\_\+handling.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ filename\_length;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ filename\_length\ =\ \mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(filename);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{libft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\_strncmp}}(filename\ +\ (filename\_length\ -\/\ 4),\ \textcolor{stringliteral}{"{}.cub\(\backslash\)0"{}},\ 5))}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{error__handling_8c_af11ad10198633d526882d9ebabf21042}{handle\_error}}(\mbox{\hyperlink{cub3D_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\_MAP\_FILE}});}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3D_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
 \mbox{\Hypertarget{error__handling_8c_af11ad10198633d526882d9ebabf21042}\label{error__handling_8c_af11ad10198633d526882d9ebabf21042}} 
 \index{error\_handling.c@{error\_handling.c}!handle\_error@{handle\_error}}
 \index{handle\_error@{handle\_error}!error\_handling.c@{error\_handling.c}}
@@ -98,14 +138,14 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00011}{11}} of fi
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 3
+% FIG 5
 Here is the caller graph for this function\+:
-% FIG 4
+% FIG 6
 \mbox{\Hypertarget{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}\label{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}} 
 \index{error\_handling.c@{error\_handling.c}!print\_error@{print\_error}}
 \index{print\_error@{print\_error}!error\_handling.c@{error\_handling.c}}
 \doxysubsubsection{\texorpdfstring{print\_error()}{print\_error()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} print\+\_\+error (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+number }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void print\+\_\+error (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+number }\end{DoxyParamCaption})}
 
 
 
@@ -133,6 +173,6 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00004}{4}} of fil
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 5
+% FIG 7
 Here is the caller graph for this function\+:
-% FIG 6
+% FIG 8

@@ -96,7 +96,7 @@ Include dependency graph for ft_putstring_fd.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acefce9ac519f8f8b7d3fde33dbafe469"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a> (char *<a class="el" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>, int fd)</td></tr>
+<tr class="memitem:acefce9ac519f8f8b7d3fde33dbafe469"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a> (char *s, int fd)</td></tr>
 <tr class="separator:acefce9ac519f8f8b7d3fde33dbafe469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -107,7 +107,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> ft_putstr_fd </td>
+          <td class="memname">void ft_putstr_fd </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>s</em>, </td>
@@ -138,13 +138,12 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>{</div>
 <div class="line"><span class="lineno">    6</span>    <span class="keywordtype">int</span> i;</div>
 <div class="line"><span class="lineno">    7</span> </div>
-<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">if</span> (!<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>)</div>
+<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">if</span> (!s)</div>
 <div class="line"><span class="lineno">    9</span>        return ;</div>
 <div class="line"><span class="lineno">   10</span>    i = 0;</div>
-<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">while</span> (<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>[i])</div>
-<div class="line"><span class="lineno">   12</span>        write(fd, &amp;<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>[i++], 1);</div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">while</span> (s[i])</div>
+<div class="line"><span class="lineno">   12</span>        write(fd, &amp;s[i++], 1);</div>
 <div class="line"><span class="lineno">   13</span>}</div>
-<div class="ttc" id="aglad_8h_html_af1b1d5edfea6a34daee7389b1b5810ad"><div class="ttname"><a href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a></div><div class="ttdeci">GLdouble s</div><div class="ttdef"><b>Definition:</b> <a href="glad_8h_source.html#l03009">glad.h:3009</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -159,7 +158,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="405,208,516,233"/>
 <area shape="rect" href="read__map_8c.html#a4262bf4509b96716171e25f0f9f0644e" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="277,183,355,208"/>
 <area shape="rect" href="draw__map__utils_8c.html#a3efc0a465ac3693c6748963564a7dc0e" title="Initializes map data." alt="" coords="114,157,217,183"/>
-<area shape="rect" href="read__map_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid and ends with &quot;.cub&quot;." alt="" coords="104,56,227,81"/>
+<area shape="rect" href="error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid and ends with &quot;.cub&quot;." alt="" coords="104,56,227,81"/>
 </map>
 </div>
 

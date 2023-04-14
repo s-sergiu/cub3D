@@ -25,11 +25,5 @@ digraph "/home/ssergiu/projects/cub3d/src/main.c"
   Node7 -> Node10 [color="steelblue1",style="solid"];
   Node10 [label="stdlib.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node2 -> Node11 [color="steelblue1",style="solid"];
-  Node11 [label="../external/MLX42/include\l/MLX42/MLX42.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$MLX42_8h.html",tooltip=" "];
-  Node11 -> Node12 [color="steelblue1",style="solid"];
-  Node12 [label="stdint.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node11 -> Node13 [color="steelblue1",style="solid"];
-  Node13 [label="stdbool.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node11 -> Node14 [color="steelblue1",style="solid"];
-  Node14 [label="MLX42_Input.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$MLX42__Input_8h.html",tooltip=" "];
+  Node11 [label="../external/MLX42/include\l/MLX42/MLX42.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
 }

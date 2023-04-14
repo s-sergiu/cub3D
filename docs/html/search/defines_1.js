@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['apientry_0',['APIENTRY',['../glad_8h.html#a428a91acf2c2439dc1a257708ee1f805',1,'glad.h']]],
-  ['apientryp_1',['APIENTRYP',['../glad_8h.html#aef0d9e5e275e1b7becf54b6aa9ce3911',1,'glad.h']]]
+  ['empty_5fmap_0',['EMPTY_MAP',['../cub3D_8h.html#a4635f2163efe937e76598aff306d35d1',1,'cub3D.h']]]
 ];

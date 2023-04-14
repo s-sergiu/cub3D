@@ -96,7 +96,7 @@ Include dependency graph for ft_strlcpy.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a12f759eb9793cf306fede66d0b7de0fc"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc">ft_strlcpy</a> (char *<a class="el" href="glad_8h.html#a85e59cd56e10d0a7f49ab199f277d486">dst</a>, const char *<a class="el" href="glad_8h.html#a2a98ddb6f79ec1048ff9e15cdd2422ba">src</a>, size_t dstsize)</td></tr>
+<tr class="memitem:a12f759eb9793cf306fede66d0b7de0fc"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc">ft_strlcpy</a> (char *dst, const char *src, size_t dstsize)</td></tr>
 <tr class="memdesc:a12f759eb9793cf306fede66d0b7de0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a string to a destination buffer with a specified maximum size.  <br /></td></tr>
 <tr class="separator:a12f759eb9793cf306fede66d0b7de0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -149,17 +149,15 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">    6</span>    <span class="keywordtype">size_t</span>  i;</div>
 <div class="line"><span class="lineno">    7</span> </div>
 <div class="line"><span class="lineno">    8</span>    i = 0;</div>
-<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">while</span> (i &lt; dstsize - 1 &amp;&amp; <a class="code hl_typedef" href="glad_8h.html#a2a98ddb6f79ec1048ff9e15cdd2422ba">src</a>[i] &amp;&amp; dstsize)</div>
+<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">while</span> (i &lt; dstsize - 1 &amp;&amp; src[i] &amp;&amp; dstsize)</div>
 <div class="line"><span class="lineno">   10</span>    {</div>
-<div class="line"><span class="lineno">   11</span>        <a class="code hl_typedef" href="glad_8h.html#a85e59cd56e10d0a7f49ab199f277d486">dst</a>[i] = (char)<a class="code hl_typedef" href="glad_8h.html#a2a98ddb6f79ec1048ff9e15cdd2422ba">src</a>[i];</div>
+<div class="line"><span class="lineno">   11</span>        dst[i] = (char)src[i];</div>
 <div class="line"><span class="lineno">   12</span>        i++;</div>
 <div class="line"><span class="lineno">   13</span>    }</div>
 <div class="line"><span class="lineno">   14</span>    <span class="keywordflow">if</span> (dstsize)</div>
-<div class="line"><span class="lineno">   15</span>        <a class="code hl_typedef" href="glad_8h.html#a85e59cd56e10d0a7f49ab199f277d486">dst</a>[i] = 0;</div>
-<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(<a class="code hl_typedef" href="glad_8h.html#a2a98ddb6f79ec1048ff9e15cdd2422ba">src</a>));</div>
+<div class="line"><span class="lineno">   15</span>        dst[i] = 0;</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(src));</div>
 <div class="line"><span class="lineno">   17</span>}</div>
-<div class="ttc" id="aglad_8h_html_a2a98ddb6f79ec1048ff9e15cdd2422ba"><div class="ttname"><a href="glad_8h.html#a2a98ddb6f79ec1048ff9e15cdd2422ba">src</a></div><div class="ttdeci">GLenum src</div><div class="ttdef"><b>Definition:</b> <a href="glad_8h_source.html#l04176">glad.h:4176</a></div></div>
-<div class="ttc" id="aglad_8h_html_a85e59cd56e10d0a7f49ab199f277d486"><div class="ttname"><a href="glad_8h.html#a85e59cd56e10d0a7f49ab199f277d486">dst</a></div><div class="ttdeci">GLenum GLenum dst</div><div class="ttdef"><b>Definition:</b> <a href="glad_8h_source.html#l04176">glad.h:4176</a></div></div>
 <div class="ttc" id="alibft_8h_html_a828402378653640f545a4be2e00e92f9"><div class="ttname"><a href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *str)</div><div class="ttdoc">Calculates the length of a string.</div><div class="ttdef"><b>Definition:</b> <a href="ft__strlen_8c_source.html#l00004">ft_strlen.c:4</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>

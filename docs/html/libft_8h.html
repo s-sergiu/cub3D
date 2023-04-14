@@ -116,19 +116,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa65c9de65051c8c589286cf133c4a1f4"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a> (char const *<a class="el" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>, char c)</td></tr>
+<tr class="memitem:aa65c9de65051c8c589286cf133c4a1f4"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a> (char const *s, char c)</td></tr>
 <tr class="memdesc:aa65c9de65051c8c589286cf133c4a1f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string into an array of strings based on a given delimiter.  <br /></td></tr>
 <tr class="separator:aa65c9de65051c8c589286cf133c4a1f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12f759eb9793cf306fede66d0b7de0fc"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libft_8h.html#a12f759eb9793cf306fede66d0b7de0fc">ft_strlcpy</a> (char *<a class="el" href="glad_8h.html#a85e59cd56e10d0a7f49ab199f277d486">dst</a>, const char *<a class="el" href="glad_8h.html#a2a98ddb6f79ec1048ff9e15cdd2422ba">src</a>, size_t dstsize)</td></tr>
+<tr class="memitem:a12f759eb9793cf306fede66d0b7de0fc"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libft_8h.html#a12f759eb9793cf306fede66d0b7de0fc">ft_strlcpy</a> (char *dst, const char *src, size_t dstsize)</td></tr>
 <tr class="memdesc:a12f759eb9793cf306fede66d0b7de0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a string to a destination buffer with a specified maximum size.  <br /></td></tr>
 <tr class="separator:a12f759eb9793cf306fede66d0b7de0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a828402378653640f545a4be2e00e92f9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a> (const char *str)</td></tr>
 <tr class="memdesc:a828402378653640f545a4be2e00e92f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the length of a string.  <br /></td></tr>
 <tr class="separator:a828402378653640f545a4be2e00e92f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d2fe792187aa4ed08e5864fb2c4d6dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libft_8h.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a> (const char *s1, const char *s2, size_t <a class="el" href="glad_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>)</td></tr>
+<tr class="memitem:a9d2fe792187aa4ed08e5864fb2c4d6dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libft_8h.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a> (const char *s1, const char *s2, size_t n)</td></tr>
 <tr class="memdesc:a9d2fe792187aa4ed08e5864fb2c4d6dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare the first n bytes of two strings.  <br /></td></tr>
 <tr class="separator:a9d2fe792187aa4ed08e5864fb2c4d6dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acefce9ac519f8f8b7d3fde33dbafe469"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a> (char *<a class="el" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>, int fd)</td></tr>
+<tr class="memitem:acefce9ac519f8f8b7d3fde33dbafe469"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a> (char *s, int fd)</td></tr>
 <tr class="separator:acefce9ac519f8f8b7d3fde33dbafe469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -139,7 +139,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> ft_putstr_fd </td>
+          <td class="memname">void ft_putstr_fd </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>s</em>, </td>
@@ -170,13 +170,12 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>{</div>
 <div class="line"><span class="lineno">    6</span>    <span class="keywordtype">int</span> i;</div>
 <div class="line"><span class="lineno">    7</span> </div>
-<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">if</span> (!<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>)</div>
+<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">if</span> (!s)</div>
 <div class="line"><span class="lineno">    9</span>        return ;</div>
 <div class="line"><span class="lineno">   10</span>    i = 0;</div>
-<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">while</span> (<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>[i])</div>
-<div class="line"><span class="lineno">   12</span>        write(fd, &amp;<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>[i++], 1);</div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">while</span> (s[i])</div>
+<div class="line"><span class="lineno">   12</span>        write(fd, &amp;s[i++], 1);</div>
 <div class="line"><span class="lineno">   13</span>}</div>
-<div class="ttc" id="aglad_8h_html_af1b1d5edfea6a34daee7389b1b5810ad"><div class="ttname"><a href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a></div><div class="ttdeci">GLdouble s</div><div class="ttdef"><b>Definition:</b> <a href="glad_8h_source.html#l03009">glad.h:3009</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -191,7 +190,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="405,208,516,233"/>
 <area shape="rect" href="read__map_8c.html#a4262bf4509b96716171e25f0f9f0644e" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="277,183,355,208"/>
 <area shape="rect" href="draw__map__utils_8c.html#a3efc0a465ac3693c6748963564a7dc0e" title="Initializes map data." alt="" coords="114,157,217,183"/>
-<area shape="rect" href="read__map_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid and ends with &quot;.cub&quot;." alt="" coords="104,56,227,81"/>
+<area shape="rect" href="error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid and ends with &quot;.cub&quot;." alt="" coords="104,56,227,81"/>
 </map>
 </div>
 
@@ -236,32 +235,31 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="ft__split_8c_source.html#l00054">54</a> of file <a class="el" href="ft__split_8c_source.html">ft_split.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   55</span>{</div>
 <div class="line"><span class="lineno">   56</span>    <span class="keywordtype">char</span>    **str;</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">int</span>     <a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>;</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">int</span>     index;</div>
 <div class="line"><span class="lineno">   58</span>    <span class="keywordtype">int</span>     lc;</div>
 <div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (!<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>)</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (!s)</div>
 <div class="line"><span class="lineno">   61</span>    {</div>
 <div class="line"><span class="lineno">   62</span>        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><span class="lineno">   63</span>    }</div>
-<div class="line"><span class="lineno">   64</span>    str = (<span class="keywordtype">char</span> **)malloc((get_words((<span class="keywordtype">char</span> *)<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>, c) + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *));</div>
+<div class="line"><span class="lineno">   64</span>    str = (<span class="keywordtype">char</span> **)malloc((get_words((<span class="keywordtype">char</span> *)s, c) + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *));</div>
 <div class="line"><span class="lineno">   65</span>    <span class="keywordflow">if</span> (!str)</div>
 <div class="line"><span class="lineno">   66</span>        <span class="keywordflow">return</span> (free_rest(str, 0));</div>
-<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">if</span> (<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>[0])</div>
-<div class="line"><span class="lineno">   68</span>        <a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a> = trim_string((<span class="keywordtype">char</span> *)<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>, c);</div>
-<div class="line"><span class="lineno">   69</span>    <a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a> = 0;</div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>))</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">if</span> (s[0])</div>
+<div class="line"><span class="lineno">   68</span>        s = trim_string((<span class="keywordtype">char</span> *)s, c);</div>
+<div class="line"><span class="lineno">   69</span>    index = 0;</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(s))</div>
 <div class="line"><span class="lineno">   71</span>    {</div>
-<div class="line"><span class="lineno">   72</span>        lc = get_letters((<span class="keywordtype">char</span> *)<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>, c);</div>
-<div class="line"><span class="lineno">   73</span>        str[<a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>] = (<span class="keywordtype">char</span> *)malloc((lc + 1) * <span class="keyword">sizeof</span>(char));</div>
-<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">if</span> (!str[<a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>])</div>
-<div class="line"><span class="lineno">   75</span>            <span class="keywordflow">return</span> (free_rest(str, <a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>));</div>
-<div class="line"><span class="lineno">   76</span>        <a class="code hl_function" href="libft_8h.html#a12f759eb9793cf306fede66d0b7de0fc">ft_strlcpy</a>(str[<a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>++], <a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>, lc + 1);</div>
-<div class="line"><span class="lineno">   77</span>        <a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a> = trim_string((<span class="keywordtype">char</span> *)<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a> + lc, c);</div>
+<div class="line"><span class="lineno">   72</span>        lc = get_letters((<span class="keywordtype">char</span> *)s, c);</div>
+<div class="line"><span class="lineno">   73</span>        str[index] = (<span class="keywordtype">char</span> *)malloc((lc + 1) * <span class="keyword">sizeof</span>(char));</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">if</span> (!str[index])</div>
+<div class="line"><span class="lineno">   75</span>            <span class="keywordflow">return</span> (free_rest(str, index));</div>
+<div class="line"><span class="lineno">   76</span>        <a class="code hl_function" href="libft_8h.html#a12f759eb9793cf306fede66d0b7de0fc">ft_strlcpy</a>(str[index++], s, lc + 1);</div>
+<div class="line"><span class="lineno">   77</span>        s = trim_string((<span class="keywordtype">char</span> *)s + lc, c);</div>
 <div class="line"><span class="lineno">   78</span>    }</div>
-<div class="line"><span class="lineno">   79</span>    str[<a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>] = NULL;</div>
+<div class="line"><span class="lineno">   79</span>    str[index] = NULL;</div>
 <div class="line"><span class="lineno">   80</span>    <span class="keywordflow">return</span> (str);</div>
 <div class="line"><span class="lineno">   81</span>}</div>
-<div class="ttc" id="aglad_8h_html_a57f14e05b1900f16a2da82ade47d0c6d"><div class="ttname"><a href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a></div><div class="ttdeci">GLuint index</div><div class="ttdef"><b>Definition:</b> <a href="glad_8h_source.html#l03345">glad.h:3345</a></div></div>
 <div class="ttc" id="alibft_8h_html_a12f759eb9793cf306fede66d0b7de0fc"><div class="ttname"><a href="libft_8h.html#a12f759eb9793cf306fede66d0b7de0fc">ft_strlcpy</a></div><div class="ttdeci">size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)</div><div class="ttdoc">Copy a string to a destination buffer with a specified maximum size.</div><div class="ttdef"><b>Definition:</b> <a href="ft__strlcpy_8c_source.html#l00004">ft_strlcpy.c:4</a></div></div>
 <div class="ttc" id="alibft_8h_html_a828402378653640f545a4be2e00e92f9"><div class="ttname"><a href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *str)</div><div class="ttdoc">Calculates the length of a string.</div><div class="ttdef"><b>Definition:</b> <a href="ft__strlen_8c_source.html#l00004">ft_strlen.c:4</a></div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -335,17 +333,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">    6</span>    <span class="keywordtype">size_t</span>  i;</div>
 <div class="line"><span class="lineno">    7</span> </div>
 <div class="line"><span class="lineno">    8</span>    i = 0;</div>
-<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">while</span> (i &lt; dstsize - 1 &amp;&amp; <a class="code hl_typedef" href="glad_8h.html#a2a98ddb6f79ec1048ff9e15cdd2422ba">src</a>[i] &amp;&amp; dstsize)</div>
+<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">while</span> (i &lt; dstsize - 1 &amp;&amp; src[i] &amp;&amp; dstsize)</div>
 <div class="line"><span class="lineno">   10</span>    {</div>
-<div class="line"><span class="lineno">   11</span>        <a class="code hl_typedef" href="glad_8h.html#a85e59cd56e10d0a7f49ab199f277d486">dst</a>[i] = (char)<a class="code hl_typedef" href="glad_8h.html#a2a98ddb6f79ec1048ff9e15cdd2422ba">src</a>[i];</div>
+<div class="line"><span class="lineno">   11</span>        dst[i] = (char)src[i];</div>
 <div class="line"><span class="lineno">   12</span>        i++;</div>
 <div class="line"><span class="lineno">   13</span>    }</div>
 <div class="line"><span class="lineno">   14</span>    <span class="keywordflow">if</span> (dstsize)</div>
-<div class="line"><span class="lineno">   15</span>        <a class="code hl_typedef" href="glad_8h.html#a85e59cd56e10d0a7f49ab199f277d486">dst</a>[i] = 0;</div>
-<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(<a class="code hl_typedef" href="glad_8h.html#a2a98ddb6f79ec1048ff9e15cdd2422ba">src</a>));</div>
+<div class="line"><span class="lineno">   15</span>        dst[i] = 0;</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(src));</div>
 <div class="line"><span class="lineno">   17</span>}</div>
-<div class="ttc" id="aglad_8h_html_a2a98ddb6f79ec1048ff9e15cdd2422ba"><div class="ttname"><a href="glad_8h.html#a2a98ddb6f79ec1048ff9e15cdd2422ba">src</a></div><div class="ttdeci">GLenum src</div><div class="ttdef"><b>Definition:</b> <a href="glad_8h_source.html#l04176">glad.h:4176</a></div></div>
-<div class="ttc" id="aglad_8h_html_a85e59cd56e10d0a7f49ab199f277d486"><div class="ttname"><a href="glad_8h.html#a85e59cd56e10d0a7f49ab199f277d486">dst</a></div><div class="ttdeci">GLenum GLenum dst</div><div class="ttdef"><b>Definition:</b> <a href="glad_8h_source.html#l04176">glad.h:4176</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -409,7 +405,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="libft_8h_a828402378653640f545a4be2e00e92f9_icgraph.png" border="0" usemap="#alibft_8h_a828402378653640f545a4be2e00e92f9_icgraph" alt=""/></div>
 <map name="alibft_8h_a828402378653640f545a4be2e00e92f9_icgraph" id="alibft_8h_a828402378653640f545a4be2e00e92f9_icgraph">
 <area shape="rect" title="Calculates the length of a string." alt="" coords="549,75,619,100"/>
-<area shape="rect" href="read__map_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid and ends with &quot;.cub&quot;." alt="" coords="255,5,377,31"/>
+<area shape="rect" href="error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid and ends with &quot;.cub&quot;." alt="" coords="255,5,377,31"/>
 <area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title="Splits a string into an array of strings based on a given delimiter." alt="" coords="285,88,347,113"/>
 <area shape="rect" href="draw__map__utils_8c.html#a3efc0a465ac3693c6748963564a7dc0e" title="Initializes map data." alt="" coords="104,88,207,113"/>
 <area shape="rect" href="ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc" title="Copy a string to a destination buffer with a specified maximum size." alt="" coords="425,100,501,125"/>
@@ -467,9 +463,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">    6</span>    <span class="keywordtype">size_t</span>  i;</div>
 <div class="line"><span class="lineno">    7</span> </div>
 <div class="line"><span class="lineno">    8</span>    i = 0;</div>
-<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">if</span> (!<a class="code hl_typedef" href="glad_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>)</div>
+<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">if</span> (!n)</div>
 <div class="line"><span class="lineno">   10</span>        <span class="keywordflow">return</span> (1);</div>
-<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">while</span> ((s1[i] || s2[i]) &amp;&amp; (i++ &lt; <a class="code hl_typedef" href="glad_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a>))</div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">while</span> ((s1[i] || s2[i]) &amp;&amp; (i++ &lt; n))</div>
 <div class="line"><span class="lineno">   12</span>    {</div>
 <div class="line"><span class="lineno">   13</span>        <span class="keywordflow">if</span> ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)s1[i - 1] &lt; (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)s2[i - 1])</div>
 <div class="line"><span class="lineno">   14</span>            <span class="keywordflow">return</span> (1);</div>
@@ -478,14 +474,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   17</span>    }</div>
 <div class="line"><span class="lineno">   18</span>    <span class="keywordflow">return</span> (0);</div>
 <div class="line"><span class="lineno">   19</span>}</div>
-<div class="ttc" id="aglad_8h_html_a0788d3762d0c3c76e4c094d8078b4c27"><div class="ttname"><a href="glad_8h.html#a0788d3762d0c3c76e4c094d8078b4c27">n</a></div><div class="ttdeci">GLdouble n</div><div class="ttdef"><b>Definition:</b> <a href="glad_8h_source.html#l04564">glad.h:4564</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="libft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc_icgraph.png" border="0" usemap="#alibft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc_icgraph" alt=""/></div>
 <map name="alibft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc_icgraph" id="alibft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc_icgraph">
 <area shape="rect" title="Compare the first n bytes of two strings." alt="" coords="275,5,359,31"/>
-<area shape="rect" href="read__map_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid and ends with &quot;.cub&quot;." alt="" coords="104,5,227,31"/>
+<area shape="rect" href="error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid and ends with &quot;.cub&quot;." alt="" coords="104,5,227,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
 </map>
 </div>

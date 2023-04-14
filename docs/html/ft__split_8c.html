@@ -96,7 +96,7 @@ Include dependency graph for ft_split.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa65c9de65051c8c589286cf133c4a1f4"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a> (char const *<a class="el" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>, char c)</td></tr>
+<tr class="memitem:aa65c9de65051c8c589286cf133c4a1f4"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a> (char const *s, char c)</td></tr>
 <tr class="memdesc:aa65c9de65051c8c589286cf133c4a1f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string into an array of strings based on a given delimiter.  <br /></td></tr>
 <tr class="separator:aa65c9de65051c8c589286cf133c4a1f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -140,33 +140,31 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="ft__split_8c_source.html#l00054">54</a> of file <a class="el" href="ft__split_8c_source.html">ft_split.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   55</span>{</div>
 <div class="line"><span class="lineno">   56</span>    <span class="keywordtype">char</span>    **str;</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">int</span>     <a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>;</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">int</span>     index;</div>
 <div class="line"><span class="lineno">   58</span>    <span class="keywordtype">int</span>     lc;</div>
 <div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (!<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>)</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (!s)</div>
 <div class="line"><span class="lineno">   61</span>    {</div>
 <div class="line"><span class="lineno">   62</span>        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><span class="lineno">   63</span>    }</div>
-<div class="line"><span class="lineno">   64</span>    str = (<span class="keywordtype">char</span> **)malloc((get_words((<span class="keywordtype">char</span> *)<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>, c) + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *));</div>
+<div class="line"><span class="lineno">   64</span>    str = (<span class="keywordtype">char</span> **)malloc((get_words((<span class="keywordtype">char</span> *)s, c) + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *));</div>
 <div class="line"><span class="lineno">   65</span>    <span class="keywordflow">if</span> (!str)</div>
 <div class="line"><span class="lineno">   66</span>        <span class="keywordflow">return</span> (free_rest(str, 0));</div>
-<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">if</span> (<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>[0])</div>
-<div class="line"><span class="lineno">   68</span>        <a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a> = trim_string((<span class="keywordtype">char</span> *)<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>, c);</div>
-<div class="line"><span class="lineno">   69</span>    <a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a> = 0;</div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>))</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">if</span> (s[0])</div>
+<div class="line"><span class="lineno">   68</span>        s = trim_string((<span class="keywordtype">char</span> *)s, c);</div>
+<div class="line"><span class="lineno">   69</span>    index = 0;</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(s))</div>
 <div class="line"><span class="lineno">   71</span>    {</div>
-<div class="line"><span class="lineno">   72</span>        lc = get_letters((<span class="keywordtype">char</span> *)<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>, c);</div>
-<div class="line"><span class="lineno">   73</span>        str[<a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>] = (<span class="keywordtype">char</span> *)malloc((lc + 1) * <span class="keyword">sizeof</span>(char));</div>
-<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">if</span> (!str[<a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>])</div>
-<div class="line"><span class="lineno">   75</span>            <span class="keywordflow">return</span> (free_rest(str, <a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>));</div>
-<div class="line"><span class="lineno">   76</span>        <a class="code hl_function" href="libft_8h.html#a12f759eb9793cf306fede66d0b7de0fc">ft_strlcpy</a>(str[<a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>++], <a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a>, lc + 1);</div>
-<div class="line"><span class="lineno">   77</span>        <a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a> = trim_string((<span class="keywordtype">char</span> *)<a class="code hl_typedef" href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a> + lc, c);</div>
+<div class="line"><span class="lineno">   72</span>        lc = get_letters((<span class="keywordtype">char</span> *)s, c);</div>
+<div class="line"><span class="lineno">   73</span>        str[index] = (<span class="keywordtype">char</span> *)malloc((lc + 1) * <span class="keyword">sizeof</span>(char));</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">if</span> (!str[index])</div>
+<div class="line"><span class="lineno">   75</span>            <span class="keywordflow">return</span> (free_rest(str, index));</div>
+<div class="line"><span class="lineno">   76</span>        <a class="code hl_function" href="libft_8h.html#a12f759eb9793cf306fede66d0b7de0fc">ft_strlcpy</a>(str[index++], s, lc + 1);</div>
+<div class="line"><span class="lineno">   77</span>        s = trim_string((<span class="keywordtype">char</span> *)s + lc, c);</div>
 <div class="line"><span class="lineno">   78</span>    }</div>
-<div class="line"><span class="lineno">   79</span>    str[<a class="code hl_typedef" href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a>] = NULL;</div>
+<div class="line"><span class="lineno">   79</span>    str[index] = NULL;</div>
 <div class="line"><span class="lineno">   80</span>    <span class="keywordflow">return</span> (str);</div>
 <div class="line"><span class="lineno">   81</span>}</div>
-<div class="ttc" id="aglad_8h_html_a57f14e05b1900f16a2da82ade47d0c6d"><div class="ttname"><a href="glad_8h.html#a57f14e05b1900f16a2da82ade47d0c6d">index</a></div><div class="ttdeci">GLuint index</div><div class="ttdef"><b>Definition:</b> <a href="glad_8h_source.html#l03345">glad.h:3345</a></div></div>
-<div class="ttc" id="aglad_8h_html_af1b1d5edfea6a34daee7389b1b5810ad"><div class="ttname"><a href="glad_8h.html#af1b1d5edfea6a34daee7389b1b5810ad">s</a></div><div class="ttdeci">GLdouble s</div><div class="ttdef"><b>Definition:</b> <a href="glad_8h_source.html#l03009">glad.h:3009</a></div></div>
 <div class="ttc" id="alibft_8h_html_a12f759eb9793cf306fede66d0b7de0fc"><div class="ttname"><a href="libft_8h.html#a12f759eb9793cf306fede66d0b7de0fc">ft_strlcpy</a></div><div class="ttdeci">size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)</div><div class="ttdoc">Copy a string to a destination buffer with a specified maximum size.</div><div class="ttdef"><b>Definition:</b> <a href="ft__strlcpy_8c_source.html#l00004">ft_strlcpy.c:4</a></div></div>
 <div class="ttc" id="alibft_8h_html_a828402378653640f545a4be2e00e92f9"><div class="ttname"><a href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *str)</div><div class="ttdoc">Calculates the length of a string.</div><div class="ttdef"><b>Definition:</b> <a href="ft__strlen_8c_source.html#l00004">ft_strlen.c:4</a></div></div>
 </div><!-- fragment --><div class="dynheader">

@@ -25,13 +25,13 @@
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{return}\ (i);}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00022}00022\ \}}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00024}\mbox{\hyperlink{cub3D_8h_a3efc0a465ac3693c6748963564a7dc0e}{00024}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{draw__map__utils_8c_a3efc0a465ac3693c6748963564a7dc0e}{init\_map\_data}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}\ **\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}},\ \textcolor{keywordtype}{char}\ *map\_file)}
+\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00024}\mbox{\hyperlink{cub3D_8h_a3efc0a465ac3693c6748963564a7dc0e}{00024}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{draw__map__utils_8c_a3efc0a465ac3693c6748963564a7dc0e}{init\_map\_data}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}\ **data,\ \textcolor{keywordtype}{char}\ *map\_file)}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00025}00025\ \{}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *map;}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00027}00027\ }
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00028}00028\ \ \ \ \ map\ =\ \mbox{\hyperlink{cub3D_8h_a4262bf4509b96716171e25f0f9f0644e}{read\_map}}(map\_file);}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00029}00029\ \ \ \ \ (*data)\ =\ malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}));}
-\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(*\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}))}
+\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(*data))}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_af11ad10198633d526882d9ebabf21042}{handle\_error}}(errno);}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00032}00032\ \ \ \ \ (*data)-\/>map\_string\ =\ map;}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string\ ==\ NULL)}
@@ -44,13 +44,13 @@
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00040}00040\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00041}00041\ \}}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00043}\mbox{\hyperlink{cub3D_8h_ac0e0d1411c5e6e51f7bb4b854217d40c}{00043}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{draw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c}{destroy\_map\_data}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}\ **\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}})}
+\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00043}\mbox{\hyperlink{cub3D_8h_ac0e0d1411c5e6e51f7bb4b854217d40c}{00043}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{draw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c}{destroy\_map\_data}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}\ **data)}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00044}00044\ \{}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00045}00045\ \ \ \ \ free((*data)-\/>map\_string);}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string)}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map)}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{draw__map__utils_8c_a73200bd9a8be60a2e2f5eb2528293a8f}{free\_split}}((*data)-\/>map);}
-\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00049}00049\ \ \ \ \ free((*\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}));}
+\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00049}00049\ \ \ \ \ free((*data));}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00050}00050\ \}}
 
 \end{DoxyCode}

@@ -8,29 +8,29 @@
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00004}\mbox{\hyperlink{cub3D_8h_a973f5273453bacdf37c27ef24bdd540d}{00004}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{read__map_8c_a973f5273453bacdf37c27ef24bdd540d}{get\_total\_bytes}}(\textcolor{keywordtype}{char}\ *filename)}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00005}00005\ \{}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ fd;}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00007}00007\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}};}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00007}00007\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *buffer;}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00008}00008\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ total\_bytes;}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ bytes;}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00010}00010\ }
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00011}00011\ \ \ \ \ fd\ =\ open(filename,\ O\_RDONLY);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (fd\ ==\ -\/1)}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_af11ad10198633d526882d9ebabf21042}{handle\_error}}(errno);}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ 100);}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}})}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00014}00014\ \ \ \ \ buffer\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ 100);}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (!buffer)}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ NULL);}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00017}00017\ \ \ \ \ bytes\ =\ read(fd,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}},\ 100);}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00017}00017\ \ \ \ \ bytes\ =\ read(fd,\ buffer,\ 100);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (bytes\ ==\ -\/1)}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ buffer);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00020}00020\ \ \ \ \ total\_bytes\ =\ bytes;}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{while}\ (bytes\ >\ 0)}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00022}00022\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00023}00023\ \ \ \ \ \ \ \ \ bytes\ =\ read(fd,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}},\ 100);}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00023}00023\ \ \ \ \ \ \ \ \ bytes\ =\ read(fd,\ buffer,\ 100);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bytes\ ==\ -\/1)}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ buffer);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ total\_bytes\ +=\ bytes;}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00027}00027\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00028}00028\ \ \ \ \ close(fd);}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00029}00029\ \ \ \ \ free(\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00029}00029\ \ \ \ \ free(buffer);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{return}\ (total\_bytes);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00031}00031\ \}}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00032}00032\ }
@@ -38,32 +38,22 @@
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00034}00034\ \{}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ fd;}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ bytes;}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}};}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *buffer;}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00038}00038\ }
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00039}00039\ \ \ \ \ bytes\ =\ \mbox{\hyperlink{read__map_8c_a973f5273453bacdf37c27ef24bdd540d}{get\_total\_bytes}}(file);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (!bytes)}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_af11ad10198633d526882d9ebabf21042}{handle\_error}}(\mbox{\hyperlink{cub3D_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}});}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ bytes\ +\ 1);}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}})}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00042}00042\ \ \ \ \ buffer\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ bytes\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (!buffer)}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00045}00045\ \ \ \ \ fd\ =\ open(file,\ O\_RDONLY);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (fd\ ==\ -\/1)}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ 0,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (read(fd,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}},\ bytes)\ ==\ -\/1)}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}[bytes]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ 0,\ buffer);}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (read(fd,\ buffer,\ bytes)\ ==\ -\/1)}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ buffer);}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00050}00050\ \ \ \ \ buffer[bytes]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00051}00051\ \ \ \ \ close(fd);}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{return}\ (buffer);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00053}00053\ \}}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00054}00054\ }
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00055}\mbox{\hyperlink{cub3D_8h_a287e1eb420c186ddb3ca11b0d5b6cab4}{00055}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{read__map_8c_a287e1eb420c186ddb3ca11b0d5b6cab4}{filename\_is\_valid}}(\textcolor{keywordtype}{char}\ *filename)}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00056}00056\ \{}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{int}\ filename\_length;}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00059}00059\ \ \ \ \ filename\_length\ =\ \mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(filename);}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{libft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\_strncmp}}(filename\ +\ (filename\_length\ -\/\ 4),\ \textcolor{stringliteral}{"{}.cub\(\backslash\)0"{}},\ 5))}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_af11ad10198633d526882d9ebabf21042}{handle\_error}}(\mbox{\hyperlink{cub3D_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\_MAP\_FILE}});}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3D_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00063}00063\ \}}
 
 \end{DoxyCode}

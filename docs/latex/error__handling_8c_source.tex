@@ -28,14 +28,24 @@
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00024}00024\ \ \ \ \ exit(error\_number);}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00025}00025\ \}}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00027}\mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{00027}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{error__handling_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(\textcolor{keywordtype}{int}\ error\_number,\ \textcolor{keywordtype}{int}\ fd,\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}})}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00027}\mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{00027}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{error__handling_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(\textcolor{keywordtype}{int}\ error\_number,\ \textcolor{keywordtype}{int}\ fd,\ \textcolor{keywordtype}{char}\ *buffer)}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00028}00028\ \{}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (fd\ >\ 0)}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00030}00030\ \ \ \ \ \ \ \ \ close(fd);}
-\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}\ !=\ NULL)}
-\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00032}00032\ \ \ \ \ \ \ \ \ free(\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (buffer\ !=\ NULL)}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00032}00032\ \ \ \ \ \ \ \ \ free(buffer);}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}{print\_error}}(error\_number);}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00034}00034\ \ \ \ \ exit(error\_number);}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00037}\mbox{\hyperlink{cub3D_8h_a287e1eb420c186ddb3ca11b0d5b6cab4}{00037}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{error__handling_8c_a287e1eb420c186ddb3ca11b0d5b6cab4}{filename\_is\_valid}}(\textcolor{keywordtype}{char}\ *filename)}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{int}\ filename\_length;}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00041}00041\ \ \ \ \ filename\_length\ =\ \mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(filename);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{libft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\_strncmp}}(filename\ +\ (filename\_length\ -\/\ 4),\ \textcolor{stringliteral}{"{}.cub\(\backslash\)0"{}},\ 5))}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{error__handling_8c_af11ad10198633d526882d9ebabf21042}{handle\_error}}(\mbox{\hyperlink{cub3D_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\_MAP\_FILE}});}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3D_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00045}00045\ \}}
 
 \end{DoxyCode}

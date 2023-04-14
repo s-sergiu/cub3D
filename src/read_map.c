@@ -51,13 +51,3 @@ char	*read_map(char *file)
 	close(fd);
 	return (buffer);
 }
-
-int	filename_is_valid(char *filename)
-{
-	int	filename_length;
-
-	filename_length = ft_strlen(filename);
-	if (ft_strncmp(filename + (filename_length - 4), ".cub\0", 5))
-		handle_error(BAD_MAP_FILE);
-	return (TRUE);
-}

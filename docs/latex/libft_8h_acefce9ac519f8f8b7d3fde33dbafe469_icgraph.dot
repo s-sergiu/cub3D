@@ -27,7 +27,7 @@ digraph "ft_putstr_fd"
   Node4 -> Node9 [dir="back",color="steelblue1",style="solid"];
   Node9 [label="handle_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#af11ad10198633d526882d9ebabf21042",tooltip="Handles the given error number, prints an error message to the standard error output,..."];
   Node9 -> Node10 [dir="back",color="steelblue1",style="solid"];
-  Node10 [label="filename_is_valid",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4",tooltip="Checks if the given filename is valid and ends with \".cub\"."];
+  Node10 [label="filename_is_valid",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4",tooltip="Checks if the given filename is valid and ends with \".cub\"."];
   Node10 -> Node3 [dir="back",color="steelblue1",style="solid"];
   Node9 -> Node6 [dir="back",color="steelblue1",style="solid"];
   Node9 -> Node8 [dir="back",color="steelblue1",style="solid"];
