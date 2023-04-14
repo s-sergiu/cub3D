@@ -1,5 +1,5 @@
 
-#include "../include/map_utils/map_utils.h"
+#include "../include/cub3D.h"
 
 void	print_error(int error_number)
 {
