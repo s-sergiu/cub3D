@@ -91,16 +91,16 @@ void	draw_map(struct s_map_data *data)
 		y += TILE;
 		j = 0;
 		x = 0;
+	}
 	//draw player
 	player = mlx_new_image(mlx, 5, 5);
-	mlx_image_to_window(mlx, player, 0, 0);
+	mlx_image_to_window(mlx, player, 20, 20);
 	for (uint32_t z = 0; z < player->width; ++z)
 	{
 		for (uint32_t b = 0; b < player->height; ++b)
 		{
 			mlx_put_pixel(player, z, b, 240);
 		}
-	}
 	}
 	mlx_loop_hook(mlx, ft_hook, mlx);
 	mlx_loop(mlx);
