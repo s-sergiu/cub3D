@@ -15,7 +15,7 @@
  *
  * @return void.
  */
-void print_error(int error_number);
+void		print_error(int error_number);
 
 /**
  * @brief Handles the given error number, prints an error message to the 
@@ -25,7 +25,7 @@ void print_error(int error_number);
  *
  * @return void.
  */
-int handle_error(int error_number);
+int			handle_error(int error_number);
 
 /**
  * @brief Frees any allocated memory and exits the program with the given 
@@ -37,7 +37,7 @@ int handle_error(int error_number);
  *
  * @return void.
  */
-void cleanup_and_exit(int error_number, int fd, char *buffer);
+void		cleanup_and_exit(int error_number, int fd, char *buffer);
 
 /**
  * @brief Returns the total number of bytes in the file with the given 
@@ -47,7 +47,7 @@ void cleanup_and_exit(int error_number, int fd, char *buffer);
  *
  * @return The total number of bytes in the file.
  */
-int get_total_bytes(char *filename);
+int			get_total_bytes(char *filename);
 
 /**
  * @brief Reads the contents of the file with the given name into a 
@@ -58,7 +58,7 @@ int get_total_bytes(char *filename);
  * @return A pointer to the dynamically allocated buffer containing the file 
  *	contents, or NULL on error.
  */
-char *read_map(char *file);
+char		*read_map(char *file);
 
 /**
  * @brief Frees memory allocated for a string array.
@@ -67,7 +67,7 @@ char *read_map(char *file);
  *
  * @param str The string array to be freed.
  */
-void			free_split(char **str);
+void		free_split(char **str);
 
 /**
  * @brief Gets the height of a map.
@@ -78,6 +78,6 @@ void			free_split(char **str);
  * @param map The 2D string array representing the map.
  * @return The height of the map.
  */
-int				get_height(char **map);
+int			get_height(char **map);
 
 #endif

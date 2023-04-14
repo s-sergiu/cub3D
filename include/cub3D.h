@@ -12,9 +12,9 @@
 # define FALSE 0
 # define TILE 64
 
-typedef struct s_map_data t_map_data;
+typedef struct s_map_data	t_map_data;
 
-struct	s_map_data 
+struct s_map_data
 {
 	char	*map_string;
 	char	**map;
@@ -22,7 +22,7 @@ struct	s_map_data
 	int		width;
 };
 
-void					draw_map(struct s_map_data *data);
+void			draw_map(struct s_map_data *data);
 
 /**
  * @brief Checks if the given filename is valid and ends with ".cub".
@@ -31,7 +31,7 @@ void					draw_map(struct s_map_data *data);
  *
  * @return TRUE (1) if the filename is valid, FALSE (0) otherwise.
  */
-int filename_is_valid(char *filename);
+int				filename_is_valid(char *filename);
 
 /**
  * @brief Initializes map data.
