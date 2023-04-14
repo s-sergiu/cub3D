@@ -27,15 +27,6 @@ struct s_map_data
 void			draw_map(struct s_map_data *data);
 
 /**
- * @brief Checks if the given filename is valid and ends with ".cub".
- *
- * @param filename The filename to check.
- *
- * @return TRUE (1) if the filename is valid, FALSE (0) otherwise.
- */
-int				filename_is_valid(char *filename);
-
-/**
  * @brief Initializes map data.
  *
  * This function initializes a map_data struct and sets its map_string, width, 
@@ -80,12 +71,12 @@ int			handle_error(int error_number);
  *	error number.
  *
  * @param error_number The error number to print.
- * @param fd The file descriptor to close.
+ * @param file The file descriptor to close.
  * @param buffer The buffer to free.
  *
  * @return void.
  */
-void		cleanup_and_exit(int error_number, int fd, char *buffer);
+void		cleanup_and_exit(int error_number, int file, char *buffer);
 
 /**
  * @brief Returns the total number of bytes in the file with the given 
@@ -106,7 +97,7 @@ int			get_total_bytes(char *filename);
  * @return A pointer to the dynamically allocated buffer containing the file 
  *	contents, or NULL on error.
  */
-char		*read_map(char *file);
+char		*read_map(char *filename);
 
 /**
  * @brief Frees memory allocated for a string array.
