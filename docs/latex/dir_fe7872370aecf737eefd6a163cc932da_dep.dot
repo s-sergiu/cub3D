@@ -11,5 +11,5 @@ digraph "/home/ssergiu/projects/cub3d/external/MLX42/include/glad"
   dir_36b4cbeb6420b8dd9057a8c4303b8bcf [label="KHR", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_36b4cbeb6420b8dd9057a8c4303b8bcf.html",tooltip=""];
   dir_fe7872370aecf737eefd6a163cc932da [label="glad", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_fe7872370aecf737eefd6a163cc932da.html",tooltip=""];
   }
-  dir_fe7872370aecf737eefd6a163cc932da->dir_36b4cbeb6420b8dd9057a8c4303b8bcf [headlabel="1", labeldistance=1.5 headhref="dir_000010_000014.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_fe7872370aecf737eefd6a163cc932da->dir_36b4cbeb6420b8dd9057a8c4303b8bcf [headlabel="1", labeldistance=1.5 headhref="dir_000003_000007.html" color="steelblue1" fontcolor="steelblue1"];
 }

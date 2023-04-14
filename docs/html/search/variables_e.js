@@ -8,6 +8,7 @@ var searchData=
   ['phys_5fx_5',['phys_x',['../structLodePNGInfo.html#a1593fa6e1acc93f3b9de51c340bef94d',1,'LodePNGInfo']]],
   ['phys_5fy_6',['phys_y',['../structLodePNGInfo.html#a52ad7a105244d00f1e91c489eaf53f97',1,'LodePNGInfo']]],
   ['pixels_7',['pixels',['../structmlx__texture.html#a3aaf04c7798cf04bf39a36eb3fc8d2de',1,'mlx_texture::pixels()'],['../structmlx__image.html#a08b12d731991bae6f4e0f3cdd290afc4',1,'mlx_image::pixels()']]],
-  ['predefined_5ffilters_8',['predefined_filters',['../structLodePNGEncoderSettings.html#a4446f87b5283f25664802a1be037e76e',1,'LodePNGEncoderSettings']]],
-  ['prev_9',['prev',['../structmlx__list.html#ac7b65503d3374c3568b05e770c9af1c5',1,'mlx_list']]]
+  ['player_8',['player',['../draw__map_8c.html#ab78dd32861bca201025751df98a1c18d',1,'draw_map.c']]],
+  ['predefined_5ffilters_9',['predefined_filters',['../structLodePNGEncoderSettings.html#a4446f87b5283f25664802a1be037e76e',1,'LodePNGEncoderSettings']]],
+  ['prev_10',['prev',['../structmlx__list.html#ac7b65503d3374c3568b05e770c9af1c5',1,'mlx_list']]]
 ];

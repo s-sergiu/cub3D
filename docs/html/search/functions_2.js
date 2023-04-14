@@ -1,7 +1,7 @@
 var searchData=
 [
   ['filename_5fis_5fvalid_0',['filename_is_valid',['../cub3D_8h.html#a287e1eb420c186ddb3ca11b0d5b6cab4',1,'filename_is_valid(char *filename):&#160;read_map.c'],['../read__map_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4',1,'filename_is_valid(char *filename):&#160;read_map.c']]],
-  ['free_5fsplit_1',['free_split',['../map__utils_8h.html#a73200bd9a8be60a2e2f5eb2528293a8f',1,'free_split(char **str):&#160;draw_map_utils.c'],['../draw__map__utils_8c.html#a73200bd9a8be60a2e2f5eb2528293a8f',1,'free_split(char **str):&#160;draw_map_utils.c']]],
+  ['free_5fsplit_1',['free_split',['../cub3D_8h.html#a73200bd9a8be60a2e2f5eb2528293a8f',1,'free_split(char **str):&#160;draw_map_utils.c'],['../draw__map__utils_8c.html#a73200bd9a8be60a2e2f5eb2528293a8f',1,'free_split(char **str):&#160;draw_map_utils.c']]],
   ['ft_5fhook_2',['ft_hook',['../draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e',1,'draw_map.c']]],
   ['ft_5fputstr_5ffd_3',['ft_putstr_fd',['../libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469',1,'ft_putstr_fd(char *s, int fd):&#160;ft_putstring_fd.c'],['../ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469',1,'ft_putstr_fd(char *s, int fd):&#160;ft_putstring_fd.c']]],
   ['ft_5fsplit_4',['ft_split',['../libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4',1,'ft_split(char const *s, char c):&#160;ft_split.c'],['../ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4',1,'ft_split(char const *s, char c):&#160;ft_split.c']]],

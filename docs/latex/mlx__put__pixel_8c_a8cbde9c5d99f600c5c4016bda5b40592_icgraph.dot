@@ -9,4 +9,13 @@ digraph "mlx_draw_pixel"
   Node1 [label="mlx_draw_pixel",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
   Node2 [label="mlx_put_pixel",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mlx__put__pixel_8c.html#a78f7c8664a6b71d4265dbcf4962ba9d4",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="draw_grid",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map_8c.html#a0784778679c1d1e56629e11ff8e33c16",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="draw_map",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map_8c.html#a1dd6a7f325ca5e8aafa0fe462209b4bb",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="draw_player",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map_8c.html#a4870a2eab5a5ceb34b6085f67f1e2998",tooltip=" "];
+  Node6 -> Node4 [dir="back",color="steelblue1",style="solid"];
 }

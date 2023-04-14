@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['empty_5fmap_0',['EMPTY_MAP',['../map__utils_8h.html#a4635f2163efe937e76598aff306d35d1',1,'map_utils.h']]],
-  ['error_5fbreak_1',['ERROR_BREAK',['../lodepng_8c.html#a691b23954341613b96b6d98ce67d339c',1,'lodepng.c']]]
+  ['false_0',['FALSE',['../cub3D_8h.html#aa93f0eb578d23995850d61f7d61c55c1',1,'cub3D.h']]],
+  ['font_5fheight_1',['FONT_HEIGHT',['../font_8h.html#a33f4fac49f2a5e27e2857eb27f054510',1,'font.h']]],
+  ['font_5fwidth_2',['FONT_WIDTH',['../font_8h.html#a7b2e9cc063e140c50b67a4f224988a45',1,'font.h']]]
 ];

@@ -1,0 +1,138 @@
+\hypertarget{error__handling_8c}{}\doxysection{/home/ssergiu/projects/cub3d/src/error\+\_\+handling.c File Reference}
+\label{error__handling_8c}\index{/home/ssergiu/projects/cub3d/src/error\_handling.c@{/home/ssergiu/projects/cub3d/src/error\_handling.c}}
+{\ttfamily \#include \char`\"{}../include/cub3\+D.\+h\char`\"{}}\newline
+Include dependency graph for error\+\_\+handling.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}{print\+\_\+error}} (int error\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Prints an error message to the standard error output. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{error__handling_8c_af11ad10198633d526882d9ebabf21042}{handle\+\_\+error}} (int error\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Handles the given error number, prints an error message to the standard error output, and exits the program. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{error__handling_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\+\_\+and\+\_\+exit}} (int error\+\_\+number, int fd, char $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}})
+\begin{DoxyCompactList}\small\item\em Frees any allocated memory and exits the program with the given error number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{error__handling_8c_aabc8b9c956e025066b300e71e80f2590}\label{error__handling_8c_aabc8b9c956e025066b300e71e80f2590}} 
+\index{error\_handling.c@{error\_handling.c}!cleanup\_and\_exit@{cleanup\_and\_exit}}
+\index{cleanup\_and\_exit@{cleanup\_and\_exit}!error\_handling.c@{error\_handling.c}}
+\doxysubsubsection{\texorpdfstring{cleanup\_and\_exit()}{cleanup\_and\_exit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} cleanup\+\_\+and\+\_\+exit (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+number,  }\item[{int}]{fd,  }\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Frees any allocated memory and exits the program with the given error number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+\_\+number} & The error number to print. \\
+\hline
+{\em fd} & The file descriptor to close. \\
+\hline
+{\em buffer} & The buffer to free.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{error__handling_8c_source_l00027}{27}} of file \mbox{\hyperlink{error__handling_8c_source}{error\+\_\+handling.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (fd\ >\ 0)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ close(fd);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}\ !=\ NULL)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ free(\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}{print\_error}}(error\_number);}
+\DoxyCodeLine{00034\ \ \ \ \ exit(error\_number);}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{error__handling_8c_af11ad10198633d526882d9ebabf21042}\label{error__handling_8c_af11ad10198633d526882d9ebabf21042}} 
+\index{error\_handling.c@{error\_handling.c}!handle\_error@{handle\_error}}
+\index{handle\_error@{handle\_error}!error\_handling.c@{error\_handling.c}}
+\doxysubsubsection{\texorpdfstring{handle\_error()}{handle\_error()}}
+{\footnotesize\ttfamily int handle\+\_\+error (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Handles the given error number, prints an error message to the standard error output, and exits the program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+\_\+number} & The error number to handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{error__handling_8c_source_l00011}{11}} of file \mbox{\hyperlink{error__handling_8c_source}{error\+\_\+handling.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (error\_number\ ==\ \mbox{\hyperlink{cub3D_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}})}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ Empty\ map\(\backslash\)n"{}},\ 17);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ exit(error\_number);}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (error\_number\ ==\ \mbox{\hyperlink{cub3D_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\_MAP\_FILE}})}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ Bad\ map\ file\(\backslash\)n"{}},\ 20);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ exit(error\_number);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}{print\_error}}(error\_number);}
+\DoxyCodeLine{00024\ \ \ \ \ exit(error\_number);}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}\label{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}} 
+\index{error\_handling.c@{error\_handling.c}!print\_error@{print\_error}}
+\index{print\_error@{print\_error}!error\_handling.c@{error\_handling.c}}
+\doxysubsubsection{\texorpdfstring{print\_error()}{print\_error()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} print\+\_\+error (\begin{DoxyParamCaption}\item[{int}]{error\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Prints an error message to the standard error output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+\_\+number} & The error number to print.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{error__handling_8c_source_l00004}{4}} of file \mbox{\hyperlink{error__handling_8c_source}{error\+\_\+handling.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ "{}},\ 7);}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}(strerror(error\_number),\ 2);}
+\DoxyCodeLine{00008\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ 1);}
+\DoxyCodeLine{00009\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6

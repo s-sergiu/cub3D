@@ -8,9 +8,9 @@ digraph "init_map_data"
   rankdir="LR";
   Node1 [label="init_map_data",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Initializes map data."];
   Node1 -> Node2 [color="steelblue1",style="solid"];
-  Node2 [label="cleanup_and_exit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#aabc8b9c956e025066b300e71e80f2590",tooltip="Frees any allocated memory and exits the program with the given error number."];
+  Node2 [label="cleanup_and_exit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#aabc8b9c956e025066b300e71e80f2590",tooltip="Frees any allocated memory and exits the program with the given error number."];
   Node2 -> Node3 [color="steelblue1",style="solid"];
-  Node3 [label="print_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#af5c60b16fc036394aa182bd09cc16e5d",tooltip="Prints an error message to the standard error output."];
+  Node3 [label="print_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#af5c60b16fc036394aa182bd09cc16e5d",tooltip="Prints an error message to the standard error output."];
   Node3 -> Node4 [color="steelblue1",style="solid"];
   Node4 [label="ft_putstr_fd",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469",tooltip=" "];
   Node1 -> Node5 [color="steelblue1",style="solid"];
@@ -24,7 +24,7 @@ digraph "init_map_data"
   Node1 -> Node8 [color="steelblue1",style="solid"];
   Node8 [label="get_height",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map__utils_8c.html#ad624da07f82233cb9bf10960641f9fec",tooltip="Gets the height of a map."];
   Node1 -> Node9 [color="steelblue1",style="solid"];
-  Node9 [label="handle_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#af11ad10198633d526882d9ebabf21042",tooltip="Handles the given error number, prints an error message to the standard error output,..."];
+  Node9 [label="handle_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#af11ad10198633d526882d9ebabf21042",tooltip="Handles the given error number, prints an error message to the standard error output,..."];
   Node9 -> Node3 [color="steelblue1",style="solid"];
   Node1 -> Node10 [color="steelblue1",style="solid"];
   Node10 [label="read_map",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#a4262bf4509b96716171e25f0f9f0644e",tooltip="Reads the contents of the file with the given name into a dynamically allocated buffer."];

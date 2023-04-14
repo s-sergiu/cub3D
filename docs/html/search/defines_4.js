@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['dec_0',['DEC',['../CMakeCCompilerId_8c.html#ad1280362da42492bbc11aa78cbf776ad',1,'DEC():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#ad1280362da42492bbc11aa78cbf776ad',1,'DEC():&#160;CMakeCXXCompilerId.cpp']]]
+  ['empty_5fmap_0',['EMPTY_MAP',['../cub3D_8h.html#a4635f2163efe937e76598aff306d35d1',1,'cub3D.h']]],
+  ['error_5fbreak_1',['ERROR_BREAK',['../lodepng_8c.html#a691b23954341613b96b6d98ce67d339c',1,'lodepng.c']]]
 ];

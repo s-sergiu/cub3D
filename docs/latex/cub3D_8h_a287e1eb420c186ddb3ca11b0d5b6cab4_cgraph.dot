@@ -12,9 +12,9 @@ digraph "filename_is_valid"
   Node1 -> Node3 [color="steelblue1",style="solid"];
   Node3 [label="ft_strncmp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc",tooltip="Compare the first n bytes of two strings."];
   Node1 -> Node4 [color="steelblue1",style="solid"];
-  Node4 [label="handle_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#af11ad10198633d526882d9ebabf21042",tooltip="Handles the given error number, prints an error message to the standard error output,..."];
+  Node4 [label="handle_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#af11ad10198633d526882d9ebabf21042",tooltip="Handles the given error number, prints an error message to the standard error output,..."];
   Node4 -> Node5 [color="steelblue1",style="solid"];
-  Node5 [label="print_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#af5c60b16fc036394aa182bd09cc16e5d",tooltip="Prints an error message to the standard error output."];
+  Node5 [label="print_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#af5c60b16fc036394aa182bd09cc16e5d",tooltip="Prints an error message to the standard error output."];
   Node5 -> Node6 [color="steelblue1",style="solid"];
   Node6 [label="ft_putstr_fd",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469",tooltip=" "];
 }

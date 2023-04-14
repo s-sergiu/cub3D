@@ -1,0 +1,41 @@
+\hypertarget{error__handling_8c_source}{}\doxysection{error\+\_\+handling.\+c}
+\label{error__handling_8c_source}\index{/home/ssergiu/projects/cub3d/src/error\_handling.c@{/home/ssergiu/projects/cub3d/src/error\_handling.c}}
+\mbox{\hyperlink{error__handling_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../include/cub3D.h"{}}}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00004}\mbox{\hyperlink{cub3D_8h_af5c60b16fc036394aa182bd09cc16e5d}{00004}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}{print\_error}}(\textcolor{keywordtype}{int}\ error\_number)}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00006}00006\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ "{}},\ 7);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}(strerror(error\_number),\ 2);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00008}00008\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00011}\mbox{\hyperlink{cub3D_8h_af11ad10198633d526882d9ebabf21042}{00011}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{error__handling_8c_af11ad10198633d526882d9ebabf21042}{handle\_error}}(\textcolor{keywordtype}{int}\ error\_number)}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (error\_number\ ==\ \mbox{\hyperlink{cub3D_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}})}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00015}00015\ \ \ \ \ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ Empty\ map\(\backslash\)n"{}},\ 17);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00016}00016\ \ \ \ \ \ \ \ \ exit(error\_number);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (error\_number\ ==\ \mbox{\hyperlink{cub3D_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\_MAP\_FILE}})}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00020}00020\ \ \ \ \ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ Bad\ map\ file\(\backslash\)n"{}},\ 20);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00021}00021\ \ \ \ \ \ \ \ \ exit(error\_number);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}{print\_error}}(error\_number);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00024}00024\ \ \ \ \ exit(error\_number);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00027}\mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{00027}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{error__handling_8c_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(\textcolor{keywordtype}{int}\ error\_number,\ \textcolor{keywordtype}{int}\ fd,\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}})}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00028}00028\ \{}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (fd\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00030}00030\ \ \ \ \ \ \ \ \ close(fd);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}\ !=\ NULL)}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00032}00032\ \ \ \ \ \ \ \ \ free(\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{error__handling_8c_af5c60b16fc036394aa182bd09cc16e5d}{print\_error}}(error\_number);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00034}00034\ \ \ \ \ exit(error\_number);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00035}00035\ \}}
+
+\end{DoxyCode}

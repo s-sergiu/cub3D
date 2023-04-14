@@ -2,7 +2,7 @@ var searchData=
 [
   ['r_0',['r',['../glad_8h.html#abe08814c2f72843fde4d8df41440d5a0',1,'glad.h']]],
   ['range_1',['range',['../glad_8h.html#a1b75efcea752e436df6ef1d72055bfa6',1,'glad.h']]],
-  ['read_5fmap_2',['read_map',['../read__map_8c.html#a4262bf4509b96716171e25f0f9f0644e',1,'read_map(char *file):&#160;read_map.c'],['../map__utils_8h.html#a4262bf4509b96716171e25f0f9f0644e',1,'read_map(char *file):&#160;read_map.c']]],
+  ['read_5fmap_2',['read_map',['../read__map_8c.html#a4262bf4509b96716171e25f0f9f0644e',1,'read_map(char *file):&#160;read_map.c'],['../cub3D_8h.html#a4262bf4509b96716171e25f0f9f0644e',1,'read_map(char *file):&#160;read_map.c']]],
   ['read_5fmap_2ec_3',['read_map.c',['../read__map_8c.html',1,'']]],
   ['read_5ftext_5fchunks_4',['read_text_chunks',['../structLodePNGDecoderSettings.html#aa1212905c3f73d9fffef2c04a220d951',1,'LodePNGDecoderSettings']]],
   ['readme_5',['README',['../md__home_ssergiu_projects_cub3d_external_MLX42_README.html',1,'']]],

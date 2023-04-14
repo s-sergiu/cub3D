@@ -27,7 +27,7 @@ var searchData=
   ['shadertype_24',['shadertype',['../glad_8h.html#a36b14850b945d03396f1da1cbc42699d',1,'glad.h']]],
   ['size_25',['size',['../structucvector.html#a27c99c34de0c5b3ca0c242d402c69499',1,'ucvector::size()'],['../glad_8h.html#adead0e00f1033fff2918e18853add2b1',1,'size():&#160;glad.h']]],
   ['sizes_26',['sizes',['../glad_8h.html#a9ded28672f8b805d6b467777d0ac7b6f',1,'glad.h']]],
-  ['sort_5fqueue_27',['sort_queue',['../mlx__init_8c.html#ab1f31200953135a9601bfb65ed495bd4',1,'sort_queue():&#160;mlx_init.c'],['../MLX42__Int_8h.html#ab1f31200953135a9601bfb65ed495bd4',1,'sort_queue():&#160;mlx_init.c']]],
+  ['sort_5fqueue_27',['sort_queue',['../MLX42__Int_8h.html#ab1f31200953135a9601bfb65ed495bd4',1,'sort_queue():&#160;mlx_init.c'],['../mlx__init_8c.html#ab1f31200953135a9601bfb65ed495bd4',1,'sort_queue():&#160;mlx_init.c']]],
   ['source_28',['source',['../glad_8h.html#a6ffd2192cbc75d017665e95207ee36a7',1,'glad.h']]],
   ['sources_29',['sources',['../glad_8h.html#a49a2265bc056056ba289f84e4241c89d',1,'glad.h']]],
   ['span_30',['span',['../glad_8h.html#a3c70e20832ac838a9b44b2003f333610',1,'glad.h']]],
@@ -57,7 +57,5 @@ var searchData=
   ['stride_54',['stride',['../glad_8h.html#ad32aa7fdf452f2411e75b93c1ce4e250',1,'glad.h']]],
   ['strides_55',['strides',['../glad_8h.html#abdc1551331dfc83183e1c34542207728',1,'glad.h']]],
   ['string_56',['string',['../glad_8h.html#ac83513893df92266f79a515488701770',1,'glad.h']]],
-  ['stringify_57',['STRINGIFY',['../CMakeCCompilerId_8c.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCXXCompilerId.cpp']]],
-  ['stringify_5fhelper_58',['STRINGIFY_HELPER',['../CMakeCCompilerId_8c.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCXXCompilerId.cpp']]],
-  ['strings_59',['strings',['../glad_8h.html#a358800951ab289d05276c793070136b7',1,'glad.h']]]
+  ['strings_57',['strings',['../glad_8h.html#a358800951ab289d05276c793070136b7',1,'glad.h']]]
 ];

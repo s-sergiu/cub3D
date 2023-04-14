@@ -134,9 +134,9 @@ var menudata={children:[
 {text:"Variables",url:"globals_vars.html",children:[
 {text:"f",url:"globals_vars.html#index_f"},
 {text:"g",url:"globals_vars_g.html#index_g"},
-{text:"i",url:"globals_vars_i.html#index_i"},
 {text:"l",url:"globals_vars_l.html#index_l"},
 {text:"m",url:"globals_vars_m.html#index_m"},
+{text:"p",url:"globals_vars_p.html#index_p"},
 {text:"s",url:"globals_vars_s.html#index_s"},
 {text:"v",url:"globals_vars_v.html#index_v"}]},
 {text:"Typedefs",url:"globals_type.html",children:[
@@ -176,14 +176,10 @@ var menudata={children:[
 {text:"a",url:"globals_defs_a.html#index_a"},
 {text:"b",url:"globals_defs_b.html#index_b"},
 {text:"c",url:"globals_defs_c.html#index_c"},
-{text:"d",url:"globals_defs_d.html#index_d"},
 {text:"e",url:"globals_defs_e.html#index_e"},
 {text:"f",url:"globals_defs_f.html#index_f"},
 {text:"g",url:"globals_defs_g.html#index_g"},
-{text:"h",url:"globals_defs_h.html#index_h"},
 {text:"k",url:"globals_defs_k.html#index_k"},
 {text:"l",url:"globals_defs_l.html#index_l"},
 {text:"m",url:"globals_defs_m.html#index_m"},
-{text:"p",url:"globals_defs_p.html#index_p"},
-{text:"s",url:"globals_defs_s.html#index_s"},
 {text:"t",url:"globals_defs_t.html#index_t"}]}]}]}]}
