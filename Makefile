@@ -47,9 +47,6 @@ $(MLX_DIR):
 	@git submodule init
 	@git submodule update
 
-bonus:
-	@echo "bonus"
-
 build/%.o: src/%.c 
 
 	@$(CC) $(FLAGS) -c $< -o $@

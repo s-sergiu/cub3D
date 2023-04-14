@@ -7,16 +7,14 @@ int	main(int argc, char **argv)
 
 	data = NULL;
 	if (argc != 2)
-		write(1, "usage: \n", 8);
+		write(1, "Usage: ./cub3D <map.cub>\n", 25);
 	else
 	{
-		write(1, "success\n", 8);
 		if (filename_is_valid(argv[1]))
 		{
-			write(1, "succes1\n", 8);
 			init_map_data(&data, argv[1]);
+			draw_map(data);
 		}
-//			draw_map(data);
 		if (data)
 			destroy_map_data(&data);
 	}

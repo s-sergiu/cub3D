@@ -35,8 +35,8 @@ void	init_map_data(struct s_map_data **data, char *map_file)
 	if ((*data)->map_string)
 	{
 		(*data)->map = ft_split((*data)->map_string, '\n');
-		(*data)->width = ft_strlen((*data)->map[0]) * 32;
-		(*data)->height = get_height((*data)->map) * 32;
+		(*data)->width = ft_strlen((*data)->map[0]) * TILE;
+		(*data)->height = get_height((*data)->map) * TILE;
 	}
 }
 

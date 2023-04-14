@@ -10,6 +10,7 @@
 # include "../external/MLX42/include/MLX42/MLX42.h"
 # define TRUE 1
 # define FALSE 0
+# define TILE 64
 
 typedef struct s_map_data t_map_data;
 
