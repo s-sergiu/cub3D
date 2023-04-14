@@ -50,33 +50,33 @@ void			destroy_map_data(struct s_map_data **data);
 /**
  * @brief Prints an error message to the standard error output.
  *
- * @param error_number The error number to print.
+ * @param error The error number to print.
  *
  * @return void.
  */
-void			print_error(int error_number);
+void			print_error(int error);
 
 /**
  * @brief Handles the given error number, prints an error message to the 
  *	standard error output, and exits the program.
  *
- * @param error_number The error number to handle.
+ * @param error The error number to handle.
  *
  * @return void.
  */
-int				handle_error(int error_number);
+int				handle_error(int error);
 
 /**
  * @brief Frees any allocated memory and exits the program with the given 
  *	error number.
  *
- * @param error_number The error number to print.
+ * @param error The error number to print.
  * @param file The file descriptor to close.
  * @param buffer The buffer to free.
  *
  * @return void.
  */
-void			cleanup_and_exit(int error_number, int file, char *buffer);
+void			cleanup_and_exit(int error, int file, char *buffer);
 
 /**
  * @brief Returns the total number of bytes in the file with the given 
