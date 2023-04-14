@@ -29,13 +29,13 @@
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00025}00025\ \{}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *map;}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00028}00028\ \ \ \ \ map\ =\ \mbox{\hyperlink{cub3D_8h_a4262bf4509b96716171e25f0f9f0644e}{read\_map}}(map\_file);}
+\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00028}00028\ \ \ \ \ map\ =\ \mbox{\hyperlink{cub3D_8h_a953ff0338bfa5e5863fc98056025e303}{read\_map}}(map\_file);}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00029}00029\ \ \ \ \ (*data)\ =\ malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}));}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(*data))}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_af11ad10198633d526882d9ebabf21042}{handle\_error}}(errno);}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00032}00032\ \ \ \ \ (*data)-\/>map\_string\ =\ map;}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string\ ==\ NULL)}
-\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ 0,\ NULL);}
+\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a7584d3cba7faed7cee5d3d2120f43e83}{cleanup\_and\_exit}}(errno,\ 0,\ NULL);}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string)}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00036}00036\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00037}00037\ \ \ \ \ \ \ \ \ (*data)-\/>map\ =\ \mbox{\hyperlink{libft_8h_aa65c9de65051c8c589286cf133c4a1f4}{ft\_split}}((*data)-\/>map\_string,\ \textcolor{charliteral}{'\(\backslash\)n'});}

@@ -8,7 +8,7 @@ digraph "get_total_bytes"
   rankdir="RL";
   Node1 [label="get_total_bytes",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Returns the total number of bytes in the file with the given filename."];
   Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node2 [label="read_map",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#a4262bf4509b96716171e25f0f9f0644e",tooltip="Reads the contents of the file with the given name into a dynamically allocated buffer."];
+  Node2 [label="read_map",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#a953ff0338bfa5e5863fc98056025e303",tooltip="Reads the contents of the file with the given name into a dynamically allocated buffer."];
   Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
   Node3 [label="init_map_data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map__utils_8c.html#a3efc0a465ac3693c6748963564a7dc0e",tooltip="Initializes map data."];
   Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];

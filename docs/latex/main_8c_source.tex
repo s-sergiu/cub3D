@@ -14,15 +14,12 @@
 \DoxyCodeLine{\Hypertarget{main_8c_source_l00010}00010\ \ \ \ \ \ \ \ \ write(1,\ \textcolor{stringliteral}{"{}Usage:\ ./cub3D\ <map.cub>\(\backslash\)n"{}},\ 25);}
 \DoxyCodeLine{\Hypertarget{main_8c_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\Hypertarget{main_8c_source_l00012}00012\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{cub3D_8h_a287e1eb420c186ddb3ca11b0d5b6cab4}{filename\_is\_valid}}(argv[1]))}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00014}00014\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a3efc0a465ac3693c6748963564a7dc0e}{init\_map\_data}}(\&data,\ argv[1]);}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a1dd6a7f325ca5e8aafa0fe462209b4bb}{draw\_map}}(data);}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00017}00017\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data)}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ac0e0d1411c5e6e51f7bb4b854217d40c}{destroy\_map\_data}}(\&data);}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00020}00020\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a3efc0a465ac3693c6748963564a7dc0e}{init\_map\_data}}(\&data,\ argv[1]);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//draw\_map(data);}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ac0e0d1411c5e6e51f7bb4b854217d40c}{destroy\_map\_data}}(\&data);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00019}00019\ \}}
 
 \end{DoxyCode}

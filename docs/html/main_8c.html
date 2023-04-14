@@ -141,18 +141,13 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   10</span>        write(1, <span class="stringliteral">&quot;Usage: ./cub3D &lt;map.cub&gt;\n&quot;</span>, 25);</div>
 <div class="line"><span class="lineno">   11</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">   12</span>    {</div>
-<div class="line"><span class="lineno">   13</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="cub3D_8h.html#a287e1eb420c186ddb3ca11b0d5b6cab4">filename_is_valid</a>(argv[1]))</div>
-<div class="line"><span class="lineno">   14</span>        {</div>
-<div class="line"><span class="lineno">   15</span>            <a class="code hl_function" href="cub3D_8h.html#a3efc0a465ac3693c6748963564a7dc0e">init_map_data</a>(&amp;data, argv[1]);</div>
-<div class="line"><span class="lineno">   16</span>            <a class="code hl_function" href="cub3D_8h.html#a1dd6a7f325ca5e8aafa0fe462209b4bb">draw_map</a>(data);</div>
-<div class="line"><span class="lineno">   17</span>        }</div>
-<div class="line"><span class="lineno">   18</span>        <span class="keywordflow">if</span> (data)</div>
-<div class="line"><span class="lineno">   19</span>            <a class="code hl_function" href="cub3D_8h.html#ac0e0d1411c5e6e51f7bb4b854217d40c">destroy_map_data</a>(&amp;data);</div>
-<div class="line"><span class="lineno">   20</span>    }</div>
-<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">return</span> (0);</div>
-<div class="line"><span class="lineno">   22</span>}</div>
-<div class="ttc" id="acub3D_8h_html_a1dd6a7f325ca5e8aafa0fe462209b4bb"><div class="ttname"><a href="cub3D_8h.html#a1dd6a7f325ca5e8aafa0fe462209b4bb">draw_map</a></div><div class="ttdeci">void draw_map(struct s_map_data *data)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00097">draw_map.c:97</a></div></div>
-<div class="ttc" id="acub3D_8h_html_a287e1eb420c186ddb3ca11b0d5b6cab4"><div class="ttname"><a href="cub3D_8h.html#a287e1eb420c186ddb3ca11b0d5b6cab4">filename_is_valid</a></div><div class="ttdeci">int filename_is_valid(char *filename)</div><div class="ttdoc">Checks if the given filename is valid and ends with &quot;.cub&quot;.</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00037">error_handling.c:37</a></div></div>
+<div class="line"><span class="lineno">   13</span>        <a class="code hl_function" href="cub3D_8h.html#a3efc0a465ac3693c6748963564a7dc0e">init_map_data</a>(&amp;data, argv[1]);</div>
+<div class="line"><span class="lineno">   14</span>        <span class="comment">//draw_map(data);</span></div>
+<div class="line"><span class="lineno">   15</span>        <span class="keywordflow">if</span> (data)</div>
+<div class="line"><span class="lineno">   16</span>            <a class="code hl_function" href="cub3D_8h.html#ac0e0d1411c5e6e51f7bb4b854217d40c">destroy_map_data</a>(&amp;data);</div>
+<div class="line"><span class="lineno">   17</span>    }</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">   19</span>}</div>
 <div class="ttc" id="acub3D_8h_html_a3efc0a465ac3693c6748963564a7dc0e"><div class="ttname"><a href="cub3D_8h.html#a3efc0a465ac3693c6748963564a7dc0e">init_map_data</a></div><div class="ttdeci">void init_map_data(struct s_map_data **data, char *map_file)</div><div class="ttdoc">Initializes map data.</div><div class="ttdef"><b>Definition:</b> <a href="draw__map__utils_8c_source.html#l00024">draw_map_utils.c:24</a></div></div>
 <div class="ttc" id="acub3D_8h_html_ac0e0d1411c5e6e51f7bb4b854217d40c"><div class="ttname"><a href="cub3D_8h.html#ac0e0d1411c5e6e51f7bb4b854217d40c">destroy_map_data</a></div><div class="ttdeci">void destroy_map_data(struct s_map_data **data)</div><div class="ttdoc">Destroys map data.</div><div class="ttdef"><b>Definition:</b> <a href="draw__map__utils_8c_source.html#l00043">draw_map_utils.c:43</a></div></div>
 <div class="ttc" id="astructs__map__data_html"><div class="ttname"><a href="structs__map__data.html">s_map_data</a></div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00019">cub3D.h:20</a></div></div>
@@ -161,27 +156,20 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#amain_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="amain_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="amain_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" title=" " alt="" coords="5,307,56,332"/>
-<area shape="rect" href="draw__map__utils_8c.html#ac0e0d1411c5e6e51f7bb4b854217d40c" title="Destroys map data." alt="" coords="104,56,233,81"/>
-<area shape="rect" href="draw__map_8c.html#a1dd6a7f325ca5e8aafa0fe462209b4bb" title=" " alt="" coords="127,180,210,205"/>
-<area shape="rect" href="error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid and ends with &quot;.cub&quot;." alt="" coords="421,559,544,584"/>
-<area shape="rect" href="draw__map__utils_8c.html#a3efc0a465ac3693c6748963564a7dc0e" title="Initializes map data." alt="" coords="117,457,220,483"/>
-<area shape="rect" href="draw__map__utils_8c.html#a73200bd9a8be60a2e2f5eb2528293a8f" title="Frees memory allocated for a string array." alt="" coords="290,5,365,31"/>
-<area shape="rect" href="draw__map_8c.html#a0784778679c1d1e56629e11ff8e33c16" title=" " alt="" coords="288,205,367,231"/>
-<area shape="rect" href="draw__map_8c.html#a4870a2eab5a5ceb34b6085f67f1e2998" title=" " alt="" coords="281,255,373,280"/>
-<area shape="rect" href="draw__map_8c.html#a130aac34cf392c1b07ed012b30469991" title=" " alt="" coords="284,55,371,80"/>
-<area shape="rect" href="draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e" title=" " alt="" coords="295,104,360,129"/>
-<area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="891,256,979,281"/>
-<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title="Calculates the length of a string." alt="" coords="619,633,688,659"/>
-<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title="Compare the first n bytes of two strings." alt="" coords="611,559,695,584"/>
-<area shape="rect" href="error__handling_8c.html#af11ad10198633d526882d9ebabf21042" title="Handles the given error number, prints an error message to the standard error output,..." alt="" coords="607,457,700,483"/>
-<area shape="rect" href="error__handling_8c.html#af5c60b16fc036394aa182bd09cc16e5d" title="Prints an error message to the standard error output." alt="" coords="763,356,843,381"/>
-<area shape="rect" href="error__handling_8c.html#aabc8b9c956e025066b300e71e80f2590" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="592,356,715,381"/>
-<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title="Splits a string into an array of strings based on a given delimiter." alt="" coords="297,608,358,633"/>
-<area shape="rect" href="draw__map__utils_8c.html#ad624da07f82233cb9bf10960641f9fec" title="Gets the height of a map." alt="" coords="286,457,369,483"/>
-<area shape="rect" href="read__map_8c.html#a4262bf4509b96716171e25f0f9f0644e" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="288,356,367,381"/>
-<area shape="rect" href="ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc" title="Copy a string to a destination buffer with a specified maximum size." alt="" coords="445,608,521,633"/>
-<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="427,407,538,432"/>
+<area shape="rect" title=" " alt="" coords="5,235,56,260"/>
+<area shape="rect" href="draw__map__utils_8c.html#ac0e0d1411c5e6e51f7bb4b854217d40c" title="Destroys map data." alt="" coords="104,108,233,133"/>
+<area shape="rect" href="draw__map__utils_8c.html#a3efc0a465ac3693c6748963564a7dc0e" title="Initializes map data." alt="" coords="117,259,220,284"/>
+<area shape="rect" href="draw__map__utils_8c.html#a73200bd9a8be60a2e2f5eb2528293a8f" title="Frees memory allocated for a string array." alt="" coords="285,5,360,31"/>
+<area shape="rect" href="error__handling_8c.html#a7584d3cba7faed7cee5d3d2120f43e83" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="571,132,693,157"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title="Splits a string into an array of strings based on a given delimiter." alt="" coords="292,409,353,435"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title="Calculates the length of a string." alt="" coords="597,360,667,385"/>
+<area shape="rect" href="draw__map__utils_8c.html#ad624da07f82233cb9bf10960641f9fec" title="Gets the height of a map." alt="" coords="281,360,364,385"/>
+<area shape="rect" href="error__handling_8c.html#af11ad10198633d526882d9ebabf21042" title="Handles the given error number, prints an error message to the standard error output,..." alt="" coords="585,208,679,233"/>
+<area shape="rect" href="read__map_8c.html#a953ff0338bfa5e5863fc98056025e303" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="283,183,362,208"/>
+<area shape="rect" href="error__handling_8c.html#af5c60b16fc036394aa182bd09cc16e5d" title="Prints an error message to the standard error output." alt="" coords="741,183,821,208"/>
+<area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="869,183,957,208"/>
+<area shape="rect" href="ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc" title="Copy a string to a destination buffer with a specified maximum size." alt="" coords="429,411,505,436"/>
+<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="412,157,523,183"/>
 </map>
 </div>
 

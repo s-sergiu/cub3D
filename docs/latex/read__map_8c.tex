@@ -8,7 +8,7 @@ Include dependency graph for read\+\_\+map.\+c\+:
 \item 
 int \mbox{\hyperlink{read__map_8c_a973f5273453bacdf37c27ef24bdd540d}{get\+\_\+total\+\_\+bytes}} (char $\ast$filename)
 \begin{DoxyCompactList}\small\item\em Returns the total number of bytes in the file with the given filename. \end{DoxyCompactList}\item 
-char $\ast$ \mbox{\hyperlink{read__map_8c_a4262bf4509b96716171e25f0f9f0644e}{read\+\_\+map}} (char $\ast$file)
+char $\ast$ \mbox{\hyperlink{read__map_8c_a953ff0338bfa5e5863fc98056025e303}{read\+\_\+map}} (char $\ast$filename)
 \begin{DoxyCompactList}\small\item\em Reads the contents of the file with the given name into a dynamically allocated buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -38,29 +38,29 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00004}{4}} of file \mbo
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00005\ \{}
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ fd;}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ file;}
 \DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *buffer;}
 \DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ total\_bytes;}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ bytes;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ bytes\_read;}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \ \ \ \ fd\ =\ open(filename,\ O\_RDONLY);}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (fd\ ==\ -\/1)}
+\DoxyCodeLine{00011\ \ \ \ \ file\ =\ open(filename,\ O\_RDONLY);}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ ==\ -\/1)}
 \DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_af11ad10198633d526882d9ebabf21042}{handle\_error}}(errno);}
 \DoxyCodeLine{00014\ \ \ \ \ buffer\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ 100);}
 \DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (!buffer)}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ NULL);}
-\DoxyCodeLine{00017\ \ \ \ \ bytes\ =\ read(fd,\ buffer,\ 100);}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (bytes\ ==\ -\/1)}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ buffer);}
-\DoxyCodeLine{00020\ \ \ \ \ total\_bytes\ =\ bytes;}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{while}\ (bytes\ >\ 0)}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a7584d3cba7faed7cee5d3d2120f43e83}{cleanup\_and\_exit}}(errno,\ file,\ NULL);}
+\DoxyCodeLine{00017\ \ \ \ \ bytes\_read\ =\ read(file,\ buffer,\ 100);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (bytes\_read\ ==\ -\/1)}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a7584d3cba7faed7cee5d3d2120f43e83}{cleanup\_and\_exit}}(errno,\ file,\ buffer);}
+\DoxyCodeLine{00020\ \ \ \ \ total\_bytes\ =\ bytes\_read;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{while}\ (bytes\_read\ >\ 0)}
 \DoxyCodeLine{00022\ \ \ \ \ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ bytes\ =\ read(fd,\ buffer,\ 100);}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bytes\ ==\ -\/1)}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ buffer);}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ total\_bytes\ +=\ bytes;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ bytes\_read\ =\ read(file,\ buffer,\ 100);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bytes\_read\ ==\ -\/1)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a7584d3cba7faed7cee5d3d2120f43e83}{cleanup\_and\_exit}}(errno,\ file,\ buffer);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ total\_bytes\ +=\ bytes\_read;}
 \DoxyCodeLine{00027\ \ \ \ \ \}}
-\DoxyCodeLine{00028\ \ \ \ \ close(fd);}
+\DoxyCodeLine{00028\ \ \ \ \ close(file);}
 \DoxyCodeLine{00029\ \ \ \ \ free(buffer);}
 \DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{return}\ (total\_bytes);}
 \DoxyCodeLine{00031\ \}}
@@ -70,11 +70,11 @@ Here is the call graph for this function\+:
 % FIG 1
 Here is the caller graph for this function\+:
 % FIG 2
-\mbox{\Hypertarget{read__map_8c_a4262bf4509b96716171e25f0f9f0644e}\label{read__map_8c_a4262bf4509b96716171e25f0f9f0644e}} 
+\mbox{\Hypertarget{read__map_8c_a953ff0338bfa5e5863fc98056025e303}\label{read__map_8c_a953ff0338bfa5e5863fc98056025e303}} 
 \index{read\_map.c@{read\_map.c}!read\_map@{read\_map}}
 \index{read\_map@{read\_map}!read\_map.c@{read\_map.c}}
 \doxysubsubsection{\texorpdfstring{read\_map()}{read\_map()}}
-{\footnotesize\ttfamily char $\ast$ read\+\_\+map (\begin{DoxyParamCaption}\item[{char $\ast$}]{file }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char $\ast$ read\+\_\+map (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
 
 
 
@@ -95,24 +95,24 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00033}{33}} of file \mb
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00034\ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ fd;}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ bytes;}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *buffer;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ file;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ bytes\_read;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *map;}
 \DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ bytes\ =\ \mbox{\hyperlink{read__map_8c_a973f5273453bacdf37c27ef24bdd540d}{get\_total\_bytes}}(file);}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (!bytes)}
+\DoxyCodeLine{00039\ \ \ \ \ bytes\_read\ =\ \mbox{\hyperlink{read__map_8c_a973f5273453bacdf37c27ef24bdd540d}{get\_total\_bytes}}(filename);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (!bytes\_read)}
 \DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_af11ad10198633d526882d9ebabf21042}{handle\_error}}(\mbox{\hyperlink{cub3D_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}});}
-\DoxyCodeLine{00042\ \ \ \ \ buffer\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ bytes\ +\ 1);}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (!buffer)}
+\DoxyCodeLine{00042\ \ \ \ \ map\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ bytes\_read\ +\ 1);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (!map)}
 \DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
-\DoxyCodeLine{00045\ \ \ \ \ fd\ =\ open(file,\ O\_RDONLY);}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (fd\ ==\ -\/1)}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ 0,\ buffer);}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (read(fd,\ buffer,\ bytes)\ ==\ -\/1)}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_aabc8b9c956e025066b300e71e80f2590}{cleanup\_and\_exit}}(errno,\ fd,\ buffer);}
-\DoxyCodeLine{00050\ \ \ \ \ buffer[bytes]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00051\ \ \ \ \ close(fd);}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{return}\ (buffer);}
+\DoxyCodeLine{00045\ \ \ \ \ file\ =\ open(filename,\ O\_RDONLY);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ ==\ -\/1)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a7584d3cba7faed7cee5d3d2120f43e83}{cleanup\_and\_exit}}(errno,\ 0,\ map);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (read(file,\ map,\ bytes\_read)\ ==\ -\/1)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a7584d3cba7faed7cee5d3d2120f43e83}{cleanup\_and\_exit}}(errno,\ file,\ map);}
+\DoxyCodeLine{00050\ \ \ \ \ map[bytes\_read]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00051\ \ \ \ \ close(file);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{return}\ (map);}
 \DoxyCodeLine{00053\ \}}
 
 \end{DoxyCode}

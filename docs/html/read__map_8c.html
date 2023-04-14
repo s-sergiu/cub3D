@@ -105,9 +105,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a973f5273453bacdf37c27ef24bdd540d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d">get_total_bytes</a> (char *filename)</td></tr>
 <tr class="memdesc:a973f5273453bacdf37c27ef24bdd540d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of bytes in the file with the given filename.  <br /></td></tr>
 <tr class="separator:a973f5273453bacdf37c27ef24bdd540d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4262bf4509b96716171e25f0f9f0644e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__map_8c.html#a4262bf4509b96716171e25f0f9f0644e">read_map</a> (char *file)</td></tr>
-<tr class="memdesc:a4262bf4509b96716171e25f0f9f0644e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the contents of the file with the given name into a dynamically allocated buffer.  <br /></td></tr>
-<tr class="separator:a4262bf4509b96716171e25f0f9f0644e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a953ff0338bfa5e5863fc98056025e303"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__map_8c.html#a953ff0338bfa5e5863fc98056025e303">read_map</a> (char *filename)</td></tr>
+<tr class="memdesc:a953ff0338bfa5e5863fc98056025e303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the contents of the file with the given name into a dynamically allocated buffer.  <br /></td></tr>
+<tr class="separator:a953ff0338bfa5e5863fc98056025e303"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a973f5273453bacdf37c27ef24bdd540d" name="a973f5273453bacdf37c27ef24bdd540d"></a>
@@ -137,33 +137,33 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="read__map_8c_source.html#l00004">4</a> of file <a class="el" href="read__map_8c_source.html">read_map.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>{</div>
-<div class="line"><span class="lineno">    6</span>    <span class="keywordtype">int</span>     fd;</div>
+<div class="line"><span class="lineno">    6</span>    <span class="keywordtype">int</span>     file;</div>
 <div class="line"><span class="lineno">    7</span>    <span class="keywordtype">char</span>    *buffer;</div>
 <div class="line"><span class="lineno">    8</span>    <span class="keywordtype">int</span>     total_bytes;</div>
-<div class="line"><span class="lineno">    9</span>    <span class="keywordtype">int</span>     bytes;</div>
+<div class="line"><span class="lineno">    9</span>    <span class="keywordtype">int</span>     bytes_read;</div>
 <div class="line"><span class="lineno">   10</span> </div>
-<div class="line"><span class="lineno">   11</span>    fd = open(filename, O_RDONLY);</div>
-<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">if</span> (fd == -1)</div>
+<div class="line"><span class="lineno">   11</span>    file = open(filename, O_RDONLY);</div>
+<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">if</span> (file == -1)</div>
 <div class="line"><span class="lineno">   13</span>        <a class="code hl_function" href="cub3D_8h.html#af11ad10198633d526882d9ebabf21042">handle_error</a>(errno);</div>
 <div class="line"><span class="lineno">   14</span>    buffer = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * 100);</div>
 <div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (!buffer)</div>
-<div class="line"><span class="lineno">   16</span>        <a class="code hl_function" href="cub3D_8h.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, fd, NULL);</div>
-<div class="line"><span class="lineno">   17</span>    bytes = read(fd, buffer, 100);</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">if</span> (bytes == -1)</div>
-<div class="line"><span class="lineno">   19</span>        <a class="code hl_function" href="cub3D_8h.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, fd, buffer);</div>
-<div class="line"><span class="lineno">   20</span>    total_bytes = bytes;</div>
-<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">while</span> (bytes &gt; 0)</div>
+<div class="line"><span class="lineno">   16</span>        <a class="code hl_function" href="cub3D_8h.html#a7584d3cba7faed7cee5d3d2120f43e83">cleanup_and_exit</a>(errno, file, NULL);</div>
+<div class="line"><span class="lineno">   17</span>    bytes_read = read(file, buffer, 100);</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">if</span> (bytes_read == -1)</div>
+<div class="line"><span class="lineno">   19</span>        <a class="code hl_function" href="cub3D_8h.html#a7584d3cba7faed7cee5d3d2120f43e83">cleanup_and_exit</a>(errno, file, buffer);</div>
+<div class="line"><span class="lineno">   20</span>    total_bytes = bytes_read;</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">while</span> (bytes_read &gt; 0)</div>
 <div class="line"><span class="lineno">   22</span>    {</div>
-<div class="line"><span class="lineno">   23</span>        bytes = read(fd, buffer, 100);</div>
-<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">if</span> (bytes == -1)</div>
-<div class="line"><span class="lineno">   25</span>            <a class="code hl_function" href="cub3D_8h.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, fd, buffer);</div>
-<div class="line"><span class="lineno">   26</span>        total_bytes += bytes;</div>
+<div class="line"><span class="lineno">   23</span>        bytes_read = read(file, buffer, 100);</div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">if</span> (bytes_read == -1)</div>
+<div class="line"><span class="lineno">   25</span>            <a class="code hl_function" href="cub3D_8h.html#a7584d3cba7faed7cee5d3d2120f43e83">cleanup_and_exit</a>(errno, file, buffer);</div>
+<div class="line"><span class="lineno">   26</span>        total_bytes += bytes_read;</div>
 <div class="line"><span class="lineno">   27</span>    }</div>
-<div class="line"><span class="lineno">   28</span>    close(fd);</div>
+<div class="line"><span class="lineno">   28</span>    close(file);</div>
 <div class="line"><span class="lineno">   29</span>    free(buffer);</div>
 <div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> (total_bytes);</div>
 <div class="line"><span class="lineno">   31</span>}</div>
-<div class="ttc" id="acub3D_8h_html_aabc8b9c956e025066b300e71e80f2590"><div class="ttname"><a href="cub3D_8h.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a></div><div class="ttdeci">void cleanup_and_exit(int error_number, int fd, char *buffer)</div><div class="ttdoc">Frees any allocated memory and exits the program with the given error number.</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00027">error_handling.c:27</a></div></div>
+<div class="ttc" id="acub3D_8h_html_a7584d3cba7faed7cee5d3d2120f43e83"><div class="ttname"><a href="cub3D_8h.html#a7584d3cba7faed7cee5d3d2120f43e83">cleanup_and_exit</a></div><div class="ttdeci">void cleanup_and_exit(int error_number, int file, char *buffer)</div><div class="ttdoc">Frees any allocated memory and exits the program with the given error number.</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00027">error_handling.c:27</a></div></div>
 <div class="ttc" id="acub3D_8h_html_af11ad10198633d526882d9ebabf21042"><div class="ttname"><a href="cub3D_8h.html#af11ad10198633d526882d9ebabf21042">handle_error</a></div><div class="ttdeci">int handle_error(int error_number)</div><div class="ttdoc">Handles the given error number, prints an error message to the standard error output,...</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00011">error_handling.c:11</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -171,7 +171,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="read__map_8c_a973f5273453bacdf37c27ef24bdd540d_cgraph.png" border="0" usemap="#aread__map_8c_a973f5273453bacdf37c27ef24bdd540d_cgraph" alt=""/></div>
 <map name="aread__map_8c_a973f5273453bacdf37c27ef24bdd540d_cgraph" id="aread__map_8c_a973f5273453bacdf37c27ef24bdd540d_cgraph">
 <area shape="rect" title="Returns the total number of bytes in the file with the given filename." alt="" coords="5,31,116,56"/>
-<area shape="rect" href="error__handling_8c.html#aabc8b9c956e025066b300e71e80f2590" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="164,5,287,31"/>
+<area shape="rect" href="error__handling_8c.html#a7584d3cba7faed7cee5d3d2120f43e83" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="164,5,287,31"/>
 <area shape="rect" href="error__handling_8c.html#af11ad10198633d526882d9ebabf21042" title="Handles the given error number, prints an error message to the standard error output,..." alt="" coords="179,55,272,80"/>
 <area shape="rect" href="error__handling_8c.html#af5c60b16fc036394aa182bd09cc16e5d" title="Prints an error message to the standard error output." alt="" coords="335,31,415,56"/>
 <area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="463,31,551,56"/>
@@ -183,7 +183,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="read__map_8c_a973f5273453bacdf37c27ef24bdd540d_icgraph.png" border="0" usemap="#aread__map_8c_a973f5273453bacdf37c27ef24bdd540d_icgraph" alt=""/></div>
 <map name="aread__map_8c_a973f5273453bacdf37c27ef24bdd540d_icgraph" id="aread__map_8c_a973f5273453bacdf37c27ef24bdd540d_icgraph">
 <area shape="rect" title="Returns the total number of bytes in the file with the given filename." alt="" coords="381,5,492,31"/>
-<area shape="rect" href="read__map_8c.html#a4262bf4509b96716171e25f0f9f0644e" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="255,5,333,31"/>
+<area shape="rect" href="read__map_8c.html#a953ff0338bfa5e5863fc98056025e303" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="255,5,333,31"/>
 <area shape="rect" href="draw__map__utils_8c.html#a3efc0a465ac3693c6748963564a7dc0e" title="Initializes map data." alt="" coords="104,5,207,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
 </map>
@@ -191,8 +191,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a4262bf4509b96716171e25f0f9f0644e" name="a4262bf4509b96716171e25f0f9f0644e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4262bf4509b96716171e25f0f9f0644e">&#9670;&#160;</a></span>read_map()</h2>
+<a id="a953ff0338bfa5e5863fc98056025e303" name="a953ff0338bfa5e5863fc98056025e303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a953ff0338bfa5e5863fc98056025e303">&#9670;&#160;</a></span>read_map()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,7 +201,7 @@ Here is the caller graph for this function:</div>
           <td class="memname">char * read_map </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>file</em></td><td>)</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -218,34 +218,34 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="read__map_8c_source.html#l00033">33</a> of file <a class="el" href="read__map_8c_source.html">read_map.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   34</span>{</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordtype">int</span>     fd;</div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordtype">int</span>     bytes;</div>
-<div class="line"><span class="lineno">   37</span>    <span class="keywordtype">char</span>    *buffer;</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordtype">int</span>     file;</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordtype">int</span>     bytes_read;</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordtype">char</span>    *map;</div>
 <div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    bytes = <a class="code hl_function" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d">get_total_bytes</a>(file);</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span> (!bytes)</div>
+<div class="line"><span class="lineno">   39</span>    bytes_read = <a class="code hl_function" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d">get_total_bytes</a>(filename);</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span> (!bytes_read)</div>
 <div class="line"><span class="lineno">   41</span>        <a class="code hl_function" href="cub3D_8h.html#af11ad10198633d526882d9ebabf21042">handle_error</a>(<a class="code hl_define" href="cub3D_8h.html#a4635f2163efe937e76598aff306d35d1">EMPTY_MAP</a>);</div>
-<div class="line"><span class="lineno">   42</span>    buffer = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * bytes + 1);</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> (!buffer)</div>
+<div class="line"><span class="lineno">   42</span>    map = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * bytes_read + 1);</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> (!map)</div>
 <div class="line"><span class="lineno">   44</span>        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><span class="lineno">   45</span>    fd = open(file, O_RDONLY);</div>
-<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (fd == -1)</div>
-<div class="line"><span class="lineno">   47</span>        <a class="code hl_function" href="cub3D_8h.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, 0, buffer);</div>
-<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">if</span> (read(fd, buffer, bytes) == -1)</div>
-<div class="line"><span class="lineno">   49</span>        <a class="code hl_function" href="cub3D_8h.html#aabc8b9c956e025066b300e71e80f2590">cleanup_and_exit</a>(errno, fd, buffer);</div>
-<div class="line"><span class="lineno">   50</span>    buffer[bytes] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">   51</span>    close(fd);</div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">return</span> (buffer);</div>
+<div class="line"><span class="lineno">   45</span>    file = open(filename, O_RDONLY);</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (file == -1)</div>
+<div class="line"><span class="lineno">   47</span>        <a class="code hl_function" href="cub3D_8h.html#a7584d3cba7faed7cee5d3d2120f43e83">cleanup_and_exit</a>(errno, 0, map);</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">if</span> (read(file, map, bytes_read) == -1)</div>
+<div class="line"><span class="lineno">   49</span>        <a class="code hl_function" href="cub3D_8h.html#a7584d3cba7faed7cee5d3d2120f43e83">cleanup_and_exit</a>(errno, file, map);</div>
+<div class="line"><span class="lineno">   50</span>    map[bytes_read] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   51</span>    close(file);</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">return</span> (map);</div>
 <div class="line"><span class="lineno">   53</span>}</div>
 <div class="ttc" id="acub3D_8h_html_a4635f2163efe937e76598aff306d35d1"><div class="ttname"><a href="cub3D_8h.html#a4635f2163efe937e76598aff306d35d1">EMPTY_MAP</a></div><div class="ttdeci">#define EMPTY_MAP</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00014">cub3D.h:14</a></div></div>
 <div class="ttc" id="aread__map_8c_html_a973f5273453bacdf37c27ef24bdd540d"><div class="ttname"><a href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d">get_total_bytes</a></div><div class="ttdeci">int get_total_bytes(char *filename)</div><div class="ttdoc">Returns the total number of bytes in the file with the given filename.</div><div class="ttdef"><b>Definition:</b> <a href="read__map_8c_source.html#l00004">read_map.c:4</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="read__map_8c_a4262bf4509b96716171e25f0f9f0644e_cgraph.png" border="0" usemap="#aread__map_8c_a4262bf4509b96716171e25f0f9f0644e_cgraph" alt=""/></div>
-<map name="aread__map_8c_a4262bf4509b96716171e25f0f9f0644e_cgraph" id="aread__map_8c_a4262bf4509b96716171e25f0f9f0644e_cgraph">
+<div class="center"><img src="read__map_8c_a953ff0338bfa5e5863fc98056025e303_cgraph.png" border="0" usemap="#aread__map_8c_a953ff0338bfa5e5863fc98056025e303_cgraph" alt=""/></div>
+<map name="aread__map_8c_a953ff0338bfa5e5863fc98056025e303_cgraph" id="aread__map_8c_a953ff0338bfa5e5863fc98056025e303_cgraph">
 <area shape="rect" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="5,29,84,55"/>
-<area shape="rect" href="error__handling_8c.html#aabc8b9c956e025066b300e71e80f2590" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="291,5,413,31"/>
+<area shape="rect" href="error__handling_8c.html#a7584d3cba7faed7cee5d3d2120f43e83" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="291,5,413,31"/>
 <area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="132,29,243,55"/>
 <area shape="rect" href="error__handling_8c.html#af11ad10198633d526882d9ebabf21042" title="Handles the given error number, prints an error message to the standard error output,..." alt="" coords="305,55,399,80"/>
 <area shape="rect" href="error__handling_8c.html#af5c60b16fc036394aa182bd09cc16e5d" title="Prints an error message to the standard error output." alt="" coords="461,31,541,56"/>
@@ -255,8 +255,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="read__map_8c_a4262bf4509b96716171e25f0f9f0644e_icgraph.png" border="0" usemap="#aread__map_8c_a4262bf4509b96716171e25f0f9f0644e_icgraph" alt=""/></div>
-<map name="aread__map_8c_a4262bf4509b96716171e25f0f9f0644e_icgraph" id="aread__map_8c_a4262bf4509b96716171e25f0f9f0644e_icgraph">
+<div class="center"><img src="read__map_8c_a953ff0338bfa5e5863fc98056025e303_icgraph.png" border="0" usemap="#aread__map_8c_a953ff0338bfa5e5863fc98056025e303_icgraph" alt=""/></div>
+<map name="aread__map_8c_a953ff0338bfa5e5863fc98056025e303_icgraph" id="aread__map_8c_a953ff0338bfa5e5863fc98056025e303_icgraph">
 <area shape="rect" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="255,5,333,31"/>
 <area shape="rect" href="draw__map__utils_8c.html#a3efc0a465ac3693c6748963564a7dc0e" title="Initializes map data." alt="" coords="104,5,207,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>

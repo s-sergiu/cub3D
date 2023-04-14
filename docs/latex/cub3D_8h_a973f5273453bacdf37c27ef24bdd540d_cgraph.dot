@@ -8,7 +8,7 @@ digraph "get_total_bytes"
   rankdir="LR";
   Node1 [label="get_total_bytes",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Returns the total number of bytes in the file with the given filename."];
   Node1 -> Node2 [color="steelblue1",style="solid"];
-  Node2 [label="cleanup_and_exit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#aabc8b9c956e025066b300e71e80f2590",tooltip="Frees any allocated memory and exits the program with the given error number."];
+  Node2 [label="cleanup_and_exit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#a7584d3cba7faed7cee5d3d2120f43e83",tooltip="Frees any allocated memory and exits the program with the given error number."];
   Node2 -> Node3 [color="steelblue1",style="solid"];
   Node3 [label="print_error",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#af5c60b16fc036394aa182bd09cc16e5d",tooltip="Prints an error message to the standard error output."];
   Node3 -> Node4 [color="steelblue1",style="solid"];
