@@ -22,13 +22,20 @@ jobs:
       run: |
         make
     - name: Valgrind memory leak check #1
-      continue-on-error: true
       run: |
         valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps/default.cub
-    - name: Valgrind memory leak check #2
+    - name: Valgrind memory leak check (empty map) #2
       continue-on-error: true
       run: |
         valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps/empty.cub || [ $? -eq 1 ]
+    - name: Valgrind memory leak check (incorrect map extension) #3
+      continue-on-error: true
+      run: |
+        valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps/empty.cubs || [ $? -eq 1 ]
+    - name: Valgrind memory leak check (map as directory) #4
+      continue-on-error: true
+      run: |
+        valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps || [ $? -eq 1 ]
 
   build-on-mac:
 
