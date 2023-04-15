@@ -11,7 +11,7 @@ void	free_array_of_memory(char **string_array)
 	free(string_array);
 }
 
-int	get_height(char **map_array)
+int	get_map_height(char **map_array)
 {
 	int	index;
 
@@ -36,7 +36,7 @@ void	initialise_map_data(struct s_map_data **data, char *map_file)
 	{
 		(*data)->map_array = ft_split((*data)->map_string, '\n');
 		(*data)->width = ft_strlen((*data)->map_array[0]) * TILE;
-		(*data)->height = get_height((*data)->map_array) * TILE;
+		(*data)->height = get_map_height((*data)->map_array) * TILE;
 	}
 }
 

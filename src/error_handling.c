@@ -34,19 +34,32 @@ void	cleanup_and_exit(int error, int file, char *buffer)
 	exit(error);
 }
 
-int	filename_extension_is_valid(char *filename)
+int	invalid_filename_extension(char *filename)
 {
 	int	filename_length;
 
 	filename_length = ft_strlen(filename);
 	if (ft_strncmp(filename + (filename_length - 4), ".cub\0", 5))
-		return(FALSE);
-	return(TRUE);
+		return(TRUE);
+	return(FALSE);
+}
+
+int	is_directory(char *filename)
+{
+	int	file;
+
+	file = open(filename, O_DIRECTORY);
+	if (file == -1)
+		return (FALSE);
+	close(file);
+	return (TRUE);
 }
 
 int	filename_is_valid(char *filename)
 {
-	if (filename_extension_is_valid(filename))
-		return (TRUE);
-	return (handle_error(BAD_MAP_FILE));
+	if (is_directory(filename))
+		return (handle_error(IS_DIRECTORY));
+	if (invalid_filename_extension(filename))
+		return (handle_error(BAD_MAP_FILE));
+	return (TRUE);
 }

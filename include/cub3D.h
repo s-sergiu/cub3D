@@ -13,6 +13,7 @@
 # define FALSE 0
 # define TILE 64
 # define EMPTY_MAP 254
+# define IS_DIRECTORY 21
 # define BAD_MAP_FILE 255
 
 typedef struct s_map_data	t_map_data;
@@ -118,7 +119,7 @@ void			free_array_of_memory(char **string_array);
  * @param map_array The 2D string array representing the map.
  * @return The height of the map.
  */
-int				get_height(char **map_array);
+int				get_map_height(char **map_array);
 
 /**
  * @brief Checks if the given filename has a valid extension.
@@ -128,7 +129,7 @@ int				get_height(char **map_array);
  * @param filename The filename to check.
  * @return Returns TRUE (1) if the extension is valid, and FALSE (0) otherwise.
  */
-int				filename_extension_is_valid(char *filename);
+int				invalid_filename_extension(char *filename);
 
  /**
  * @brief Checks if the given filename is valid.
