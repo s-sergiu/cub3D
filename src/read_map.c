@@ -4,29 +4,29 @@
 int	get_total_bytes(char *filename)
 {
 	int		file;
-	char	*buffer;
+	char	*string_buffer;
 	int		total_bytes;
 	int		bytes_read;
 
 	file = open(filename, O_RDONLY);
 	if (file == -1)
 		handle_error(errno);
-	buffer = (char *)malloc(sizeof(char) * 100);
-	if (!buffer)
+	string_buffer = (char *)malloc(sizeof(char) * 100);
+	if (!string_buffer)
 		cleanup_and_exit(errno, file, NULL);
-	bytes_read = read(file, buffer, 100);
+	bytes_read = read(file, string_buffer, 100);
 	if (bytes_read == -1)
-		cleanup_and_exit(errno, file, buffer);
+		cleanup_and_exit(errno, file, string_buffer);
 	total_bytes = bytes_read;
 	while (bytes_read > 0)
 	{
-		bytes_read = read(file, buffer, 100);
+		bytes_read = read(file, string_buffer, 100);
 		if (bytes_read == -1)
-			cleanup_and_exit(errno, file, buffer);
+			cleanup_and_exit(errno, file, string_buffer);
 		total_bytes += bytes_read;
 	}
 	close(file);
-	free(buffer);
+	free(string_buffer);
 	return (total_bytes);
 }
 
@@ -34,20 +34,20 @@ char	*read_map(char *filename)
 {
 	int		file;
 	int		bytes_read;
-	char	*map;
+	char	*map_string;
 
 	bytes_read = get_total_bytes(filename);
 	if (!bytes_read)
 		handle_error(EMPTY_MAP);
-	map = (char *)malloc(sizeof(char) * bytes_read + 1);
-	if (!map)
+	map_string = (char *)malloc(sizeof(char) * bytes_read + 1);
+	if (!map_string)
 		return (NULL);
 	file = open(filename, O_RDONLY);
 	if (file == -1)
-		cleanup_and_exit(errno, 0, map);
-	if (read(file, map, bytes_read) == -1)
-		cleanup_and_exit(errno, file, map);
-	map[bytes_read] = '\0';
+		cleanup_and_exit(errno, 0, map_string);
+	if (read(file, map_string, bytes_read) == -1)
+		cleanup_and_exit(errno, file, map_string);
+	map_string[bytes_read] = '\0';
 	close(file);
-	return (map);
+	return (map_string);
 }

@@ -35,17 +35,17 @@ void	draw_walls(mlx_t *mlx, struct s_map_data *data)
 	j = 0;
 	x = 0;
 	y = 0;
-	while (data->map[i])
+	while (data->map_array[i])
 	{
-		while (data->map[i][j])
+		while (data->map_array[i][j])
 		{
-			if (data->map[i][j] == '1')
+			if (data->map_array[i][j] == '1')
 			{
 				img = mlx_new_image(mlx, TILE, TILE);
 				mlx_image_to_window(mlx, img, x, y);
 				memset(img->pixels, 120, TILE * TILE * 4);
 			}
-			printf("%c", data->map[i][j]);
+			printf("%c", data->map_array[i][j]);
 			j++;
 			x += TILE;
 		}

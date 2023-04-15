@@ -20,7 +20,7 @@ typedef struct s_map_data	t_map_data;
 struct s_map_data
 {
 	char	*map_string;
-	char	**map;
+	char	**map_array;
 	int		height;
 	int		width;
 };
@@ -36,7 +36,7 @@ void			draw_map(struct s_map_data *data);
  * @param data A pointer to the map_data struct to be initialized.
  * @param map_file The file path of the map file to be read.
  */
-void			init_map_data(struct s_map_data **data, char *map_file);
+void			initialise_map_data(struct s_map_data **data, char *map_file);
 
 /**
  * @brief Destroys map data.
@@ -105,9 +105,9 @@ char			*read_map(char *filename);
  *
  * This function frees the memory that was allocated for a string array.
  *
- * @param str The string array to be freed.
+ * @param string_array The string array to be freed.
  */
-void			free_split(char **str);
+void			free_array_of_memory(char **string_array);
 
 /**
  * @brief Gets the height of a map.
@@ -115,10 +115,10 @@ void			free_split(char **str);
  * This function takes a 2D string array representing a map and returns its 
  *	height.
  *
- * @param map The 2D string array representing the map.
+ * @param map_array The 2D string array representing the map.
  * @return The height of the map.
  */
-int				get_height(char **map);
+int				get_height(char **map_array);
 
 /**
  * @brief Checks if the given filename has a valid extension.

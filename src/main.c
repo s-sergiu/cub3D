@@ -11,7 +11,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		if (filename_is_valid(argv[1]))
-			init_map_data(&data, argv[1]);
+			initialise_map_data(&data, argv[1]);
 		//draw_map(data);
 		if (data)
 			destroy_map_data(&data);
