@@ -3,6 +3,7 @@
 # define CUB3D_H
 
 # include <stdio.h>
+# include <assert.h>
 # include <errno.h>
 # include <fcntl.h>
 # include <string.h>
@@ -118,5 +119,28 @@ void			free_split(char **str);
  * @return The height of the map.
  */
 int				get_height(char **map);
+
+/**
+ * @brief Checks if the given filename has a valid extension.
+ *
+ * This function checks if the extension of the given filename is ".cub".
+ *
+ * @param filename The filename to check.
+ * @return Returns TRUE (1) if the extension is valid, and FALSE (0) otherwise.
+ */
+int				filename_extension_is_valid(char *filename);
+
+ /**
+ * @brief Checks if the given filename is valid.
+ *
+ * This function checks if the extension of the given filename is valid.
+ * If the extension is not valid, it calls the handle_error() function with 
+ *	the error code BAD_MAP_FILE.
+ *
+ * @param filename The filename to check.
+ * @return Returns TRUE (1) if the filename is valid, and the handle_error() 
+ *	function does not return an error code. Otherwise, it returns FALSE (0).
+ */
+int				filename_is_valid(char *filename);
 
 #endif
