@@ -113,7 +113,8 @@ void	draw_map(struct s_map_data *data)
 		mlx_close_window(mlx);
 		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
 	}
-	memset(image->pixels, 255, data->width * data->height * 4);
+	if (image != NULL)
+		memset(image->pixels, 255, data->width * data->height * 4);
 	//draw grid
 	draw_grid(data, image);
 	//draw walls

@@ -10,7 +10,8 @@ int	main(int argc, char **argv)
 		write(1, "Usage: ./cub3D <map.cub>\n", 25);
 	else
 	{
-		init_map_data(&data, argv[1]);
+		if (filename_is_valid(argv[1]))
+			init_map_data(&data, argv[1]);
 		//draw_map(data);
 		if (data)
 			destroy_map_data(&data);
