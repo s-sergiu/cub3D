@@ -31,8 +31,8 @@ void			draw_map(struct s_map_data *data);
 /**
  * @brief Initializes map data.
  *
- * This function initializes a map_data struct and sets its map_string, width, 
- *	and height values.
+ * This function initializes a map_data struct and sets its map_string
+ *	map_array, width, and height values.
  *
  * @param data A pointer to the map_data struct to be initialized.
  * @param map_file The file path of the map file to be read.
@@ -50,23 +50,14 @@ void			initialise_map_data(struct s_map_data **data, char *map_file);
 void			destroy_map_data(struct s_map_data **data);
 
 /**
- * @brief Prints an error message to the standard error output.
+ * @brief Prints an error message to the standard error output and exits 
+ *	with the function parameter passed error code.
  *
  * @param error The error number to print.
  *
  * @return void.
  */
 void			print_error(int error);
-
-/**
- * @brief Handles the given error number, prints an error message to the 
- *	standard error output, and exits the program.
- *
- * @param error The error number to handle.
- *
- * @return void.
- */
-void			handle_error(int error);
 
 /**
  * @brief Frees any allocated memory and exits the program with the given 

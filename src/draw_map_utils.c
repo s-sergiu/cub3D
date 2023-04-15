@@ -28,7 +28,7 @@ void	initialise_map_data(struct s_map_data **data, char *map_file)
 	map_string = read_map(map_file);
 	(*data) = malloc(sizeof(struct s_map_data));
 	if (data == NULL)
-		handle_error(errno);
+		print_error(errno);
 	(*data)->map_string = map_string;
 	if ((*data)->map_string == NULL)
 		cleanup_and_exit(errno, 0, NULL);

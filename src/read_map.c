@@ -10,7 +10,7 @@ int	get_total_bytes(char *filename)
 
 	file = open(filename, O_RDONLY);
 	if (file == -1)
-		handle_error(errno);
+		print_error(errno);
 	string_buffer = (char *)malloc(sizeof(char) * 100);
 	if (!string_buffer)
 		cleanup_and_exit(errno, file, NULL);
@@ -38,7 +38,7 @@ char	*read_map(char *filename)
 
 	bytes_read = get_total_bytes(filename);
 	if (!bytes_read)
-		handle_error(EMPTY_MAP);
+		print_error(EMPTY_MAP);
 	map_string = (char *)malloc(sizeof(char) * bytes_read + 1);
 	if (!map_string)
 		return (NULL);

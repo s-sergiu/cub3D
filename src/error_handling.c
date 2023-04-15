@@ -19,11 +19,6 @@ void	print_error(int error)
 	exit(error);
 }
 
-void	handle_error(int error)
-{
-	print_error(error);
-}
-
 void	cleanup_and_exit(int error, int file, char *buffer)
 {
 	if (file > 0)
@@ -57,8 +52,8 @@ int	is_directory(char *filename)
 int	is_valid_filename(char *filename)
 {
 	if (is_directory(filename))
-		handle_error(IS_DIRECTORY);
+		print_error(IS_DIRECTORY);
 	if (has_invalid_map_extension(filename))
-		handle_error(BAD_MAP_FILE);
+		print_error(BAD_MAP_FILE);
 	return (TRUE);
 }
