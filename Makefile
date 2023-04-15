@@ -4,6 +4,7 @@ FLAGS = -g -Wall -Werror -Wextra
 
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/%.o)
+DEPS = include
 
 OBJ_DIR = build
 
@@ -28,7 +29,7 @@ endif
 
 all:$(NAME)
 
-$(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(LIBFT)
+$(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(LIBFT) $(DEPS)
 	$(CC) $(FLAGS) $(OBJ) -lft -L $(LIBFT_OBJ_DIR) \
 	$(MLX42) -Iinclude \
 	$(MLX_FLAGS) -o $@
