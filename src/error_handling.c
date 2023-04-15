@@ -3,13 +3,6 @@
 
 void	print_error(int error)
 {
-	write(2, "Error: ", 7);
-	ft_putstr_fd(strerror(error), 2);
-	write(2, "\n", 1);
-}
-
-int	handle_error(int error)
-{
 	if (error == EMPTY_MAP)
 	{
 		write(2, "Error: Empty map\n", 17);
@@ -20,8 +13,15 @@ int	handle_error(int error)
 		write(2, "Error: Bad map file\n", 20);
 		exit(error);
 	}
-	print_error(error);
+	write(2, "Error: ", 7);
+	ft_putstr_fd(strerror(error), 2);
+	write(2, "\n", 1);
 	exit(error);
+}
+
+void	handle_error(int error)
+{
+	print_error(error);
 }
 
 void	cleanup_and_exit(int error, int file, char *buffer)
@@ -31,10 +31,9 @@ void	cleanup_and_exit(int error, int file, char *buffer)
 	if (buffer != NULL)
 		free(buffer);
 	print_error(error);
-	exit(error);
 }
 
-int	invalid_filename_extension(char *filename)
+int	has_invalid_map_extension(char *filename)
 {
 	int	filename_length;
 
@@ -55,11 +54,11 @@ int	is_directory(char *filename)
 	return (TRUE);
 }
 
-int	filename_is_valid(char *filename)
+int	is_valid_filename(char *filename)
 {
 	if (is_directory(filename))
-		return (handle_error(IS_DIRECTORY));
-	if (invalid_filename_extension(filename))
-		return (handle_error(BAD_MAP_FILE));
+		handle_error(IS_DIRECTORY);
+	if (has_invalid_map_extension(filename))
+		handle_error(BAD_MAP_FILE);
 	return (TRUE);
 }

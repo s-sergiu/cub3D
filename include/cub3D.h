@@ -66,7 +66,7 @@ void			print_error(int error);
  *
  * @return void.
  */
-int				handle_error(int error);
+void			handle_error(int error);
 
 /**
  * @brief Frees any allocated memory and exits the program with the given 
@@ -129,7 +129,7 @@ int				get_map_height(char **map_array);
  * @param filename The filename to check.
  * @return Returns TRUE (1) if the extension is valid, and FALSE (0) otherwise.
  */
-int				invalid_filename_extension(char *filename);
+int				has_invalid_map_extension(char *filename);
 
  /**
  * @brief Checks if the given filename is valid.
@@ -142,6 +142,6 @@ int				invalid_filename_extension(char *filename);
  * @return Returns TRUE (1) if the filename is valid, and the handle_error() 
  *	function does not return an error code. Otherwise, it returns FALSE (0).
  */
-int				filename_is_valid(char *filename);
+int				is_valid_filename(char *filename);
 
 #endif
