@@ -21,30 +21,32 @@ int	get_map_height(char **map_array)
 	return (index);
 }
 
-void	initialise_map_data(struct s_map_data **data, char *map_file)
+void	initialize_game_data(struct s_game_data **game_data)
+{
+	(void)game_data;
+}
+
+void	initialize_map_data(struct s_map_data **map_data, char *map_file)
 {
 	char	*map_string;
 
 	map_string = read_map(map_file);
-	(*data) = malloc(sizeof(struct s_map_data));
-	if (data == NULL)
-		print_error(errno);
-	(*data)->map_string = map_string;
-	if ((*data)->map_string == NULL)
+	*map_data = (struct s_map_data *)malloc(sizeof(struct s_map_data));
+	if (map_data == NULL)
+		cleanup_and_exit(errno, 0, map_string);
+	(*map_data)->map_string = map_string;
+	if ((*map_data)->map_string == NULL)
 		cleanup_and_exit(errno, 0, NULL);
-	if ((*data)->map_string)
-	{
-		(*data)->map_array = ft_split((*data)->map_string, '\n');
-		(*data)->width = ft_strlen((*data)->map_array[0]) * TILE;
-		(*data)->height = get_map_height((*data)->map_array) * TILE;
-	}
+	(*map_data)->map_array = ft_split((*map_data)->map_string, '\n');
+	(*map_data)->width = ft_strlen((*map_data)->map_array[0]) * TILE;
+	(*map_data)->height = get_map_height((*map_data)->map_array) * TILE;
 }
 
-void	destroy_map_data(struct s_map_data **data)
+void	destroy_map_data(struct s_map_data **map_data)
 {
-	free((*data)->map_string);
-	if ((*data)->map_string)
-		if ((*data)->map_array)
-			free_array_of_memory((*data)->map_array);
-	free((*data));
+	free((*map_data)->map_string);
+	if ((*map_data)->map_string)
+		if ((*map_data)->map_array)
+			free_array_of_memory((*map_data)->map_array);
+	free((*map_data));
 }

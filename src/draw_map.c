@@ -23,7 +23,7 @@ void ft_hook(void* param)
 		player->instances[0].x += 5;
 }
 
-void	draw_walls(mlx_t *mlx, struct s_map_data *data)
+void	draw_walls(mlx_t *mlx, struct s_map_data *map_data)
 {
 	mlx_image_t*	img;
 	int			x;
@@ -35,17 +35,17 @@ void	draw_walls(mlx_t *mlx, struct s_map_data *data)
 	j = 0;
 	x = 0;
 	y = 0;
-	while (data->map_array[i])
+	while (map_data->map_array[i])
 	{
-		while (data->map_array[i][j])
+		while (map_data->map_array[i][j])
 		{
-			if (data->map_array[i][j] == '1')
+			if (map_data->map_array[i][j] == '1')
 			{
 				img = mlx_new_image(mlx, TILE, TILE);
 				mlx_image_to_window(mlx, img, x, y);
 				memset(img->pixels, 120, TILE * TILE * 4);
 			}
-			printf("%c", data->map_array[i][j]);
+			printf("%c", map_data->map_array[i][j]);
 			j++;
 			x += TILE;
 		}
@@ -70,40 +70,40 @@ void	draw_player(mlx_t *mlx)
 	}
 }
 
-void	draw_grid(struct s_map_data *data, mlx_image_t *image)
+void	draw_grid(struct s_map_data *map_data, mlx_image_t *image)
 {
 	int	x;
 	int	y;
 
 	x = 0;
 	y = TILE;
-	while (y < data->height)
+	while (y < map_data->height)
 	{
-		while (x < data->width)
+		while (x < map_data->width)
 			mlx_put_pixel(image, x++, y, 231);
 		y += TILE;
 		x = 0;
 	}
 	y = 0;
-	while (x < data->width)
+	while (x < map_data->width)
 	{
-		while (y < data->height)
+		while (y < map_data->height)
 			mlx_put_pixel(image, x, y++, 255);
 		x += TILE;
 		y = 0;
 	}
 }
 
-void	draw_map(struct s_map_data *data)
+void	draw_map(struct s_map_data *map_data)
 {
-	mlx_t*			mlx;
-	mlx_image_t*	image;
+	mlx_t*				mlx;
+	mlx_image_t*		image;
 
-	if (!(mlx = mlx_init(data->width, data->height, "MLX42", true)))
+	if (!(mlx = mlx_init(map_data->width, map_data->height, "MLX42", true)))
 	{
 		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
 	}
-	if (!(image = mlx_new_image(mlx, data->width, data->height)))
+	if (!(image = mlx_new_image(mlx, map_data->width, map_data->height)))
 	{
 		mlx_close_window(mlx);
 		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
@@ -114,11 +114,11 @@ void	draw_map(struct s_map_data *data)
 		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
 	}
 	if (image != NULL)
-		memset(image->pixels, 255, data->width * data->height * 4);
+		memset(image->pixels, 255, map_data->width * map_data->height * 4);
 	//draw grid
-	draw_grid(data, image);
+	draw_grid(map_data, image);
 	//draw walls
-	draw_walls(mlx, data);
+	draw_walls(mlx, map_data);
 	//draw player
 	draw_player(mlx);
 	mlx_loop_hook(mlx, ft_hook, mlx);

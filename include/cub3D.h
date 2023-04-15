@@ -16,7 +16,11 @@
 # define IS_DIRECTORY 21
 # define BAD_MAP_FILE 255
 
-typedef struct s_map_data	t_map_data;
+struct s_game_data
+{
+	mlx_t		*mlx_handle;
+	mlx_image_t	*mlx_background_image;
+};
 
 struct s_map_data
 {
@@ -26,7 +30,7 @@ struct s_map_data
 	int		width;
 };
 
-void			draw_map(struct s_map_data *data);
+void		draw_map(struct s_map_data *map_data);
 
 /**
  * @brief Initializes map data.
@@ -34,10 +38,10 @@ void			draw_map(struct s_map_data *data);
  * This function initializes a map_data struct and sets its map_string
  *	map_array, width, and height values.
  *
- * @param data A pointer to the map_data struct to be initialized.
+ * @param map_data A pointer to the map_data struct to be initialized.
  * @param map_file The file path of the map file to be read.
  */
-void			initialise_map_data(struct s_map_data **data, char *map_file);
+void		initialize_map_data(struct s_map_data **map_data, char *map_file);
 
 /**
  * @brief Destroys map data.
@@ -45,9 +49,9 @@ void			initialise_map_data(struct s_map_data **data, char *map_file);
  * This function frees memory allocated for a map_data struct and its 
  *	components.
  *
- * @param data A pointer to the map_data struct to be destroyed.
+ * @param map_data A pointer to the map_data struct to be destroyed.
  */
-void			destroy_map_data(struct s_map_data **data);
+void		destroy_map_data(struct s_map_data **map_data);
 
 /**
  * @brief Prints an error message to the standard error output and exits 
@@ -57,7 +61,7 @@ void			destroy_map_data(struct s_map_data **data);
  *
  * @return void.
  */
-void			print_error(int error);
+void		print_error(int error);
 
 /**
  * @brief Frees any allocated memory and exits the program with the given 
@@ -69,7 +73,7 @@ void			print_error(int error);
  *
  * @return void.
  */
-void			cleanup_and_exit(int error, int file, char *buffer);
+void		cleanup_and_exit(int error, int file, char *buffer);
 
 /**
  * @brief Returns the total number of bytes in the file with the given 
@@ -79,7 +83,7 @@ void			cleanup_and_exit(int error, int file, char *buffer);
  *
  * @return The total number of bytes in the file.
  */
-int				get_total_bytes(char *filename);
+int			get_total_bytes(char *filename);
 
 /**
  * @brief Reads the contents of the file with the given name into a 
@@ -90,7 +94,7 @@ int				get_total_bytes(char *filename);
  * @return A pointer to the dynamically allocated buffer containing the file 
  *	contents, or NULL on error.
  */
-char			*read_map(char *filename);
+char		*read_map(char *filename);
 
 /**
  * @brief Frees memory allocated for a string array.
@@ -99,7 +103,7 @@ char			*read_map(char *filename);
  *
  * @param string_array The string array to be freed.
  */
-void			free_array_of_memory(char **string_array);
+void		free_array_of_memory(char **string_array);
 
 /**
  * @brief Gets the height of a map.
@@ -110,7 +114,7 @@ void			free_array_of_memory(char **string_array);
  * @param map_array The 2D string array representing the map.
  * @return The height of the map.
  */
-int				get_map_height(char **map_array);
+int			get_map_height(char **map_array);
 
 /**
  * @brief Checks if the given filename has a valid extension.
@@ -120,9 +124,9 @@ int				get_map_height(char **map_array);
  * @param filename The filename to check.
  * @return Returns TRUE (1) if the extension is valid, and FALSE (0) otherwise.
  */
-int				has_invalid_map_extension(char *filename);
+int			has_invalid_map_extension(char *filename);
 
- /**
+/**
  * @brief Checks if the given filename is valid.
  *
  * This function checks if the extension of the given filename is valid.
@@ -133,6 +137,7 @@ int				has_invalid_map_extension(char *filename);
  * @return Returns TRUE (1) if the filename is valid, and the handle_error() 
  *	function does not return an error code. Otherwise, it returns FALSE (0).
  */
-int				is_valid_filename(char *filename);
+int			is_valid_filename(char *filename);
+void		protected_malloc(void **parameter, size_t size_of_parameter);
 
 #endif

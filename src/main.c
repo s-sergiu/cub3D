@@ -3,18 +3,20 @@
 
 int	main(int argc, char **argv)
 {
-	struct s_map_data	*data;
+	struct s_map_data	*map_data;
 
-	data = NULL;
+	map_data = NULL;
 	if (argc != 2)
 		write(1, "Usage: ./cub3D <map.cub>\n", 25);
 	else
 	{
 		if (is_valid_filename(argv[1]))
-			initialise_map_data(&data, argv[1]);
-		//draw_map(data);
-		if (data)
-			destroy_map_data(&data);
+		{
+			initialize_map_data(&map_data, argv[1]);
+			draw_map(map_data);
+		}
+		if (map_data)
+			destroy_map_data(&map_data);
 	}
 	return (0);
 }
