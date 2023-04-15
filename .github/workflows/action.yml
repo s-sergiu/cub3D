@@ -39,7 +39,7 @@ jobs:
     - name: Valgrind memory leak check (read permission) #4
       continue-on-error: true
       run: |
-		chmod -r data/maps/default.cub
+        chmod -r data/maps/default.cub
         valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps/default.cub || [ $? -eq 1 ]
 
   build-on-mac:
