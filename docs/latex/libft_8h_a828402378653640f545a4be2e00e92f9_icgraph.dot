@@ -10,11 +10,16 @@ digraph "ft_strlen"
   Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
   Node2 [label="ft_split",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4",tooltip="Splits a string into an array of strings based on a given delimiter."];
   Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
-  Node3 [label="init_map_data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map__utils_8c.html#a3efc0a465ac3693c6748963564a7dc0e",tooltip="Initializes map data."];
+  Node3 [label="initialise_map_data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map__utils_8c.html#a5fa910f318c64f5de1f230726dfe8540",tooltip="Initializes map data."];
   Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
   Node4 [label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
   Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node5 [label="ft_strlcpy",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc",tooltip="Copy a string to a destination buffer with a specified maximum size."];
   Node5 -> Node2 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="invalid_filename_extension",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#a1f0692484a3f086b1ea42551ac0c2415",tooltip="Checks if the given filename has a valid extension."];
+  Node6 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="filename_is_valid",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4",tooltip="Checks if the given filename is valid."];
+  Node7 -> Node4 [dir="back",color="steelblue1",style="solid"];
 }

@@ -8,5 +8,5 @@ digraph "destroy_map_data"
   rankdir="LR";
   Node1 [label="destroy_map_data",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Destroys map data."];
   Node1 -> Node2 [color="steelblue1",style="solid"];
-  Node2 [label="free_split",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map__utils_8c.html#a73200bd9a8be60a2e2f5eb2528293a8f",tooltip="Frees memory allocated for a string array."];
+  Node2 [label="free_array_of_memory",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map__utils_8c.html#a8034e3c8d12267f763e14f44c8da3d43",tooltip="Frees memory allocated for a string array."];
 }

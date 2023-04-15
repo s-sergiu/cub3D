@@ -1,0 +1,23 @@
+digraph "handle_error"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="handle_error",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Handles the given error number, prints an error message to the standard error output,..."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="filename_is_valid",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4",tooltip="Checks if the given filename is valid."];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="get_total_bytes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d",tooltip="Returns the total number of bytes in the file with the given filename."];
+  Node4 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="read_map",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#a953ff0338bfa5e5863fc98056025e303",tooltip="Reads the contents of the file with the given name into a dynamically allocated buffer."];
+  Node5 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="initialise_map_data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map__utils_8c.html#a5fa910f318c64f5de1f230726dfe8540",tooltip="Initializes map data."];
+  Node6 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+}

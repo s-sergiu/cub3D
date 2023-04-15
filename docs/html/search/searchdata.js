@@ -6,7 +6,7 @@ var indexSectionsWithContent =
   3: "cdfghimpr",
   4: "hmpw",
   5: "t",
-  6: "beft",
+  6: "befit",
   7: "c"
 };
 

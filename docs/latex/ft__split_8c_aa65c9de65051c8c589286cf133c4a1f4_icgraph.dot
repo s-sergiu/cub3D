@@ -8,7 +8,7 @@ digraph "ft_split"
   rankdir="RL";
   Node1 [label="ft_split",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Splits a string into an array of strings based on a given delimiter."];
   Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node2 [label="init_map_data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map__utils_8c.html#a3efc0a465ac3693c6748963564a7dc0e",tooltip="Initializes map data."];
+  Node2 [label="initialise_map_data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map__utils_8c.html#a5fa910f318c64f5de1f230726dfe8540",tooltip="Initializes map data."];
   Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
   Node3 [label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
 }

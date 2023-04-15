@@ -92,17 +92,18 @@ Definition at line \mbox{\hyperlink{draw__map_8c_source_l00097}{97}} of file \mb
 \DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
 \DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}((\textcolor{keywordtype}{char}\ *)mlx\_strerror(mlx\_errno),\ 2);}
 \DoxyCodeLine{00115\ \ \ \ \ \}}
-\DoxyCodeLine{00116\ \ \ \ \ memset(image-\/>pixels,\ 255,\ data-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}}\ *\ data-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}}\ *\ 4);}
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//draw\ grid}}
-\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a0784778679c1d1e56629e11ff8e33c16}{draw\_grid}}(data,\ image);}
-\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//draw\ walls}}
-\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a130aac34cf392c1b07ed012b30469991}{draw\_walls}}(mlx,\ data);}
-\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//draw\ player}}
-\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a4870a2eab5a5ceb34b6085f67f1e2998}{draw\_player}}(mlx);}
-\DoxyCodeLine{00123\ \ \ \ \ mlx\_loop\_hook(mlx,\ \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\_hook}},\ mlx);}
-\DoxyCodeLine{00124\ \ \ \ \ mlx\_loop(mlx);}
-\DoxyCodeLine{00125\ \ \ \ \ mlx\_terminate(mlx);}
-\DoxyCodeLine{00126\ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{if}\ (image\ !=\ NULL)}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ memset(image-\/>pixels,\ 255,\ data-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}}\ *\ data-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}}\ *\ 4);}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//draw\ grid}}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a0784778679c1d1e56629e11ff8e33c16}{draw\_grid}}(data,\ image);}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//draw\ walls}}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a130aac34cf392c1b07ed012b30469991}{draw\_walls}}(mlx,\ data);}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//draw\ player}}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a4870a2eab5a5ceb34b6085f67f1e2998}{draw\_player}}(mlx);}
+\DoxyCodeLine{00124\ \ \ \ \ mlx\_loop\_hook(mlx,\ \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\_hook}},\ mlx);}
+\DoxyCodeLine{00125\ \ \ \ \ mlx\_loop(mlx);}
+\DoxyCodeLine{00126\ \ \ \ \ mlx\_terminate(mlx);}
+\DoxyCodeLine{00127\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -157,17 +158,17 @@ Definition at line \mbox{\hyperlink{draw__map_8c_source_l00026}{26}} of file \mb
 \DoxyCodeLine{00035\ \ \ \ \ j\ =\ 0;}
 \DoxyCodeLine{00036\ \ \ \ \ x\ =\ 0;}
 \DoxyCodeLine{00037\ \ \ \ \ y\ =\ 0;}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{while}\ (data-\/>\mbox{\hyperlink{structs__map__data_ac75adee8f204e673a58ac734fe26f099}{map}}[i])}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{while}\ (data-\/>\mbox{\hyperlink{structs__map__data_a051ac3dde821d42a7049464e58d67419}{map\_array}}[i])}
 \DoxyCodeLine{00039\ \ \ \ \ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (data-\/>\mbox{\hyperlink{structs__map__data_ac75adee8f204e673a58ac734fe26f099}{map}}[i][j])}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (data-\/>\mbox{\hyperlink{structs__map__data_a051ac3dde821d42a7049464e58d67419}{map\_array}}[i][j])}
 \DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data-\/>\mbox{\hyperlink{structs__map__data_ac75adee8f204e673a58ac734fe26f099}{map}}[i][j]\ ==\ \textcolor{charliteral}{'1'})}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data-\/>\mbox{\hyperlink{structs__map__data_a051ac3dde821d42a7049464e58d67419}{map\_array}}[i][j]\ ==\ \textcolor{charliteral}{'1'})}
 \DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ img\ =\ mlx\_new\_image(mlx,\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}},\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}});}
 \DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mlx\_image\_to\_window(mlx,\ img,\ x,\ y);}
 \DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memset(img-\/>pixels,\ 120,\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}}\ *\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}}\ *\ 4);}
 \DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%c"{}},\ data-\/>\mbox{\hyperlink{structs__map__data_ac75adee8f204e673a58ac734fe26f099}{map}}[i][j]);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%c"{}},\ data-\/>\mbox{\hyperlink{structs__map__data_a051ac3dde821d42a7049464e58d67419}{map\_array}}[i][j]);}
 \DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ j++;}
 \DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
 \DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
