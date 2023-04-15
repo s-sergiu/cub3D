@@ -13,9 +13,10 @@ INC = include/cub3D.h
 
 MLX42 = external/MLX42/build/libmlx42.a
 LIBFT = build/libft/libft.a
+LIBFT_OBJ_DIR = build/libft
 
 MLX_DIR = external/MLX42/include
-LIBFT_DIR = src/libft
+LIBFT_DIR = libs/libft
 
 UNAME = $(shell uname -s)
 ifeq ($(UNAME),Linux)
@@ -31,14 +32,14 @@ endif
 all:$(NAME)
 
 $(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(MAPOBJ) $(INC) $(LIBFT)
-	$(CC) $(MAPOBJ) $(FLAGS) $(OBJ) build/libft.a \
+	$(CC) $(MAPOBJ) $(FLAGS) $(OBJ) -lft -L $(LIBFT_OBJ_DIR) \
 	$(MLX42) -Iinclude \
 	$(MLX_FLAGS) -o $@
 
 $(LIBFT): 
 	@make -C $(LIBFT_DIR)
-	@mv src/libft/libft.a $(OBJ_DIR)
-	@rm -rf src/libft/build
+	@mv $(LIBFT_DIR)/libft.a $(LIBFT)
+	@rm -rf $(LIBFT_DIR)/build
 
 $(MLX42): $(MLX_DIR)
 	@cd external/MLX42; cmake -B build; cmake --build build -j4
@@ -57,10 +58,11 @@ build/map_utils/%.o: src/map_utils/%.c
 
 $(OBJ_DIR):
 	@mkdir $(OBJ_DIR) 
-	@mkdir -p build/map_utils
+	@mkdir -p $(OBJ_DIR)/map_utils
+	@mkdir -p $(OBJ_DIR)/libft
 
 clean: 
-	@$(RM) $(OBJ) $(MAPOBJ) build/libft.a
+	@$(RM) $(OBJ) $(MAPOBJ) $(LIBFT)
 	@echo "Removing $(OBJ) $(MAPOBJ)"
 	@cmake --build external/MLX42/build --target clean
 	@echo "Removing MLX42 build objects..."
