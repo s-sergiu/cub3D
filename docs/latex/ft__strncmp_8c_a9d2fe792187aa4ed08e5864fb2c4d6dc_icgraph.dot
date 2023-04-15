@@ -8,9 +8,9 @@ digraph "ft_strncmp"
   rankdir="RL";
   Node1 [label="ft_strncmp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Compare the first n bytes of two strings."];
   Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node2 [label="invalid_filename_extension",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#a1f0692484a3f086b1ea42551ac0c2415",tooltip="Checks if the given filename has a valid extension."];
+  Node2 [label="has_invalid_map_extension",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#ae82ab44de3b7db5df0474efb78347c37",tooltip="Checks if the given filename has a valid extension."];
   Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
-  Node3 [label="filename_is_valid",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4",tooltip="Checks if the given filename is valid."];
+  Node3 [label="is_valid_filename",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#a28722e35659ad0e59ef9d1f1c09e23f1",tooltip="Checks if the given filename is valid."];
   Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
   Node4 [label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
 }

@@ -9,4 +9,6 @@ digraph "draw_player"
   Node1 [label="draw_player",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
   Node2 [label="draw_map",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map_8c.html#a1dd6a7f325ca5e8aafa0fe462209b4bb",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
 }

@@ -14,7 +14,7 @@
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00010}00010\ }
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00011}00011\ \ \ \ \ file\ =\ open(filename,\ O\_RDONLY);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ ==\ -\/1)}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad181c6ede99dd5972122241b43954466}{handle\_error}}(errno);}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a968801b6df4daa98b46851157bfbacab}{print\_error}}(errno);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00014}00014\ \ \ \ \ string\_buffer\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ 100);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (!string\_buffer)}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ file,\ NULL);}
@@ -42,7 +42,7 @@
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00038}00038\ }
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00039}00039\ \ \ \ \ bytes\_read\ =\ \mbox{\hyperlink{read__map_8c_a973f5273453bacdf37c27ef24bdd540d}{get\_total\_bytes}}(filename);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (!bytes\_read)}
-\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad181c6ede99dd5972122241b43954466}{handle\_error}}(\mbox{\hyperlink{cub3D_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}});}
+\DoxyCodeLine{\Hypertarget{read__map_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a968801b6df4daa98b46851157bfbacab}{print\_error}}(\mbox{\hyperlink{cub3D_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}});}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00042}00042\ \ \ \ \ map\_string\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ bytes\_read\ +\ 1);}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (!map\_string)}
 \DoxyCodeLine{\Hypertarget{read__map_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}

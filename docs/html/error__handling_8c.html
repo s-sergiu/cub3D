@@ -104,22 +104,19 @@ Include dependency graph for error_handling.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a968801b6df4daa98b46851157bfbacab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab">print_error</a> (int error)</td></tr>
-<tr class="memdesc:a968801b6df4daa98b46851157bfbacab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints an error message to the standard error output.  <br /></td></tr>
+<tr class="memdesc:a968801b6df4daa98b46851157bfbacab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints an error message to the standard error output and exits with the function parameter passed error code.  <br /></td></tr>
 <tr class="separator:a968801b6df4daa98b46851157bfbacab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad181c6ede99dd5972122241b43954466"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error__handling_8c.html#ad181c6ede99dd5972122241b43954466">handle_error</a> (int error)</td></tr>
-<tr class="memdesc:ad181c6ede99dd5972122241b43954466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the given error number, prints an error message to the standard error output, and exits the program.  <br /></td></tr>
-<tr class="separator:ad181c6ede99dd5972122241b43954466"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad12f49185b9cfb483605a617c9484f25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a> (int error, int file, char *buffer)</td></tr>
 <tr class="memdesc:ad12f49185b9cfb483605a617c9484f25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees any allocated memory and exits the program with the given error number.  <br /></td></tr>
 <tr class="separator:ad12f49185b9cfb483605a617c9484f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f0692484a3f086b1ea42551ac0c2415"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error__handling_8c.html#a1f0692484a3f086b1ea42551ac0c2415">invalid_filename_extension</a> (char *filename)</td></tr>
-<tr class="memdesc:a1f0692484a3f086b1ea42551ac0c2415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given filename has a valid extension.  <br /></td></tr>
-<tr class="separator:a1f0692484a3f086b1ea42551ac0c2415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae82ab44de3b7db5df0474efb78347c37"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error__handling_8c.html#ae82ab44de3b7db5df0474efb78347c37">has_invalid_map_extension</a> (char *filename)</td></tr>
+<tr class="memdesc:ae82ab44de3b7db5df0474efb78347c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given filename has a valid extension.  <br /></td></tr>
+<tr class="separator:ae82ab44de3b7db5df0474efb78347c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a708cb4d96afdb85180287f9fe26a9076"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error__handling_8c.html#a708cb4d96afdb85180287f9fe26a9076">is_directory</a> (char *filename)</td></tr>
 <tr class="separator:a708cb4d96afdb85180287f9fe26a9076"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a287e1eb420c186ddb3ca11b0d5b6cab4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4">filename_is_valid</a> (char *filename)</td></tr>
-<tr class="memdesc:a287e1eb420c186ddb3ca11b0d5b6cab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given filename is valid.  <br /></td></tr>
-<tr class="separator:a287e1eb420c186ddb3ca11b0d5b6cab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28722e35659ad0e59ef9d1f1c09e23f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error__handling_8c.html#a28722e35659ad0e59ef9d1f1c09e23f1">is_valid_filename</a> (char *filename)</td></tr>
+<tr class="memdesc:a28722e35659ad0e59ef9d1f1c09e23f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given filename is valid.  <br /></td></tr>
+<tr class="separator:a28722e35659ad0e59ef9d1f1c09e23f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ad12f49185b9cfb483605a617c9484f25" name="ad12f49185b9cfb483605a617c9484f25"></a>
@@ -165,23 +162,22 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error__handling_8c_source.html#l00027">27</a> of file <a class="el" href="error__handling_8c_source.html">error_handling.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>{</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (file &gt; 0)</div>
-<div class="line"><span class="lineno">   30</span>        close(file);</div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (buffer != NULL)</div>
-<div class="line"><span class="lineno">   32</span>        free(buffer);</div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab">print_error</a>(error);</div>
-<div class="line"><span class="lineno">   34</span>    exit(error);</div>
-<div class="line"><span class="lineno">   35</span>}</div>
-<div class="ttc" id="aerror__handling_8c_html_a968801b6df4daa98b46851157bfbacab"><div class="ttname"><a href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab">print_error</a></div><div class="ttdeci">void print_error(int error)</div><div class="ttdoc">Prints an error message to the standard error output.</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00004">error_handling.c:4</a></div></div>
+<p class="definition">Definition at line <a class="el" href="error__handling_8c_source.html#l00022">22</a> of file <a class="el" href="error__handling_8c_source.html">error_handling.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> (file &gt; 0)</div>
+<div class="line"><span class="lineno">   25</span>        close(file);</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (buffer != NULL)</div>
+<div class="line"><span class="lineno">   27</span>        free(buffer);</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_function" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab">print_error</a>(error);</div>
+<div class="line"><span class="lineno">   29</span>}</div>
+<div class="ttc" id="aerror__handling_8c_html_a968801b6df4daa98b46851157bfbacab"><div class="ttname"><a href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab">print_error</a></div><div class="ttdeci">void print_error(int error)</div><div class="ttdoc">Prints an error message to the standard error output and exits with the function parameter passed err...</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00004">error_handling.c:4</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="error__handling_8c_ad12f49185b9cfb483605a617c9484f25_cgraph.png" border="0" usemap="#aerror__handling_8c_ad12f49185b9cfb483605a617c9484f25_cgraph" alt=""/></div>
 <map name="aerror__handling_8c_ad12f49185b9cfb483605a617c9484f25_cgraph" id="aerror__handling_8c_ad12f49185b9cfb483605a617c9484f25_cgraph">
 <area shape="rect" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="5,5,128,31"/>
-<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output." alt="" coords="176,5,256,31"/>
+<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="176,5,256,31"/>
 <area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="304,5,392,31"/>
 </map>
 </div>
@@ -200,148 +196,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a287e1eb420c186ddb3ca11b0d5b6cab4" name="a287e1eb420c186ddb3ca11b0d5b6cab4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a287e1eb420c186ddb3ca11b0d5b6cab4">&#9670;&#160;</a></span>filename_is_valid()</h2>
+<a id="ae82ab44de3b7db5df0474efb78347c37" name="ae82ab44de3b7db5df0474efb78347c37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae82ab44de3b7db5df0474efb78347c37">&#9670;&#160;</a></span>has_invalid_map_extension()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int filename_is_valid </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>filename</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Checks if the given filename is valid. </p>
-<p>This function checks if the extension of the given filename is valid. If the extension is not valid, it calls the <a class="el" href="cub3D_8h.html#ad181c6ede99dd5972122241b43954466" title="Handles the given error number, prints an error message to the standard error output,...">handle_error()</a> function with the error code BAD_MAP_FILE.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">filename</td><td>The filename to check. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns TRUE (1) if the filename is valid, and the <a class="el" href="cub3D_8h.html#ad181c6ede99dd5972122241b43954466" title="Handles the given error number, prints an error message to the standard error output,...">handle_error()</a> function does not return an error code. Otherwise, it returns FALSE (0). </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="error__handling_8c_source.html#l00058">58</a> of file <a class="el" href="error__handling_8c_source.html">error_handling.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="error__handling_8c.html#a708cb4d96afdb85180287f9fe26a9076">is_directory</a>(filename))</div>
-<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="error__handling_8c.html#ad181c6ede99dd5972122241b43954466">handle_error</a>(<a class="code hl_define" href="cub3D_8h.html#ae9c7e3e493aaf9541c7dc341111be1f9">IS_DIRECTORY</a>));</div>
-<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="error__handling_8c.html#a1f0692484a3f086b1ea42551ac0c2415">invalid_filename_extension</a>(filename))</div>
-<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="error__handling_8c.html#ad181c6ede99dd5972122241b43954466">handle_error</a>(<a class="code hl_define" href="cub3D_8h.html#a8e0ad1ba0b05ba2af8e7fcd8f02c12ed">BAD_MAP_FILE</a>));</div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="cub3D_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
-<div class="line"><span class="lineno">   65</span>}</div>
-<div class="ttc" id="acub3D_8h_html_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed"><div class="ttname"><a href="cub3D_8h.html#a8e0ad1ba0b05ba2af8e7fcd8f02c12ed">BAD_MAP_FILE</a></div><div class="ttdeci">#define BAD_MAP_FILE</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00017">cub3D.h:17</a></div></div>
-<div class="ttc" id="acub3D_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="cub3D_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00012">cub3D.h:12</a></div></div>
-<div class="ttc" id="acub3D_8h_html_ae9c7e3e493aaf9541c7dc341111be1f9"><div class="ttname"><a href="cub3D_8h.html#ae9c7e3e493aaf9541c7dc341111be1f9">IS_DIRECTORY</a></div><div class="ttdeci">#define IS_DIRECTORY</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00016">cub3D.h:16</a></div></div>
-<div class="ttc" id="aerror__handling_8c_html_a1f0692484a3f086b1ea42551ac0c2415"><div class="ttname"><a href="error__handling_8c.html#a1f0692484a3f086b1ea42551ac0c2415">invalid_filename_extension</a></div><div class="ttdeci">int invalid_filename_extension(char *filename)</div><div class="ttdoc">Checks if the given filename has a valid extension.</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00037">error_handling.c:37</a></div></div>
-<div class="ttc" id="aerror__handling_8c_html_a708cb4d96afdb85180287f9fe26a9076"><div class="ttname"><a href="error__handling_8c.html#a708cb4d96afdb85180287f9fe26a9076">is_directory</a></div><div class="ttdeci">int is_directory(char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00047">error_handling.c:47</a></div></div>
-<div class="ttc" id="aerror__handling_8c_html_ad181c6ede99dd5972122241b43954466"><div class="ttname"><a href="error__handling_8c.html#ad181c6ede99dd5972122241b43954466">handle_error</a></div><div class="ttdeci">int handle_error(int error)</div><div class="ttdoc">Handles the given error number, prints an error message to the standard error output,...</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00011">error_handling.c:11</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="error__handling_8c_a287e1eb420c186ddb3ca11b0d5b6cab4_cgraph.png" border="0" usemap="#aerror__handling_8c_a287e1eb420c186ddb3ca11b0d5b6cab4_cgraph" alt=""/></div>
-<map name="aerror__handling_8c_a287e1eb420c186ddb3ca11b0d5b6cab4_cgraph" id="aerror__handling_8c_a287e1eb420c186ddb3ca11b0d5b6cab4_cgraph">
-<area shape="rect" title="Checks if the given filename is valid." alt="" coords="5,55,128,80"/>
-<area shape="rect" href="error__handling_8c.html#ad181c6ede99dd5972122241b43954466" title="Handles the given error number, prints an error message to the standard error output,..." alt="" coords="219,5,312,31"/>
-<area shape="rect" href="error__handling_8c.html#a1f0692484a3f086b1ea42551ac0c2415" title="Checks if the given filename has a valid extension." alt="" coords="176,55,355,80"/>
-<area shape="rect" href="error__handling_8c.html#a708cb4d96afdb85180287f9fe26a9076" title=" " alt="" coords="221,104,310,129"/>
-<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output." alt="" coords="405,5,485,31"/>
-<area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="535,5,623,31"/>
-<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title="Calculates the length of a string." alt="" coords="410,55,479,80"/>
-<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title="Compare the first n bytes of two strings." alt="" coords="403,104,487,129"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="error__handling_8c_a287e1eb420c186ddb3ca11b0d5b6cab4_icgraph.png" border="0" usemap="#aerror__handling_8c_a287e1eb420c186ddb3ca11b0d5b6cab4_icgraph" alt=""/></div>
-<map name="aerror__handling_8c_a287e1eb420c186ddb3ca11b0d5b6cab4_icgraph" id="aerror__handling_8c_a287e1eb420c186ddb3ca11b0d5b6cab4_icgraph">
-<area shape="rect" title="Checks if the given filename is valid." alt="" coords="104,5,227,31"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ad181c6ede99dd5972122241b43954466" name="ad181c6ede99dd5972122241b43954466"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad181c6ede99dd5972122241b43954466">&#9670;&#160;</a></span>handle_error()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int handle_error </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>error</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Handles the given error number, prints an error message to the standard error output, and exits the program. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">error</td><td>The error number to handle.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="error__handling_8c_source.html#l00011">11</a> of file <a class="el" href="error__handling_8c_source.html">error_handling.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>{</div>
-<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">if</span> (error == <a class="code hl_define" href="cub3D_8h.html#a4635f2163efe937e76598aff306d35d1">EMPTY_MAP</a>)</div>
-<div class="line"><span class="lineno">   14</span>    {</div>
-<div class="line"><span class="lineno">   15</span>        write(2, <span class="stringliteral">&quot;Error: Empty map\n&quot;</span>, 17);</div>
-<div class="line"><span class="lineno">   16</span>        exit(error);</div>
-<div class="line"><span class="lineno">   17</span>    }</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">if</span> (error == <a class="code hl_define" href="cub3D_8h.html#a8e0ad1ba0b05ba2af8e7fcd8f02c12ed">BAD_MAP_FILE</a>)</div>
-<div class="line"><span class="lineno">   19</span>    {</div>
-<div class="line"><span class="lineno">   20</span>        write(2, <span class="stringliteral">&quot;Error: Bad map file\n&quot;</span>, 20);</div>
-<div class="line"><span class="lineno">   21</span>        exit(error);</div>
-<div class="line"><span class="lineno">   22</span>    }</div>
-<div class="line"><span class="lineno">   23</span>    <a class="code hl_function" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab">print_error</a>(error);</div>
-<div class="line"><span class="lineno">   24</span>    exit(error);</div>
-<div class="line"><span class="lineno">   25</span>}</div>
-<div class="ttc" id="acub3D_8h_html_a4635f2163efe937e76598aff306d35d1"><div class="ttname"><a href="cub3D_8h.html#a4635f2163efe937e76598aff306d35d1">EMPTY_MAP</a></div><div class="ttdeci">#define EMPTY_MAP</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00015">cub3D.h:15</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="error__handling_8c_ad181c6ede99dd5972122241b43954466_cgraph.png" border="0" usemap="#aerror__handling_8c_ad181c6ede99dd5972122241b43954466_cgraph" alt=""/></div>
-<map name="aerror__handling_8c_ad181c6ede99dd5972122241b43954466_cgraph" id="aerror__handling_8c_ad181c6ede99dd5972122241b43954466_cgraph">
-<area shape="rect" title="Handles the given error number, prints an error message to the standard error output,..." alt="" coords="5,5,99,31"/>
-<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output." alt="" coords="147,5,227,31"/>
-<area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="275,5,363,31"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="error__handling_8c_ad181c6ede99dd5972122241b43954466_icgraph.png" border="0" usemap="#aerror__handling_8c_ad181c6ede99dd5972122241b43954466_icgraph" alt=""/></div>
-<map name="aerror__handling_8c_ad181c6ede99dd5972122241b43954466_icgraph" id="aerror__handling_8c_ad181c6ede99dd5972122241b43954466_icgraph">
-<area shape="rect" title="Handles the given error number, prints an error message to the standard error output,..." alt="" coords="615,75,708,100"/>
-<area shape="rect" href="error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid." alt="" coords="285,5,408,31"/>
-<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="456,49,567,75"/>
-<area shape="rect" href="read__map_8c.html#a953ff0338bfa5e5863fc98056025e303" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="307,93,386,119"/>
-<area shape="rect" href="draw__map__utils_8c.html#a5fa910f318c64f5de1f230726dfe8540" title="Initializes map data." alt="" coords="104,93,237,119"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,68,56,93"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a1f0692484a3f086b1ea42551ac0c2415" name="a1f0692484a3f086b1ea42551ac0c2415"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f0692484a3f086b1ea42551ac0c2415">&#9670;&#160;</a></span>invalid_filename_extension()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int invalid_filename_extension </td>
+          <td class="memname">int has_invalid_map_extension </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -360,35 +222,36 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns TRUE (1) if the extension is valid, and FALSE (0) otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error__handling_8c_source.html#l00037">37</a> of file <a class="el" href="error__handling_8c_source.html">error_handling.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>{</div>
-<div class="line"><span class="lineno">   39</span>    <span class="keywordtype">int</span> filename_length;</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>    filename_length = <a class="code hl_function" href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(filename);</div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="libft_8h.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a>(filename + (filename_length - 4), <span class="stringliteral">&quot;.cub\0&quot;</span>, 5))</div>
-<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">return</span>(<a class="code hl_define" href="cub3D_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span>(<a class="code hl_define" href="cub3D_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>);</div>
-<div class="line"><span class="lineno">   45</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error__handling_8c_source.html#l00031">31</a> of file <a class="el" href="error__handling_8c_source.html">error_handling.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordtype">int</span> filename_length;</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    filename_length = <a class="code hl_function" href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>(filename);</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="libft_8h.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a>(filename + (filename_length - 4), <span class="stringliteral">&quot;.cub\0&quot;</span>, 5))</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">return</span>(<a class="code hl_define" href="cub3D_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span>(<a class="code hl_define" href="cub3D_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>);</div>
+<div class="line"><span class="lineno">   39</span>}</div>
+<div class="ttc" id="acub3D_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="cub3D_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00012">cub3D.h:12</a></div></div>
 <div class="ttc" id="acub3D_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="cub3D_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00013">cub3D.h:13</a></div></div>
 <div class="ttc" id="alibft_8h_html_a828402378653640f545a4be2e00e92f9"><div class="ttname"><a href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *str)</div><div class="ttdoc">Calculates the length of a string.</div><div class="ttdef"><b>Definition:</b> <a href="ft__strlen_8c_source.html#l00004">ft_strlen.c:4</a></div></div>
 <div class="ttc" id="alibft_8h_html_a9d2fe792187aa4ed08e5864fb2c4d6dc"><div class="ttname"><a href="libft_8h.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a></div><div class="ttdeci">int ft_strncmp(const char *s1, const char *s2, size_t n)</div><div class="ttdoc">Compare the first n bytes of two strings.</div><div class="ttdef"><b>Definition:</b> <a href="ft__strncmp_8c_source.html#l00004">ft_strncmp.c:4</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="error__handling_8c_a1f0692484a3f086b1ea42551ac0c2415_cgraph.png" border="0" usemap="#aerror__handling_8c_a1f0692484a3f086b1ea42551ac0c2415_cgraph" alt=""/></div>
-<map name="aerror__handling_8c_a1f0692484a3f086b1ea42551ac0c2415_cgraph" id="aerror__handling_8c_a1f0692484a3f086b1ea42551ac0c2415_cgraph">
-<area shape="rect" title="Checks if the given filename has a valid extension." alt="" coords="5,31,184,56"/>
-<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title="Calculates the length of a string." alt="" coords="239,5,309,31"/>
-<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title="Compare the first n bytes of two strings." alt="" coords="232,55,316,80"/>
+<div class="center"><img src="error__handling_8c_ae82ab44de3b7db5df0474efb78347c37_cgraph.png" border="0" usemap="#aerror__handling_8c_ae82ab44de3b7db5df0474efb78347c37_cgraph" alt=""/></div>
+<map name="aerror__handling_8c_ae82ab44de3b7db5df0474efb78347c37_cgraph" id="aerror__handling_8c_ae82ab44de3b7db5df0474efb78347c37_cgraph">
+<area shape="rect" title="Checks if the given filename has a valid extension." alt="" coords="5,31,188,56"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title="Calculates the length of a string." alt="" coords="243,5,313,31"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title="Compare the first n bytes of two strings." alt="" coords="236,55,320,80"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="error__handling_8c_a1f0692484a3f086b1ea42551ac0c2415_icgraph.png" border="0" usemap="#aerror__handling_8c_a1f0692484a3f086b1ea42551ac0c2415_icgraph" alt=""/></div>
-<map name="aerror__handling_8c_a1f0692484a3f086b1ea42551ac0c2415_icgraph" id="aerror__handling_8c_a1f0692484a3f086b1ea42551ac0c2415_icgraph">
-<area shape="rect" title="Checks if the given filename has a valid extension." alt="" coords="275,5,453,31"/>
-<area shape="rect" href="error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid." alt="" coords="104,5,227,31"/>
+<div class="center"><img src="error__handling_8c_ae82ab44de3b7db5df0474efb78347c37_icgraph.png" border="0" usemap="#aerror__handling_8c_ae82ab44de3b7db5df0474efb78347c37_icgraph" alt=""/></div>
+<map name="aerror__handling_8c_ae82ab44de3b7db5df0474efb78347c37_icgraph" id="aerror__handling_8c_ae82ab44de3b7db5df0474efb78347c37_icgraph">
+<area shape="rect" title="Checks if the given filename has a valid extension." alt="" coords="275,5,457,31"/>
+<area shape="rect" href="error__handling_8c.html#a28722e35659ad0e59ef9d1f1c09e23f1" title="Checks if the given filename is valid." alt="" coords="104,5,227,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
 </map>
 </div>
@@ -411,23 +274,87 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="error__handling_8c_source.html#l00047">47</a> of file <a class="el" href="error__handling_8c_source.html">error_handling.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordtype">int</span> file;</div>
-<div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>    file = open(filename, O_DIRECTORY);</div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (file == -1)</div>
-<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="cub3D_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>);</div>
-<div class="line"><span class="lineno">   54</span>    close(file);</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="cub3D_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
-<div class="line"><span class="lineno">   56</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error__handling_8c_source.html#l00041">41</a> of file <a class="el" href="error__handling_8c_source.html">error_handling.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordtype">int</span> file;</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    file = open(filename, O_DIRECTORY);</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (file == -1)</div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="cub3D_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>);</div>
+<div class="line"><span class="lineno">   48</span>    close(file);</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="cub3D_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
+<div class="line"><span class="lineno">   50</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="error__handling_8c_a708cb4d96afdb85180287f9fe26a9076_icgraph.png" border="0" usemap="#aerror__handling_8c_a708cb4d96afdb85180287f9fe26a9076_icgraph" alt=""/></div>
 <map name="aerror__handling_8c_a708cb4d96afdb85180287f9fe26a9076_icgraph" id="aerror__handling_8c_a708cb4d96afdb85180287f9fe26a9076_icgraph">
 <area shape="rect" title=" " alt="" coords="275,5,364,31"/>
-<area shape="rect" href="error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid." alt="" coords="104,5,227,31"/>
+<area shape="rect" href="error__handling_8c.html#a28722e35659ad0e59ef9d1f1c09e23f1" title="Checks if the given filename is valid." alt="" coords="104,5,227,31"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a28722e35659ad0e59ef9d1f1c09e23f1" name="a28722e35659ad0e59ef9d1f1c09e23f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28722e35659ad0e59ef9d1f1c09e23f1">&#9670;&#160;</a></span>is_valid_filename()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_valid_filename </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the given filename is valid. </p>
+<p>This function checks if the extension of the given filename is valid. If the extension is not valid, it calls the handle_error() function with the error code BAD_MAP_FILE.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The filename to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns TRUE (1) if the filename is valid, and the handle_error() function does not return an error code. Otherwise, it returns FALSE (0). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="error__handling_8c_source.html#l00052">52</a> of file <a class="el" href="error__handling_8c_source.html">error_handling.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="error__handling_8c.html#a708cb4d96afdb85180287f9fe26a9076">is_directory</a>(filename))</div>
+<div class="line"><span class="lineno">   55</span>        <a class="code hl_function" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab">print_error</a>(<a class="code hl_define" href="cub3D_8h.html#ae9c7e3e493aaf9541c7dc341111be1f9">IS_DIRECTORY</a>);</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="error__handling_8c.html#ae82ab44de3b7db5df0474efb78347c37">has_invalid_map_extension</a>(filename))</div>
+<div class="line"><span class="lineno">   57</span>        <a class="code hl_function" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab">print_error</a>(<a class="code hl_define" href="cub3D_8h.html#a8e0ad1ba0b05ba2af8e7fcd8f02c12ed">BAD_MAP_FILE</a>);</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="cub3D_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
+<div class="line"><span class="lineno">   59</span>}</div>
+<div class="ttc" id="acub3D_8h_html_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed"><div class="ttname"><a href="cub3D_8h.html#a8e0ad1ba0b05ba2af8e7fcd8f02c12ed">BAD_MAP_FILE</a></div><div class="ttdeci">#define BAD_MAP_FILE</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00017">cub3D.h:17</a></div></div>
+<div class="ttc" id="acub3D_8h_html_ae9c7e3e493aaf9541c7dc341111be1f9"><div class="ttname"><a href="cub3D_8h.html#ae9c7e3e493aaf9541c7dc341111be1f9">IS_DIRECTORY</a></div><div class="ttdeci">#define IS_DIRECTORY</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00016">cub3D.h:16</a></div></div>
+<div class="ttc" id="aerror__handling_8c_html_a708cb4d96afdb85180287f9fe26a9076"><div class="ttname"><a href="error__handling_8c.html#a708cb4d96afdb85180287f9fe26a9076">is_directory</a></div><div class="ttdeci">int is_directory(char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00041">error_handling.c:41</a></div></div>
+<div class="ttc" id="aerror__handling_8c_html_ae82ab44de3b7db5df0474efb78347c37"><div class="ttname"><a href="error__handling_8c.html#ae82ab44de3b7db5df0474efb78347c37">has_invalid_map_extension</a></div><div class="ttdeci">int has_invalid_map_extension(char *filename)</div><div class="ttdoc">Checks if the given filename has a valid extension.</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00031">error_handling.c:31</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="error__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1_cgraph.png" border="0" usemap="#aerror__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1_cgraph" alt=""/></div>
+<map name="aerror__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1_cgraph" id="aerror__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1_cgraph">
+<area shape="rect" title="Checks if the given filename is valid." alt="" coords="5,79,128,104"/>
+<area shape="rect" href="error__handling_8c.html#ae82ab44de3b7db5df0474efb78347c37" title="Checks if the given filename has a valid extension." alt="" coords="176,29,359,55"/>
+<area shape="rect" href="error__handling_8c.html#a708cb4d96afdb85180287f9fe26a9076" title=" " alt="" coords="223,79,312,104"/>
+<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="227,128,307,153"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title="Calculates the length of a string." alt="" coords="416,5,485,31"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title="Compare the first n bytes of two strings." alt="" coords="409,55,493,80"/>
+<area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="407,128,495,153"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="error__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1_icgraph.png" border="0" usemap="#aerror__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1_icgraph" alt=""/></div>
+<map name="aerror__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1_icgraph" id="aerror__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1_icgraph">
+<area shape="rect" title="Checks if the given filename is valid." alt="" coords="104,5,227,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
 </map>
 </div>
@@ -450,7 +377,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Prints an error message to the standard error output. </p>
+<p>Prints an error message to the standard error output and exits with the function parameter passed error code. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">error</td><td>The error number to print.</td></tr>
@@ -461,17 +388,29 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="error__handling_8c_source.html#l00004">4</a> of file <a class="el" href="error__handling_8c_source.html">error_handling.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>{</div>
-<div class="line"><span class="lineno">    6</span>    write(2, <span class="stringliteral">&quot;Error: &quot;</span>, 7);</div>
-<div class="line"><span class="lineno">    7</span>    <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(strerror(error), 2);</div>
-<div class="line"><span class="lineno">    8</span>    write(2, <span class="stringliteral">&quot;\n&quot;</span>, 1);</div>
-<div class="line"><span class="lineno">    9</span>}</div>
+<div class="line"><span class="lineno">    6</span>    <span class="keywordflow">if</span> (error == <a class="code hl_define" href="cub3D_8h.html#a4635f2163efe937e76598aff306d35d1">EMPTY_MAP</a>)</div>
+<div class="line"><span class="lineno">    7</span>    {</div>
+<div class="line"><span class="lineno">    8</span>        write(2, <span class="stringliteral">&quot;Error: Empty map\n&quot;</span>, 17);</div>
+<div class="line"><span class="lineno">    9</span>        exit(error);</div>
+<div class="line"><span class="lineno">   10</span>    }</div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">if</span> (error == <a class="code hl_define" href="cub3D_8h.html#a8e0ad1ba0b05ba2af8e7fcd8f02c12ed">BAD_MAP_FILE</a>)</div>
+<div class="line"><span class="lineno">   12</span>    {</div>
+<div class="line"><span class="lineno">   13</span>        write(2, <span class="stringliteral">&quot;Error: Bad map file\n&quot;</span>, 20);</div>
+<div class="line"><span class="lineno">   14</span>        exit(error);</div>
+<div class="line"><span class="lineno">   15</span>    }</div>
+<div class="line"><span class="lineno">   16</span>    write(2, <span class="stringliteral">&quot;Error: &quot;</span>, 7);</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(strerror(error), 2);</div>
+<div class="line"><span class="lineno">   18</span>    write(2, <span class="stringliteral">&quot;\n&quot;</span>, 1);</div>
+<div class="line"><span class="lineno">   19</span>    exit(error);</div>
+<div class="line"><span class="lineno">   20</span>}</div>
+<div class="ttc" id="acub3D_8h_html_a4635f2163efe937e76598aff306d35d1"><div class="ttname"><a href="cub3D_8h.html#a4635f2163efe937e76598aff306d35d1">EMPTY_MAP</a></div><div class="ttdeci">#define EMPTY_MAP</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00015">cub3D.h:15</a></div></div>
 <div class="ttc" id="alibft_8h_html_acefce9ac519f8f8b7d3fde33dbafe469"><div class="ttname"><a href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a></div><div class="ttdeci">void ft_putstr_fd(char *s, int fd)</div><div class="ttdef"><b>Definition:</b> <a href="ft__putstring__fd_8c_source.html#l00004">ft_putstring_fd.c:4</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="error__handling_8c_a968801b6df4daa98b46851157bfbacab_cgraph.png" border="0" usemap="#aerror__handling_8c_a968801b6df4daa98b46851157bfbacab_cgraph" alt=""/></div>
 <map name="aerror__handling_8c_a968801b6df4daa98b46851157bfbacab_cgraph" id="aerror__handling_8c_a968801b6df4daa98b46851157bfbacab_cgraph">
-<area shape="rect" title="Prints an error message to the standard error output." alt="" coords="5,5,85,31"/>
+<area shape="rect" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="5,5,85,31"/>
 <area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="133,5,221,31"/>
 </map>
 </div>
@@ -480,14 +419,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="error__handling_8c_a968801b6df4daa98b46851157bfbacab_icgraph.png" border="0" usemap="#aerror__handling_8c_a968801b6df4daa98b46851157bfbacab_icgraph" alt=""/></div>
 <map name="aerror__handling_8c_a968801b6df4daa98b46851157bfbacab_icgraph" id="aerror__handling_8c_a968801b6df4daa98b46851157bfbacab_icgraph">
-<area shape="rect" title="Prints an error message to the standard error output." alt="" coords="785,69,865,94"/>
-<area shape="rect" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="615,18,737,44"/>
-<area shape="rect" href="error__handling_8c.html#ad181c6ede99dd5972122241b43954466" title="Handles the given error number, prints an error message to the standard error output,..." alt="" coords="629,94,723,120"/>
-<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="456,44,567,69"/>
-<area shape="rect" href="read__map_8c.html#a953ff0338bfa5e5863fc98056025e303" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="307,56,386,81"/>
-<area shape="rect" href="draw__map__utils_8c.html#a5fa910f318c64f5de1f230726dfe8540" title="Initializes map data." alt="" coords="104,69,237,94"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,120,56,145"/>
-<area shape="rect" href="error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4" title="Checks if the given filename is valid." alt="" coords="285,196,408,221"/>
+<area shape="rect" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="753,64,833,89"/>
+<area shape="rect" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="583,115,705,140"/>
+<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="418,64,529,89"/>
+<area shape="rect" href="read__map_8c.html#a953ff0338bfa5e5863fc98056025e303" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="285,89,364,115"/>
+<area shape="rect" href="draw__map__utils_8c.html#a5fa910f318c64f5de1f230726dfe8540" title="Initializes map data." alt="" coords="104,115,237,140"/>
+<area shape="rect" href="error__handling_8c.html#a28722e35659ad0e59ef9d1f1c09e23f1" title="Checks if the given filename is valid." alt="" coords="412,216,535,241"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,191,56,216"/>
 </map>
 </div>
 

@@ -16,10 +16,10 @@ digraph "ft_strlen"
   Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node5 [label="ft_strlcpy",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc",tooltip="Copy a string to a destination buffer with a specified maximum size."];
   Node5 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
-  Node6 [label="invalid_filename_extension",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#a1f0692484a3f086b1ea42551ac0c2415",tooltip="Checks if the given filename has a valid extension."];
+  Node6 [label="has_invalid_map_extension",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#ae82ab44de3b7db5df0474efb78347c37",tooltip="Checks if the given filename has a valid extension."];
   Node6 -> Node7 [dir="back",color="steelblue1",style="solid"];
-  Node7 [label="filename_is_valid",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#a287e1eb420c186ddb3ca11b0d5b6cab4",tooltip="Checks if the given filename is valid."];
+  Node7 [label="is_valid_filename",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$error__handling_8c.html#a28722e35659ad0e59ef9d1f1c09e23f1",tooltip="Checks if the given filename is valid."];
   Node7 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
 }

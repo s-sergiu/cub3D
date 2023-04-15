@@ -46,9 +46,7 @@ void \mbox{\hyperlink{cub3D_8h_a5fa910f318c64f5de1f230726dfe8540}{initialise\+\_
 void \mbox{\hyperlink{cub3D_8h_ac0e0d1411c5e6e51f7bb4b854217d40c}{destroy\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$data)
 \begin{DoxyCompactList}\small\item\em Destroys map data. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{cub3D_8h_a968801b6df4daa98b46851157bfbacab}{print\+\_\+error}} (int error)
-\begin{DoxyCompactList}\small\item\em Prints an error message to the standard error output. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{cub3D_8h_ad181c6ede99dd5972122241b43954466}{handle\+\_\+error}} (int error)
-\begin{DoxyCompactList}\small\item\em Handles the given error number, prints an error message to the standard error output, and exits the program. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Prints an error message to the standard error output and exits with the function parameter passed error code. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\+\_\+and\+\_\+exit}} (int error, int file, char $\ast$buffer)
 \begin{DoxyCompactList}\small\item\em Frees any allocated memory and exits the program with the given error number. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{cub3D_8h_a973f5273453bacdf37c27ef24bdd540d}{get\+\_\+total\+\_\+bytes}} (char $\ast$filename)
@@ -59,9 +57,9 @@ void \mbox{\hyperlink{cub3D_8h_a8034e3c8d12267f763e14f44c8da3d43}{free\+\_\+arra
 \begin{DoxyCompactList}\small\item\em Frees memory allocated for a string array. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{cub3D_8h_a8b69eb84595662299e24d7bf079c1709}{get\+\_\+map\+\_\+height}} (char $\ast$$\ast$map\+\_\+array)
 \begin{DoxyCompactList}\small\item\em Gets the height of a map. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{cub3D_8h_a1f0692484a3f086b1ea42551ac0c2415}{invalid\+\_\+filename\+\_\+extension}} (char $\ast$filename)
+int \mbox{\hyperlink{cub3D_8h_ae82ab44de3b7db5df0474efb78347c37}{has\+\_\+invalid\+\_\+map\+\_\+extension}} (char $\ast$filename)
 \begin{DoxyCompactList}\small\item\em Checks if the given filename has a valid extension. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{cub3D_8h_a287e1eb420c186ddb3ca11b0d5b6cab4}{filename\+\_\+is\+\_\+valid}} (char $\ast$filename)
+int \mbox{\hyperlink{cub3D_8h_a28722e35659ad0e59ef9d1f1c09e23f1}{is\+\_\+valid\+\_\+filename}} (char $\ast$filename)
 \begin{DoxyCompactList}\small\item\em Checks if the given filename is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -166,18 +164,17 @@ void.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{error__handling_8c_source_l00027}{27}} of file \mbox{\hyperlink{error__handling_8c_source}{error\+\_\+handling.\+c}}.
+Definition at line \mbox{\hyperlink{error__handling_8c_source_l00022}{22}} of file \mbox{\hyperlink{error__handling_8c_source}{error\+\_\+handling.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00028\ \{}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ >\ 0)}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ close(file);}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (buffer\ !=\ NULL)}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ free(buffer);}
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{error__handling_8c_a968801b6df4daa98b46851157bfbacab}{print\_error}}(error);}
-\DoxyCodeLine{00034\ \ \ \ \ exit(error);}
-\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ >\ 0)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ close(file);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (buffer\ !=\ NULL)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ free(buffer);}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{error__handling_8c_a968801b6df4daa98b46851157bfbacab}{print\_error}}(error);}
+\DoxyCodeLine{00029\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -266,45 +263,8 @@ Definition at line \mbox{\hyperlink{draw__map_8c_source_l00097}{97}} of file \mb
 \end{DoxyCode}
 Here is the call graph for this function\+:
 % FIG 6
-\mbox{\Hypertarget{cub3D_8h_a287e1eb420c186ddb3ca11b0d5b6cab4}\label{cub3D_8h_a287e1eb420c186ddb3ca11b0d5b6cab4}} 
-\index{cub3D.h@{cub3D.h}!filename\_is\_valid@{filename\_is\_valid}}
-\index{filename\_is\_valid@{filename\_is\_valid}!cub3D.h@{cub3D.h}}
-\doxysubsubsection{\texorpdfstring{filename\_is\_valid()}{filename\_is\_valid()}}
-{\footnotesize\ttfamily int filename\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
-
-
-
-Checks if the given filename is valid. 
-
-This function checks if the extension of the given filename is valid. If the extension is not valid, it calls the \mbox{\hyperlink{cub3D_8h_ad181c6ede99dd5972122241b43954466}{handle\+\_\+error()}} function with the error code BAD\+\_\+\+MAP\+\_\+\+FILE.
-
-
-\begin{DoxyParams}{Parameters}
-{\em filename} & The filename to check. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Returns TRUE (1) if the filename is valid, and the \mbox{\hyperlink{cub3D_8h_ad181c6ede99dd5972122241b43954466}{handle\+\_\+error()}} function does not return an error code. Otherwise, it returns FALSE (0). 
-\end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{error__handling_8c_source_l00058}{58}} of file \mbox{\hyperlink{error__handling_8c_source}{error\+\_\+handling.\+c}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00059\ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{error__handling_8c_a708cb4d96afdb85180287f9fe26a9076}{is\_directory}}(filename))}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{error__handling_8c_ad181c6ede99dd5972122241b43954466}{handle\_error}}(\mbox{\hyperlink{cub3D_8h_ae9c7e3e493aaf9541c7dc341111be1f9}{IS\_DIRECTORY}}));}
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{error__handling_8c_a1f0692484a3f086b1ea42551ac0c2415}{invalid\_filename\_extension}}(filename))}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{error__handling_8c_ad181c6ede99dd5972122241b43954466}{handle\_error}}(\mbox{\hyperlink{cub3D_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\_MAP\_FILE}}));}
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3D_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
-\DoxyCodeLine{00065\ \}}
-
-\end{DoxyCode}
-Here is the call graph for this function\+:
-% FIG 7
 Here is the caller graph for this function\+:
-% FIG 8
+% FIG 7
 \mbox{\Hypertarget{cub3D_8h_a8034e3c8d12267f763e14f44c8da3d43}\label{cub3D_8h_a8034e3c8d12267f763e14f44c8da3d43}} 
 \index{cub3D.h@{cub3D.h}!free\_array\_of\_memory@{free\_array\_of\_memory}}
 \index{free\_array\_of\_memory@{free\_array\_of\_memory}!cub3D.h@{cub3D.h}}
@@ -339,7 +299,7 @@ Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00004}{4}} of fi
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
-% FIG 9
+% FIG 8
 \mbox{\Hypertarget{cub3D_8h_a8b69eb84595662299e24d7bf079c1709}\label{cub3D_8h_a8b69eb84595662299e24d7bf079c1709}} 
 \index{cub3D.h@{cub3D.h}!get\_map\_height@{get\_map\_height}}
 \index{get\_map\_height@{get\_map\_height}!cub3D.h@{cub3D.h}}
@@ -377,7 +337,7 @@ Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00014}{14}} of f
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
-% FIG 10
+% FIG 9
 \mbox{\Hypertarget{cub3D_8h_a973f5273453bacdf37c27ef24bdd540d}\label{cub3D_8h_a973f5273453bacdf37c27ef24bdd540d}} 
 \index{cub3D.h@{cub3D.h}!get\_total\_bytes@{get\_total\_bytes}}
 \index{get\_total\_bytes@{get\_total\_bytes}!cub3D.h@{cub3D.h}}
@@ -410,7 +370,7 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00004}{4}} of file \mbo
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \ \ \ \ file\ =\ open(filename,\ O\_RDONLY);}
 \DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ ==\ -\/1)}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad181c6ede99dd5972122241b43954466}{handle\_error}}(errno);}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a968801b6df4daa98b46851157bfbacab}{print\_error}}(errno);}
 \DoxyCodeLine{00014\ \ \ \ \ string\_buffer\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ 100);}
 \DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (!string\_buffer)}
 \DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ file,\ NULL);}
@@ -432,53 +392,49 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00004}{4}} of file \mbo
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 11
+% FIG 10
 Here is the caller graph for this function\+:
-% FIG 12
-\mbox{\Hypertarget{cub3D_8h_ad181c6ede99dd5972122241b43954466}\label{cub3D_8h_ad181c6ede99dd5972122241b43954466}} 
-\index{cub3D.h@{cub3D.h}!handle\_error@{handle\_error}}
-\index{handle\_error@{handle\_error}!cub3D.h@{cub3D.h}}
-\doxysubsubsection{\texorpdfstring{handle\_error()}{handle\_error()}}
-{\footnotesize\ttfamily int handle\+\_\+error (\begin{DoxyParamCaption}\item[{int}]{error }\end{DoxyParamCaption})}
+% FIG 11
+\mbox{\Hypertarget{cub3D_8h_ae82ab44de3b7db5df0474efb78347c37}\label{cub3D_8h_ae82ab44de3b7db5df0474efb78347c37}} 
+\index{cub3D.h@{cub3D.h}!has\_invalid\_map\_extension@{has\_invalid\_map\_extension}}
+\index{has\_invalid\_map\_extension@{has\_invalid\_map\_extension}!cub3D.h@{cub3D.h}}
+\doxysubsubsection{\texorpdfstring{has\_invalid\_map\_extension()}{has\_invalid\_map\_extension()}}
+{\footnotesize\ttfamily int has\+\_\+invalid\+\_\+map\+\_\+extension (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
 
 
 
-Handles the given error number, prints an error message to the standard error output, and exits the program. 
+Checks if the given filename has a valid extension. 
+
+This function checks if the extension of the given filename is \char`\"{}.\+cub\char`\"{}.
 
 
 \begin{DoxyParams}{Parameters}
-{\em error} & The error number to handle.\\
+{\em filename} & The filename to check. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-void. 
+Returns TRUE (1) if the extension is valid, and FALSE (0) otherwise. 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{error__handling_8c_source_l00011}{11}} of file \mbox{\hyperlink{error__handling_8c_source}{error\+\_\+handling.\+c}}.
+Definition at line \mbox{\hyperlink{error__handling_8c_source_l00031}{31}} of file \mbox{\hyperlink{error__handling_8c_source}{error\+\_\+handling.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00012\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (error\ ==\ \mbox{\hyperlink{cub3D_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}})}
-\DoxyCodeLine{00014\ \ \ \ \ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ Empty\ map\(\backslash\)n"{}},\ 17);}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ exit(error);}
-\DoxyCodeLine{00017\ \ \ \ \ \}}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (error\ ==\ \mbox{\hyperlink{cub3D_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\_MAP\_FILE}})}
-\DoxyCodeLine{00019\ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ Bad\ map\ file\(\backslash\)n"{}},\ 20);}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ exit(error);}
-\DoxyCodeLine{00022\ \ \ \ \ \}}
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{error__handling_8c_a968801b6df4daa98b46851157bfbacab}{print\_error}}(error);}
-\DoxyCodeLine{00024\ \ \ \ \ exit(error);}
-\DoxyCodeLine{00025\ \}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ filename\_length;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ filename\_length\ =\ \mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(filename);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{libft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\_strncmp}}(filename\ +\ (filename\_length\ -\/\ 4),\ \textcolor{stringliteral}{"{}.cub\(\backslash\)0"{}},\ 5))}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}(\mbox{\hyperlink{cub3D_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}(\mbox{\hyperlink{cub3D_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}});}
+\DoxyCodeLine{00039\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 13
+% FIG 12
 Here is the caller graph for this function\+:
-% FIG 14
+% FIG 13
 \mbox{\Hypertarget{cub3D_8h_a5fa910f318c64f5de1f230726dfe8540}\label{cub3D_8h_a5fa910f318c64f5de1f230726dfe8540}} 
 \index{cub3D.h@{cub3D.h}!initialise\_map\_data@{initialise\_map\_data}}
 \index{initialise\_map\_data@{initialise\_map\_data}!cub3D.h@{cub3D.h}}
@@ -489,7 +445,7 @@ Here is the caller graph for this function\+:
 
 Initializes map data. 
 
-This function initializes a map\+\_\+data struct and sets its map\+\_\+string, width, and height values.
+This function initializes a map\+\_\+data struct and sets its map\+\_\+string map\+\_\+array, width, and height values.
 
 
 \begin{DoxyParams}{Parameters}
@@ -510,7 +466,7 @@ Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00024}{24}} of f
 \DoxyCodeLine{00028\ \ \ \ \ map\_string\ =\ \mbox{\hyperlink{cub3D_8h_a953ff0338bfa5e5863fc98056025e303}{read\_map}}(map\_file);}
 \DoxyCodeLine{00029\ \ \ \ \ (*data)\ =\ malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}));}
 \DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (data\ ==\ NULL)}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad181c6ede99dd5972122241b43954466}{handle\_error}}(errno);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a968801b6df4daa98b46851157bfbacab}{print\_error}}(errno);}
 \DoxyCodeLine{00032\ \ \ \ \ (*data)-\/>map\_string\ =\ map\_string;}
 \DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string\ ==\ NULL)}
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ 0,\ NULL);}
@@ -524,20 +480,20 @@ Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00024}{24}} of f
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 15
+% FIG 14
 Here is the caller graph for this function\+:
-% FIG 16
-\mbox{\Hypertarget{cub3D_8h_a1f0692484a3f086b1ea42551ac0c2415}\label{cub3D_8h_a1f0692484a3f086b1ea42551ac0c2415}} 
-\index{cub3D.h@{cub3D.h}!invalid\_filename\_extension@{invalid\_filename\_extension}}
-\index{invalid\_filename\_extension@{invalid\_filename\_extension}!cub3D.h@{cub3D.h}}
-\doxysubsubsection{\texorpdfstring{invalid\_filename\_extension()}{invalid\_filename\_extension()}}
-{\footnotesize\ttfamily int invalid\+\_\+filename\+\_\+extension (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+% FIG 15
+\mbox{\Hypertarget{cub3D_8h_a28722e35659ad0e59ef9d1f1c09e23f1}\label{cub3D_8h_a28722e35659ad0e59ef9d1f1c09e23f1}} 
+\index{cub3D.h@{cub3D.h}!is\_valid\_filename@{is\_valid\_filename}}
+\index{is\_valid\_filename@{is\_valid\_filename}!cub3D.h@{cub3D.h}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_filename()}{is\_valid\_filename()}}
+{\footnotesize\ttfamily int is\+\_\+valid\+\_\+filename (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
 
 
 
-Checks if the given filename has a valid extension. 
+Checks if the given filename is valid. 
 
-This function checks if the extension of the given filename is \char`\"{}.\+cub\char`\"{}.
+This function checks if the extension of the given filename is valid. If the extension is not valid, it calls the handle\+\_\+error() function with the error code BAD\+\_\+\+MAP\+\_\+\+FILE.
 
 
 \begin{DoxyParams}{Parameters}
@@ -545,28 +501,27 @@ This function checks if the extension of the given filename is \char`\"{}.\+cub\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Returns TRUE (1) if the extension is valid, and FALSE (0) otherwise. 
+Returns TRUE (1) if the filename is valid, and the handle\+\_\+error() function does not return an error code. Otherwise, it returns FALSE (0). 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{error__handling_8c_source_l00037}{37}} of file \mbox{\hyperlink{error__handling_8c_source}{error\+\_\+handling.\+c}}.
+Definition at line \mbox{\hyperlink{error__handling_8c_source_l00052}{52}} of file \mbox{\hyperlink{error__handling_8c_source}{error\+\_\+handling.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00038\ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ filename\_length;}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ filename\_length\ =\ \mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(filename);}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{libft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\_strncmp}}(filename\ +\ (filename\_length\ -\/\ 4),\ \textcolor{stringliteral}{"{}.cub\(\backslash\)0"{}},\ 5))}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}(\mbox{\hyperlink{cub3D_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{return}(\mbox{\hyperlink{cub3D_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}});}
-\DoxyCodeLine{00045\ \}}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{error__handling_8c_a708cb4d96afdb85180287f9fe26a9076}{is\_directory}}(filename))}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{error__handling_8c_a968801b6df4daa98b46851157bfbacab}{print\_error}}(\mbox{\hyperlink{cub3D_8h_ae9c7e3e493aaf9541c7dc341111be1f9}{IS\_DIRECTORY}});}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{error__handling_8c_ae82ab44de3b7db5df0474efb78347c37}{has\_invalid\_map\_extension}}(filename))}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{error__handling_8c_a968801b6df4daa98b46851157bfbacab}{print\_error}}(\mbox{\hyperlink{cub3D_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\_MAP\_FILE}});}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3D_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
+\DoxyCodeLine{00059\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 17
+% FIG 16
 Here is the caller graph for this function\+:
-% FIG 18
+% FIG 17
 \mbox{\Hypertarget{cub3D_8h_a968801b6df4daa98b46851157bfbacab}\label{cub3D_8h_a968801b6df4daa98b46851157bfbacab}} 
 \index{cub3D.h@{cub3D.h}!print\_error@{print\_error}}
 \index{print\_error@{print\_error}!cub3D.h@{cub3D.h}}
@@ -575,7 +530,7 @@ Here is the caller graph for this function\+:
 
 
 
-Prints an error message to the standard error output. 
+Prints an error message to the standard error output and exits with the function parameter passed error code. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -592,16 +547,27 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00004}{4}} of fil
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00005\ \{}
-\DoxyCodeLine{00006\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ "{}},\ 7);}
-\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}(strerror(error),\ 2);}
-\DoxyCodeLine{00008\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ 1);}
-\DoxyCodeLine{00009\ \}}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordflow}{if}\ (error\ ==\ \mbox{\hyperlink{cub3D_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}})}
+\DoxyCodeLine{00007\ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ Empty\ map\(\backslash\)n"{}},\ 17);}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ exit(error);}
+\DoxyCodeLine{00010\ \ \ \ \ \}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (error\ ==\ \mbox{\hyperlink{cub3D_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\_MAP\_FILE}})}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ Bad\ map\ file\(\backslash\)n"{}},\ 20);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ exit(error);}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ "{}},\ 7);}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}(strerror(error),\ 2);}
+\DoxyCodeLine{00018\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ 1);}
+\DoxyCodeLine{00019\ \ \ \ \ exit(error);}
+\DoxyCodeLine{00020\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 19
+% FIG 18
 Here is the caller graph for this function\+:
-% FIG 20
+% FIG 19
 \mbox{\Hypertarget{cub3D_8h_a953ff0338bfa5e5863fc98056025e303}\label{cub3D_8h_a953ff0338bfa5e5863fc98056025e303}} 
 \index{cub3D.h@{cub3D.h}!read\_map@{read\_map}}
 \index{read\_map@{read\_map}!cub3D.h@{cub3D.h}}
@@ -633,7 +599,7 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00033}{33}} of file \mb
 \DoxyCodeLine{00038\ }
 \DoxyCodeLine{00039\ \ \ \ \ bytes\_read\ =\ \mbox{\hyperlink{read__map_8c_a973f5273453bacdf37c27ef24bdd540d}{get\_total\_bytes}}(filename);}
 \DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (!bytes\_read)}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad181c6ede99dd5972122241b43954466}{handle\_error}}(\mbox{\hyperlink{cub3D_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a968801b6df4daa98b46851157bfbacab}{print\_error}}(\mbox{\hyperlink{cub3D_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}});}
 \DoxyCodeLine{00042\ \ \ \ \ map\_string\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ bytes\_read\ +\ 1);}
 \DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (!map\_string)}
 \DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
@@ -649,6 +615,6 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00033}{33}} of file \mb
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 21
+% FIG 20
 Here is the caller graph for this function\+:
-% FIG 22
+% FIG 21

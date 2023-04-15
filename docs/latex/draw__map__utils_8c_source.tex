@@ -32,7 +32,7 @@
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00028}00028\ \ \ \ \ map\_string\ =\ \mbox{\hyperlink{cub3D_8h_a953ff0338bfa5e5863fc98056025e303}{read\_map}}(map\_file);}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00029}00029\ \ \ \ \ (*data)\ =\ malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}));}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (data\ ==\ NULL)}
-\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad181c6ede99dd5972122241b43954466}{handle\_error}}(errno);}
+\DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a968801b6df4daa98b46851157bfbacab}{print\_error}}(errno);}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00032}00032\ \ \ \ \ (*data)-\/>map\_string\ =\ map\_string;}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string\ ==\ NULL)}
 \DoxyCodeLine{\Hypertarget{draw__map__utils_8c_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ 0,\ NULL);}

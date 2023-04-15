@@ -145,7 +145,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   10</span> </div>
 <div class="line"><span class="lineno">   11</span>    file = open(filename, O_RDONLY);</div>
 <div class="line"><span class="lineno">   12</span>    <span class="keywordflow">if</span> (file == -1)</div>
-<div class="line"><span class="lineno">   13</span>        <a class="code hl_function" href="cub3D_8h.html#ad181c6ede99dd5972122241b43954466">handle_error</a>(errno);</div>
+<div class="line"><span class="lineno">   13</span>        <a class="code hl_function" href="cub3D_8h.html#a968801b6df4daa98b46851157bfbacab">print_error</a>(errno);</div>
 <div class="line"><span class="lineno">   14</span>    string_buffer = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * 100);</div>
 <div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (!string_buffer)</div>
 <div class="line"><span class="lineno">   16</span>        <a class="code hl_function" href="cub3D_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a>(errno, file, NULL);</div>
@@ -164,8 +164,8 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   29</span>    free(string_buffer);</div>
 <div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> (total_bytes);</div>
 <div class="line"><span class="lineno">   31</span>}</div>
-<div class="ttc" id="acub3D_8h_html_ad12f49185b9cfb483605a617c9484f25"><div class="ttname"><a href="cub3D_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a></div><div class="ttdeci">void cleanup_and_exit(int error, int file, char *buffer)</div><div class="ttdoc">Frees any allocated memory and exits the program with the given error number.</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00027">error_handling.c:27</a></div></div>
-<div class="ttc" id="acub3D_8h_html_ad181c6ede99dd5972122241b43954466"><div class="ttname"><a href="cub3D_8h.html#ad181c6ede99dd5972122241b43954466">handle_error</a></div><div class="ttdeci">int handle_error(int error)</div><div class="ttdoc">Handles the given error number, prints an error message to the standard error output,...</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00011">error_handling.c:11</a></div></div>
+<div class="ttc" id="acub3D_8h_html_a968801b6df4daa98b46851157bfbacab"><div class="ttname"><a href="cub3D_8h.html#a968801b6df4daa98b46851157bfbacab">print_error</a></div><div class="ttdeci">void print_error(int error)</div><div class="ttdoc">Prints an error message to the standard error output and exits with the function parameter passed err...</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00004">error_handling.c:4</a></div></div>
+<div class="ttc" id="acub3D_8h_html_ad12f49185b9cfb483605a617c9484f25"><div class="ttname"><a href="cub3D_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a></div><div class="ttdeci">void cleanup_and_exit(int error, int file, char *buffer)</div><div class="ttdoc">Frees any allocated memory and exits the program with the given error number.</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00022">error_handling.c:22</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -173,8 +173,7 @@ Here is the call graph for this function:</div>
 <map name="aread__map_8c_a973f5273453bacdf37c27ef24bdd540d_cgraph" id="aread__map_8c_a973f5273453bacdf37c27ef24bdd540d_cgraph">
 <area shape="rect" title="Returns the total number of bytes in the file with the given filename." alt="" coords="5,31,116,56"/>
 <area shape="rect" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="164,5,287,31"/>
-<area shape="rect" href="error__handling_8c.html#ad181c6ede99dd5972122241b43954466" title="Handles the given error number, prints an error message to the standard error output,..." alt="" coords="179,55,272,80"/>
-<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output." alt="" coords="335,31,415,56"/>
+<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="335,31,415,56"/>
 <area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="463,31,551,56"/>
 </map>
 </div>
@@ -225,7 +224,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   38</span> </div>
 <div class="line"><span class="lineno">   39</span>    bytes_read = <a class="code hl_function" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d">get_total_bytes</a>(filename);</div>
 <div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span> (!bytes_read)</div>
-<div class="line"><span class="lineno">   41</span>        <a class="code hl_function" href="cub3D_8h.html#ad181c6ede99dd5972122241b43954466">handle_error</a>(<a class="code hl_define" href="cub3D_8h.html#a4635f2163efe937e76598aff306d35d1">EMPTY_MAP</a>);</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_function" href="cub3D_8h.html#a968801b6df4daa98b46851157bfbacab">print_error</a>(<a class="code hl_define" href="cub3D_8h.html#a4635f2163efe937e76598aff306d35d1">EMPTY_MAP</a>);</div>
 <div class="line"><span class="lineno">   42</span>    map_string = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * bytes_read + 1);</div>
 <div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> (!map_string)</div>
 <div class="line"><span class="lineno">   44</span>        <span class="keywordflow">return</span> (NULL);</div>
@@ -245,12 +244,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="read__map_8c_a953ff0338bfa5e5863fc98056025e303_cgraph.png" border="0" usemap="#aread__map_8c_a953ff0338bfa5e5863fc98056025e303_cgraph" alt=""/></div>
 <map name="aread__map_8c_a953ff0338bfa5e5863fc98056025e303_cgraph" id="aread__map_8c_a953ff0338bfa5e5863fc98056025e303_cgraph">
-<area shape="rect" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="5,29,84,55"/>
-<area shape="rect" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="291,5,413,31"/>
-<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="132,29,243,55"/>
-<area shape="rect" href="error__handling_8c.html#ad181c6ede99dd5972122241b43954466" title="Handles the given error number, prints an error message to the standard error output,..." alt="" coords="305,55,399,80"/>
-<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output." alt="" coords="461,31,541,56"/>
-<area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="589,31,677,56"/>
+<area shape="rect" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="5,27,84,52"/>
+<area shape="rect" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="291,27,413,52"/>
+<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="461,27,541,52"/>
+<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="132,78,243,103"/>
+<area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="589,27,677,52"/>
 </map>
 </div>
 <div class="dynheader">
