@@ -5,11 +5,7 @@ FLAGS = -g -Wall -Werror -Wextra
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/%.o)
 
-MAPSRC = $(wildcard src/map_utils/*.c)
-MAPOBJ = $(MAPSRC:src/map_utils/%.c=build/map_utils/%.o)
-
 OBJ_DIR = build
-INC = include/cub3D.h
 
 MLX42 = external/MLX42/build/libmlx42.a
 LIBFT = build/libft/libft.a
@@ -17,6 +13,7 @@ LIBFT_OBJ_DIR = build/libft
 
 MLX_DIR = external/MLX42/include
 LIBFT_DIR = libs/libft
+VPATH = src
 
 UNAME = $(shell uname -s)
 ifeq ($(UNAME),Linux)
@@ -31,15 +28,15 @@ endif
 
 all:$(NAME)
 
-$(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(MAPOBJ) $(INC) $(LIBFT)
-	$(CC) $(MAPOBJ) $(FLAGS) $(OBJ) -lft -L $(LIBFT_OBJ_DIR) \
+$(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(LIBFT)
+	$(CC) $(FLAGS) $(OBJ) -lft -L $(LIBFT_OBJ_DIR) \
 	$(MLX42) -Iinclude \
 	$(MLX_FLAGS) -o $@
 
 $(LIBFT): 
-	@make -C $(LIBFT_DIR)
+	@$(MAKE) -C $(LIBFT_DIR)
 	@mv $(LIBFT_DIR)/libft.a $(LIBFT)
-	@rm -rf $(LIBFT_DIR)/build
+	@$(RM) -rf $(LIBFT_DIR)/build
 
 $(MLX42): $(MLX_DIR)
 	@cd external/MLX42; cmake -B build; cmake --build build -j4
@@ -48,17 +45,12 @@ $(MLX_DIR):
 	@git submodule init
 	@git submodule update
 
-build/%.o: src/%.c 
-
-	@$(CC) $(FLAGS) -c $< -o $@
-
-build/map_utils/%.o: src/map_utils/%.c 
+build/%.o: %.c 
 
 	@$(CC) $(FLAGS) -c $< -o $@
 
 $(OBJ_DIR):
 	@mkdir $(OBJ_DIR) 
-	@mkdir -p $(OBJ_DIR)/map_utils
 	@mkdir -p $(OBJ_DIR)/libft
 
 clean: 
