@@ -43,7 +43,6 @@ void	initialize_game_data(struct s_game_data **game_data,
 	(*game_data)->mlx_background_image = image;
 	(*game_data)->map_data = map_data;
 	(*game_data)->player_data.player_image = NULL;
-	(*game_data)->player_data.player_position = NULL;
 }
 
 void	initialize_map_data(struct s_map_data **map_data, char *map_file)
