@@ -16,10 +16,24 @@
 # define IS_DIRECTORY 21
 # define BAD_MAP_FILE 255
 
+struct s_position
+{
+	int	*xAxis;
+	int	*yAxis;
+};
+
+struct s_player_data
+{
+	struct s_position	player_position;
+	mlx_image_t			*player_image;
+};
+
 struct s_game_data
 {
-	mlx_t		*mlx_handle;
-	mlx_image_t	*mlx_background_image;
+	mlx_t					*mlx_handle;
+	mlx_image_t				*mlx_background_image;
+	struct s_map_data		*map_data;
+	struct s_player_data	player_data;
 };
 
 struct s_map_data
@@ -139,5 +153,8 @@ int			has_invalid_map_extension(char *filename);
  */
 int			is_valid_filename(char *filename);
 void		protected_malloc(void **parameter, size_t size_of_parameter);
+void		initialize_game_data(struct s_game_data **game_data,
+							struct s_map_data *map_data);
+void		destroy_game_data(struct s_game_data **game_data);
 
 #endif
