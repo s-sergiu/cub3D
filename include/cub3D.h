@@ -22,10 +22,17 @@ struct s_position
 	int	*yAxis;
 };
 
+struct s_static_position
+{
+	int	xAxis;
+	int	yAxis;
+};
+
 struct s_player_data
 {
-	struct s_position	player_position;
-	mlx_image_t			*player_image;
+	struct s_static_position	initial_position;
+	struct s_position			current_position;
+	mlx_image_t					*player_image;
 };
 
 struct s_game_data
