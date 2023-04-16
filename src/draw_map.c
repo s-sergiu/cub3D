@@ -1,26 +1,70 @@
 
 #include "../include/cub3D.h"
 
-mlx_image_t*	player;
 
 void ft_hook(void* param)
 {
-	mlx_t* mlx = param;
+	struct s_game_data	*game_data;
+	mlx_t				*mlx;
+	mlx_image_t			*player;
+	char				**map;
+	int					playerX;
+	int					playerY;
 
+	game_data = param;
+	map = game_data->map_data->map_array;
+	mlx = game_data->mlx_handle;
+	player = game_data->player_data.player_image;
+	playerX = *game_data->player_data.player_position.xAxis / TILE;
+	playerY = *game_data->player_data.player_position.yAxis / TILE;
 	if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(mlx);
 	if (mlx_is_key_down(mlx, MLX_KEY_W))
 	{
-		printf("player y: %d\n", player->instances[0].y / TILE);
-		printf("player x: %d\n", player->instances[0].x / TILE);
-		player->instances[0].y -= 5;
+		if (map[playerY][playerX] != '1')
+		{
+			printf("player y: %d\n", playerY);
+			printf("player x: %d\n", playerX);
+			printf("location: %c\n", map[playerY][playerX]);
+			if (map[(player->instances[0].y - 1) / TILE][playerX] != '1')
+				player->instances[0].y -= 1;
+			playerX = *game_data->player_data.player_position.xAxis / TILE;
+			playerY = *game_data->player_data.player_position.yAxis / TILE;
+		}
 	}
 	if (mlx_is_key_down(mlx, MLX_KEY_S))
-		player->instances[0].y += 5;
+		if (map[playerY][playerX] != '1')
+		{
+			printf("player x: %d\n", playerY);
+			printf("player y: %d\n", playerX);
+			printf("location: %c\n", map[playerY][playerX]);
+			if (map[(player->instances[0].y + 5) / TILE][playerX] != '1')
+				player->instances[0].y += 1;
+			playerX = *game_data->player_data.player_position.xAxis / TILE;
+			playerY = *game_data->player_data.player_position.yAxis / TILE;
+		}
 	if (mlx_is_key_down(mlx, MLX_KEY_A))
-		player->instances[0].x -= 5;
+		if (map[playerY][playerX] != '1')
+		{
+			printf("player x: %d\n", playerY);
+			printf("player y: %d\n", playerX);
+			printf("location: %c\n", map[playerY][playerX]);
+			if (map[playerY][ (player->instances[0].x - 1) / TILE] != '1')
+				player->instances[0].x -= 1;
+			playerX = *game_data->player_data.player_position.xAxis / TILE;
+			playerY = *game_data->player_data.player_position.yAxis / TILE;
+		}
 	if (mlx_is_key_down(mlx, MLX_KEY_D))
-		player->instances[0].x += 5;
+		if (map[playerY][playerX] != '1')
+		{
+			printf("player x: %d\n", playerY);
+			printf("player y: %d\n", playerX);
+			printf("location: %c\n", map[playerY][playerX]);
+			if (map[playerY] [(player->instances[0].x + 5) / TILE] != '1')
+				player->instances[0].x += 1;
+			playerX = *game_data->player_data.player_position.xAxis / TILE;
+			playerY = *game_data->player_data.player_position.yAxis / TILE;
+		}
 }
 
 void	draw_walls(mlx_t *mlx, struct s_map_data *map_data)
@@ -57,10 +101,15 @@ void	draw_walls(mlx_t *mlx, struct s_map_data *map_data)
 	}
 }
 
-void	draw_player(mlx_t *mlx)
+void	draw_player(struct s_game_data *game_data)
 {
-	player = mlx_new_image(mlx, 5, 5);
-	mlx_image_to_window(mlx, player, 20, 20);
+	mlx_image_t	*player;
+
+	game_data->player_data.player_image = mlx_new_image(game_data->mlx_handle, 5, 5);
+	player = game_data->player_data.player_image;
+	mlx_image_to_window(game_data->mlx_handle, player, 100, 100);
+	game_data->player_data.player_position.xAxis = &player->instances[0].x;
+	game_data->player_data.player_position.yAxis = &player->instances[0].y;
 	for (uint32_t z = 0; z < player->width; ++z)
 	{
 		for (uint32_t b = 0; b < player->height; ++b)
@@ -94,34 +143,35 @@ void	draw_grid(struct s_map_data *map_data, mlx_image_t *image)
 	}
 }
 
-void	draw_map(struct s_map_data *map_data)
+void	place_image_to_screen(struct s_game_data **game_data,
+							struct s_map_data *map_data)
 {
-	mlx_t*				mlx;
-	mlx_image_t*		image;
+	mlx_t*			mlx;
+	mlx_image_t*	image;
 
-	if (!(mlx = mlx_init(map_data->width, map_data->height, "MLX42", true)))
-	{
-		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
-	}
-	if (!(image = mlx_new_image(mlx, map_data->width, map_data->height)))
-	{
-		mlx_close_window(mlx);
-		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
-	}
+	mlx = (*game_data)->mlx_handle;
+	image = (*game_data)->mlx_background_image;
 	if (mlx_image_to_window(mlx, image, 0, 0) == -1)
 	{
 		mlx_close_window(mlx);
 		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
 	}
-	if (image != NULL)
-		memset(image->pixels, 255, map_data->width * map_data->height * 4);
-	//draw grid
-	draw_grid(map_data, image);
-	//draw walls
-	draw_walls(mlx, map_data);
-	//draw player
-	draw_player(mlx);
-	mlx_loop_hook(mlx, ft_hook, mlx);
-	mlx_loop(mlx);
-	mlx_terminate(mlx);
+	memset(image->pixels, 255, map_data->width * map_data->height * 4);
+}
+
+void	draw_map(struct s_map_data *map_data)
+{
+	struct s_game_data	*game_data;
+
+	game_data = NULL;
+	initialize_game_data(&game_data, map_data);
+	place_image_to_screen(&game_data, map_data);
+	draw_grid(map_data, game_data->mlx_background_image);
+	draw_walls(game_data->mlx_handle, map_data);
+	draw_player(game_data);
+	mlx_loop_hook(game_data->mlx_handle, ft_hook, game_data);
+	mlx_loop(game_data->mlx_handle);
+	mlx_terminate(game_data->mlx_handle);
+	if (game_data)
+		destroy_game_data(&game_data);
 }
