@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 extern "C" {
-#include "include/cub3D.h"
+#include "../include/cub3D.h"
 }
 // Demonstrate some basic assertions.
 TEST(Sergiu, TestFilename) {
