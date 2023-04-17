@@ -16,4 +16,6 @@ digraph "/home/ssergiu/projects/cub3d/include/cub3D.h"
   Node5 [label="/home/ssergiu/projects\l/cub3d/src/main.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html",tooltip=" "];
   Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
   Node6 [label="/home/ssergiu/projects\l/cub3d/src/read_map.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="/home/ssergiu/projects\l/cub3d/tests/hello_test.cc",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hello__test_8cc.html",tooltip=" "];
 }

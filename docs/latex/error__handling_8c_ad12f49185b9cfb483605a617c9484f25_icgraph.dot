@@ -12,9 +12,16 @@ digraph "cleanup_and_exit"
   Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
   Node3 [label="read_map",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$read__map_8c.html#a953ff0338bfa5e5863fc98056025e303",tooltip="Reads the contents of the file with the given name into a dynamically allocated buffer."];
   Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
-  Node4 [label="initialise_map_data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map__utils_8c.html#a5fa910f318c64f5de1f230726dfe8540",tooltip="Initializes map data."];
+  Node4 [label="initialize_map_data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map__utils_8c.html#aa2d20c5e42ff62d43c7ffab6d84dc5dd",tooltip="Initializes map data."];
   Node4 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node5 [label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node3 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hello__test_8cc.html#a830efcea470539cf966af5e1ca1d484e",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="initialize_game_data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map__utils_8c.html#ab1c2d2b6d5eaaa4e4602c09659d51d3d",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="draw_map",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$draw__map_8c.html#a3443be67d00219beaaad98305349ce07",tooltip=" "];
+  Node8 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['player_0',['player',['../draw__map_8c.html#ab78dd32861bca201025751df98a1c18d',1,'draw_map.c']]]
+  ['initial_5fposition_0',['initial_position',['../structs__player__data.html#a741da92a1e2db0978396663d99e6a905',1,'s_player_data']]]
 ];

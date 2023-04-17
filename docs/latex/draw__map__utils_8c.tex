@@ -10,18 +10,41 @@ void \mbox{\hyperlink{draw__map__utils_8c_a8034e3c8d12267f763e14f44c8da3d43}{fre
 \begin{DoxyCompactList}\small\item\em Frees memory allocated for a string array. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{draw__map__utils_8c_a8b69eb84595662299e24d7bf079c1709}{get\+\_\+map\+\_\+height}} (char $\ast$$\ast$map\+\_\+array)
 \begin{DoxyCompactList}\small\item\em Gets the height of a map. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{draw__map__utils_8c_a5fa910f318c64f5de1f230726dfe8540}{initialise\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$data, char $\ast$map\+\_\+file)
+void \mbox{\hyperlink{draw__map__utils_8c_ab1c2d2b6d5eaaa4e4602c09659d51d3d}{initialize\+\_\+game\+\_\+data}} (struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$$\ast$game\+\_\+data, struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$map\+\_\+data)
+\item 
+void \mbox{\hyperlink{draw__map__utils_8c_aa2d20c5e42ff62d43c7ffab6d84dc5dd}{initialize\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$map\+\_\+data, char $\ast$map\+\_\+file)
 \begin{DoxyCompactList}\small\item\em Initializes map data. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{draw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c}{destroy\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$data)
+void \mbox{\hyperlink{draw__map__utils_8c_a356733f8825c30cebb2db84f94eb95a7}{destroy\+\_\+game\+\_\+data}} (struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$$\ast$game\+\_\+data)
+\item 
+void \mbox{\hyperlink{draw__map__utils_8c_a9b9c00429f52ccf4cb4a0cf0967f6394}{destroy\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$map\+\_\+data)
 \begin{DoxyCompactList}\small\item\em Destroys map data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{draw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c}\label{draw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c}} 
+\mbox{\Hypertarget{draw__map__utils_8c_a356733f8825c30cebb2db84f94eb95a7}\label{draw__map__utils_8c_a356733f8825c30cebb2db84f94eb95a7}} 
+\index{draw\_map\_utils.c@{draw\_map\_utils.c}!destroy\_game\_data@{destroy\_game\_data}}
+\index{destroy\_game\_data@{destroy\_game\_data}!draw\_map\_utils.c@{draw\_map\_utils.c}}
+\doxysubsubsection{\texorpdfstring{destroy\_game\_data()}{destroy\_game\_data()}}
+{\footnotesize\ttfamily void destroy\+\_\+game\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$$\ast$}]{game\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00070}{70}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ free((*game\_data));}
+\DoxyCodeLine{00073\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{draw__map__utils_8c_a9b9c00429f52ccf4cb4a0cf0967f6394}\label{draw__map__utils_8c_a9b9c00429f52ccf4cb4a0cf0967f6394}} 
 \index{draw\_map\_utils.c@{draw\_map\_utils.c}!destroy\_map\_data@{destroy\_map\_data}}
 \index{destroy\_map\_data@{destroy\_map\_data}!draw\_map\_utils.c@{draw\_map\_utils.c}}
 \doxysubsubsection{\texorpdfstring{destroy\_map\_data()}{destroy\_map\_data()}}
-{\footnotesize\ttfamily void destroy\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void destroy\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{map\+\_\+data }\end{DoxyParamCaption})}
 
 
 
@@ -31,28 +54,28 @@ This function frees memory allocated for a map\+\_\+data struct and its componen
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & A pointer to the map\+\_\+data struct to be destroyed. \\
+{\em map\+\_\+data} & A pointer to the map\+\_\+data struct to be destroyed. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00043}{43}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
+Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00075}{75}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00044\ \{}
-\DoxyCodeLine{00045\ \ \ \ \ free((*data)-\/>map\_string);}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string)}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_array)}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{draw__map__utils_8c_a8034e3c8d12267f763e14f44c8da3d43}{free\_array\_of\_memory}}((*data)-\/>map\_array);}
-\DoxyCodeLine{00049\ \ \ \ \ free((*data));}
-\DoxyCodeLine{00050\ \}}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*map\_data)-\/>map\_string)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ free((*map\_data)-\/>map\_string);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*map\_data)-\/>map\_array)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{draw__map__utils_8c_a8034e3c8d12267f763e14f44c8da3d43}{free\_array\_of\_memory}}((*map\_data)-\/>map\_array);}
+\DoxyCodeLine{00081\ \ \ \ \ free((*map\_data));}
+\DoxyCodeLine{00082\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 1
-Here is the caller graph for this function\+:
 % FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
 \mbox{\Hypertarget{draw__map__utils_8c_a8034e3c8d12267f763e14f44c8da3d43}\label{draw__map__utils_8c_a8034e3c8d12267f763e14f44c8da3d43}} 
 \index{draw\_map\_utils.c@{draw\_map\_utils.c}!free\_array\_of\_memory@{free\_array\_of\_memory}}
 \index{free\_array\_of\_memory@{free\_array\_of\_memory}!draw\_map\_utils.c@{draw\_map\_utils.c}}
@@ -87,7 +110,7 @@ Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00004}{4}} of fi
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
-% FIG 3
+% FIG 4
 \mbox{\Hypertarget{draw__map__utils_8c_a8b69eb84595662299e24d7bf079c1709}\label{draw__map__utils_8c_a8b69eb84595662299e24d7bf079c1709}} 
 \index{draw\_map\_utils.c@{draw\_map\_utils.c}!get\_map\_height@{get\_map\_height}}
 \index{get\_map\_height@{get\_map\_height}!draw\_map\_utils.c@{draw\_map\_utils.c}}
@@ -125,12 +148,51 @@ Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00014}{14}} of f
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
-% FIG 4
-\mbox{\Hypertarget{draw__map__utils_8c_a5fa910f318c64f5de1f230726dfe8540}\label{draw__map__utils_8c_a5fa910f318c64f5de1f230726dfe8540}} 
-\index{draw\_map\_utils.c@{draw\_map\_utils.c}!initialise\_map\_data@{initialise\_map\_data}}
-\index{initialise\_map\_data@{initialise\_map\_data}!draw\_map\_utils.c@{draw\_map\_utils.c}}
-\doxysubsubsection{\texorpdfstring{initialise\_map\_data()}{initialise\_map\_data()}}
-{\footnotesize\ttfamily void initialise\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{data,  }\item[{char $\ast$}]{map\+\_\+file }\end{DoxyParamCaption})}
+% FIG 5
+\mbox{\Hypertarget{draw__map__utils_8c_ab1c2d2b6d5eaaa4e4602c09659d51d3d}\label{draw__map__utils_8c_ab1c2d2b6d5eaaa4e4602c09659d51d3d}} 
+\index{draw\_map\_utils.c@{draw\_map\_utils.c}!initialize\_game\_data@{initialize\_game\_data}}
+\index{initialize\_game\_data@{initialize\_game\_data}!draw\_map\_utils.c@{draw\_map\_utils.c}}
+\doxysubsubsection{\texorpdfstring{initialize\_game\_data()}{initialize\_game\_data()}}
+{\footnotesize\ttfamily void initialize\+\_\+game\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$$\ast$}]{game\+\_\+data,  }\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$}]{map\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00024}{24}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ mlx\_t*\ \ \ \ \ \ \ \ \ \ mlx;}
+\DoxyCodeLine{00028\ \ \ \ \ mlx\_image\_t*\ \ \ \ image;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ *game\_data\ =\ (\textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__game__data}{s\_game\_data}}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__game__data}{s\_game\_data}}));}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (game\_data\ ==\ NULL)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ 0,\ NULL);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(mlx\ =\ mlx\_init(\mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}}-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}},\ \mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}}-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}},\ \textcolor{stringliteral}{"{}cub3D"{}},\ \textcolor{keyword}{true})))}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}((\textcolor{keywordtype}{char}\ *)mlx\_strerror(mlx\_errno),\ 2);}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(image\ =\ mlx\_new\_image(mlx,\ \mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}}-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}},\ \mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}}-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}})))}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}((\textcolor{keywordtype}{char}\ *)mlx\_strerror(mlx\_errno),\ 2);}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ (*game\_data)-\/>mlx\_handle\ =\ mlx;}
+\DoxyCodeLine{00043\ \ \ \ \ (*game\_data)-\/>mlx\_background\_image\ =\ image;}
+\DoxyCodeLine{00044\ \ \ \ \ (*game\_data)-\/>map\_data\ =\ \mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}};}
+\DoxyCodeLine{00045\ \ \ \ \ (*game\_data)-\/>player\_data.player\_image\ =\ NULL;}
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{draw__map__utils_8c_aa2d20c5e42ff62d43c7ffab6d84dc5dd}\label{draw__map__utils_8c_aa2d20c5e42ff62d43c7ffab6d84dc5dd}} 
+\index{draw\_map\_utils.c@{draw\_map\_utils.c}!initialize\_map\_data@{initialize\_map\_data}}
+\index{initialize\_map\_data@{initialize\_map\_data}!draw\_map\_utils.c@{draw\_map\_utils.c}}
+\doxysubsubsection{\texorpdfstring{initialize\_map\_data()}{initialize\_map\_data()}}
+{\footnotesize\ttfamily void initialize\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{map\+\_\+data,  }\item[{char $\ast$}]{map\+\_\+file }\end{DoxyParamCaption})}
 
 
 
@@ -140,37 +202,40 @@ This function initializes a map\+\_\+data struct and sets its map\+\_\+string ma
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & A pointer to the map\+\_\+data struct to be initialized. \\
+{\em map\+\_\+data} & A pointer to the map\+\_\+data struct to be initialized. \\
 \hline
 {\em map\+\_\+file} & The file path of the map file to be read. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00024}{24}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
+Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00048}{48}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00025\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *map\_string;}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ map\_string\ =\ \mbox{\hyperlink{cub3D_8h_a953ff0338bfa5e5863fc98056025e303}{read\_map}}(map\_file);}
-\DoxyCodeLine{00029\ \ \ \ \ (*data)\ =\ malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}));}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (data\ ==\ NULL)}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a968801b6df4daa98b46851157bfbacab}{print\_error}}(errno);}
-\DoxyCodeLine{00032\ \ \ \ \ (*data)-\/>map\_string\ =\ map\_string;}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string\ ==\ NULL)}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ 0,\ NULL);}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string)}
-\DoxyCodeLine{00036\ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ (*data)-\/>map\_array\ =\ \mbox{\hyperlink{libft_8h_aa65c9de65051c8c589286cf133c4a1f4}{ft\_split}}((*data)-\/>map\_string,\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ (*data)-\/>width\ =\ \mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}((*data)-\/>map\_array[0])\ *\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ (*data)-\/>height\ =\ \mbox{\hyperlink{draw__map__utils_8c_a8b69eb84595662299e24d7bf079c1709}{get\_map\_height}}((*data)-\/>map\_array)\ *\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
-\DoxyCodeLine{00040\ \ \ \ \ \}}
-\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *map\_string;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ map\_string\ =\ \mbox{\hyperlink{cub3D_8h_a953ff0338bfa5e5863fc98056025e303}{read\_map}}(map\_file);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (map\_string\ ==\ NULL)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ 0,\ NULL);}
+\DoxyCodeLine{00055\ \ \ \ \ *map\_data\ =\ (\textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__map__data}{s\_map\_data}}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}));}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (map\_data\ ==\ NULL)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ 0,\ \mbox{\hyperlink{structs__map__data_a78e4cdf90cbb511d692e8792cc3de949}{map\_string}});}
+\DoxyCodeLine{00058\ \ \ \ \ (*map\_data)-\/>map\_string\ =\ \mbox{\hyperlink{structs__map__data_a78e4cdf90cbb511d692e8792cc3de949}{map\_string}};}
+\DoxyCodeLine{00059\ \ \ \ \ (*map\_data)-\/>map\_array\ =\ \mbox{\hyperlink{libft_8h_aa65c9de65051c8c589286cf133c4a1f4}{ft\_split}}((*map\_data)-\/>map\_string,\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*map\_data)-\/>map\_array\ ==\ NULL)}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ free((*map\_data)-\/>map\_string);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ free(*map\_data);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ exit(errno);}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ (*map\_data)-\/>width\ =\ \mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}((*map\_data)-\/>map\_array[0])\ *\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
+\DoxyCodeLine{00067\ \ \ \ \ (*map\_data)-\/>height\ =\ \mbox{\hyperlink{draw__map__utils_8c_a8b69eb84595662299e24d7bf079c1709}{get\_map\_height}}((*map\_data)-\/>map\_array)\ *\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
+\DoxyCodeLine{00068\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 5
+% FIG 8
 Here is the caller graph for this function\+:
-% FIG 6
+% FIG 9

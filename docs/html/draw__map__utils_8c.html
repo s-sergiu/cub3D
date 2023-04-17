@@ -109,16 +109,53 @@ Functions</h2></td></tr>
 <tr class="memitem:a8b69eb84595662299e24d7bf079c1709"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="draw__map__utils_8c.html#a8b69eb84595662299e24d7bf079c1709">get_map_height</a> (char **map_array)</td></tr>
 <tr class="memdesc:a8b69eb84595662299e24d7bf079c1709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height of a map.  <br /></td></tr>
 <tr class="separator:a8b69eb84595662299e24d7bf079c1709"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fa910f318c64f5de1f230726dfe8540"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="draw__map__utils_8c.html#a5fa910f318c64f5de1f230726dfe8540">initialise_map_data</a> (struct <a class="el" href="structs__map__data.html">s_map_data</a> **data, char *map_file)</td></tr>
-<tr class="memdesc:a5fa910f318c64f5de1f230726dfe8540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes map data.  <br /></td></tr>
-<tr class="separator:a5fa910f318c64f5de1f230726dfe8540"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0e0d1411c5e6e51f7bb4b854217d40c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="draw__map__utils_8c.html#ac0e0d1411c5e6e51f7bb4b854217d40c">destroy_map_data</a> (struct <a class="el" href="structs__map__data.html">s_map_data</a> **data)</td></tr>
-<tr class="memdesc:ac0e0d1411c5e6e51f7bb4b854217d40c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys map data.  <br /></td></tr>
-<tr class="separator:ac0e0d1411c5e6e51f7bb4b854217d40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c2d2b6d5eaaa4e4602c09659d51d3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="draw__map__utils_8c.html#ab1c2d2b6d5eaaa4e4602c09659d51d3d">initialize_game_data</a> (struct <a class="el" href="structs__game__data.html">s_game_data</a> **game_data, struct <a class="el" href="structs__map__data.html">s_map_data</a> *map_data)</td></tr>
+<tr class="separator:ab1c2d2b6d5eaaa4e4602c09659d51d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2d20c5e42ff62d43c7ffab6d84dc5dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="draw__map__utils_8c.html#aa2d20c5e42ff62d43c7ffab6d84dc5dd">initialize_map_data</a> (struct <a class="el" href="structs__map__data.html">s_map_data</a> **map_data, char *map_file)</td></tr>
+<tr class="memdesc:aa2d20c5e42ff62d43c7ffab6d84dc5dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes map data.  <br /></td></tr>
+<tr class="separator:aa2d20c5e42ff62d43c7ffab6d84dc5dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a356733f8825c30cebb2db84f94eb95a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="draw__map__utils_8c.html#a356733f8825c30cebb2db84f94eb95a7">destroy_game_data</a> (struct <a class="el" href="structs__game__data.html">s_game_data</a> **game_data)</td></tr>
+<tr class="separator:a356733f8825c30cebb2db84f94eb95a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9c00429f52ccf4cb4a0cf0967f6394"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="draw__map__utils_8c.html#a9b9c00429f52ccf4cb4a0cf0967f6394">destroy_map_data</a> (struct <a class="el" href="structs__map__data.html">s_map_data</a> **map_data)</td></tr>
+<tr class="memdesc:a9b9c00429f52ccf4cb4a0cf0967f6394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys map data.  <br /></td></tr>
+<tr class="separator:a9b9c00429f52ccf4cb4a0cf0967f6394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ac0e0d1411c5e6e51f7bb4b854217d40c" name="ac0e0d1411c5e6e51f7bb4b854217d40c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0e0d1411c5e6e51f7bb4b854217d40c">&#9670;&#160;</a></span>destroy_map_data()</h2>
+<a id="a356733f8825c30cebb2db84f94eb95a7" name="a356733f8825c30cebb2db84f94eb95a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a356733f8825c30cebb2db84f94eb95a7">&#9670;&#160;</a></span>destroy_game_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void destroy_game_data </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structs__game__data.html">s_game_data</a> **&#160;</td>
+          <td class="paramname"><em>game_data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="draw__map__utils_8c_source.html#l00070">70</a> of file <a class="el" href="draw__map__utils_8c_source.html">draw_map_utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>{</div>
+<div class="line"><span class="lineno">   72</span>    free((*game_data));</div>
+<div class="line"><span class="lineno">   73</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="draw__map__utils_8c_a356733f8825c30cebb2db84f94eb95a7_icgraph.png" border="0" usemap="#adraw__map__utils_8c_a356733f8825c30cebb2db84f94eb95a7_icgraph" alt=""/></div>
+<map name="adraw__map__utils_8c_a356733f8825c30cebb2db84f94eb95a7_icgraph" id="adraw__map__utils_8c_a356733f8825c30cebb2db84f94eb95a7_icgraph">
+<area shape="rect" title=" " alt="" coords="235,5,371,31"/>
+<area shape="rect" href="draw__map_8c.html#a3443be67d00219beaaad98305349ce07" title=" " alt="" coords="104,5,187,31"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9b9c00429f52ccf4cb4a0cf0967f6394" name="a9b9c00429f52ccf4cb4a0cf0967f6394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b9c00429f52ccf4cb4a0cf0967f6394">&#9670;&#160;</a></span>destroy_map_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +164,7 @@ Functions</h2></td></tr>
           <td class="memname">void destroy_map_data </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structs__map__data.html">s_map_data</a> **&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
+          <td class="paramname"><em>map_data</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -137,25 +174,25 @@ Functions</h2></td></tr>
 <p>This function frees memory allocated for a map_data struct and its components.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>A pointer to the map_data struct to be destroyed. </td></tr>
+    <tr><td class="paramname">map_data</td><td>A pointer to the map_data struct to be destroyed. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="draw__map__utils_8c_source.html#l00043">43</a> of file <a class="el" href="draw__map__utils_8c_source.html">draw_map_utils.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
-<div class="line"><span class="lineno">   45</span>    free((*data)-&gt;map_string);</div>
-<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> ((*data)-&gt;map_string)</div>
-<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">if</span> ((*data)-&gt;map_array)</div>
-<div class="line"><span class="lineno">   48</span>            <a class="code hl_function" href="draw__map__utils_8c.html#a8034e3c8d12267f763e14f44c8da3d43">free_array_of_memory</a>((*data)-&gt;map_array);</div>
-<div class="line"><span class="lineno">   49</span>    free((*data));</div>
-<div class="line"><span class="lineno">   50</span>}</div>
+<p class="definition">Definition at line <a class="el" href="draw__map__utils_8c_source.html#l00075">75</a> of file <a class="el" href="draw__map__utils_8c_source.html">draw_map_utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>{</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">if</span> ((*map_data)-&gt;map_string)</div>
+<div class="line"><span class="lineno">   78</span>        free((*map_data)-&gt;map_string);</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">if</span> ((*map_data)-&gt;map_array)</div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_function" href="draw__map__utils_8c.html#a8034e3c8d12267f763e14f44c8da3d43">free_array_of_memory</a>((*map_data)-&gt;map_array);</div>
+<div class="line"><span class="lineno">   81</span>    free((*map_data));</div>
+<div class="line"><span class="lineno">   82</span>}</div>
 <div class="ttc" id="adraw__map__utils_8c_html_a8034e3c8d12267f763e14f44c8da3d43"><div class="ttname"><a href="draw__map__utils_8c.html#a8034e3c8d12267f763e14f44c8da3d43">free_array_of_memory</a></div><div class="ttdeci">void free_array_of_memory(char **string_array)</div><div class="ttdoc">Frees memory allocated for a string array.</div><div class="ttdef"><b>Definition:</b> <a href="draw__map__utils_8c_source.html#l00004">draw_map_utils.c:4</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="draw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c_cgraph.png" border="0" usemap="#adraw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c_cgraph" alt=""/></div>
-<map name="adraw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c_cgraph" id="adraw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c_cgraph">
+<div class="center"><img src="draw__map__utils_8c_a9b9c00429f52ccf4cb4a0cf0967f6394_cgraph.png" border="0" usemap="#adraw__map__utils_8c_a9b9c00429f52ccf4cb4a0cf0967f6394_cgraph" alt=""/></div>
+<map name="adraw__map__utils_8c_a9b9c00429f52ccf4cb4a0cf0967f6394_cgraph" id="adraw__map__utils_8c_a9b9c00429f52ccf4cb4a0cf0967f6394_cgraph">
 <area shape="rect" title="Destroys map data." alt="" coords="5,5,135,31"/>
 <area shape="rect" href="draw__map__utils_8c.html#a8034e3c8d12267f763e14f44c8da3d43" title="Frees memory allocated for a string array." alt="" coords="183,5,335,31"/>
 </map>
@@ -163,8 +200,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="draw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c_icgraph.png" border="0" usemap="#adraw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c_icgraph" alt=""/></div>
-<map name="adraw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c_icgraph" id="adraw__map__utils_8c_ac0e0d1411c5e6e51f7bb4b854217d40c_icgraph">
+<div class="center"><img src="draw__map__utils_8c_a9b9c00429f52ccf4cb4a0cf0967f6394_icgraph.png" border="0" usemap="#adraw__map__utils_8c_a9b9c00429f52ccf4cb4a0cf0967f6394_icgraph" alt=""/></div>
+<map name="adraw__map__utils_8c_a9b9c00429f52ccf4cb4a0cf0967f6394_icgraph" id="adraw__map__utils_8c_a9b9c00429f52ccf4cb4a0cf0967f6394_icgraph">
 <area shape="rect" title="Destroys map data." alt="" coords="104,5,233,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
 </map>
@@ -212,7 +249,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="draw__map__utils_8c_a8034e3c8d12267f763e14f44c8da3d43_icgraph.png" border="0" usemap="#adraw__map__utils_8c_a8034e3c8d12267f763e14f44c8da3d43_icgraph" alt=""/></div>
 <map name="adraw__map__utils_8c_a8034e3c8d12267f763e14f44c8da3d43_icgraph" id="adraw__map__utils_8c_a8034e3c8d12267f763e14f44c8da3d43_icgraph">
 <area shape="rect" title="Frees memory allocated for a string array." alt="" coords="281,5,433,31"/>
-<area shape="rect" href="draw__map__utils_8c.html#ac0e0d1411c5e6e51f7bb4b854217d40c" title="Destroys map data." alt="" coords="104,5,233,31"/>
+<area shape="rect" href="draw__map__utils_8c.html#a9b9c00429f52ccf4cb4a0cf0967f6394" title="Destroys map data." alt="" coords="104,5,233,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
 </map>
 </div>
@@ -260,24 +297,102 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="draw__map__utils_8c_a8b69eb84595662299e24d7bf079c1709_icgraph.png" border="0" usemap="#adraw__map__utils_8c_a8b69eb84595662299e24d7bf079c1709_icgraph" alt=""/></div>
 <map name="adraw__map__utils_8c_a8b69eb84595662299e24d7bf079c1709_icgraph" id="adraw__map__utils_8c_a8b69eb84595662299e24d7bf079c1709_icgraph">
 <area shape="rect" title="Gets the height of a map." alt="" coords="285,5,400,31"/>
-<area shape="rect" href="draw__map__utils_8c.html#a5fa910f318c64f5de1f230726dfe8540" title="Initializes map data." alt="" coords="104,5,237,31"/>
+<area shape="rect" href="draw__map__utils_8c.html#aa2d20c5e42ff62d43c7ffab6d84dc5dd" title="Initializes map data." alt="" coords="104,5,237,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a5fa910f318c64f5de1f230726dfe8540" name="a5fa910f318c64f5de1f230726dfe8540"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fa910f318c64f5de1f230726dfe8540">&#9670;&#160;</a></span>initialise_map_data()</h2>
+<a id="ab1c2d2b6d5eaaa4e4602c09659d51d3d" name="ab1c2d2b6d5eaaa4e4602c09659d51d3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c2d2b6d5eaaa4e4602c09659d51d3d">&#9670;&#160;</a></span>initialize_game_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void initialise_map_data </td>
+          <td class="memname">void initialize_game_data </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structs__game__data.html">s_game_data</a> **&#160;</td>
+          <td class="paramname"><em>game_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structs__map__data.html">s_map_data</a> *&#160;</td>
+          <td class="paramname"><em>map_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="draw__map__utils_8c_source.html#l00024">24</a> of file <a class="el" href="draw__map__utils_8c_source.html">draw_map_utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
+<div class="line"><span class="lineno">   27</span>    mlx_t*          mlx;</div>
+<div class="line"><span class="lineno">   28</span>    mlx_image_t*    image;</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>    *game_data = (<span class="keyword">struct </span><a class="code hl_struct" href="structs__game__data.html">s_game_data</a> *)malloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structs__game__data.html">s_game_data</a>));</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (game_data == NULL)</div>
+<div class="line"><span class="lineno">   32</span>        <a class="code hl_function" href="cub3D_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a>(errno, 0, NULL);</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (!(mlx = mlx_init(<a class="code hl_variable" href="structs__game__data.html#a67e1cd5cf12b83ff14d0c488c65f76e9">map_data</a>-&gt;<a class="code hl_variable" href="structs__map__data.html#a6c935e0fd9d156d75d36287be039e256">width</a>, <a class="code hl_variable" href="structs__game__data.html#a67e1cd5cf12b83ff14d0c488c65f76e9">map_data</a>-&gt;<a class="code hl_variable" href="structs__map__data.html#a3dc97c8f3b6eaa17bf4e5fe4467d9b98">height</a>, <span class="stringliteral">&quot;cub3D&quot;</span>, <span class="keyword">true</span>)))</div>
+<div class="line"><span class="lineno">   34</span>    {</div>
+<div class="line"><span class="lineno">   35</span>        <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>((<span class="keywordtype">char</span> *)mlx_strerror(mlx_errno), 2);</div>
+<div class="line"><span class="lineno">   36</span>    }</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (!(image = mlx_new_image(mlx, <a class="code hl_variable" href="structs__game__data.html#a67e1cd5cf12b83ff14d0c488c65f76e9">map_data</a>-&gt;<a class="code hl_variable" href="structs__map__data.html#a6c935e0fd9d156d75d36287be039e256">width</a>, <a class="code hl_variable" href="structs__game__data.html#a67e1cd5cf12b83ff14d0c488c65f76e9">map_data</a>-&gt;<a class="code hl_variable" href="structs__map__data.html#a3dc97c8f3b6eaa17bf4e5fe4467d9b98">height</a>)))</div>
+<div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   39</span>        mlx_close_window(mlx);</div>
+<div class="line"><span class="lineno">   40</span>        <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>((<span class="keywordtype">char</span> *)mlx_strerror(mlx_errno), 2);</div>
+<div class="line"><span class="lineno">   41</span>    }</div>
+<div class="line"><span class="lineno">   42</span>    (*game_data)-&gt;mlx_handle = mlx;</div>
+<div class="line"><span class="lineno">   43</span>    (*game_data)-&gt;mlx_background_image = image;</div>
+<div class="line"><span class="lineno">   44</span>    (*game_data)-&gt;map_data = <a class="code hl_variable" href="structs__game__data.html#a67e1cd5cf12b83ff14d0c488c65f76e9">map_data</a>;</div>
+<div class="line"><span class="lineno">   45</span>    (*game_data)-&gt;player_data.player_image = NULL;</div>
+<div class="line"><span class="lineno">   46</span>}</div>
+<div class="ttc" id="acub3D_8h_html_ad12f49185b9cfb483605a617c9484f25"><div class="ttname"><a href="cub3D_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a></div><div class="ttdeci">void cleanup_and_exit(int error, int file, char *buffer)</div><div class="ttdoc">Frees any allocated memory and exits the program with the given error number.</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00022">error_handling.c:22</a></div></div>
+<div class="ttc" id="alibft_8h_html_acefce9ac519f8f8b7d3fde33dbafe469"><div class="ttname"><a href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a></div><div class="ttdeci">void ft_putstr_fd(char *s, int fd)</div><div class="ttdef"><b>Definition:</b> <a href="ft__putstring__fd_8c_source.html#l00004">ft_putstring_fd.c:4</a></div></div>
+<div class="ttc" id="astructs__game__data_html"><div class="ttname"><a href="structs__game__data.html">s_game_data</a></div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00038">cub3D.h:39</a></div></div>
+<div class="ttc" id="astructs__game__data_html_a67e1cd5cf12b83ff14d0c488c65f76e9"><div class="ttname"><a href="structs__game__data.html#a67e1cd5cf12b83ff14d0c488c65f76e9">s_game_data::map_data</a></div><div class="ttdeci">struct s_map_data * map_data</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00042">cub3D.h:42</a></div></div>
+<div class="ttc" id="astructs__map__data_html_a3dc97c8f3b6eaa17bf4e5fe4467d9b98"><div class="ttname"><a href="structs__map__data.html#a3dc97c8f3b6eaa17bf4e5fe4467d9b98">s_map_data::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00050">cub3D.h:50</a></div></div>
+<div class="ttc" id="astructs__map__data_html_a6c935e0fd9d156d75d36287be039e256"><div class="ttname"><a href="structs__map__data.html#a6c935e0fd9d156d75d36287be039e256">s_map_data::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00051">cub3D.h:51</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="draw__map__utils_8c_ab1c2d2b6d5eaaa4e4602c09659d51d3d_cgraph.png" border="0" usemap="#adraw__map__utils_8c_ab1c2d2b6d5eaaa4e4602c09659d51d3d_cgraph" alt=""/></div>
+<map name="adraw__map__utils_8c_ab1c2d2b6d5eaaa4e4602c09659d51d3d_cgraph" id="adraw__map__utils_8c_ab1c2d2b6d5eaaa4e4602c09659d51d3d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,145,56"/>
+<area shape="rect" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="193,5,316,31"/>
+<area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="492,31,580,56"/>
+<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="364,5,444,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="draw__map__utils_8c_ab1c2d2b6d5eaaa4e4602c09659d51d3d_icgraph.png" border="0" usemap="#adraw__map__utils_8c_ab1c2d2b6d5eaaa4e4602c09659d51d3d_icgraph" alt=""/></div>
+<map name="adraw__map__utils_8c_ab1c2d2b6d5eaaa4e4602c09659d51d3d_icgraph" id="adraw__map__utils_8c_ab1c2d2b6d5eaaa4e4602c09659d51d3d_icgraph">
+<area shape="rect" title=" " alt="" coords="235,5,375,31"/>
+<area shape="rect" href="draw__map_8c.html#a3443be67d00219beaaad98305349ce07" title=" " alt="" coords="104,5,187,31"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa2d20c5e42ff62d43c7ffab6d84dc5dd" name="aa2d20c5e42ff62d43c7ffab6d84dc5dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2d20c5e42ff62d43c7ffab6d84dc5dd">&#9670;&#160;</a></span>initialize_map_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initialize_map_data </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structs__map__data.html">s_map_data</a> **&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramname"><em>map_data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -297,60 +412,62 @@ Here is the caller graph for this function:</div>
 <p>This function initializes a map_data struct and sets its map_string map_array, width, and height values.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>A pointer to the map_data struct to be initialized. </td></tr>
+    <tr><td class="paramname">map_data</td><td>A pointer to the map_data struct to be initialized. </td></tr>
     <tr><td class="paramname">map_file</td><td>The file path of the map file to be read. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="draw__map__utils_8c_source.html#l00024">24</a> of file <a class="el" href="draw__map__utils_8c_source.html">draw_map_utils.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   25</span>{</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">char</span>    *map_string;</div>
-<div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>    map_string = <a class="code hl_function" href="cub3D_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a>(map_file);</div>
-<div class="line"><span class="lineno">   29</span>    (*data) = malloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structs__map__data.html">s_map_data</a>));</div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (data == NULL)</div>
-<div class="line"><span class="lineno">   31</span>        <a class="code hl_function" href="cub3D_8h.html#a968801b6df4daa98b46851157bfbacab">print_error</a>(errno);</div>
-<div class="line"><span class="lineno">   32</span>    (*data)-&gt;map_string = map_string;</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> ((*data)-&gt;map_string == NULL)</div>
-<div class="line"><span class="lineno">   34</span>        <a class="code hl_function" href="cub3D_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a>(errno, 0, NULL);</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">if</span> ((*data)-&gt;map_string)</div>
-<div class="line"><span class="lineno">   36</span>    {</div>
-<div class="line"><span class="lineno">   37</span>        (*data)-&gt;map_array = <a class="code hl_function" href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a>((*data)-&gt;map_string, <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><span class="lineno">   38</span>        (*data)-&gt;width = <a class="code hl_function" href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>((*data)-&gt;map_array[0]) * <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
-<div class="line"><span class="lineno">   39</span>        (*data)-&gt;height = <a class="code hl_function" href="draw__map__utils_8c.html#a8b69eb84595662299e24d7bf079c1709">get_map_height</a>((*data)-&gt;map_array) * <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
-<div class="line"><span class="lineno">   40</span>    }</div>
-<div class="line"><span class="lineno">   41</span>}</div>
+<p class="definition">Definition at line <a class="el" href="draw__map__utils_8c_source.html#l00048">48</a> of file <a class="el" href="draw__map__utils_8c_source.html">draw_map_utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>{</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordtype">char</span>    *map_string;</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    map_string = <a class="code hl_function" href="cub3D_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a>(map_file);</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">if</span> (map_string == NULL)</div>
+<div class="line"><span class="lineno">   54</span>        <a class="code hl_function" href="cub3D_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a>(errno, 0, NULL);</div>
+<div class="line"><span class="lineno">   55</span>    *map_data = (<span class="keyword">struct </span><a class="code hl_struct" href="structs__map__data.html">s_map_data</a> *)malloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structs__map__data.html">s_map_data</a>));</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">if</span> (map_data == NULL)</div>
+<div class="line"><span class="lineno">   57</span>        <a class="code hl_function" href="cub3D_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a>(errno, 0, <a class="code hl_variable" href="structs__map__data.html#a78e4cdf90cbb511d692e8792cc3de949">map_string</a>);</div>
+<div class="line"><span class="lineno">   58</span>    (*map_data)-&gt;map_string = <a class="code hl_variable" href="structs__map__data.html#a78e4cdf90cbb511d692e8792cc3de949">map_string</a>;</div>
+<div class="line"><span class="lineno">   59</span>    (*map_data)-&gt;map_array = <a class="code hl_function" href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a>((*map_data)-&gt;map_string, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> ((*map_data)-&gt;map_array == NULL)</div>
+<div class="line"><span class="lineno">   61</span>    {</div>
+<div class="line"><span class="lineno">   62</span>        free((*map_data)-&gt;map_string);</div>
+<div class="line"><span class="lineno">   63</span>        free(*map_data);</div>
+<div class="line"><span class="lineno">   64</span>        exit(errno);</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+<div class="line"><span class="lineno">   66</span>    (*map_data)-&gt;width = <a class="code hl_function" href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a>((*map_data)-&gt;map_array[0]) * <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
+<div class="line"><span class="lineno">   67</span>    (*map_data)-&gt;height = <a class="code hl_function" href="draw__map__utils_8c.html#a8b69eb84595662299e24d7bf079c1709">get_map_height</a>((*map_data)-&gt;map_array) * <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
+<div class="line"><span class="lineno">   68</span>}</div>
 <div class="ttc" id="acub3D_8h_html_a2706e5298e357ffb64b22c7e7fc1b3e9"><div class="ttname"><a href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a></div><div class="ttdeci">#define TILE</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00014">cub3D.h:14</a></div></div>
 <div class="ttc" id="acub3D_8h_html_a953ff0338bfa5e5863fc98056025e303"><div class="ttname"><a href="cub3D_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a></div><div class="ttdeci">char * read_map(char *filename)</div><div class="ttdoc">Reads the contents of the file with the given name into a dynamically allocated buffer.</div><div class="ttdef"><b>Definition:</b> <a href="read__map_8c_source.html#l00033">read_map.c:33</a></div></div>
-<div class="ttc" id="acub3D_8h_html_a968801b6df4daa98b46851157bfbacab"><div class="ttname"><a href="cub3D_8h.html#a968801b6df4daa98b46851157bfbacab">print_error</a></div><div class="ttdeci">void print_error(int error)</div><div class="ttdoc">Prints an error message to the standard error output and exits with the function parameter passed err...</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00004">error_handling.c:4</a></div></div>
-<div class="ttc" id="acub3D_8h_html_ad12f49185b9cfb483605a617c9484f25"><div class="ttname"><a href="cub3D_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a></div><div class="ttdeci">void cleanup_and_exit(int error, int file, char *buffer)</div><div class="ttdoc">Frees any allocated memory and exits the program with the given error number.</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00022">error_handling.c:22</a></div></div>
 <div class="ttc" id="adraw__map__utils_8c_html_a8b69eb84595662299e24d7bf079c1709"><div class="ttname"><a href="draw__map__utils_8c.html#a8b69eb84595662299e24d7bf079c1709">get_map_height</a></div><div class="ttdeci">int get_map_height(char **map_array)</div><div class="ttdoc">Gets the height of a map.</div><div class="ttdef"><b>Definition:</b> <a href="draw__map__utils_8c_source.html#l00014">draw_map_utils.c:14</a></div></div>
 <div class="ttc" id="alibft_8h_html_a828402378653640f545a4be2e00e92f9"><div class="ttname"><a href="libft_8h.html#a828402378653640f545a4be2e00e92f9">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *str)</div><div class="ttdoc">Calculates the length of a string.</div><div class="ttdef"><b>Definition:</b> <a href="ft__strlen_8c_source.html#l00004">ft_strlen.c:4</a></div></div>
 <div class="ttc" id="alibft_8h_html_aa65c9de65051c8c589286cf133c4a1f4"><div class="ttname"><a href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a></div><div class="ttdeci">char ** ft_split(char const *s, char c)</div><div class="ttdoc">Splits a string into an array of strings based on a given delimiter.</div><div class="ttdef"><b>Definition:</b> <a href="ft__split_8c_source.html#l00054">ft_split.c:54</a></div></div>
-<div class="ttc" id="astructs__map__data_html"><div class="ttname"><a href="structs__map__data.html">s_map_data</a></div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00021">cub3D.h:22</a></div></div>
+<div class="ttc" id="astructs__map__data_html"><div class="ttname"><a href="structs__map__data.html">s_map_data</a></div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00046">cub3D.h:47</a></div></div>
+<div class="ttc" id="astructs__map__data_html_a78e4cdf90cbb511d692e8792cc3de949"><div class="ttname"><a href="structs__map__data.html#a78e4cdf90cbb511d692e8792cc3de949">s_map_data::map_string</a></div><div class="ttdeci">char * map_string</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00048">cub3D.h:48</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="draw__map__utils_8c_a5fa910f318c64f5de1f230726dfe8540_cgraph.png" border="0" usemap="#adraw__map__utils_8c_a5fa910f318c64f5de1f230726dfe8540_cgraph" alt=""/></div>
-<map name="adraw__map__utils_8c_a5fa910f318c64f5de1f230726dfe8540_cgraph" id="adraw__map__utils_8c_a5fa910f318c64f5de1f230726dfe8540_cgraph">
-<area shape="rect" title="Initializes map data." alt="" coords="5,149,139,174"/>
-<area shape="rect" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="508,276,631,301"/>
-<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="679,200,759,225"/>
-<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title="Splits a string into an array of strings based on a given delimiter." alt="" coords="213,22,275,48"/>
-<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title="Calculates the length of a string." alt="" coords="535,22,604,48"/>
-<area shape="rect" href="draw__map__utils_8c.html#a8b69eb84595662299e24d7bf079c1709" title="Gets the height of a map." alt="" coords="187,224,301,249"/>
-<area shape="rect" href="read__map_8c.html#a953ff0338bfa5e5863fc98056025e303" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="205,174,283,200"/>
-<area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="807,200,895,225"/>
-<area shape="rect" href="ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc" title="Copy a string to a destination buffer with a specified maximum size." alt="" coords="367,22,443,48"/>
-<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="349,225,460,250"/>
+<div class="center"><img src="draw__map__utils_8c_aa2d20c5e42ff62d43c7ffab6d84dc5dd_cgraph.png" border="0" usemap="#adraw__map__utils_8c_aa2d20c5e42ff62d43c7ffab6d84dc5dd_cgraph" alt=""/></div>
+<map name="adraw__map__utils_8c_aa2d20c5e42ff62d43c7ffab6d84dc5dd_cgraph" id="adraw__map__utils_8c_aa2d20c5e42ff62d43c7ffab6d84dc5dd_cgraph">
+<area shape="rect" title="Initializes map data." alt="" coords="5,157,139,183"/>
+<area shape="rect" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="508,5,631,31"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title="Splits a string into an array of strings based on a given delimiter." alt="" coords="213,208,275,233"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title="Calculates the length of a string." alt="" coords="535,208,604,233"/>
+<area shape="rect" href="draw__map__utils_8c.html#a8b69eb84595662299e24d7bf079c1709" title="Gets the height of a map." alt="" coords="187,257,301,283"/>
+<area shape="rect" href="read__map_8c.html#a953ff0338bfa5e5863fc98056025e303" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="205,81,283,107"/>
+<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="679,56,759,81"/>
+<area shape="rect" href="ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="807,56,895,81"/>
+<area shape="rect" href="ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc" title="Copy a string to a destination buffer with a specified maximum size." alt="" coords="367,259,443,284"/>
+<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="349,56,460,81"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="draw__map__utils_8c_a5fa910f318c64f5de1f230726dfe8540_icgraph.png" border="0" usemap="#adraw__map__utils_8c_a5fa910f318c64f5de1f230726dfe8540_icgraph" alt=""/></div>
-<map name="adraw__map__utils_8c_a5fa910f318c64f5de1f230726dfe8540_icgraph" id="adraw__map__utils_8c_a5fa910f318c64f5de1f230726dfe8540_icgraph">
+<div class="center"><img src="draw__map__utils_8c_aa2d20c5e42ff62d43c7ffab6d84dc5dd_icgraph.png" border="0" usemap="#adraw__map__utils_8c_aa2d20c5e42ff62d43c7ffab6d84dc5dd_icgraph" alt=""/></div>
+<map name="adraw__map__utils_8c_aa2d20c5e42ff62d43c7ffab6d84dc5dd_icgraph" id="adraw__map__utils_8c_aa2d20c5e42ff62d43c7ffab6d84dc5dd_icgraph">
 <area shape="rect" title="Initializes map data." alt="" coords="104,5,237,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,31"/>
 </map>

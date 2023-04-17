@@ -1,0 +1,16 @@
+digraph "/home/ssergiu/projects/cub3d/libs"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_6719ab1f1f7655efc2fa43f7eb574fd1 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html",tooltip=""]
+    dir_6719ab1f1f7655efc2fa43f7eb574fd1 [shape=plaintext, label="libs"];
+  dir_4af9eafa7167d8e0c2eebb5f9dfb5dac [label="libft", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_4af9eafa7167d8e0c2eebb5f9dfb5dac.html",tooltip=""];
+  }
+  dir_d44c64559bbebec7f509842c48db8b23 [label="include", fillcolor="#edf0f7", color="red", style="filled", URL="dir_d44c64559bbebec7f509842c48db8b23.html",tooltip=""];
+  dir_4af9eafa7167d8e0c2eebb5f9dfb5dac->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="5", labeldistance=1.5 headhref="dir_000002_000000.html" color="steelblue1" fontcolor="steelblue1"];
+}

@@ -14,6 +14,14 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+struct \mbox{\hyperlink{structs__position}{s\+\_\+position}}
+\item 
+struct \mbox{\hyperlink{structs__static__position}{s\+\_\+static\+\_\+position}}
+\item 
+struct \mbox{\hyperlink{structs__player__data}{s\+\_\+player\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}}
+\item 
 struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Macros}
@@ -31,19 +39,14 @@ struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}}
 \item 
 \#define \mbox{\hyperlink{cub3D_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\+\_\+\+MAP\+\_\+\+FILE}}~255
 \end{DoxyCompactItemize}
-\doxysubsection*{Typedefs}
-\begin{DoxyCompactItemize}
-\item 
-typedef struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} \mbox{\hyperlink{cub3D_8h_a2e2d5bf45b85bbcd3d47c64673725ab1}{t\+\_\+map\+\_\+data}}
-\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{cub3D_8h_a1dd6a7f325ca5e8aafa0fe462209b4bb}{draw\+\_\+map}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$data)
+void \mbox{\hyperlink{cub3D_8h_a3443be67d00219beaaad98305349ce07}{draw\+\_\+map}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$map\+\_\+data)
 \item 
-void \mbox{\hyperlink{cub3D_8h_a5fa910f318c64f5de1f230726dfe8540}{initialise\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$data, char $\ast$map\+\_\+file)
+void \mbox{\hyperlink{cub3D_8h_aa2d20c5e42ff62d43c7ffab6d84dc5dd}{initialize\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$map\+\_\+data, char $\ast$map\+\_\+file)
 \begin{DoxyCompactList}\small\item\em Initializes map data. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{cub3D_8h_ac0e0d1411c5e6e51f7bb4b854217d40c}{destroy\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$data)
+void \mbox{\hyperlink{cub3D_8h_a9b9c00429f52ccf4cb4a0cf0967f6394}{destroy\+\_\+map\+\_\+data}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$map\+\_\+data)
 \begin{DoxyCompactList}\small\item\em Destroys map data. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{cub3D_8h_a968801b6df4daa98b46851157bfbacab}{print\+\_\+error}} (int error)
 \begin{DoxyCompactList}\small\item\em Prints an error message to the standard error output and exits with the function parameter passed error code. \end{DoxyCompactList}\item 
@@ -60,7 +63,13 @@ int \mbox{\hyperlink{cub3D_8h_a8b69eb84595662299e24d7bf079c1709}{get\+\_\+map\+\
 int \mbox{\hyperlink{cub3D_8h_ae82ab44de3b7db5df0474efb78347c37}{has\+\_\+invalid\+\_\+map\+\_\+extension}} (char $\ast$filename)
 \begin{DoxyCompactList}\small\item\em Checks if the given filename has a valid extension. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{cub3D_8h_a28722e35659ad0e59ef9d1f1c09e23f1}{is\+\_\+valid\+\_\+filename}} (char $\ast$filename)
-\begin{DoxyCompactList}\small\item\em Checks if the given filename is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks if the given filename is valid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cub3D_8h_a66378599b8e9ef436a2e73192b5364a8}{protected\+\_\+malloc}} (void $\ast$$\ast$parameter, size\+\_\+t size\+\_\+of\+\_\+parameter)
+\item 
+void \mbox{\hyperlink{cub3D_8h_ab1c2d2b6d5eaaa4e4602c09659d51d3d}{initialize\+\_\+game\+\_\+data}} (struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$$\ast$game\+\_\+data, struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$map\+\_\+data)
+\item 
+void \mbox{\hyperlink{cub3D_8h_a356733f8825c30cebb2db84f94eb95a7}{destroy\+\_\+game\+\_\+data}} (struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$$\ast$game\+\_\+data)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -126,19 +135,6 @@ Definition at line \mbox{\hyperlink{cub3D_8h_source_l00012}{12}} of file \mbox{\
 
 
 
-\doxysubsection{Typedef Documentation}
-\mbox{\Hypertarget{cub3D_8h_a2e2d5bf45b85bbcd3d47c64673725ab1}\label{cub3D_8h_a2e2d5bf45b85bbcd3d47c64673725ab1}} 
-\index{cub3D.h@{cub3D.h}!t\_map\_data@{t\_map\_data}}
-\index{t\_map\_data@{t\_map\_data}!cub3D.h@{cub3D.h}}
-\doxysubsubsection{\texorpdfstring{t\_map\_data}{t\_map\_data}}
-{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} \mbox{\hyperlink{cub3D_8h_a2e2d5bf45b85bbcd3d47c64673725ab1}{t\+\_\+map\+\_\+data}}}
-
-
-
-Definition at line \mbox{\hyperlink{cub3D_8h_source_l00019}{19}} of file \mbox{\hyperlink{cub3D_8h_source}{cub3\+D.\+h}}.
-
-
-
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}\label{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}} 
 \index{cub3D.h@{cub3D.h}!cleanup\_and\_exit@{cleanup\_and\_exit}}
@@ -181,11 +177,30 @@ Here is the call graph for this function\+:
 % FIG 2
 Here is the caller graph for this function\+:
 % FIG 3
-\mbox{\Hypertarget{cub3D_8h_ac0e0d1411c5e6e51f7bb4b854217d40c}\label{cub3D_8h_ac0e0d1411c5e6e51f7bb4b854217d40c}} 
+\mbox{\Hypertarget{cub3D_8h_a356733f8825c30cebb2db84f94eb95a7}\label{cub3D_8h_a356733f8825c30cebb2db84f94eb95a7}} 
+\index{cub3D.h@{cub3D.h}!destroy\_game\_data@{destroy\_game\_data}}
+\index{destroy\_game\_data@{destroy\_game\_data}!cub3D.h@{cub3D.h}}
+\doxysubsubsection{\texorpdfstring{destroy\_game\_data()}{destroy\_game\_data()}}
+{\footnotesize\ttfamily void destroy\+\_\+game\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$$\ast$}]{game\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00070}{70}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ free((*game\_data));}
+\DoxyCodeLine{00073\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{cub3D_8h_a9b9c00429f52ccf4cb4a0cf0967f6394}\label{cub3D_8h_a9b9c00429f52ccf4cb4a0cf0967f6394}} 
 \index{cub3D.h@{cub3D.h}!destroy\_map\_data@{destroy\_map\_data}}
 \index{destroy\_map\_data@{destroy\_map\_data}!cub3D.h@{cub3D.h}}
 \doxysubsubsection{\texorpdfstring{destroy\_map\_data()}{destroy\_map\_data()}}
-{\footnotesize\ttfamily void destroy\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void destroy\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{map\+\_\+data }\end{DoxyParamCaption})}
 
 
 
@@ -195,76 +210,61 @@ This function frees memory allocated for a map\+\_\+data struct and its componen
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & A pointer to the map\+\_\+data struct to be destroyed. \\
+{\em map\+\_\+data} & A pointer to the map\+\_\+data struct to be destroyed. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00043}{43}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
+Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00075}{75}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00044\ \{}
-\DoxyCodeLine{00045\ \ \ \ \ free((*data)-\/>map\_string);}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string)}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_array)}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{draw__map__utils_8c_a8034e3c8d12267f763e14f44c8da3d43}{free\_array\_of\_memory}}((*data)-\/>map\_array);}
-\DoxyCodeLine{00049\ \ \ \ \ free((*data));}
-\DoxyCodeLine{00050\ \}}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*map\_data)-\/>map\_string)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ free((*map\_data)-\/>map\_string);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*map\_data)-\/>map\_array)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{draw__map__utils_8c_a8034e3c8d12267f763e14f44c8da3d43}{free\_array\_of\_memory}}((*map\_data)-\/>map\_array);}
+\DoxyCodeLine{00081\ \ \ \ \ free((*map\_data));}
+\DoxyCodeLine{00082\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 4
-Here is the caller graph for this function\+:
 % FIG 5
-\mbox{\Hypertarget{cub3D_8h_a1dd6a7f325ca5e8aafa0fe462209b4bb}\label{cub3D_8h_a1dd6a7f325ca5e8aafa0fe462209b4bb}} 
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{cub3D_8h_a3443be67d00219beaaad98305349ce07}\label{cub3D_8h_a3443be67d00219beaaad98305349ce07}} 
 \index{cub3D.h@{cub3D.h}!draw\_map@{draw\_map}}
 \index{draw\_map@{draw\_map}!cub3D.h@{cub3D.h}}
 \doxysubsubsection{\texorpdfstring{draw\_map()}{draw\_map()}}
-{\footnotesize\ttfamily void draw\+\_\+map (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void draw\+\_\+map (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$}]{map\+\_\+data }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{draw__map_8c_source_l00097}{97}} of file \mbox{\hyperlink{draw__map_8c_source}{draw\+\_\+map.\+c}}.
+Definition at line \mbox{\hyperlink{draw__map_8c_source_l00155}{155}} of file \mbox{\hyperlink{draw__map_8c_source}{draw\+\_\+map.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00098\ \{}
-\DoxyCodeLine{00099\ \ \ \ \ mlx\_t*\ \ \ \ \ \ \ \ \ \ mlx;}
-\DoxyCodeLine{00100\ \ \ \ \ mlx\_image\_t*\ \ \ \ image;}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(mlx\ =\ mlx\_init(data-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}},\ data-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}},\ \textcolor{stringliteral}{"{}MLX42"{}},\ \textcolor{keyword}{true})))}
-\DoxyCodeLine{00103\ \ \ \ \ \{}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}((\textcolor{keywordtype}{char}\ *)mlx\_strerror(mlx\_errno),\ 2);}
-\DoxyCodeLine{00105\ \ \ \ \ \}}
-\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(image\ =\ mlx\_new\_image(mlx,\ data-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}},\ data-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}})))}
-\DoxyCodeLine{00107\ \ \ \ \ \{}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}((\textcolor{keywordtype}{char}\ *)mlx\_strerror(mlx\_errno),\ 2);}
-\DoxyCodeLine{00110\ \ \ \ \ \}}
-\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{if}\ (mlx\_image\_to\_window(mlx,\ image,\ 0,\ 0)\ ==\ -\/1)}
-\DoxyCodeLine{00112\ \ \ \ \ \{}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}((\textcolor{keywordtype}{char}\ *)mlx\_strerror(mlx\_errno),\ 2);}
-\DoxyCodeLine{00115\ \ \ \ \ \}}
-\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{if}\ (image\ !=\ NULL)}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ memset(image-\/>pixels,\ 255,\ data-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}}\ *\ data-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}}\ *\ 4);}
-\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//draw\ grid}}
-\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a0784778679c1d1e56629e11ff8e33c16}{draw\_grid}}(data,\ image);}
-\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//draw\ walls}}
-\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a130aac34cf392c1b07ed012b30469991}{draw\_walls}}(mlx,\ data);}
-\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//draw\ player}}
-\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a4870a2eab5a5ceb34b6085f67f1e2998}{draw\_player}}(mlx);}
-\DoxyCodeLine{00124\ \ \ \ \ mlx\_loop\_hook(mlx,\ \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\_hook}},\ mlx);}
-\DoxyCodeLine{00125\ \ \ \ \ mlx\_loop(mlx);}
-\DoxyCodeLine{00126\ \ \ \ \ mlx\_terminate(mlx);}
-\DoxyCodeLine{00127\ \}}
+\DoxyCodeLine{00156\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__game__data}{s\_game\_data}}\ \ \ *game\_data;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ game\_data\ =\ NULL;}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ab1c2d2b6d5eaaa4e4602c09659d51d3d}{initialize\_game\_data}}(\&game\_data,\ \mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}});}
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a97d700c0c000abcc642a44c27e85afef}{place\_image\_to\_screen}}(\&game\_data,\ \mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}});}
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_ad1d783c8f0f0cff7b80b71c22944d648}{draw\_grid}}(\mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}},\ game\_data-\/>\mbox{\hyperlink{structs__game__data_a9469f6a12260a7bc586d8934bc3120dc}{mlx\_background\_image}});}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_aa54199ea768b27cd270ff94975ac0f46}{draw\_walls}}(game\_data);}
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_ac35b39a660a405d9638cb1483d8fe93a}{draw\_player}}(game\_data);}
+\DoxyCodeLine{00165\ \ \ \ \ mlx\_loop\_hook(game\_data-\/>\mbox{\hyperlink{structs__game__data_ad9fd52da8c21de0b10b15b79c01f09c9}{mlx\_handle}},\ \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\_hook}},\ game\_data);}
+\DoxyCodeLine{00166\ \ \ \ \ mlx\_loop(game\_data-\/>\mbox{\hyperlink{structs__game__data_ad9fd52da8c21de0b10b15b79c01f09c9}{mlx\_handle}});}
+\DoxyCodeLine{00167\ \ \ \ \ mlx\_terminate(game\_data-\/>\mbox{\hyperlink{structs__game__data_ad9fd52da8c21de0b10b15b79c01f09c9}{mlx\_handle}});}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{if}\ (game\_data)}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a356733f8825c30cebb2db84f94eb95a7}{destroy\_game\_data}}(\&game\_data);}
+\DoxyCodeLine{00170\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 6
-Here is the caller graph for this function\+:
 % FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
 \mbox{\Hypertarget{cub3D_8h_a8034e3c8d12267f763e14f44c8da3d43}\label{cub3D_8h_a8034e3c8d12267f763e14f44c8da3d43}} 
 \index{cub3D.h@{cub3D.h}!free\_array\_of\_memory@{free\_array\_of\_memory}}
 \index{free\_array\_of\_memory@{free\_array\_of\_memory}!cub3D.h@{cub3D.h}}
@@ -299,7 +299,7 @@ Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00004}{4}} of fi
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
-% FIG 8
+% FIG 9
 \mbox{\Hypertarget{cub3D_8h_a8b69eb84595662299e24d7bf079c1709}\label{cub3D_8h_a8b69eb84595662299e24d7bf079c1709}} 
 \index{cub3D.h@{cub3D.h}!get\_map\_height@{get\_map\_height}}
 \index{get\_map\_height@{get\_map\_height}!cub3D.h@{cub3D.h}}
@@ -337,7 +337,7 @@ Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00014}{14}} of f
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
-% FIG 9
+% FIG 10
 \mbox{\Hypertarget{cub3D_8h_a973f5273453bacdf37c27ef24bdd540d}\label{cub3D_8h_a973f5273453bacdf37c27ef24bdd540d}} 
 \index{cub3D.h@{cub3D.h}!get\_total\_bytes@{get\_total\_bytes}}
 \index{get\_total\_bytes@{get\_total\_bytes}!cub3D.h@{cub3D.h}}
@@ -392,9 +392,9 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00004}{4}} of file \mbo
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 10
-Here is the caller graph for this function\+:
 % FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
 \mbox{\Hypertarget{cub3D_8h_ae82ab44de3b7db5df0474efb78347c37}\label{cub3D_8h_ae82ab44de3b7db5df0474efb78347c37}} 
 \index{cub3D.h@{cub3D.h}!has\_invalid\_map\_extension@{has\_invalid\_map\_extension}}
 \index{has\_invalid\_map\_extension@{has\_invalid\_map\_extension}!cub3D.h@{cub3D.h}}
@@ -432,14 +432,53 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00031}{31}} of fi
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 12
-Here is the caller graph for this function\+:
 % FIG 13
-\mbox{\Hypertarget{cub3D_8h_a5fa910f318c64f5de1f230726dfe8540}\label{cub3D_8h_a5fa910f318c64f5de1f230726dfe8540}} 
-\index{cub3D.h@{cub3D.h}!initialise\_map\_data@{initialise\_map\_data}}
-\index{initialise\_map\_data@{initialise\_map\_data}!cub3D.h@{cub3D.h}}
-\doxysubsubsection{\texorpdfstring{initialise\_map\_data()}{initialise\_map\_data()}}
-{\footnotesize\ttfamily void initialise\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{data,  }\item[{char $\ast$}]{map\+\_\+file }\end{DoxyParamCaption})}
+Here is the caller graph for this function\+:
+% FIG 14
+\mbox{\Hypertarget{cub3D_8h_ab1c2d2b6d5eaaa4e4602c09659d51d3d}\label{cub3D_8h_ab1c2d2b6d5eaaa4e4602c09659d51d3d}} 
+\index{cub3D.h@{cub3D.h}!initialize\_game\_data@{initialize\_game\_data}}
+\index{initialize\_game\_data@{initialize\_game\_data}!cub3D.h@{cub3D.h}}
+\doxysubsubsection{\texorpdfstring{initialize\_game\_data()}{initialize\_game\_data()}}
+{\footnotesize\ttfamily void initialize\+\_\+game\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$$\ast$}]{game\+\_\+data,  }\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$}]{map\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00024}{24}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ mlx\_t*\ \ \ \ \ \ \ \ \ \ mlx;}
+\DoxyCodeLine{00028\ \ \ \ \ mlx\_image\_t*\ \ \ \ image;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ *game\_data\ =\ (\textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__game__data}{s\_game\_data}}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__game__data}{s\_game\_data}}));}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (game\_data\ ==\ NULL)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ 0,\ NULL);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(mlx\ =\ mlx\_init(\mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}}-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}},\ \mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}}-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}},\ \textcolor{stringliteral}{"{}cub3D"{}},\ \textcolor{keyword}{true})))}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}((\textcolor{keywordtype}{char}\ *)mlx\_strerror(mlx\_errno),\ 2);}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(image\ =\ mlx\_new\_image(mlx,\ \mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}}-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}},\ \mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}}-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}})))}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}((\textcolor{keywordtype}{char}\ *)mlx\_strerror(mlx\_errno),\ 2);}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ (*game\_data)-\/>mlx\_handle\ =\ mlx;}
+\DoxyCodeLine{00043\ \ \ \ \ (*game\_data)-\/>mlx\_background\_image\ =\ image;}
+\DoxyCodeLine{00044\ \ \ \ \ (*game\_data)-\/>map\_data\ =\ \mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}};}
+\DoxyCodeLine{00045\ \ \ \ \ (*game\_data)-\/>player\_data.player\_image\ =\ NULL;}
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 15
+Here is the caller graph for this function\+:
+% FIG 16
+\mbox{\Hypertarget{cub3D_8h_aa2d20c5e42ff62d43c7ffab6d84dc5dd}\label{cub3D_8h_aa2d20c5e42ff62d43c7ffab6d84dc5dd}} 
+\index{cub3D.h@{cub3D.h}!initialize\_map\_data@{initialize\_map\_data}}
+\index{initialize\_map\_data@{initialize\_map\_data}!cub3D.h@{cub3D.h}}
+\doxysubsubsection{\texorpdfstring{initialize\_map\_data()}{initialize\_map\_data()}}
+{\footnotesize\ttfamily void initialize\+\_\+map\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$$\ast$}]{map\+\_\+data,  }\item[{char $\ast$}]{map\+\_\+file }\end{DoxyParamCaption})}
 
 
 
@@ -449,40 +488,43 @@ This function initializes a map\+\_\+data struct and sets its map\+\_\+string ma
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & A pointer to the map\+\_\+data struct to be initialized. \\
+{\em map\+\_\+data} & A pointer to the map\+\_\+data struct to be initialized. \\
 \hline
 {\em map\+\_\+file} & The file path of the map file to be read. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00024}{24}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
+Definition at line \mbox{\hyperlink{draw__map__utils_8c_source_l00048}{48}} of file \mbox{\hyperlink{draw__map__utils_8c_source}{draw\+\_\+map\+\_\+utils.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00025\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *map\_string;}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ map\_string\ =\ \mbox{\hyperlink{cub3D_8h_a953ff0338bfa5e5863fc98056025e303}{read\_map}}(map\_file);}
-\DoxyCodeLine{00029\ \ \ \ \ (*data)\ =\ malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}));}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (data\ ==\ NULL)}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a968801b6df4daa98b46851157bfbacab}{print\_error}}(errno);}
-\DoxyCodeLine{00032\ \ \ \ \ (*data)-\/>map\_string\ =\ map\_string;}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string\ ==\ NULL)}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ 0,\ NULL);}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*data)-\/>map\_string)}
-\DoxyCodeLine{00036\ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ (*data)-\/>map\_array\ =\ \mbox{\hyperlink{libft_8h_aa65c9de65051c8c589286cf133c4a1f4}{ft\_split}}((*data)-\/>map\_string,\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ (*data)-\/>width\ =\ \mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}((*data)-\/>map\_array[0])\ *\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ (*data)-\/>height\ =\ \mbox{\hyperlink{draw__map__utils_8c_a8b69eb84595662299e24d7bf079c1709}{get\_map\_height}}((*data)-\/>map\_array)\ *\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
-\DoxyCodeLine{00040\ \ \ \ \ \}}
-\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *map\_string;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ map\_string\ =\ \mbox{\hyperlink{cub3D_8h_a953ff0338bfa5e5863fc98056025e303}{read\_map}}(map\_file);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (map\_string\ ==\ NULL)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ 0,\ NULL);}
+\DoxyCodeLine{00055\ \ \ \ \ *map\_data\ =\ (\textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__map__data}{s\_map\_data}}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__map__data}{s\_map\_data}}));}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (map\_data\ ==\ NULL)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ 0,\ \mbox{\hyperlink{structs__map__data_a78e4cdf90cbb511d692e8792cc3de949}{map\_string}});}
+\DoxyCodeLine{00058\ \ \ \ \ (*map\_data)-\/>map\_string\ =\ \mbox{\hyperlink{structs__map__data_a78e4cdf90cbb511d692e8792cc3de949}{map\_string}};}
+\DoxyCodeLine{00059\ \ \ \ \ (*map\_data)-\/>map\_array\ =\ \mbox{\hyperlink{libft_8h_aa65c9de65051c8c589286cf133c4a1f4}{ft\_split}}((*map\_data)-\/>map\_string,\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}\ ((*map\_data)-\/>map\_array\ ==\ NULL)}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ free((*map\_data)-\/>map\_string);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ free(*map\_data);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ exit(errno);}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ (*map\_data)-\/>width\ =\ \mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}((*map\_data)-\/>map\_array[0])\ *\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
+\DoxyCodeLine{00067\ \ \ \ \ (*map\_data)-\/>height\ =\ \mbox{\hyperlink{draw__map__utils_8c_a8b69eb84595662299e24d7bf079c1709}{get\_map\_height}}((*map\_data)-\/>map\_array)\ *\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
+\DoxyCodeLine{00068\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 14
+% FIG 17
 Here is the caller graph for this function\+:
-% FIG 15
+% FIG 18
 \mbox{\Hypertarget{cub3D_8h_a28722e35659ad0e59ef9d1f1c09e23f1}\label{cub3D_8h_a28722e35659ad0e59ef9d1f1c09e23f1}} 
 \index{cub3D.h@{cub3D.h}!is\_valid\_filename@{is\_valid\_filename}}
 \index{is\_valid\_filename@{is\_valid\_filename}!cub3D.h@{cub3D.h}}
@@ -519,9 +561,9 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00052}{52}} of fi
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 16
+% FIG 19
 Here is the caller graph for this function\+:
-% FIG 17
+% FIG 20
 \mbox{\Hypertarget{cub3D_8h_a968801b6df4daa98b46851157bfbacab}\label{cub3D_8h_a968801b6df4daa98b46851157bfbacab}} 
 \index{cub3D.h@{cub3D.h}!print\_error@{print\_error}}
 \index{print\_error@{print\_error}!cub3D.h@{cub3D.h}}
@@ -565,9 +607,15 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00004}{4}} of fil
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 18
+% FIG 21
 Here is the caller graph for this function\+:
-% FIG 19
+% FIG 22
+\mbox{\Hypertarget{cub3D_8h_a66378599b8e9ef436a2e73192b5364a8}\label{cub3D_8h_a66378599b8e9ef436a2e73192b5364a8}} 
+\index{cub3D.h@{cub3D.h}!protected\_malloc@{protected\_malloc}}
+\index{protected\_malloc@{protected\_malloc}!cub3D.h@{cub3D.h}}
+\doxysubsubsection{\texorpdfstring{protected\_malloc()}{protected\_malloc()}}
+{\footnotesize\ttfamily void protected\+\_\+malloc (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{parameter,  }\item[{size\+\_\+t}]{size\+\_\+of\+\_\+parameter }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{cub3D_8h_a953ff0338bfa5e5863fc98056025e303}\label{cub3D_8h_a953ff0338bfa5e5863fc98056025e303}} 
 \index{cub3D.h@{cub3D.h}!read\_map@{read\_map}}
 \index{read\_map@{read\_map}!cub3D.h@{cub3D.h}}
@@ -615,6 +663,6 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00033}{33}} of file \mb
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 20
+% FIG 23
 Here is the caller graph for this function\+:
-% FIG 21
+% FIG 24
