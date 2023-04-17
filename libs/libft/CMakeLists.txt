@@ -12,3 +12,4 @@ add_library(
 	src/ft_strncmp.c
 	src/ft_strlcpy.c
 )
+
