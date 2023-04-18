@@ -1,5 +1,5 @@
 
-#include "../include/cub3D.h"
+#include <cub3D.h>
 
 void	free_array_of_memory(char **string_array)
 {
