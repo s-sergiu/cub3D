@@ -1,0 +1,62 @@
+name: test
+
+on: [push]
+
+jobs:
+  build-on-ubuntu:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install GLFW
+      run: sudo apt-get install libglfw3-dev valgrind
+    - name: Initialize submodule
+      run: git submodule update --init --recursive
+    - name: Build dependency
+      working-directory: external/MLX42
+      run: |
+        cmake -B build
+        cmake --build build -j4
+    - name: Build and run C project
+      run: |
+        make
+    - name: Valgrind memory leak check #1
+      run: |
+        valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps/default.cub
+    - name: Valgrind memory leak check (empty map) #2
+      continue-on-error: true
+      run: |
+        valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps/empty.cub || [ $? -eq 1 ]
+    - name: Valgrind memory leak check (incorrect map extension) #3
+      continue-on-error: true
+      run: |
+        valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps/empty.cubs || [ $? -eq 1 ]
+    - name: Valgrind memory leak check (map as directory) #4
+      continue-on-error: true
+      run: |
+        valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps || [ $? -eq 1 ]
+    - name: Valgrind memory leak check (read permission) #4
+      continue-on-error: true
+      run: |
+        chmod -r data/maps/default.cub
+        valgrind --leak-check=full --show-leak-kinds=all ./cub3D data/maps/default.cub || [ $? -eq 1 ]
+
+  build-on-mac:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install GLFW
+      run: brew install glfw
+    - name: Initialize submodule
+      run: git submodule update --init --recursive
+    - name: Build dependency
+      working-directory: external/MLX42
+      run: |
+        cmake -B build
+        cmake --build build -j4
+    - name: Build and run C project
+      run: |
+        make

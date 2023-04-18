@@ -1,16 +1,22 @@
 
-#include "../include/cub3D.h"
+#include <cub3D.h>
 
 int	main(int argc, char **argv)
 {
-	(void)argc;
-	(void)argv;
+	struct s_map_data	*map_data;
+
+	map_data = NULL;
 	if (argc != 2)
-		write(1, "usage: \n", 8);
+		write(1, "Usage: ./cub3D <map.cub>\n", 25);
 	else
 	{
-		write(1, "success\n", 8);
-		printf("bytes: %d\n", (get_total_bytes(argv[1])));
+		if (is_valid_filename(argv[1]))
+		{
+			initialize_map_data(&map_data, argv[1]);
+			draw_map(map_data);
+		}
+		if (map_data)
+			destroy_map_data(&map_data);
 	}
 	return (0);
 }

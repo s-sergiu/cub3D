@@ -1,0 +1,277 @@
+\hypertarget{draw__map_8c}{}\doxysection{/home/ssergiu/projects/cub3d/src/draw\+\_\+map.c File Reference}
+\label{draw__map_8c}\index{/home/ssergiu/projects/cub3d/src/draw\_map.c@{/home/ssergiu/projects/cub3d/src/draw\_map.c}}
+{\ttfamily \#include \char`\"{}../include/cub3\+D.\+h\char`\"{}}\newline
+Include dependency graph for draw\+\_\+map.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\+\_\+hook}} (void $\ast$param)
+\item 
+void \mbox{\hyperlink{draw__map_8c_aa54199ea768b27cd270ff94975ac0f46}{draw\+\_\+walls}} (struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$game\+\_\+data)
+\item 
+void \mbox{\hyperlink{draw__map_8c_ac35b39a660a405d9638cb1483d8fe93a}{draw\+\_\+player}} (struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$game\+\_\+data)
+\item 
+void \mbox{\hyperlink{draw__map_8c_ad1d783c8f0f0cff7b80b71c22944d648}{draw\+\_\+grid}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$map\+\_\+data, mlx\+\_\+image\+\_\+t $\ast$image)
+\item 
+void \mbox{\hyperlink{draw__map_8c_a97d700c0c000abcc642a44c27e85afef}{place\+\_\+image\+\_\+to\+\_\+screen}} (struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$$\ast$game\+\_\+data, struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$map\+\_\+data)
+\item 
+void \mbox{\hyperlink{draw__map_8c_a3443be67d00219beaaad98305349ce07}{draw\+\_\+map}} (struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$map\+\_\+data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{draw__map_8c_ad1d783c8f0f0cff7b80b71c22944d648}\label{draw__map_8c_ad1d783c8f0f0cff7b80b71c22944d648}} 
+\index{draw\_map.c@{draw\_map.c}!draw\_grid@{draw\_grid}}
+\index{draw\_grid@{draw\_grid}!draw\_map.c@{draw\_map.c}}
+\doxysubsubsection{\texorpdfstring{draw\_grid()}{draw\_grid()}}
+{\footnotesize\ttfamily void draw\+\_\+grid (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$}]{map\+\_\+data,  }\item[{mlx\+\_\+image\+\_\+t $\ast$}]{image }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__map_8c_source_l00115}{115}} of file \mbox{\hyperlink{draw__map_8c_source}{draw\+\_\+map.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{int}\ x;}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{int}\ y;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ x\ =\ 0;}
+\DoxyCodeLine{00121\ \ \ \ \ y\ =\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{while}\ (y\ <\ map\_data-\/>height)}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (x\ <\ map\_data-\/>width)}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ mlx\_put\_pixel(image,\ x++,\ y,\ 231);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ x\ =\ 0;}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{while}\ (x\ <\ map\_data-\/>width)}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (y\ <\ map\_data-\/>height)}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ mlx\_put\_pixel(image,\ x,\ y++,\ 255);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{draw__map_8c_a3443be67d00219beaaad98305349ce07}\label{draw__map_8c_a3443be67d00219beaaad98305349ce07}} 
+\index{draw\_map.c@{draw\_map.c}!draw\_map@{draw\_map}}
+\index{draw\_map@{draw\_map}!draw\_map.c@{draw\_map.c}}
+\doxysubsubsection{\texorpdfstring{draw\_map()}{draw\_map()}}
+{\footnotesize\ttfamily void draw\+\_\+map (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$}]{map\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__map_8c_source_l00155}{155}} of file \mbox{\hyperlink{draw__map_8c_source}{draw\+\_\+map.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00156\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__game__data}{s\_game\_data}}\ \ \ *game\_data;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ game\_data\ =\ NULL;}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{cub3D_8h_ab1c2d2b6d5eaaa4e4602c09659d51d3d}{initialize\_game\_data}}(\&game\_data,\ \mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}});}
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a97d700c0c000abcc642a44c27e85afef}{place\_image\_to\_screen}}(\&game\_data,\ \mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}});}
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_ad1d783c8f0f0cff7b80b71c22944d648}{draw\_grid}}(\mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}},\ game\_data-\/>\mbox{\hyperlink{structs__game__data_a9469f6a12260a7bc586d8934bc3120dc}{mlx\_background\_image}});}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_aa54199ea768b27cd270ff94975ac0f46}{draw\_walls}}(game\_data);}
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_ac35b39a660a405d9638cb1483d8fe93a}{draw\_player}}(game\_data);}
+\DoxyCodeLine{00165\ \ \ \ \ mlx\_loop\_hook(game\_data-\/>\mbox{\hyperlink{structs__game__data_ad9fd52da8c21de0b10b15b79c01f09c9}{mlx\_handle}},\ \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\_hook}},\ game\_data);}
+\DoxyCodeLine{00166\ \ \ \ \ mlx\_loop(game\_data-\/>\mbox{\hyperlink{structs__game__data_ad9fd52da8c21de0b10b15b79c01f09c9}{mlx\_handle}});}
+\DoxyCodeLine{00167\ \ \ \ \ mlx\_terminate(game\_data-\/>\mbox{\hyperlink{structs__game__data_ad9fd52da8c21de0b10b15b79c01f09c9}{mlx\_handle}});}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{if}\ (game\_data)}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3D_8h_a356733f8825c30cebb2db84f94eb95a7}{destroy\_game\_data}}(\&game\_data);}
+\DoxyCodeLine{00170\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{draw__map_8c_ac35b39a660a405d9638cb1483d8fe93a}\label{draw__map_8c_ac35b39a660a405d9638cb1483d8fe93a}} 
+\index{draw\_map.c@{draw\_map.c}!draw\_player@{draw\_player}}
+\index{draw\_player@{draw\_player}!draw\_map.c@{draw\_map.c}}
+\doxysubsubsection{\texorpdfstring{draw\_player()}{draw\_player()}}
+{\footnotesize\ttfamily void draw\+\_\+player (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$}]{game\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__map_8c_source_l00093}{93}} of file \mbox{\hyperlink{draw__map_8c_source}{draw\+\_\+map.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ mlx\_image\_t\ \ \ \ \ \ \ \ \ *player;}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{int}\ x;}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ y;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ game\_data-\/>\mbox{\hyperlink{structs__game__data_aea7bfd67666036492cb89377cf177012}{player\_data}}.\mbox{\hyperlink{structs__player__data_a48bafbc06699fab0f92d6b334b1d28d7}{player\_image}}\ =\ mlx\_new\_image(game\_data-\/>\mbox{\hyperlink{structs__game__data_ad9fd52da8c21de0b10b15b79c01f09c9}{mlx\_handle}},\ 5,\ 5);}
+\DoxyCodeLine{00100\ \ \ \ \ player\ =\ game\_data-\/>\mbox{\hyperlink{structs__game__data_aea7bfd67666036492cb89377cf177012}{player\_data}}.\mbox{\hyperlink{structs__player__data_a48bafbc06699fab0f92d6b334b1d28d7}{player\_image}};}
+\DoxyCodeLine{00101\ \ \ \ \ x\ =\ game\_data-\/>\mbox{\hyperlink{structs__game__data_aea7bfd67666036492cb89377cf177012}{player\_data}}.\mbox{\hyperlink{structs__player__data_a741da92a1e2db0978396663d99e6a905}{initial\_position}}.\mbox{\hyperlink{structs__static__position_a9640a25bf9e545ee03cd6ca4904ad51f}{xAxis}};}
+\DoxyCodeLine{00102\ \ \ \ \ y\ =\ game\_data-\/>\mbox{\hyperlink{structs__game__data_aea7bfd67666036492cb89377cf177012}{player\_data}}.\mbox{\hyperlink{structs__player__data_a741da92a1e2db0978396663d99e6a905}{initial\_position}}.\mbox{\hyperlink{structs__static__position_ad51368021113b9b493e9d0304a6db900}{yAxis}};}
+\DoxyCodeLine{00103\ \ \ \ \ mlx\_image\_to\_window(game\_data-\/>\mbox{\hyperlink{structs__game__data_ad9fd52da8c21de0b10b15b79c01f09c9}{mlx\_handle}},\ player,\ (x\ *\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}})\ +\ 28,\ (y\ *\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}})\ +\ 28);}
+\DoxyCodeLine{00104\ \ \ \ \ game\_data-\/>\mbox{\hyperlink{structs__game__data_aea7bfd67666036492cb89377cf177012}{player\_data}}.\mbox{\hyperlink{structs__player__data_a0f45f772efc7762c0ea9548ef1a10d76}{current\_position}}.\mbox{\hyperlink{structs__position_a0f991de4fa88927f817ca4c34c852307}{xAxis}}\ =\ \&player-\/>instances[0].x;}
+\DoxyCodeLine{00105\ \ \ \ \ game\_data-\/>\mbox{\hyperlink{structs__game__data_aea7bfd67666036492cb89377cf177012}{player\_data}}.\mbox{\hyperlink{structs__player__data_a0f45f772efc7762c0ea9548ef1a10d76}{current\_position}}.\mbox{\hyperlink{structs__position_aea370833455884f9b66282a89c22b879}{yAxis}}\ =\ \&player-\/>instances[0].y;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ z\ =\ 0;\ z\ <\ player-\/>width;\ ++z)}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ b\ =\ 0;\ b\ <\ player-\/>height;\ ++b)}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ mlx\_put\_pixel(player,\ z,\ b,\ 240);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{draw__map_8c_aa54199ea768b27cd270ff94975ac0f46}\label{draw__map_8c_aa54199ea768b27cd270ff94975ac0f46}} 
+\index{draw\_map.c@{draw\_map.c}!draw\_walls@{draw\_walls}}
+\index{draw\_walls@{draw\_walls}!draw\_map.c@{draw\_map.c}}
+\doxysubsubsection{\texorpdfstring{draw\_walls()}{draw\_walls()}}
+{\footnotesize\ttfamily void draw\+\_\+walls (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$}]{game\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__map_8c_source_l00050}{50}} of file \mbox{\hyperlink{draw__map_8c_source}{draw\+\_\+map.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ mlx\_image\_t\ \ \ \ \ *img;}
+\DoxyCodeLine{00053\ \ \ \ \ mlx\_t\ \ \ \ \ \ \ \ \ \ \ *mlx;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__map__data}{s\_map\_data}}\ *map\_data;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ x;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ y;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ i;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ j;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00061\ \ \ \ \ j\ =\ 0;}
+\DoxyCodeLine{00062\ \ \ \ \ x\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ map\_data\ =\ game\_data-\/>\mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}};}
+\DoxyCodeLine{00065\ \ \ \ \ mlx\ =\ game\_data-\/>\mbox{\hyperlink{structs__game__data_ad9fd52da8c21de0b10b15b79c01f09c9}{mlx\_handle}};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{while}\ (map\_data-\/>\mbox{\hyperlink{structs__map__data_a051ac3dde821d42a7049464e58d67419}{map\_array}}[i])}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (map\_data-\/>\mbox{\hyperlink{structs__map__data_a051ac3dde821d42a7049464e58d67419}{map\_array}}[i][j])}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map\_data-\/>\mbox{\hyperlink{structs__map__data_a051ac3dde821d42a7049464e58d67419}{map\_array}}[i][j]\ ==\ \textcolor{charliteral}{'1'})}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ img\ =\ mlx\_new\_image(mlx,\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}},\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mlx\_image\_to\_window(mlx,\ img,\ x,\ y);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memset(img-\/>pixels,\ 120,\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}}\ *\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}}\ *\ 4);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map\_data-\/>\mbox{\hyperlink{structs__map__data_a051ac3dde821d42a7049464e58d67419}{map\_array}}[i][j]\ ==\ \textcolor{charliteral}{'P'})}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ game\_data-\/>\mbox{\hyperlink{structs__game__data_aea7bfd67666036492cb89377cf177012}{player\_data}}.\mbox{\hyperlink{structs__player__data_a741da92a1e2db0978396663d99e6a905}{initial\_position}}.\mbox{\hyperlink{structs__static__position_a9640a25bf9e545ee03cd6ca4904ad51f}{xAxis}}\ =\ j;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ game\_data-\/>\mbox{\hyperlink{structs__game__data_aea7bfd67666036492cb89377cf177012}{player\_data}}.\mbox{\hyperlink{structs__player__data_a741da92a1e2db0978396663d99e6a905}{initial\_position}}.\mbox{\hyperlink{structs__static__position_ad51368021113b9b493e9d0304a6db900}{yAxis}}\ =\ i;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%c"{}},\ map\_data-\/>\mbox{\hyperlink{structs__map__data_a051ac3dde821d42a7049464e58d67419}{map\_array}}[i][j]);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ y\ +=\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ j\ =\ 0;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ x\ =\ 0;}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}\label{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}} 
+\index{draw\_map.c@{draw\_map.c}!ft\_hook@{ft\_hook}}
+\index{ft\_hook@{ft\_hook}!draw\_map.c@{draw\_map.c}}
+\doxysubsubsection{\texorpdfstring{ft\_hook()}{ft\_hook()}}
+{\footnotesize\ttfamily void ft\+\_\+hook (\begin{DoxyParamCaption}\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__map_8c_source_l00005}{5}} of file \mbox{\hyperlink{draw__map_8c_source}{draw\+\_\+map.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__game__data}{s\_game\_data}}\ \ \ *game\_data;}
+\DoxyCodeLine{00008\ \ \ \ \ mlx\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *mlx;}
+\DoxyCodeLine{00009\ \ \ \ \ mlx\_image\_t\ \ \ \ \ \ \ \ \ *player;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **map;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerX;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerY;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ game\_data\ =\ param;}
+\DoxyCodeLine{00015\ \ \ \ \ map\ =\ game\_data-\/>\mbox{\hyperlink{structs__game__data_a67e1cd5cf12b83ff14d0c488c65f76e9}{map\_data}}-\/>\mbox{\hyperlink{structs__map__data_a051ac3dde821d42a7049464e58d67419}{map\_array}};}
+\DoxyCodeLine{00016\ \ \ \ \ mlx\ =\ game\_data-\/>\mbox{\hyperlink{structs__game__data_ad9fd52da8c21de0b10b15b79c01f09c9}{mlx\_handle}};}
+\DoxyCodeLine{00017\ \ \ \ \ player\ =\ game\_data-\/>\mbox{\hyperlink{structs__game__data_aea7bfd67666036492cb89377cf177012}{player\_data}}.\mbox{\hyperlink{structs__player__data_a48bafbc06699fab0f92d6b334b1d28d7}{player\_image}};}
+\DoxyCodeLine{00018\ \ \ \ \ playerX\ =\ *game\_data-\/>\mbox{\hyperlink{structs__game__data_aea7bfd67666036492cb89377cf177012}{player\_data}}.\mbox{\hyperlink{structs__player__data_a0f45f772efc7762c0ea9548ef1a10d76}{current\_position}}.\mbox{\hyperlink{structs__position_a0f991de4fa88927f817ca4c34c852307}{xAxis}}\ /\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
+\DoxyCodeLine{00019\ \ \ \ \ playerY\ =\ *game\_data-\/>\mbox{\hyperlink{structs__game__data_aea7bfd67666036492cb89377cf177012}{player\_data}}.\mbox{\hyperlink{structs__player__data_a0f45f772efc7762c0ea9548ef1a10d76}{current\_position}}.\mbox{\hyperlink{structs__position_aea370833455884f9b66282a89c22b879}{yAxis}}\ /\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (mlx\_is\_key\_down(mlx,\ MLX\_KEY\_ESCAPE))}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (mlx\_is\_key\_down(mlx,\ MLX\_KEY\_W))}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map[playerY][playerX]\ !=\ \textcolor{charliteral}{'1'})}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map[(player-\/>instances[0].y\ -\/\ 1)\ /\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}}][playerX]\ !=\ \textcolor{charliteral}{'1'})}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ player-\/>instances[0].y\ -\/=\ 1;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (mlx\_is\_key\_down(mlx,\ MLX\_KEY\_S))}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map[playerY][playerX]\ !=\ \textcolor{charliteral}{'1'})}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map[(player-\/>instances[0].y\ +\ 5)\ /\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}}][playerX]\ !=\ \textcolor{charliteral}{'1'})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ player-\/>instances[0].y\ +=\ 1;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (mlx\_is\_key\_down(mlx,\ MLX\_KEY\_A))}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map[playerY][playerX]\ !=\ \textcolor{charliteral}{'1'})}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map[playerY][\ (player-\/>instances[0].x\ -\/\ 1)\ /\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}}]\ !=\ \textcolor{charliteral}{'1'})}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ player-\/>instances[0].x\ -\/=\ 1;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (mlx\_is\_key\_down(mlx,\ MLX\_KEY\_D))}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map[playerY][playerX]\ !=\ \textcolor{charliteral}{'1'})}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (map[playerY]\ [(player-\/>instances[0].x\ +\ 5)\ /\ \mbox{\hyperlink{cub3D_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}}]\ !=\ \textcolor{charliteral}{'1'})}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ player-\/>instances[0].x\ +=\ 1;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{draw__map_8c_a97d700c0c000abcc642a44c27e85afef}\label{draw__map_8c_a97d700c0c000abcc642a44c27e85afef}} 
+\index{draw\_map.c@{draw\_map.c}!place\_image\_to\_screen@{place\_image\_to\_screen}}
+\index{place\_image\_to\_screen@{place\_image\_to\_screen}!draw\_map.c@{draw\_map.c}}
+\doxysubsubsection{\texorpdfstring{place\_image\_to\_screen()}{place\_image\_to\_screen()}}
+{\footnotesize\ttfamily void place\+\_\+image\+\_\+to\+\_\+screen (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structs__game__data}{s\+\_\+game\+\_\+data}} $\ast$$\ast$}]{game\+\_\+data,  }\item[{struct \mbox{\hyperlink{structs__map__data}{s\+\_\+map\+\_\+data}} $\ast$}]{map\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__map_8c_source_l00139}{139}} of file \mbox{\hyperlink{draw__map_8c_source}{draw\+\_\+map.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00141\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ mlx\_t*\ \ \ \ \ \ \ \ \ \ mlx;}
+\DoxyCodeLine{00143\ \ \ \ \ mlx\_image\_t*\ \ \ \ image;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ mlx\ =\ (*game\_data)-\/>mlx\_handle;}
+\DoxyCodeLine{00146\ \ \ \ \ image\ =\ (*game\_data)-\/>mlx\_background\_image;}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{if}\ (mlx\_image\_to\_window(mlx,\ image,\ 0,\ 0)\ ==\ -\/1)}
+\DoxyCodeLine{00148\ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}((\textcolor{keywordtype}{char}\ *)mlx\_strerror(mlx\_errno),\ 2);}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ memset(image-\/>pixels,\ 255,\ map\_data-\/>\mbox{\hyperlink{structs__map__data_a6c935e0fd9d156d75d36287be039e256}{width}}\ *\ map\_data-\/>\mbox{\hyperlink{structs__map__data_a3dc97c8f3b6eaa17bf4e5fe4467d9b98}{height}}\ *\ 4);}
+\DoxyCodeLine{00153\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8

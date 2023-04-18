@@ -1,0 +1,47 @@
+\hypertarget{ft__putstring__fd_8c}{}\doxysection{/home/ssergiu/projects/cub3d/libs/libft/src/ft\+\_\+putstring\+\_\+fd.c File Reference}
+\label{ft__putstring__fd_8c}\index{/home/ssergiu/projects/cub3d/libs/libft/src/ft\_putstring\_fd.c@{/home/ssergiu/projects/cub3d/libs/libft/src/ft\_putstring\_fd.c}}
+{\ttfamily \#include \char`\"{}../../../include/libft/libft.\+h\char`\"{}}\newline
+Include dependency graph for ft\+\_\+putstring\+\_\+fd.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ft__putstring__fd_8c_acefce9ac519f8f8b7d3fde33dbafe469}{ft\+\_\+putstr\+\_\+fd}} (char $\ast$s, int fd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ft__putstring__fd_8c_acefce9ac519f8f8b7d3fde33dbafe469}\label{ft__putstring__fd_8c_acefce9ac519f8f8b7d3fde33dbafe469}} 
+\index{ft\_putstring\_fd.c@{ft\_putstring\_fd.c}!ft\_putstr\_fd@{ft\_putstr\_fd}}
+\index{ft\_putstr\_fd@{ft\_putstr\_fd}!ft\_putstring\_fd.c@{ft\_putstring\_fd.c}}
+\doxysubsubsection{\texorpdfstring{ft\_putstr\_fd()}{ft\_putstr\_fd()}}
+{\footnotesize\ttfamily void ft\+\_\+putstr\+\_\+fd (\begin{DoxyParamCaption}\item[{char $\ast$}]{s,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+Outputs a string to a file descriptor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to output. \\
+\hline
+{\em fd} & The file descriptor to write to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ft__putstring__fd_8c_source_l00004}{4}} of file \mbox{\hyperlink{ft__putstring__fd_8c_source}{ft\+\_\+putstring\+\_\+fd.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s)}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ return\ ;}
+\DoxyCodeLine{00010\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{while}\ (s[i])}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ write(fd,\ \&s[i++],\ 1);}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 1

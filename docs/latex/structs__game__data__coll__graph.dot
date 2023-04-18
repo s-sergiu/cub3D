@@ -1,0 +1,17 @@
+digraph "s_game_data"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [shape=record,label="{s_game_data\n|+ mlx_handle\l+ mlx_background_image\l|}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",style="solid",label=" +map_data" ,arrowhead="odiamond"];
+  Node2 [shape=record,label="{s_map_data\n|+ map_string\l+ map_array\l+ height\l+ width\l|}",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structs__map__data.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",style="solid",label=" +player_data" ,arrowhead="odiamond"];
+  Node3 [shape=record,label="{s_player_data\n|+ player_image\l|}",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structs__player__data.html",tooltip=" "];
+  Node4 -> Node3 [color="grey25",style="solid",label=" +initial_position" ,arrowhead="odiamond"];
+  Node4 [shape=record,label="{s_static_position\n|+ xAxis\l+ yAxis\l|}",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structs__static__position.html",tooltip=" "];
+  Node5 -> Node3 [color="grey25",style="solid",label=" +current_position" ,arrowhead="odiamond"];
+  Node5 [shape=record,label="{s_position\n|+ xAxis\l+ yAxis\l|}",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structs__position.html",tooltip=" "];
+}
