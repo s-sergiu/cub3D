@@ -1,5 +1,5 @@
 
-cmake_minimum_required(VERSION 3.26.3)
+cmake_minimum_required(VERSION 3.10)
 add_compile_options(-Wall -Wextra -Werror)
 
 project(ft)
