@@ -46,6 +46,6 @@ else()
 		src/error_handling.c
 		src/read_map.c
 	)
-	include_directories(include include/libft)
-	target_link_libraries(${PROJECT_NAME} PRIVATE mlx42 ft)
+	include_directories(include PRIVATE include/libft)
+	target_link_libraries(${PROJECT_NAME} PRIVATE  mlx42 ft)
 endif()

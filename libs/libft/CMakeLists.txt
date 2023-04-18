@@ -13,4 +13,3 @@ add_library(
 	src/ft_strlcpy.c
 )
 
-target_include_directories(${PROJECT_NAME} PUBLIC ../../include)
