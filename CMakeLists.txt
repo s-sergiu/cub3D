@@ -25,6 +25,7 @@ if (CMAKE_BUILD_TYPE STREQUAL "TEST")
 	  ../src/error_handling.c
 	  ../src/read_map.c
 	)
+	include_directories(include PRIVATE include/libft)
 	target_link_libraries(
 	  hello_test
 	  GTest::gtest_main
