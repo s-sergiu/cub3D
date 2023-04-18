@@ -7,8 +7,8 @@
 # include <errno.h>
 # include <fcntl.h>
 # include <string.h>
-# include "libft/libft.h"
-# include "../external/MLX42/include/MLX42/MLX42.h"
+# include <libft/libft.h>
+# include <MLX42/MLX42.h>
 # define TRUE 1
 # define FALSE 0
 # define TILE 64
