@@ -5,6 +5,7 @@ FLAGS = -g -Wall -Werror -Wextra
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/%.o)
 DEPS = include
+MLX_INC = external/MLX42/include
 
 OBJ_DIR = build
 
@@ -30,41 +31,41 @@ endif
 all:$(NAME)
 
 $(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(LIBFT) $(DEPS)
-	$(CC) $(FLAGS) $(OBJ) -lft -L $(LIBFT_OBJ_DIR) \
+	$(CC) $(FLAGS) $(OBJ) -lft -L$(LIBFT_OBJ_DIR) \
 	$(MLX42) -Iinclude \
 	$(MLX_FLAGS) -o $@
 
 $(LIBFT): 
-	@$(MAKE) -C $(LIBFT_DIR)
-	@mv $(LIBFT_DIR)/libft.a $(LIBFT)
-	@$(RM) -rf $(LIBFT_DIR)/build
+	$(MAKE) -C $(LIBFT_DIR)
+	mv $(LIBFT_DIR)/libft.a $(LIBFT)
+	$(RM) -rf $(LIBFT_DIR)/build
 
 $(MLX42): $(MLX_DIR)
-	@cd external/MLX42; cmake -B build; cmake --build build -j4
+	cd external/MLX42; cmake -B build; cmake --build build -j4
 
 $(MLX_DIR):
-	@git submodule init
-	@git submodule update
+	git submodule init
+	git submodule update
 
 build/%.o: %.c 
 
-	@$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@ -I$(DEPS) -I$(MLX_INC)
 
 $(OBJ_DIR):
-	@mkdir $(OBJ_DIR) 
-	@mkdir -p $(OBJ_DIR)/libft
+	mkdir $(OBJ_DIR) 
+	mkdir -p $(OBJ_DIR)/libft
 
 clean: 
-	@$(RM) $(OBJ) $(MAPOBJ) $(LIBFT)
-	@echo "Removing $(OBJ) $(MAPOBJ)"
-	@cmake --build external/MLX42/build --target clean
-	@echo "Removing MLX42 build objects..."
+	$(RM) $(OBJ) $(MAPOBJ) $(LIBFT)
+	echo "Removing $(OBJ) $(MAPOBJ)"
+	cmake --build external/MLX42/build --target clean
+	echo "Removing MLX42 build objects..."
 
 fclean: clean 
-	@$(RM) $(NAME)
-	@echo "Removing $(NAME)..."
-	@$(RM) -rf external/MLX42/build
-	@echo "Removing MLX42 build directory..."
+	$(RM) $(NAME)
+	echo "Removing $(NAME)..."
+	$(RM) -rf external/MLX42/build
+	echo "Removing MLX42 build directory..."
 
 re: clean all
 
