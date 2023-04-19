@@ -48,7 +48,7 @@ else()
 		src/error_handling.c
 		src/read_map.c
 	)
-	include_directories(include PRIVATE include/libft)
-	include_directories(include PRIVATE include/libarrtools)
+	include_directories(include PRIVATE libs/libft/include)
+	include_directories(include PRIVATE libs/libarrtools/include)
 	target_link_libraries(${PROJECT_NAME} PRIVATE  mlx42 ft arrtools)
 endif()

@@ -4,7 +4,7 @@ add_compile_options(-Wall -Wextra -Werror)
 
 project(ft)
 
-include_directories(include PRIVATE ../../include/libft)
+include_directories(include PRIVATE include)
 
 add_library(
 	${PROJECT_NAME} STATIC

@@ -5,17 +5,18 @@ FLAGS = -g -Wall -Werror -Wextra
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/%.o)
 DEPS = include
+INC_DIRS := $(wildcard libs/*/include)
+INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 MLX_INC = external/MLX42/include
 
 OBJ_DIR = build
 
 MLX42 = external/MLX42/build/libmlx42.a
-LIBARRTOOLS = build/libarrtools/libarrtools.a
-LIBARRTOOLS_OBJ = build/libarrtools
-LIBFT = build/libft/libft.a
-LIBFT_OBJ_DIR = build/libft
+LIBARRTOOLS = build/libs/libarrtools/libarrtools.a
+LIBARRTOOLS_OBJ = build/libs/libarrtools
+LIBFT = build/libs/libft/libft.a
+LIBFT_OBJ_DIR = build/libs/libft
 
-MLX_DIR = external/MLX42/include
 LIBFT_DIR = libs/libft
 LIBARRTOOLS_DIR = libs/libarrtools
 VPATH = src
@@ -48,21 +49,21 @@ $(LIBARRTOOLS):
 	mv $(LIBARRTOOLS_DIR)/libarrtools.a $(LIBARRTOOLS)
 	$(RM) -rf $(LIBARRTOOLS_DIR)/build
 
-$(MLX42): $(MLX_DIR)
+$(MLX42): $(MLX_INC)
 	cd external/MLX42; cmake -B build; cmake --build build -j4
 
-$(MLX_DIR):
+$(MLX_INC):
 	git submodule init
 	git submodule update
 
 build/%.o: %.c 
 
-	$(CC) $(FLAGS) -c $< -o $@ -I$(DEPS) -I$(MLX_INC)
+	$(CC) $(FLAGS) -c $< -o $@ -I$(DEPS) -I$(MLX_INC) $(INC_FLAGS)
 
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR) 
-	mkdir -p $(OBJ_DIR)/libft
-	mkdir -p $(OBJ_DIR)/libarrtools
+	mkdir -p $(LIBFT_OBJ_DIR)
+	mkdir -p $(LIBARRTOOLS_OBJ)
 
 clean: 
 	$(RM) $(OBJ) $(MAPOBJ) $(LIBFT) $(LIBARRTOOLS)

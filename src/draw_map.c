@@ -54,38 +54,29 @@ void	draw_walls(struct s_game *game_data)
 	struct s_map	*map_data;
 	int			x;
 	int			y;
-	int			i;
-	int			j;
 
-	i = 0;
-	j = 0;
 	x = 0;
 	y = 0;
 	map_data = game_data->map_data;
 	mlx = game_data->mlx_handle;
-	while (map_data->map_array[i])
+	while (map_data->map_array[y])
 	{
-		while (map_data->map_array[i][j])
+		while (map_data->map_array[y][x])
 		{
-			if (map_data->map_array[i][j] == '1')
+			if (map_data->map_array[y][x] == '1')
 			{
 				img = mlx_new_image(mlx, TILE, TILE);
-				mlx_image_to_window(mlx, img, x, y);
+				mlx_image_to_window(mlx, img, x * TILE, y * TILE);
 				memset(img->pixels, 120, TILE * TILE * 4);
 			}
-			if (map_data->map_array[i][j] == 'P')
+			if (map_data->map_array[y][x] == 'P')
 			{
-				game_data->player_data.initial_position.xAxis = j;
-				game_data->player_data.initial_position.yAxis = i;
+				game_data->player_data.initial_position.xAxis = x;
+				game_data->player_data.initial_position.yAxis = y;
 			}
-			printf("%c", map_data->map_array[i][j]);
-			j++;
-			x += TILE;
+			x++;
 		}
-		printf("\n");
-		i++;
-		y += TILE;
-		j = 0;
+		y++;
 		x = 0;
 	}
 }

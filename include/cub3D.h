@@ -7,9 +7,9 @@
 # include <errno.h>
 # include <fcntl.h>
 # include <string.h>
-# include "libft/libft.h"
+# include "libft.h"
 # include "MLX42/MLX42.h"
-# include "libarrtools/libarrtools.h"
+# include "libarrtools.h"
 # define TRUE 1
 # define FALSE 0
 # define TILE 64
