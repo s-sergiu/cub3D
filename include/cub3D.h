@@ -36,15 +36,15 @@ struct s_player_data
 	mlx_image_t					*player_image;
 };
 
-struct s_game_data
+struct s_game
 {
 	mlx_t					*mlx_handle;
 	mlx_image_t				*mlx_background_image;
-	struct s_map_data		*map_data;
+	struct s_map		*map_data;
 	struct s_player_data	player_data;
 };
 
-struct s_map_data
+struct s_map
 {
 	char	*map_string;
 	char	**map_array;
@@ -52,7 +52,7 @@ struct s_map_data
 	int		width;
 };
 
-void		draw_map(struct s_map_data *map_data);
+void		draw_map(struct s_map *map_data);
 
 /**
  * @brief Initializes map data.
@@ -63,7 +63,7 @@ void		draw_map(struct s_map_data *map_data);
  * @param map_data A pointer to the map_data struct to be initialized.
  * @param map_file The file path of the map file to be read.
  */
-void		initialize_map_data(struct s_map_data **map_data, char *map_file);
+void		initialize_map_data(struct s_map **map_data, char *map_file);
 
 /**
  * @brief Destroys map data.
@@ -73,7 +73,7 @@ void		initialize_map_data(struct s_map_data **map_data, char *map_file);
  *
  * @param map_data A pointer to the map_data struct to be destroyed.
  */
-void		destroy_map_data(struct s_map_data **map_data);
+void		destroy_map_data(struct s_map **map_data);
 
 /**
  * @brief Prints an error message to the standard error output and exits 
@@ -141,8 +141,8 @@ int			has_invalid_map_extension(char *filename);
  */
 int			is_valid_filename(char *filename);
 void		protected_malloc(void **parameter, size_t size_of_parameter);
-void		initialize_game_data(struct s_game_data **game_data,
-							struct s_map_data *map_data);
-void		destroy_game_data(struct s_game_data **game_data);
+void		initialize_game_data(struct s_game **game_data,
+							struct s_map *map_data);
+void		destroy_game_data(struct s_game **game_data);
 
 #endif

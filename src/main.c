@@ -3,7 +3,7 @@
 
 int	main(int argc, char **argv)
 {
-	struct s_map_data	*map_data;
+	struct s_map	*map_data;
 
 	map_data = NULL;
 	if (argc != 2)

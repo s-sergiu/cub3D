@@ -4,7 +4,7 @@
 
 void ft_hook(void* param)
 {
-	struct s_game_data	*game_data;
+	struct s_game	*game_data;
 	mlx_t				*mlx;
 	mlx_image_t			*player;
 	char				**map;
@@ -47,11 +47,11 @@ void ft_hook(void* param)
 		}
 }
 
-void	draw_walls(struct s_game_data *game_data)
+void	draw_walls(struct s_game *game_data)
 {
 	mlx_image_t		*img;
 	mlx_t			*mlx;
-	struct s_map_data	*map_data;
+	struct s_map	*map_data;
 	int			x;
 	int			y;
 	int			i;
@@ -90,7 +90,7 @@ void	draw_walls(struct s_game_data *game_data)
 	}
 }
 
-void	draw_player(struct s_game_data *game_data)
+void	draw_player(struct s_game *game_data)
 {
 	mlx_image_t			*player;
 	int	x;
@@ -112,7 +112,7 @@ void	draw_player(struct s_game_data *game_data)
 	}
 }
 
-void	draw_grid(struct s_map_data *map_data, mlx_image_t *image)
+void	draw_grid(struct s_map *map_data, mlx_image_t *image)
 {
 	int	x;
 	int	y;
@@ -136,8 +136,8 @@ void	draw_grid(struct s_map_data *map_data, mlx_image_t *image)
 	}
 }
 
-void	place_image_to_screen(struct s_game_data **game_data,
-							struct s_map_data *map_data)
+void	place_image_to_screen(struct s_game **game_data,
+							struct s_map *map_data)
 {
 	mlx_t*			mlx;
 	mlx_image_t*	image;
@@ -152,9 +152,9 @@ void	place_image_to_screen(struct s_game_data **game_data,
 	memset(image->pixels, 255, map_data->width * map_data->height * 4);
 }
 
-void	draw_map(struct s_map_data *map_data)
+void	draw_map(struct s_map *map_data)
 {
-	struct s_game_data	*game_data;
+	struct s_game	*game_data;
 
 	game_data = NULL;
 	initialize_game_data(&game_data, map_data);
