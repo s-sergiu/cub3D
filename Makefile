@@ -14,10 +14,10 @@ OBJ_DIR = build
 MLX42 = external/MLX42/build/libmlx42.a
 LIBARRTOOLS = build/libs/libarrtools/libarrtools.a
 LIBARRTOOLS_OBJ = build/libs/libarrtools
-LIBFT = build/libs/libft/libft.a
-LIBFT_OBJ_DIR = build/libs/libft
+LIBFT = build/libs/Libft/libft.a
+LIBFT_OBJ_DIR = build/libs/Libft
 
-LIBFT_DIR = libs/libft
+LIBFT_DIR = libs/Libft
 LIBARRTOOLS_DIR = libs/libarrtools
 VPATH = src
 

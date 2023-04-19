@@ -17,7 +17,7 @@ if (CMAKE_BUILD_TYPE STREQUAL "TEST")
 	enable_testing()
 
 	add_subdirectory(external/MLX42)
-	add_subdirectory(libs/libft)
+	add_subdirectory(libs/Libft)
 
 	add_executable(
 	  hello_test
@@ -25,7 +25,7 @@ if (CMAKE_BUILD_TYPE STREQUAL "TEST")
 	  ../src/error_handling.c
 	  ../src/read_map.c
 	)
-	include_directories(include PRIVATE include/libft)
+	include_directories(include PRIVATE include/Libft)
 	target_link_libraries(
 	  hello_test
 	  GTest::gtest_main
@@ -38,7 +38,7 @@ if (CMAKE_BUILD_TYPE STREQUAL "TEST")
 else()
 	add_compile_options(-Wall -Wextra -Werror)
 	add_subdirectory(external/MLX42)
-	add_subdirectory(libs/libft)
+	add_subdirectory(libs/Libft)
 	add_subdirectory(libs/libarrtools)
 	add_executable(
 		${PROJECT_NAME} 
@@ -48,7 +48,7 @@ else()
 		src/error_handling.c
 		src/read_map.c
 	)
-	include_directories(include PRIVATE libs/libft/include)
+	include_directories(include PRIVATE libs/Libft/include)
 	include_directories(include PRIVATE libs/libarrtools/include)
 	target_link_libraries(${PROJECT_NAME} PRIVATE  mlx42 ft arrtools)
 endif()
