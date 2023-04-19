@@ -12,15 +12,15 @@ SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/%.o)
 
 OBJ_DIR = build
-INC = ../../include/libft/libft.h
+INC = ../../include/libft
 
-all: $(OBJ_DIR) $(NAME) $(INC)
+all: $(OBJ_DIR) $(NAME) $(INC)/libft.h
 
 $(NAME): $(OBJ)
 	@$(AR) $(NAME) $^
 
 build/%.o: src/%.c
-	@$(CC) $(FLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -I$(INC) -c $< -o $@
 
 $(OBJ_DIR):
 	@mkdir $(OBJ_DIR)

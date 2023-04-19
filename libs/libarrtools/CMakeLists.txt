@@ -4,6 +4,8 @@ add_compile_options(-Wall -Wextra -Werror)
 
 project(arrtools)
 
+include_directories(include PRIVATE ../../include/libarrtools)
+
 add_library(
 	${PROJECT_NAME} STATIC
 	src/arrtools_free.c

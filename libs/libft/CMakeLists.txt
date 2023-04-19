@@ -4,6 +4,8 @@ add_compile_options(-Wall -Wextra -Werror)
 
 project(ft)
 
+include_directories(include PRIVATE ../../include/libft)
+
 add_library(
 	${PROJECT_NAME} STATIC
 	src/ft_putstring_fd.c

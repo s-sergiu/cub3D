@@ -1,5 +1,5 @@
 
-#include <cub3D.h>
+#include "cub3D.h"
 
 void	initialize_game_data(struct s_game_data **game_data,
 							struct s_map_data *map_data)
