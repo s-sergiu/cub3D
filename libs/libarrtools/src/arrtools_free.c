@@ -1,7 +1,7 @@
 
 #include "libarrtools.h"
 
-void	free_array_of_memory(char **string_array)
+void	arrtools_free(char **string_array)
 {
 	int	index;	
 

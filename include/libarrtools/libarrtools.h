@@ -4,7 +4,7 @@
 
 # include <stdlib.h>
 
-int			get_map_height(char **map_array);
-void		free_array_of_memory(char **string_array);
+void	arrtools_free(char **map_array);
+int		arrtools_arrlen(char **string_array);
 
 #endif

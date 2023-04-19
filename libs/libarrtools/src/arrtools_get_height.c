@@ -1,7 +1,7 @@
 
 #include "libarrtools.h"
 
-int	get_map_height(char **map_array)
+int	arrtools_arrlen(char **map_array)
 {
 	int	index;
 

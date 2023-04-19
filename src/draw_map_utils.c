@@ -44,7 +44,7 @@ void	initialize_map_data(struct s_map **map_data, char *map_file)
 		exit(errno);
     }
 	(*map_data)->width = ft_strlen((*map_data)->map_array[0]) * TILE;
-	(*map_data)->height = get_map_height((*map_data)->map_array) * TILE;
+	(*map_data)->height = arrtools_arrlen((*map_data)->map_array) * TILE;
 }
 
 void	destroy_game_data(struct s_game **game_data)
@@ -57,6 +57,6 @@ void	destroy_map_data(struct s_map **map_data)
 	if ((*map_data)->map_string)
 		free((*map_data)->map_string);
 	if ((*map_data)->map_array)
-		free_array_of_memory((*map_data)->map_array);
+		arrtools_free((*map_data)->map_array);
 	free((*map_data));
 }
