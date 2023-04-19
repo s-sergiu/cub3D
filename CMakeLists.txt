@@ -39,6 +39,7 @@ else()
 	add_compile_options(-Wall -Wextra -Werror)
 	add_subdirectory(external/MLX42)
 	add_subdirectory(libs/libft)
+	add_subdirectory(libs/libarrtools)
 	add_executable(
 		${PROJECT_NAME} 
 		src/main.c
@@ -48,5 +49,6 @@ else()
 		src/read_map.c
 	)
 	include_directories(include PRIVATE include/libft)
-	target_link_libraries(${PROJECT_NAME} PRIVATE  mlx42 ft)
+	include_directories(include PRIVATE include/libarrtools)
+	target_link_libraries(${PROJECT_NAME} PRIVATE  mlx42 ft arrtools)
 endif()

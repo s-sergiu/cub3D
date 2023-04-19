@@ -9,6 +9,7 @@
 # include <string.h>
 # include <libft/libft.h>
 # include <MLX42/MLX42.h>
+# include <libarrtools/libarrtools.h>
 # define TRUE 1
 # define FALSE 0
 # define TILE 64
@@ -116,26 +117,6 @@ int			get_total_bytes(char *filename);
  *	contents, or NULL on error.
  */
 char		*read_map(char *filename);
-
-/**
- * @brief Frees memory allocated for a string array.
- *
- * This function frees the memory that was allocated for a string array.
- *
- * @param string_array The string array to be freed.
- */
-void		free_array_of_memory(char **string_array);
-
-/**
- * @brief Gets the height of a map.
- *
- * This function takes a 2D string array representing a map and returns its 
- *	height.
- *
- * @param map_array The 2D string array representing the map.
- * @return The height of the map.
- */
-int			get_map_height(char **map_array);
 
 /**
  * @brief Checks if the given filename has a valid extension.

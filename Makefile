@@ -10,11 +10,14 @@ MLX_INC = external/MLX42/include
 OBJ_DIR = build
 
 MLX42 = external/MLX42/build/libmlx42.a
+LIBARRTOOLS = build/libarrtools/libarrtools.a
+LIBARRTOOLS_OBJ = build/libarrtools
 LIBFT = build/libft/libft.a
 LIBFT_OBJ_DIR = build/libft
 
 MLX_DIR = external/MLX42/include
 LIBFT_DIR = libs/libft
+LIBARRTOOLS_DIR = libs/libarrtools
 VPATH = src
 
 UNAME = $(shell uname -s)
@@ -30,15 +33,20 @@ endif
 
 all:$(NAME)
 
-$(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(LIBFT) $(DEPS)
+$(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(LIBFT) $(LIBARRTOOLS) $(DEPS)
 	$(CC) $(FLAGS) $(OBJ) -lft -L$(LIBFT_OBJ_DIR) \
-	$(MLX42) -Iinclude \
+	$(MLX42) -Iinclude -larrtools -L$(LIBARRTOOLS_OBJ) \
 	$(MLX_FLAGS) -o $@
 
 $(LIBFT): 
 	$(MAKE) -C $(LIBFT_DIR)
 	mv $(LIBFT_DIR)/libft.a $(LIBFT)
 	$(RM) -rf $(LIBFT_DIR)/build
+
+$(LIBARRTOOLS): 
+	$(MAKE) -C $(LIBARRTOOLS_DIR)
+	mv $(LIBARRTOOLS_DIR)/libarrtools.a $(LIBARRTOOLS)
+	$(RM) -rf $(LIBARRTOOLS_DIR)/build
 
 $(MLX42): $(MLX_DIR)
 	cd external/MLX42; cmake -B build; cmake --build build -j4
@@ -54,9 +62,10 @@ build/%.o: %.c
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR) 
 	mkdir -p $(OBJ_DIR)/libft
+	mkdir -p $(OBJ_DIR)/libarrtools
 
 clean: 
-	$(RM) $(OBJ) $(MAPOBJ) $(LIBFT)
+	$(RM) $(OBJ) $(MAPOBJ) $(LIBFT) $(LIBARRTOOLS)
 	echo "Removing $(OBJ) $(MAPOBJ)"
 	cmake --build external/MLX42/build --target clean
 	echo "Removing MLX42 build objects..."

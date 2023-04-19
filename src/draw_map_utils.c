@@ -1,26 +1,6 @@
 
 #include <cub3D.h>
 
-void	free_array_of_memory(char **string_array)
-{
-	int	index;	
-
-	index = -1;
-	while (string_array[++index])
-		free(string_array[index]);
-	free(string_array);
-}
-
-int	get_map_height(char **map_array)
-{
-	int	index;
-
-	index = 0;
-	while (map_array[index])
-		index++;
-	return (index);
-}
-
 void	initialize_game_data(struct s_game_data **game_data,
 							struct s_map_data *map_data)
 {
