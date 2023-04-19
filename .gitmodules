@@ -6,4 +6,4 @@
 	url = https://github.com/s-sergiu/Libft.git
 [submodule "libs/libarrtools"]
 	path = libs/libarrtools
-	url = https://github.com/s-sergiu/libarrtools.git
+	url = git@github.com:s-sergiu/libarrtools.git
