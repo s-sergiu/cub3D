@@ -3,13 +3,13 @@ CC = cc
 FLAGS = -g -Wall -Werror -Wextra
 
 SRC = $(wildcard src/*.c)
-OBJ = $(SRC:src/%.c=build/%.o)
+OBJ = $(SRC:src/%.c=build/obj/%.o)
 DEPS = include
 MLX_INC = external/MLX42/include
 INC_DIRS = $(wildcard libs/*/include)
 INC_FLAGS = $(addprefix -I,$(INC_DIRS))
 
-OBJ_DIR = build
+OBJ_DIR = build/obj
 
 MLX42 = external/MLX42/build/libmlx42.a
 LIBARRTOOLS = build/libs/libarrtools/libarrtools.a
@@ -60,11 +60,11 @@ $(MLX42):
 	cd external/MLX42; cmake -B build; cmake --build build -j4
 
 
-build/%.o: %.c 
+build/obj/%.o: %.c 
 	$(CC) $(FLAGS) -I$(DEPS) -I$(MLX_INC) $(INC_FLAGS) -c $< -o $@ 
 
 $(OBJ_DIR):
-	mkdir $(OBJ_DIR) 
+	mkdir -p $(OBJ_DIR) 
 	mkdir -p $(LIBFT_OBJ_DIR)
 	mkdir -p $(LIBARRTOOLS_OBJ)
 
