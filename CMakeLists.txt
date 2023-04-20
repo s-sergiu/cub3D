@@ -32,7 +32,9 @@ if (CMAKE_BUILD_TYPE STREQUAL "TEST")
 	  ../src/error_handling.c
 	  ../src/read_map.c
 	)
+	include_directories(include PUBLIC include)
 	include_directories(include PRIVATE include/Libft)
+	include_directories(include PRIVATE libs/libarrtools/include)
 	target_link_libraries(
 	  hello_test
 	  GTest::gtest_main
@@ -55,6 +57,7 @@ else()
 		src/error_handling.c
 		src/read_map.c
 	)
+	include_directories(include PUBLIC include)
 	include_directories(include PRIVATE libs/Libft/include)
 	include_directories(include PRIVATE libs/libarrtools/include)
 	target_link_libraries(${PROJECT_NAME} PRIVATE  mlx42 ft arrtools)
