@@ -47,13 +47,10 @@ else()
 	add_subdirectory(external/MLX42)
 	add_subdirectory(libs/Libft)
 	add_subdirectory(libs/libarrtools)
+	file(GLOB SOURCES "src/*.c" "src/*/*.c")
 	add_executable(
 		${PROJECT_NAME} 
-		src/main.c
-		src/draw_map_utils.c
-		src/draw_map.c
-		src/error_handling.c
-		src/read_map.c
+		${SOURCES}
 	)
 	include_directories(include PRIVATE libs/Libft/include)
 	include_directories(include PRIVATE libs/libarrtools/include)

@@ -2,7 +2,7 @@ NAME = cub3D
 CC = cc 
 FLAGS = -g -Wall -Werror -Wextra
 
-SRC = $(wildcard src/*.c)
+SRC = $(wildcard src/*/*.c) $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/obj/%.o)
 DEPS = include
 MLX_INC = external/MLX42/include
@@ -65,6 +65,7 @@ build/obj/%.o: %.c
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR) 
+	mkdir -p $(OBJ_DIR)/init
 	mkdir -p $(LIBFT_OBJ_DIR)
 	mkdir -p $(LIBARRTOOLS_OBJ)
 
