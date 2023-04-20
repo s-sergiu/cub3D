@@ -6,7 +6,7 @@ SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/%.o)
 DEPS = include
 INC_DIRS := $(wildcard libs/*/include)
-INC_FLAGS := $(addprefix -I,$(INC_DIRS))
+INC_FLAGS := $(foreach dir,$(INC_DIRS),-I$(dir))
 MLX_INC = external/MLX42/include
 
 OBJ_DIR = build
@@ -57,7 +57,7 @@ $(MLX_INC):
 	git submodule update
 
 build/%.o: %.c 
-	$(CC) $(FLAGS) -c $< -o $@ -I$(DEPS) -I$(MLX_INC) $(INC_FLAGS)
+	$(CC) $(FLAGS) -I$(DEPS) -I$(MLX_INC) $(INC_FLAGS) -c $< -o $@ 
 
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR) 
