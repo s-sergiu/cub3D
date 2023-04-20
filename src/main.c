@@ -3,7 +3,7 @@
 
 int	main(int argc, char **argv)
 {
-	struct s_map	*map_data;
+	t_map	*map_data;
 
 	map_data = NULL;
 	if (argc != 2)
@@ -12,11 +12,9 @@ int	main(int argc, char **argv)
 	{
 		if (is_valid_filename(argv[1]))
 		{
-			initialize_map_data(&map_data, argv[1]);
+			init_map_data(&map_data, argv[1]);
 			draw_map(map_data);
 		}
-		if (map_data)
-			destroy_map_data(&map_data);
 	}
 	return (0);
 }

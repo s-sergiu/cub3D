@@ -17,6 +17,9 @@
 # define IS_DIRECTORY 21
 # define BAD_MAP_FILE 255
 
+typedef struct s_game t_game;
+typedef struct s_map t_map;
+
 struct s_position
 {
 	int	*xAxis;
@@ -51,7 +54,7 @@ struct s_map
 	int		width;
 };
 
-void		draw_map(struct s_map *map_data);
+void		draw_map(t_map *map_data);
 
 /**
  * @brief Initializes map data.
@@ -62,7 +65,7 @@ void		draw_map(struct s_map *map_data);
  * @param map_data A pointer to the map_data struct to be initialized.
  * @param map_file The file path of the map file to be read.
  */
-void		initialize_map_data(struct s_map **map_data, char *map_file);
+void		init_map_data(t_map **map_data, char *map_file);
 
 /**
  * @brief Destroys map data.
@@ -72,7 +75,7 @@ void		initialize_map_data(struct s_map **map_data, char *map_file);
  *
  * @param map_data A pointer to the map_data struct to be destroyed.
  */
-void		destroy_map_data(struct s_map **map_data);
+void		destroy_map_data(t_map *map_data);
 
 /**
  * @brief Prints an error message to the standard error output and exits 
@@ -140,8 +143,8 @@ int			has_invalid_map_extension(char *filename);
  */
 int			is_valid_filename(char *filename);
 void		protected_malloc(void **parameter, size_t size_of_parameter);
-void		initialize_game_data(struct s_game **game_data,
-							struct s_map *map_data);
-void		destroy_game_data(struct s_game **game_data);
+void		init_game_data(t_game **game_data,
+							t_map *map_data);
+void		destroy_game_data(t_game *game_data);
 
 #endif
