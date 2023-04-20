@@ -5,9 +5,9 @@ FLAGS = -g -Wall -Werror -Wextra
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/%.o)
 DEPS = include
-INC_DIRS := $(wildcard libs/*/include)
-INC_FLAGS := $(foreach dir,$(INC_DIRS),-I$(dir))
 MLX_INC = external/MLX42/include
+INC_DIRS :=
+INC_FLAGS :=
 
 OBJ_DIR = build
 
@@ -51,6 +51,8 @@ $(LIBARRTOOLS):
 
 $(MLX42): $(MLX_INC)
 	cd external/MLX42; cmake -B build; cmake --build build -j4
+	$(INC_DIRS) := $(wildcard libs/*/include)
+	$(INC_FLAGS) := $(foreach dir,$(INC_DIRS),-I$(dir))
 
 $(MLX_INC):
 	git submodule init
