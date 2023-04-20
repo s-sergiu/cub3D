@@ -40,13 +40,12 @@ struct s_game
 {
 	mlx_t					*mlx_handle;
 	mlx_image_t				*mlx_background_image;
-	struct s_map		*map_data;
+	struct s_map			*map_data;
 	struct s_player_data	player_data;
 };
 
 struct s_map
 {
-	char	*map_string;
 	char	**map_array;
 	int		height;
 	int		width;
