@@ -18,9 +18,9 @@ void	init_mlx(mlx_t **mlx, int width, int height)
 		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
 }
 
-void	init_img(mlx_image_t **img, mlx_t *mlx, int width, int height)
+void	create_img(mlx_image_t **img, mlx_t *mlx, int width, int height)
 {
-	*img = mlx_new_image(mlx, width, height);
+	(*img) = mlx_new_image(mlx, width, height);
 	if (!img)
 	{
 		mlx_close_window(mlx);
@@ -42,13 +42,11 @@ void	init_game_data(t_game **game_data, t_map *map_data)
 
 	width = map_data->width;
 	height = map_data->height;
-	(void)height;
-	(void)width;
 	mlx = NULL;
 	background = NULL;
 	malloc_game_struct(game_data, *destroy_map_data, map_data);
 	init_mlx(&mlx, width, height);
-	init_img(&background, mlx, width, height);
+	create_img(&background, mlx, width, height);
 	if (!background || !mlx)
 	{
 		destroy_game_data(*game_data);

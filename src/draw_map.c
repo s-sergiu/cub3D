@@ -88,9 +88,11 @@ void	draw_walls(t_game *game_data)
 
 void	draw_player(t_game *game_data)
 {
-	mlx_image_t			*player;
-	int					x;
-	int					y;
+	mlx_image_t	*player;
+	int			x;
+	int			y;
+	int			i;
+	int			j;
 
 	game_data->player_data.player_image = mlx_new_image(game_data->mlx_handle, 5, 5);
 	player = game_data->player_data.player_image;
@@ -99,53 +101,84 @@ void	draw_player(t_game *game_data)
 	mlx_image_to_window(game_data->mlx_handle, player, (x * TILE) + 28, (y * TILE) + 28);
 	game_data->player_data.current_position.xAxis = &player->instances[0].x;
 	game_data->player_data.current_position.yAxis = &player->instances[0].y;
-	for (uint32_t z = 0; z < player->width; ++z)
+	i = -1;
+	j = 0;
+	while (++i < (int)player->width)
 	{
-		for (uint32_t b = 0; b < player->height; ++b)
+		while (j < (int)player->height)
 		{
-			mlx_put_pixel(player, z, b, 240);
+			mlx_put_pixel(player, i, j, 240);
+			j++;
 		}
+		j = 0;
 	}
 }
 
-void	draw_grid(t_map *map_data, mlx_image_t *image)
+void	draw_horizontal_line(int height, int width, mlx_image_t *image)
 {
 	int	x;
 	int	y;
 
 	x = 0;
 	y = TILE;
-	while (y < map_data->height)
+	while (y < height)
 	{
-		while (x < map_data->width)
+		while (x < width)
 			mlx_put_pixel(image, x++, y, 231);
 		y += TILE;
 		x = 0;
 	}
+}
+
+void	draw_vertical_line(int height, int width, mlx_image_t *image)
+{
+	int	x;
+	int	y;
+
 	y = 0;
-	while (x < map_data->width)
+	x = TILE;
+	while (x < width)
 	{
-		while (y < map_data->height)
+		while (y < height)
 			mlx_put_pixel(image, x, y++, 255);
 		x += TILE;
 		y = 0;
 	}
 }
 
-void	place_image_to_screen(t_game **game_data,
-							t_map *map_data)
+void	draw_grid(t_map *map_data, mlx_image_t *image)
 {
-	mlx_t		*mlx;
-	mlx_image_t	*image;
+	int	height;
+	int	width;
 
-	mlx = (*game_data)->mlx_handle;
-	image = (*game_data)->mlx_background_image;
-	if (mlx_image_to_window(mlx, image, 0, 0) == -1)
+	height = map_data->height;
+	width = map_data->width;
+	draw_horizontal_line(height, width, image);
+	draw_vertical_line(height, width, image);
+}
+
+void	add_img(mlx_image_t *img, mlx_t *mlx, int width, int height)
+{
+	if (mlx_image_to_window(mlx, img, width, height) == -1)
 	{
 		mlx_close_window(mlx);
 		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
 	}
-	memset(image->pixels, 255, map_data->width * map_data->height * 4);
+}
+
+void	add_bg_image(t_game **game_data, t_map *map_data)
+{
+	mlx_t		*mlx;
+	mlx_image_t	*image;
+	int			width;
+	int			height;
+
+	width = map_data->width;
+	height = map_data->height;
+	mlx = (*game_data)->mlx_handle;
+	image = (*game_data)->mlx_background_image;
+	add_img(image, mlx, 0, 0);
+	memset(image->pixels, 255, width * height * 4);
 }
 
 void	draw_map(t_map *map_data)
@@ -154,7 +187,7 @@ void	draw_map(t_map *map_data)
 
 	game_data = NULL;
 	init_game_data(&game_data, map_data);
-	place_image_to_screen(&game_data, map_data);
+	add_bg_image(&game_data, map_data);
 	draw_grid(map_data, game_data->mlx_background_image);
 	draw_walls(game_data);
 	draw_player(game_data);

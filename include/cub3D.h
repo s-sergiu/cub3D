@@ -16,6 +16,8 @@
 # define EMPTY_MAP 254
 # define IS_DIRECTORY 21
 # define BAD_MAP_FILE 255
+# define PLAYER 'P'
+# define WALL '1'
 
 typedef struct s_game t_game;
 typedef struct s_map t_map;
@@ -146,5 +148,6 @@ void		protected_malloc(void **parameter, size_t size_of_parameter);
 void		init_game_data(t_game **game_data,
 							t_map *map_data);
 void		destroy_game_data(t_game *game_data);
+void		add_img(mlx_image_t *img, mlx_t *mlx, int width, int height);
 
 #endif
