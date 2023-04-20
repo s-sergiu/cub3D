@@ -32,12 +32,16 @@ FLAGS += "-mmacosx-version-min=12.06" "-arch" "x86_64"
 MLX_FLAGS = -lglfw -L"$(BREW)/3.3.8/lib"
 endif
 
-ifndef ($(INC_DIRS))
-	git submodule init
-	git submodule update
-endif
 
 all:$(NAME)
+
+update_submodules:
+ifeq ($(wildcard libs/*/include),)
+	@git submodule init
+	@git submodule update
+else
+	@echo Dir not exists
+endif
 
 $(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(LIBFT) $(LIBARRTOOLS) $(DEPS) $(INC_FLAGS)
 	$(CC) $(FLAGS) $(OBJ) -lft -L$(LIBFT_OBJ_DIR) \
