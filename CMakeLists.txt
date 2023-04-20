@@ -2,6 +2,13 @@ cmake_minimum_required(VERSION 3.10)
 
 project(cub3D)
 
+function(init_git_submodules)
+	EXECUTE_PROCESS(COMMAND git submodule init)
+	EXECUTE_PROCESS(COMMAND git submodule update)
+endfunction()
+
+init_git_submodules() 
+
 if (CMAKE_BUILD_TYPE STREQUAL "TEST")
 	set(CMAKE_CXX_STANDARD 14)
 
