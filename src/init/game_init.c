@@ -53,6 +53,7 @@ void	init_game_data(t_game **game_data, t_map *map_data)
 	{
 		destroy_game_data(*game_data);
 		destroy_map_data(map_data);
+		exit(errno);
 	}
 	(*game_data)->mlx_handle = mlx;
 	(*game_data)->mlx_background_image = background;
