@@ -34,7 +34,7 @@ endif
 
 all:$(NAME)
 
-$(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(LIBFT) $(LIBARRTOOLS) $(DEPS)
+$(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(LIBFT) $(LIBARRTOOLS) $(DEPS) $(INC_FLAGS)
 	$(CC) $(FLAGS) $(OBJ) -lft -L$(LIBFT_OBJ_DIR) \
 	$(MLX42) -Iinclude -larrtools -L$(LIBARRTOOLS_OBJ) \
 	$(MLX_FLAGS) -o $@
@@ -57,7 +57,6 @@ $(MLX_INC):
 	git submodule update
 
 build/%.o: %.c 
-
 	$(CC) $(FLAGS) -c $< -o $@ -I$(DEPS) -I$(MLX_INC) $(INC_FLAGS)
 
 $(OBJ_DIR):
