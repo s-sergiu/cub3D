@@ -6,8 +6,8 @@ SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=build/%.o)
 DEPS = include
 MLX_INC = external/MLX42/include
-INC_DIRS :=
-INC_FLAGS :=
+INC_DIRS = $(wildcard libs/*/include)
+INC_FLAGS = $(addprefix -I,$(INC_DIRS))
 
 OBJ_DIR = build
 
@@ -32,6 +32,11 @@ FLAGS += "-mmacosx-version-min=12.06" "-arch" "x86_64"
 MLX_FLAGS = -lglfw -L"$(BREW)/3.3.8/lib"
 endif
 
+ifndef ($(INC_DIRS))
+	git submodule init
+	git submodule update
+endif
+
 all:$(NAME)
 
 $(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(LIBFT) $(LIBARRTOOLS) $(DEPS) $(INC_FLAGS)
@@ -49,14 +54,9 @@ $(LIBARRTOOLS):
 	mv $(LIBARRTOOLS_DIR)/libarrtools.a $(LIBARRTOOLS)
 	$(RM) -rf $(LIBARRTOOLS_DIR)/build
 
-$(MLX42): $(MLX_INC)
+$(MLX42): 
 	cd external/MLX42; cmake -B build; cmake --build build -j4
-	INC_DIRS=$(wildcard libs/*/include)
-	INC_FLAGS=$(addprefix -I,$(INC_DIRS))
 
-$(MLX_INC):
-	git submodule init
-	git submodule update
 
 build/%.o: %.c 
 	$(CC) $(FLAGS) -I$(DEPS) -I$(MLX_INC) $(INC_FLAGS) -c $< -o $@ 
