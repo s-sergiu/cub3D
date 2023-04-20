@@ -1,59 +1,64 @@
 
 #include "cub3D.h"
 
-
-void ft_hook(void* param)
+void	ft_hook(void *param)
 {
-	t_game	*game_data;
+	t_game				*game_data;
 	mlx_t				*mlx;
 	mlx_image_t			*player;
 	char				**map;
-	int					playerX;
-	int					playerY;
+	int					posx;
+	int					posy;
 
 	game_data = param;
 	map = game_data->map_data->map_array;
 	mlx = game_data->mlx_handle;
 	player = game_data->player_data.player_image;
-	playerX = *game_data->player_data.current_position.xAxis / TILE;
-	playerY = *game_data->player_data.current_position.yAxis / TILE;
+	posx = *game_data->player_data.current_position.xAxis / TILE;
+	posy = *game_data->player_data.current_position.yAxis / TILE;
 	if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(mlx);
 	if (mlx_is_key_down(mlx, MLX_KEY_W))
 	{
-		if (map[playerY][playerX] != '1')
+		if (map[posy][posx] != '1')
 		{
-			if (map[(player->instances[0].y - 1) / TILE][playerX] != '1')
+			if (map[(player->instances[0].y - 1) / TILE][posx] != '1')
 				player->instances[0].y -= 1;
 		}
 	}
 	if (mlx_is_key_down(mlx, MLX_KEY_S))
-		if (map[playerY][playerX] != '1')
+	{
+		if (map[posy][posx] != '1')
 		{
-			if (map[(player->instances[0].y + 5) / TILE][playerX] != '1')
+			if (map[(player->instances[0].y + 5) / TILE][posx] != '1')
 				player->instances[0].y += 1;
 		}
+	}
 	if (mlx_is_key_down(mlx, MLX_KEY_A))
-		if (map[playerY][playerX] != '1')
+	{
+		if (map[posy][posx] != '1')
 		{
-			if (map[playerY][ (player->instances[0].x - 1) / TILE] != '1')
+			if (map[posy][(player->instances[0].x - 1) / TILE] != '1')
 				player->instances[0].x -= 1;
 		}
+	}
 	if (mlx_is_key_down(mlx, MLX_KEY_D))
-		if (map[playerY][playerX] != '1')
+	{
+		if (map[posy][posx] != '1')
 		{
-			if (map[playerY] [(player->instances[0].x + 5) / TILE] != '1')
+			if (map[posy][(player->instances[0].x + 5) / TILE] != '1')
 				player->instances[0].x += 1;
 		}
+	}
 }
 
 void	draw_walls(t_game *game_data)
 {
 	mlx_image_t		*img;
 	mlx_t			*mlx;
-	t_map	*map_data;
-	int			x;
-	int			y;
+	t_map			*map_data;
+	int				x;
+	int				y;
 
 	x = 0;
 	y = 0;
@@ -84,8 +89,8 @@ void	draw_walls(t_game *game_data)
 void	draw_player(t_game *game_data)
 {
 	mlx_image_t			*player;
-	int	x;
-	int	y;
+	int					x;
+	int					y;
 
 	game_data->player_data.player_image = mlx_new_image(game_data->mlx_handle, 5, 5);
 	player = game_data->player_data.player_image;
@@ -130,8 +135,8 @@ void	draw_grid(t_map *map_data, mlx_image_t *image)
 void	place_image_to_screen(t_game **game_data,
 							t_map *map_data)
 {
-	mlx_t*			mlx;
-	mlx_image_t*	image;
+	mlx_t		*mlx;
+	mlx_image_t	*image;
 
 	mlx = (*game_data)->mlx_handle;
 	image = (*game_data)->mlx_background_image;

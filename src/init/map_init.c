@@ -4,6 +4,7 @@
 char	*try_read_map(char *map_file)
 {
 	char	*pointer;
+
 	pointer = read_map(map_file);
 	if (pointer == NULL)
 		exit(errno);
@@ -12,12 +13,12 @@ char	*try_read_map(char *map_file)
 
 char	**try_split_string(char *string, t_map *map_data)
 {
-	char **map_array;
+	char	**map_array;
 
 	map_array = ft_split(string, '\n');
 	if (map_array == NULL)
 	{
-        free(string);
+		free(string);
 		free(map_data);
 		exit(errno);
 	}

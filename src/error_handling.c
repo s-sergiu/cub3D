@@ -34,8 +34,8 @@ int	has_invalid_map_extension(char *filename)
 
 	filename_length = ft_strlen(filename);
 	if (ft_strncmp(filename + (filename_length - 4), ".cub\0", 5))
-		return(TRUE);
-	return(FALSE);
+		return (TRUE);
+	return (FALSE);
 }
 
 int	is_directory(char *filename)
