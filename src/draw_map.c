@@ -65,28 +65,31 @@ void	draw_player(t_game **game_data)
 	}
 }
 
-void	add_bg_image(t_game **game_data, t_map *map_data)
+void	add_bg_image(t_game **game_data)
 {
 	mlx_t		*mlx;
 	mlx_image_t	*image;
 	int			width;
 	int			height;
 
-	width = map_data->width;
-	height = map_data->height;
+	width = (*game_data)->map_data->width;
+	height = (*game_data)->map_data->height;
 	mlx = (*game_data)->mlx_handle;
 	image = (*game_data)->mlx_background_image;
-	add_img(image, mlx, 0, 0);
+	place_image(image, mlx, 0, 0);
 	memset(image->pixels, 255, width * height * sizeof(int));
 }
 
-void	draw_map(t_map *map_data)
+void	game_setup(char *argv)
 {
 	t_game	*game_data;
+	t_map	*map_data;
 
 	game_data = NULL;
+	map_data = NULL;
+	init_map_data(&map_data, argv);
 	init_game_data(&game_data, map_data);
-	add_bg_image(&game_data, map_data);
+	add_bg_image(&game_data);
 	draw_grid(map_data, game_data->mlx_background_image);
 	draw_walls(game_data);
 	draw_player(&game_data);

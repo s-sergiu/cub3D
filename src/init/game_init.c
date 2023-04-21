@@ -18,16 +18,6 @@ void	init_mlx(mlx_t **mlx, int width, int height)
 		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
 }
 
-void	create_img(mlx_image_t **img, mlx_t *mlx, int width, int height)
-{
-	(*img) = mlx_new_image(mlx, width, height);
-	if (!img)
-	{
-		mlx_close_window(mlx);
-		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
-	}
-}
-
 void	destroy_game_data(t_game *game_data)
 {
 	free(game_data);
