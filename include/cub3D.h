@@ -19,19 +19,19 @@
 # define PLAYER 'P'
 # define WALL '1'
 
-typedef struct s_game t_game;
-typedef struct s_map t_map;
+typedef struct s_game	t_game;
+typedef struct s_map	t_map;
 
 struct s_position
 {
-	int	*xAxis;
-	int	*yAxis;
+	int	*x_axis;
+	int	*y_axis;
 };
 
 struct s_static_position
 {
-	int	xAxis;
-	int	yAxis;
+	int	x_axis;
+	int	y_axis;
 };
 
 struct s_player_data
@@ -146,8 +146,15 @@ int			has_invalid_map_extension(char *filename);
 int			is_valid_filename(char *filename);
 void		protected_malloc(void **parameter, size_t size_of_parameter);
 void		init_game_data(t_game **game_data,
-							t_map *map_data);
+				t_map *map_data);
 void		destroy_game_data(t_game *game_data);
 void		add_img(mlx_image_t *img, mlx_t *mlx, int width, int height);
+void		create_img(mlx_image_t **img, mlx_t *mlx, int width, int height);
+void		turn_right(char **map, t_game *game_data);
+void		turn_left(char **map, t_game *game_data);
+void		turn_down(char **map, t_game *game_data);
+void		turn_up(char **map, t_game *game_data);
+void		place_wall_or_player(char **map, t_game *game_data, int x, int y);
+void		draw_grid(t_map *map_data, mlx_image_t *image);
 
 #endif
