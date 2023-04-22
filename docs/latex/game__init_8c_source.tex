@@ -1,0 +1,66 @@
+\hypertarget{game__init_8c_source}{}\doxysection{game\+\_\+init.\+c}
+\label{game__init_8c_source}\index{/Users/ssergiu/projects/cub3D/src/init/game\_init.c@{/Users/ssergiu/projects/cub3D/src/init/game\_init.c}}
+\mbox{\hyperlink{game__init_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cub3_d_8h}{cub3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00004}\mbox{\hyperlink{game__init_8c_a9c0871c61cbc49661f12864d518bb64a}{00004}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{game__init_8c_a9c0871c61cbc49661f12864d518bb64a}{malloc\_game\_struct}}(\mbox{\hyperlink{structs__game}{t\_game}}\ **game\_data,\ \textcolor{keywordtype}{void}\ (*f)(\mbox{\hyperlink{structs__map}{t\_map}}\ *),\ \textcolor{keywordtype}{void}\ *data)}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00006}00006\ \ \ \ \ *game\_data\ =\ (\mbox{\hyperlink{structs__game}{t\_game}}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__game}{s\_game}}));}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00007}00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (game\_data\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00008}00008\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00009}00009\ \ \ \ \ \ \ \ \ f(data);}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00010}00010\ \ \ \ \ \ \ \ \ exit(errno);}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00011}00011\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00014}\mbox{\hyperlink{game__init_8c_a13350d37b122b6455e86a2a9eeb0c7e2}{00014}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{game__init_8c_a13350d37b122b6455e86a2a9eeb0c7e2}{init\_mlx}}(mlx\_t\ **mlx,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00016}00016\ \ \ \ \ (*mlx)\ =\ mlx\_init(width,\ height,\ \textcolor{stringliteral}{"{}cub3D"{}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (!mlx)}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00018}00018\ \ \ \ \ \ \ \ \ ft\_putstr\_fd((\textcolor{keywordtype}{char}\ *)mlx\_strerror(mlx\_errno),\ 2);}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00021}\mbox{\hyperlink{cub3_d_8h_aac9ff83d4670c2e40935bf939f0e9be1}{00021}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{game__init_8c_aac9ff83d4670c2e40935bf939f0e9be1}{create\_img}}(mlx\_image\_t\ **img,\ mlx\_t\ *mlx,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00023}00023\ \ \ \ \ (*img)\ =\ mlx\_new\_image(mlx,\ width,\ height);}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (!img)}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ ft\_putstr\_fd((\textcolor{keywordtype}{char}\ *)mlx\_strerror(mlx\_errno),\ 2);}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00031}\mbox{\hyperlink{cub3_d_8h_a4742c3e8fdf7e08d4b94889136e7161c}{00031}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{game__init_8c_a4742c3e8fdf7e08d4b94889136e7161c}{destroy\_game\_data}}(\mbox{\hyperlink{structs__game}{t\_game}}\ *game\_data)}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00033}00033\ \ \ \ \ free(game\_data);}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00036}\mbox{\hyperlink{cub3_d_8h_a11f7064e48a9cb662f0a3d67a706e922}{00036}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{game__init_8c_a11f7064e48a9cb662f0a3d67a706e922}{init\_game\_data}}(\mbox{\hyperlink{structs__game}{t\_game}}\ **game\_data,\ \mbox{\hyperlink{structs__map}{t\_map}}\ *map\_data)}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00037}00037\ \{}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00038}00038\ \ \ \ \ mlx\_t\ \ \ \ \ \ \ \ \ \ \ *mlx;}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00039}00039\ \ \ \ \ mlx\_image\_t\ \ \ \ \ *background;}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ width;}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ height;}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00043}00043\ \ \ \ \ width\ =\ map\_data-\/>\mbox{\hyperlink{structs__map_ad4768adacc3ab19724a77cee481cd105}{width}};}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00044}00044\ \ \ \ \ height\ =\ map\_data-\/>\mbox{\hyperlink{structs__map_a50b07a6909effa731a1215b0515d2484}{height}};}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00045}00045\ \ \ \ \ mlx\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00046}00046\ \ \ \ \ background\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{game__init_8c_a9c0871c61cbc49661f12864d518bb64a}{malloc\_game\_struct}}(game\_data,\ *\mbox{\hyperlink{cub3_d_8h_a3324efc071ce4b896ac6759b3f359b24}{destroy\_map\_data}},\ map\_data);}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{game__init_8c_a13350d37b122b6455e86a2a9eeb0c7e2}{init\_mlx}}(\&mlx,\ width,\ height);}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{game__init_8c_aac9ff83d4670c2e40935bf939f0e9be1}{create\_img}}(\&background,\ mlx,\ width,\ height);}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (!background\ ||\ !mlx)}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00051}00051\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{game__init_8c_a4742c3e8fdf7e08d4b94889136e7161c}{destroy\_game\_data}}(*game\_data);}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_a3324efc071ce4b896ac6759b3f359b24}{destroy\_map\_data}}(map\_data);}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ exit(errno);}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00056}00056\ \ \ \ \ (*game\_data)-\/>mlx\_handle\ =\ mlx;}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00057}00057\ \ \ \ \ (*game\_data)-\/>mlx\_background\_image\ =\ background;}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00058}00058\ \ \ \ \ (*game\_data)-\/>map\_data\ =\ map\_data;}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00059}00059\ \ \ \ \ (*game\_data)-\/>player\_data.player\_image\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{game__init_8c_source_l00060}00060\ \}}
+
+\end{DoxyCode}

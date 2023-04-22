@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cub3D: /home/ssergiu/projects/cub3d/src/draw_map.c Source File</title>
+<title>cub3D: /Users/ssergiu/projects/cub3D/src/draw_map.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -77,201 +77,124 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="draw__map_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;../include/cub3D.h&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="cub3_d_8h.html">cub3D.h</a>&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e">    5</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e">ft_hook</a>(<span class="keywordtype">void</span>* param)</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structs__game__data.html">s_game_data</a>  *game_data;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    mlx_t               *mlx;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    mlx_image_t         *player;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">char</span>                **map;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">int</span>                 playerX;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">int</span>                 playerY;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    game_data = param;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    map = game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#a67e1cd5cf12b83ff14d0c488c65f76e9">map_data</a>-&gt;<a class="code hl_variable" href="structs__map__data.html#a051ac3dde821d42a7049464e58d67419">map_array</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    mlx = game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#ad9fd52da8c21de0b10b15b79c01f09c9">mlx_handle</a>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    player = game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#aea7bfd67666036492cb89377cf177012">player_data</a>.<a class="code hl_variable" href="structs__player__data.html#a48bafbc06699fab0f92d6b334b1d28d7">player_image</a>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    playerX = *game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#aea7bfd67666036492cb89377cf177012">player_data</a>.<a class="code hl_variable" href="structs__player__data.html#a0f45f772efc7762c0ea9548ef1a10d76">current_position</a>.<a class="code hl_variable" href="structs__position.html#a0f991de4fa88927f817ca4c34c852307">xAxis</a> / <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    playerY = *game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#aea7bfd67666036492cb89377cf177012">player_data</a>.<a class="code hl_variable" href="structs__player__data.html#a0f45f772efc7762c0ea9548ef1a10d76">current_position</a>.<a class="code hl_variable" href="structs__position.html#aea370833455884f9b66282a89c22b879">yAxis</a> / <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        mlx_close_window(mlx);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">if</span> (mlx_is_key_down(mlx, MLX_KEY_W))</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span> (map[playerY][playerX] != <span class="charliteral">&#39;1&#39;</span>)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">if</span> (map[(player-&gt;instances[0].y - 1) / <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>][playerX] != <span class="charliteral">&#39;1&#39;</span>)</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                player-&gt;instances[0].y -= 1;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span> (mlx_is_key_down(mlx, MLX_KEY_S))</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">if</span> (map[playerY][playerX] != <span class="charliteral">&#39;1&#39;</span>)</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">if</span> (map[(player-&gt;instances[0].y + 5) / <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>][playerX] != <span class="charliteral">&#39;1&#39;</span>)</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                player-&gt;instances[0].y += 1;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (mlx_is_key_down(mlx, MLX_KEY_A))</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span> (map[playerY][playerX] != <span class="charliteral">&#39;1&#39;</span>)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">if</span> (map[playerY][ (player-&gt;instances[0].x - 1) / <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>] != <span class="charliteral">&#39;1&#39;</span>)</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                player-&gt;instances[0].x -= 1;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span> (mlx_is_key_down(mlx, MLX_KEY_D))</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> (map[playerY][playerX] != <span class="charliteral">&#39;1&#39;</span>)</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">if</span> (map[playerY] [(player-&gt;instances[0].x + 5) / <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>] != <span class="charliteral">&#39;1&#39;</span>)</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                player-&gt;instances[0].x += 1;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e">    4</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e">ft_hook</a>(<span class="keywordtype">void</span> *param)</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <a class="code hl_struct" href="structs__game.html">t_game</a>              *game_data;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    mlx_t               *mlx;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">char</span>                **map;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    game_data = param;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    map = game_data-&gt;<a class="code hl_variable" href="structs__game.html#ae63d93b40e2cc66492ebbf535d3b0967">map_data</a>-&gt;<a class="code hl_variable" href="structs__map.html#af6220ec05504a768f925bf41236b4532">map_array</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    mlx = game_data-&gt;<a class="code hl_variable" href="structs__game.html#a678a8acab0bcbf093a03c5fc65246d2a">mlx_handle</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">if</span> (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        mlx_close_window(mlx);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">if</span> (mlx_is_key_down(mlx, MLX_KEY_W))</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_function" href="cub3_d_8h.html#a99fb742061411522c5ed3e1c0ca5c69e">turn_up</a>(map, game_data);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">if</span> (mlx_is_key_down(mlx, MLX_KEY_S))</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_function" href="cub3_d_8h.html#a23d77dc915419830147ffded05fbbb79">turn_down</a>(map, game_data);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">if</span> (mlx_is_key_down(mlx, MLX_KEY_A))</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_function" href="cub3_d_8h.html#a2e8bbe16d9940195bd0809cfee562230">turn_left</a>(map, game_data);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span> (mlx_is_key_down(mlx, MLX_KEY_D))</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_function" href="cub3_d_8h.html#a2500c0e1d515fb8494bcad43210675e5">turn_right</a>(map, game_data);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="draw__map_8c.html#a554099133a957e84d50486d968eb4f15">   25</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="draw__map_8c.html#a554099133a957e84d50486d968eb4f15">draw_walls</a>(<a class="code hl_struct" href="structs__game.html">t_game</a> *game_data)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">char</span>            **map;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">int</span>             x;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">int</span>             y;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    x = 0;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    y = 0;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    map = game_data-&gt;<a class="code hl_variable" href="structs__game.html#ae63d93b40e2cc66492ebbf535d3b0967">map_data</a>-&gt;<a class="code hl_variable" href="structs__map.html#af6220ec05504a768f925bf41236b4532">map_array</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">while</span> (map[y])</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">while</span> (map[y][x])</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <a class="code hl_function" href="cub3_d_8h.html#a2154a52d790968e915c0bf680f0f9f7d">place_wall_or_player</a>(map, game_data, x++, y);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        y++;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        x = 0;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="draw__map_8c.html#a71bac51cfa90c1339b54d02cc53514fd">   43</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="draw__map_8c.html#a71bac51cfa90c1339b54d02cc53514fd">draw_player</a>(<a class="code hl_struct" href="structs__game.html">t_game</a> **game_data)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    mlx_image_t *player;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    mlx_t       *mlx;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">int</span>         x;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">int</span>         y;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="draw__map_8c.html#aa54199ea768b27cd270ff94975ac0f46">   50</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="draw__map_8c.html#aa54199ea768b27cd270ff94975ac0f46">draw_walls</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structs__game__data.html">s_game_data</a> *game_data)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    mlx_image_t     *img;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    mlx_t           *mlx;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structs__map__data.html">s_map_data</a>   *map_data;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">int</span>         x;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">int</span>         y;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">int</span>         i;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">int</span>         j;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    i = 0;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    j = 0;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    x = 0;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    y = 0;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    map_data = game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#a67e1cd5cf12b83ff14d0c488c65f76e9">map_data</a>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    mlx = game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#ad9fd52da8c21de0b10b15b79c01f09c9">mlx_handle</a>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">while</span> (map_data-&gt;<a class="code hl_variable" href="structs__map__data.html#a051ac3dde821d42a7049464e58d67419">map_array</a>[i])</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">while</span> (map_data-&gt;<a class="code hl_variable" href="structs__map__data.html#a051ac3dde821d42a7049464e58d67419">map_array</a>[i][j])</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordflow">if</span> (map_data-&gt;<a class="code hl_variable" href="structs__map__data.html#a051ac3dde821d42a7049464e58d67419">map_array</a>[i][j] == <span class="charliteral">&#39;1&#39;</span>)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                img = mlx_new_image(mlx, <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>, <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                mlx_image_to_window(mlx, img, x, y);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                memset(img-&gt;pixels, 120, <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a> * <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a> * 4);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">if</span> (map_data-&gt;<a class="code hl_variable" href="structs__map__data.html#a051ac3dde821d42a7049464e58d67419">map_array</a>[i][j] == <span class="charliteral">&#39;P&#39;</span>)</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#aea7bfd67666036492cb89377cf177012">player_data</a>.<a class="code hl_variable" href="structs__player__data.html#a741da92a1e2db0978396663d99e6a905">initial_position</a>.<a class="code hl_variable" href="structs__static__position.html#a9640a25bf9e545ee03cd6ca4904ad51f">xAxis</a> = j;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#aea7bfd67666036492cb89377cf177012">player_data</a>.<a class="code hl_variable" href="structs__player__data.html#a741da92a1e2db0978396663d99e6a905">initial_position</a>.<a class="code hl_variable" href="structs__static__position.html#ad51368021113b9b493e9d0304a6db900">yAxis</a> = i;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            printf(<span class="stringliteral">&quot;%c&quot;</span>, map_data-&gt;<a class="code hl_variable" href="structs__map__data.html#a051ac3dde821d42a7049464e58d67419">map_array</a>[i][j]);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            j++;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            x += <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        i++;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        y += <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        j = 0;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        x = 0;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="draw__map_8c.html#ac35b39a660a405d9638cb1483d8fe93a">   93</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="draw__map_8c.html#ac35b39a660a405d9638cb1483d8fe93a">draw_player</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structs__game__data.html">s_game_data</a> *game_data)</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    mlx_image_t         *player;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">int</span> x;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">int</span> y;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#aea7bfd67666036492cb89377cf177012">player_data</a>.<a class="code hl_variable" href="structs__player__data.html#a48bafbc06699fab0f92d6b334b1d28d7">player_image</a> = mlx_new_image(game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#ad9fd52da8c21de0b10b15b79c01f09c9">mlx_handle</a>, 5, 5);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    player = game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#aea7bfd67666036492cb89377cf177012">player_data</a>.<a class="code hl_variable" href="structs__player__data.html#a48bafbc06699fab0f92d6b334b1d28d7">player_image</a>;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    x = game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#aea7bfd67666036492cb89377cf177012">player_data</a>.<a class="code hl_variable" href="structs__player__data.html#a741da92a1e2db0978396663d99e6a905">initial_position</a>.<a class="code hl_variable" href="structs__static__position.html#a9640a25bf9e545ee03cd6ca4904ad51f">xAxis</a>;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    y = game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#aea7bfd67666036492cb89377cf177012">player_data</a>.<a class="code hl_variable" href="structs__player__data.html#a741da92a1e2db0978396663d99e6a905">initial_position</a>.<a class="code hl_variable" href="structs__static__position.html#ad51368021113b9b493e9d0304a6db900">yAxis</a>;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    mlx_image_to_window(game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#ad9fd52da8c21de0b10b15b79c01f09c9">mlx_handle</a>, player, (x * <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>) + 28, (y * <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>) + 28);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#aea7bfd67666036492cb89377cf177012">player_data</a>.<a class="code hl_variable" href="structs__player__data.html#a0f45f772efc7762c0ea9548ef1a10d76">current_position</a>.<a class="code hl_variable" href="structs__position.html#a0f991de4fa88927f817ca4c34c852307">xAxis</a> = &amp;player-&gt;instances[0].x;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#aea7bfd67666036492cb89377cf177012">player_data</a>.<a class="code hl_variable" href="structs__player__data.html#a0f45f772efc7762c0ea9548ef1a10d76">current_position</a>.<a class="code hl_variable" href="structs__position.html#aea370833455884f9b66282a89c22b879">yAxis</a> = &amp;player-&gt;instances[0].y;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">for</span> (uint32_t z = 0; z &lt; player-&gt;width; ++z)</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">for</span> (uint32_t b = 0; b &lt; player-&gt;height; ++b)</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            mlx_put_pixel(player, z, b, 240);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="draw__map_8c.html#ad1d783c8f0f0cff7b80b71c22944d648">  115</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="draw__map_8c.html#ad1d783c8f0f0cff7b80b71c22944d648">draw_grid</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structs__map__data.html">s_map_data</a> *map_data, mlx_image_t *image)</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>{</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">int</span> x;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordtype">int</span> y;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    x = 0;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    y = <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">while</span> (y &lt; map_data-&gt;<a class="code hl_variable" href="structs__map__data.html#a3dc97c8f3b6eaa17bf4e5fe4467d9b98">height</a>)</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">while</span> (x &lt; map_data-&gt;<a class="code hl_variable" href="structs__map__data.html#a6c935e0fd9d156d75d36287be039e256">width</a>)</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            mlx_put_pixel(image, x++, y, 231);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        y += <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        x = 0;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    y = 0;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">while</span> (x &lt; map_data-&gt;<a class="code hl_variable" href="structs__map__data.html#a6c935e0fd9d156d75d36287be039e256">width</a>)</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    {</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">while</span> (y &lt; map_data-&gt;<a class="code hl_variable" href="structs__map__data.html#a3dc97c8f3b6eaa17bf4e5fe4467d9b98">height</a>)</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            mlx_put_pixel(image, x, y++, 255);</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        x += <a class="code hl_define" href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        y = 0;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="draw__map_8c.html#a97d700c0c000abcc642a44c27e85afef">  139</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="draw__map_8c.html#a97d700c0c000abcc642a44c27e85afef">place_image_to_screen</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structs__game__data.html">s_game_data</a> **game_data,</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                            <span class="keyword">struct</span> <a class="code hl_struct" href="structs__map__data.html">s_map_data</a> *map_data)</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>{</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    mlx_t*          mlx;</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    mlx_image_t*    image;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    mlx = (*game_data)-&gt;mlx_handle;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    image = (*game_data)-&gt;mlx_background_image;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordflow">if</span> (mlx_image_to_window(mlx, image, 0, 0) == -1)</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    {</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        mlx_close_window(mlx);</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>((<span class="keywordtype">char</span> *)mlx_strerror(mlx_errno), 2);</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    memset(image-&gt;pixels, 255, map_data-&gt;<a class="code hl_variable" href="structs__map__data.html#a6c935e0fd9d156d75d36287be039e256">width</a> * map_data-&gt;<a class="code hl_variable" href="structs__map__data.html#a3dc97c8f3b6eaa17bf4e5fe4467d9b98">height</a> * 4);</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>}</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="cub3D_8h.html#a3443be67d00219beaaad98305349ce07">  155</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="draw__map_8c.html#a3443be67d00219beaaad98305349ce07">draw_map</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structs__map__data.html">s_map_data</a> *map_data)</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>{</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structs__game__data.html">s_game_data</a>  *game_data;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    game_data = NULL;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <a class="code hl_function" href="cub3D_8h.html#ab1c2d2b6d5eaaa4e4602c09659d51d3d">initialize_game_data</a>(&amp;game_data, <a class="code hl_variable" href="structs__game__data.html#a67e1cd5cf12b83ff14d0c488c65f76e9">map_data</a>);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <a class="code hl_function" href="draw__map_8c.html#a97d700c0c000abcc642a44c27e85afef">place_image_to_screen</a>(&amp;game_data, <a class="code hl_variable" href="structs__game__data.html#a67e1cd5cf12b83ff14d0c488c65f76e9">map_data</a>);</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <a class="code hl_function" href="draw__map_8c.html#ad1d783c8f0f0cff7b80b71c22944d648">draw_grid</a>(<a class="code hl_variable" href="structs__game__data.html#a67e1cd5cf12b83ff14d0c488c65f76e9">map_data</a>, game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#a9469f6a12260a7bc586d8934bc3120dc">mlx_background_image</a>);</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <a class="code hl_function" href="draw__map_8c.html#aa54199ea768b27cd270ff94975ac0f46">draw_walls</a>(game_data);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <a class="code hl_function" href="draw__map_8c.html#ac35b39a660a405d9638cb1483d8fe93a">draw_player</a>(game_data);</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    mlx_loop_hook(game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#ad9fd52da8c21de0b10b15b79c01f09c9">mlx_handle</a>, <a class="code hl_function" href="draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e">ft_hook</a>, game_data);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    mlx_loop(game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#ad9fd52da8c21de0b10b15b79c01f09c9">mlx_handle</a>);</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    mlx_terminate(game_data-&gt;<a class="code hl_variable" href="structs__game__data.html#ad9fd52da8c21de0b10b15b79c01f09c9">mlx_handle</a>);</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordflow">if</span> (game_data)</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <a class="code hl_function" href="cub3D_8h.html#a356733f8825c30cebb2db84f94eb95a7">destroy_game_data</a>(&amp;game_data);</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>}</div>
-<div class="ttc" id="acub3D_8h_html_a2706e5298e357ffb64b22c7e7fc1b3e9"><div class="ttname"><a href="cub3D_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a></div><div class="ttdeci">#define TILE</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00014">cub3D.h:14</a></div></div>
-<div class="ttc" id="acub3D_8h_html_a356733f8825c30cebb2db84f94eb95a7"><div class="ttname"><a href="cub3D_8h.html#a356733f8825c30cebb2db84f94eb95a7">destroy_game_data</a></div><div class="ttdeci">void destroy_game_data(struct s_game_data **game_data)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map__utils_8c_source.html#l00070">draw_map_utils.c:70</a></div></div>
-<div class="ttc" id="acub3D_8h_html_ab1c2d2b6d5eaaa4e4602c09659d51d3d"><div class="ttname"><a href="cub3D_8h.html#ab1c2d2b6d5eaaa4e4602c09659d51d3d">initialize_game_data</a></div><div class="ttdeci">void initialize_game_data(struct s_game_data **game_data, struct s_map_data *map_data)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map__utils_8c_source.html#l00024">draw_map_utils.c:24</a></div></div>
-<div class="ttc" id="adraw__map_8c_html_a3443be67d00219beaaad98305349ce07"><div class="ttname"><a href="draw__map_8c.html#a3443be67d00219beaaad98305349ce07">draw_map</a></div><div class="ttdeci">void draw_map(struct s_map_data *map_data)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00155">draw_map.c:155</a></div></div>
-<div class="ttc" id="adraw__map_8c_html_a4b7144f73d9e8c25ca55c890584b5c0e"><div class="ttname"><a href="draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e">ft_hook</a></div><div class="ttdeci">void ft_hook(void *param)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00005">draw_map.c:5</a></div></div>
-<div class="ttc" id="adraw__map_8c_html_a97d700c0c000abcc642a44c27e85afef"><div class="ttname"><a href="draw__map_8c.html#a97d700c0c000abcc642a44c27e85afef">place_image_to_screen</a></div><div class="ttdeci">void place_image_to_screen(struct s_game_data **game_data, struct s_map_data *map_data)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00139">draw_map.c:139</a></div></div>
-<div class="ttc" id="adraw__map_8c_html_aa54199ea768b27cd270ff94975ac0f46"><div class="ttname"><a href="draw__map_8c.html#aa54199ea768b27cd270ff94975ac0f46">draw_walls</a></div><div class="ttdeci">void draw_walls(struct s_game_data *game_data)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00050">draw_map.c:50</a></div></div>
-<div class="ttc" id="adraw__map_8c_html_ac35b39a660a405d9638cb1483d8fe93a"><div class="ttname"><a href="draw__map_8c.html#ac35b39a660a405d9638cb1483d8fe93a">draw_player</a></div><div class="ttdeci">void draw_player(struct s_game_data *game_data)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00093">draw_map.c:93</a></div></div>
-<div class="ttc" id="adraw__map_8c_html_ad1d783c8f0f0cff7b80b71c22944d648"><div class="ttname"><a href="draw__map_8c.html#ad1d783c8f0f0cff7b80b71c22944d648">draw_grid</a></div><div class="ttdeci">void draw_grid(struct s_map_data *map_data, mlx_image_t *image)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00115">draw_map.c:115</a></div></div>
-<div class="ttc" id="alibft_8h_html_acefce9ac519f8f8b7d3fde33dbafe469"><div class="ttname"><a href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a></div><div class="ttdeci">void ft_putstr_fd(char *s, int fd)</div><div class="ttdef"><b>Definition:</b> <a href="ft__putstring__fd_8c_source.html#l00004">ft_putstring_fd.c:4</a></div></div>
-<div class="ttc" id="astructs__game__data_html"><div class="ttname"><a href="structs__game__data.html">s_game_data</a></div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00038">cub3D.h:39</a></div></div>
-<div class="ttc" id="astructs__game__data_html_a67e1cd5cf12b83ff14d0c488c65f76e9"><div class="ttname"><a href="structs__game__data.html#a67e1cd5cf12b83ff14d0c488c65f76e9">s_game_data::map_data</a></div><div class="ttdeci">struct s_map_data * map_data</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00042">cub3D.h:42</a></div></div>
-<div class="ttc" id="astructs__game__data_html_a9469f6a12260a7bc586d8934bc3120dc"><div class="ttname"><a href="structs__game__data.html#a9469f6a12260a7bc586d8934bc3120dc">s_game_data::mlx_background_image</a></div><div class="ttdeci">mlx_image_t * mlx_background_image</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00041">cub3D.h:41</a></div></div>
-<div class="ttc" id="astructs__game__data_html_ad9fd52da8c21de0b10b15b79c01f09c9"><div class="ttname"><a href="structs__game__data.html#ad9fd52da8c21de0b10b15b79c01f09c9">s_game_data::mlx_handle</a></div><div class="ttdeci">mlx_t * mlx_handle</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00040">cub3D.h:40</a></div></div>
-<div class="ttc" id="astructs__game__data_html_aea7bfd67666036492cb89377cf177012"><div class="ttname"><a href="structs__game__data.html#aea7bfd67666036492cb89377cf177012">s_game_data::player_data</a></div><div class="ttdeci">struct s_player_data player_data</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00043">cub3D.h:43</a></div></div>
-<div class="ttc" id="astructs__map__data_html"><div class="ttname"><a href="structs__map__data.html">s_map_data</a></div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00046">cub3D.h:47</a></div></div>
-<div class="ttc" id="astructs__map__data_html_a051ac3dde821d42a7049464e58d67419"><div class="ttname"><a href="structs__map__data.html#a051ac3dde821d42a7049464e58d67419">s_map_data::map_array</a></div><div class="ttdeci">char ** map_array</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00049">cub3D.h:49</a></div></div>
-<div class="ttc" id="astructs__map__data_html_a3dc97c8f3b6eaa17bf4e5fe4467d9b98"><div class="ttname"><a href="structs__map__data.html#a3dc97c8f3b6eaa17bf4e5fe4467d9b98">s_map_data::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00050">cub3D.h:50</a></div></div>
-<div class="ttc" id="astructs__map__data_html_a6c935e0fd9d156d75d36287be039e256"><div class="ttname"><a href="structs__map__data.html#a6c935e0fd9d156d75d36287be039e256">s_map_data::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00051">cub3D.h:51</a></div></div>
-<div class="ttc" id="astructs__player__data_html_a0f45f772efc7762c0ea9548ef1a10d76"><div class="ttname"><a href="structs__player__data.html#a0f45f772efc7762c0ea9548ef1a10d76">s_player_data::current_position</a></div><div class="ttdeci">struct s_position current_position</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00034">cub3D.h:34</a></div></div>
-<div class="ttc" id="astructs__player__data_html_a48bafbc06699fab0f92d6b334b1d28d7"><div class="ttname"><a href="structs__player__data.html#a48bafbc06699fab0f92d6b334b1d28d7">s_player_data::player_image</a></div><div class="ttdeci">mlx_image_t * player_image</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00035">cub3D.h:35</a></div></div>
-<div class="ttc" id="astructs__player__data_html_a741da92a1e2db0978396663d99e6a905"><div class="ttname"><a href="structs__player__data.html#a741da92a1e2db0978396663d99e6a905">s_player_data::initial_position</a></div><div class="ttdeci">struct s_static_position initial_position</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00033">cub3D.h:33</a></div></div>
-<div class="ttc" id="astructs__position_html_a0f991de4fa88927f817ca4c34c852307"><div class="ttname"><a href="structs__position.html#a0f991de4fa88927f817ca4c34c852307">s_position::xAxis</a></div><div class="ttdeci">int * xAxis</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00021">cub3D.h:21</a></div></div>
-<div class="ttc" id="astructs__position_html_aea370833455884f9b66282a89c22b879"><div class="ttname"><a href="structs__position.html#aea370833455884f9b66282a89c22b879">s_position::yAxis</a></div><div class="ttdeci">int * yAxis</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00022">cub3D.h:22</a></div></div>
-<div class="ttc" id="astructs__static__position_html_a9640a25bf9e545ee03cd6ca4904ad51f"><div class="ttname"><a href="structs__static__position.html#a9640a25bf9e545ee03cd6ca4904ad51f">s_static_position::xAxis</a></div><div class="ttdeci">int xAxis</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00027">cub3D.h:27</a></div></div>
-<div class="ttc" id="astructs__static__position_html_ad51368021113b9b493e9d0304a6db900"><div class="ttname"><a href="structs__static__position.html#ad51368021113b9b493e9d0304a6db900">s_static_position::yAxis</a></div><div class="ttdeci">int yAxis</div><div class="ttdef"><b>Definition:</b> <a href="cub3D_8h_source.html#l00028">cub3D.h:28</a></div></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    mlx = (*game_data)-&gt;mlx_handle;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    (*game_data)-&gt;player_data.player_image = mlx_new_image(mlx, 10, 10);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    player = (*game_data)-&gt;player_data.player_image;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    x = (*game_data)-&gt;player_data.initial_position.x_axis;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    y = (*game_data)-&gt;player_data.initial_position.y_axis;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    mlx_image_to_window(mlx, player, (x * <a class="code hl_define" href="cub3_d_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>) + 28, (y * <a class="code hl_define" href="cub3_d_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>) + 28);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    (*game_data)-&gt;player_data.current_position.x_axis = &amp;player-&gt;instances[0].x;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    (*game_data)-&gt;player_data.current_position.y_axis = &amp;player-&gt;instances[0].y;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    x = -1;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    y = 0;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">while</span> (++x &lt; (<span class="keywordtype">int</span>)player-&gt;width)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">while</span> (y &lt; (<span class="keywordtype">int</span>)player-&gt;height)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            mlx_put_pixel(player, x, y++, 240);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        y = 0;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="draw__map_8c.html#a31c296079f8f4ddfd732fa4a82cbae6d">   68</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="draw__map_8c.html#a31c296079f8f4ddfd732fa4a82cbae6d">add_bg_image</a>(<a class="code hl_struct" href="structs__game.html">t_game</a> **game_data, <a class="code hl_struct" href="structs__map.html">t_map</a> *map_data)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    mlx_t       *mlx;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    mlx_image_t *image;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">int</span>         width;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">int</span>         height;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    width = map_data-&gt;<a class="code hl_variable" href="structs__map.html#ad4768adacc3ab19724a77cee481cd105">width</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    height = map_data-&gt;<a class="code hl_variable" href="structs__map.html#a50b07a6909effa731a1215b0515d2484">height</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    mlx = (*game_data)-&gt;mlx_handle;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    image = (*game_data)-&gt;mlx_background_image;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_function" href="cub3_d_8h.html#a150e6241c0bff245cf7b1d418b6ef251">add_img</a>(image, mlx, 0, 0);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    memset(image-&gt;pixels, 255, width * height * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="cub3_d_8h.html#a503c2906050453b79fab37a3149cbe9b">   83</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="draw__map_8c.html#a503c2906050453b79fab37a3149cbe9b">draw_map</a>(<a class="code hl_struct" href="structs__map.html">t_map</a> *map_data)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <a class="code hl_struct" href="structs__game.html">t_game</a>  *game_data;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    game_data = NULL;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_function" href="cub3_d_8h.html#a11f7064e48a9cb662f0a3d67a706e922">init_game_data</a>(&amp;game_data, map_data);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_function" href="draw__map_8c.html#a31c296079f8f4ddfd732fa4a82cbae6d">add_bg_image</a>(&amp;game_data, map_data);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_function" href="cub3_d_8h.html#ae914fc944001699592e064479b3442df">draw_grid</a>(map_data, game_data-&gt;<a class="code hl_variable" href="structs__game.html#af8e7eda669e14c113ac05e94dc6fcff8">mlx_background_image</a>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_function" href="draw__map_8c.html#a554099133a957e84d50486d968eb4f15">draw_walls</a>(game_data);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_function" href="draw__map_8c.html#a71bac51cfa90c1339b54d02cc53514fd">draw_player</a>(&amp;game_data);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    mlx_loop_hook(game_data-&gt;<a class="code hl_variable" href="structs__game.html#a678a8acab0bcbf093a03c5fc65246d2a">mlx_handle</a>, <a class="code hl_function" href="draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e">ft_hook</a>, game_data);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    mlx_loop(game_data-&gt;<a class="code hl_variable" href="structs__game.html#a678a8acab0bcbf093a03c5fc65246d2a">mlx_handle</a>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    mlx_terminate(game_data-&gt;<a class="code hl_variable" href="structs__game.html#a678a8acab0bcbf093a03c5fc65246d2a">mlx_handle</a>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+<div class="ttc" id="acub3_d_8h_html"><div class="ttname"><a href="cub3_d_8h.html">cub3D.h</a></div></div>
+<div class="ttc" id="acub3_d_8h_html_a11f7064e48a9cb662f0a3d67a706e922"><div class="ttname"><a href="cub3_d_8h.html#a11f7064e48a9cb662f0a3d67a706e922">init_game_data</a></div><div class="ttdeci">void init_game_data(t_game **game_data, t_map *map_data)</div><div class="ttdef"><b>Definition:</b> <a href="game__init_8c_source.html#l00036">game_init.c:36</a></div></div>
+<div class="ttc" id="acub3_d_8h_html_a150e6241c0bff245cf7b1d418b6ef251"><div class="ttname"><a href="cub3_d_8h.html#a150e6241c0bff245cf7b1d418b6ef251">add_img</a></div><div class="ttdeci">void add_img(mlx_image_t *img, mlx_t *mlx, int width, int height)</div><div class="ttdef"><b>Definition:</b> <a href="mlx__wrappers_8c_source.html#l00023">mlx_wrappers.c:23</a></div></div>
+<div class="ttc" id="acub3_d_8h_html_a2154a52d790968e915c0bf680f0f9f7d"><div class="ttname"><a href="cub3_d_8h.html#a2154a52d790968e915c0bf680f0f9f7d">place_wall_or_player</a></div><div class="ttdeci">void place_wall_or_player(char **map, t_game *game_data, int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="mlx__wrappers_8c_source.html#l00004">mlx_wrappers.c:4</a></div></div>
+<div class="ttc" id="acub3_d_8h_html_a23d77dc915419830147ffded05fbbb79"><div class="ttname"><a href="cub3_d_8h.html#a23d77dc915419830147ffded05fbbb79">turn_down</a></div><div class="ttdeci">void turn_down(char **map, t_game *game_data)</div><div class="ttdef"><b>Definition:</b> <a href="hook__movements_8c_source.html#l00036">hook_movements.c:36</a></div></div>
+<div class="ttc" id="acub3_d_8h_html_a2500c0e1d515fb8494bcad43210675e5"><div class="ttname"><a href="cub3_d_8h.html#a2500c0e1d515fb8494bcad43210675e5">turn_right</a></div><div class="ttdeci">void turn_right(char **map, t_game *game_data)</div><div class="ttdef"><b>Definition:</b> <a href="hook__movements_8c_source.html#l00004">hook_movements.c:4</a></div></div>
+<div class="ttc" id="acub3_d_8h_html_a2706e5298e357ffb64b22c7e7fc1b3e9"><div class="ttname"><a href="cub3_d_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a></div><div class="ttdeci">#define TILE</div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00015">cub3D.h:15</a></div></div>
+<div class="ttc" id="acub3_d_8h_html_a2e8bbe16d9940195bd0809cfee562230"><div class="ttname"><a href="cub3_d_8h.html#a2e8bbe16d9940195bd0809cfee562230">turn_left</a></div><div class="ttdeci">void turn_left(char **map, t_game *game_data)</div><div class="ttdef"><b>Definition:</b> <a href="hook__movements_8c_source.html#l00020">hook_movements.c:20</a></div></div>
+<div class="ttc" id="acub3_d_8h_html_a99fb742061411522c5ed3e1c0ca5c69e"><div class="ttname"><a href="cub3_d_8h.html#a99fb742061411522c5ed3e1c0ca5c69e">turn_up</a></div><div class="ttdeci">void turn_up(char **map, t_game *game_data)</div><div class="ttdef"><b>Definition:</b> <a href="hook__movements_8c_source.html#l00052">hook_movements.c:52</a></div></div>
+<div class="ttc" id="acub3_d_8h_html_ae914fc944001699592e064479b3442df"><div class="ttname"><a href="cub3_d_8h.html#ae914fc944001699592e064479b3442df">draw_grid</a></div><div class="ttdeci">void draw_grid(t_map *map_data, mlx_image_t *image)</div><div class="ttdef"><b>Definition:</b> <a href="grid_8c_source.html#l00036">grid.c:36</a></div></div>
+<div class="ttc" id="adraw__map_8c_html_a31c296079f8f4ddfd732fa4a82cbae6d"><div class="ttname"><a href="draw__map_8c.html#a31c296079f8f4ddfd732fa4a82cbae6d">add_bg_image</a></div><div class="ttdeci">void add_bg_image(t_game **game_data, t_map *map_data)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00068">draw_map.c:68</a></div></div>
+<div class="ttc" id="adraw__map_8c_html_a4b7144f73d9e8c25ca55c890584b5c0e"><div class="ttname"><a href="draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e">ft_hook</a></div><div class="ttdeci">void ft_hook(void *param)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00004">draw_map.c:4</a></div></div>
+<div class="ttc" id="adraw__map_8c_html_a503c2906050453b79fab37a3149cbe9b"><div class="ttname"><a href="draw__map_8c.html#a503c2906050453b79fab37a3149cbe9b">draw_map</a></div><div class="ttdeci">void draw_map(t_map *map_data)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00083">draw_map.c:83</a></div></div>
+<div class="ttc" id="adraw__map_8c_html_a554099133a957e84d50486d968eb4f15"><div class="ttname"><a href="draw__map_8c.html#a554099133a957e84d50486d968eb4f15">draw_walls</a></div><div class="ttdeci">void draw_walls(t_game *game_data)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00025">draw_map.c:25</a></div></div>
+<div class="ttc" id="adraw__map_8c_html_a71bac51cfa90c1339b54d02cc53514fd"><div class="ttname"><a href="draw__map_8c.html#a71bac51cfa90c1339b54d02cc53514fd">draw_player</a></div><div class="ttdeci">void draw_player(t_game **game_data)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00043">draw_map.c:43</a></div></div>
+<div class="ttc" id="astructs__game_html"><div class="ttname"><a href="structs__game.html">s_game</a></div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00044">cub3D.h:45</a></div></div>
+<div class="ttc" id="astructs__game_html_a678a8acab0bcbf093a03c5fc65246d2a"><div class="ttname"><a href="structs__game.html#a678a8acab0bcbf093a03c5fc65246d2a">s_game::mlx_handle</a></div><div class="ttdeci">mlx_t * mlx_handle</div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00046">cub3D.h:46</a></div></div>
+<div class="ttc" id="astructs__game_html_ae63d93b40e2cc66492ebbf535d3b0967"><div class="ttname"><a href="structs__game.html#ae63d93b40e2cc66492ebbf535d3b0967">s_game::map_data</a></div><div class="ttdeci">struct s_map * map_data</div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00048">cub3D.h:48</a></div></div>
+<div class="ttc" id="astructs__game_html_af8e7eda669e14c113ac05e94dc6fcff8"><div class="ttname"><a href="structs__game.html#af8e7eda669e14c113ac05e94dc6fcff8">s_game::mlx_background_image</a></div><div class="ttdeci">mlx_image_t * mlx_background_image</div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00047">cub3D.h:47</a></div></div>
+<div class="ttc" id="astructs__map_html"><div class="ttname"><a href="structs__map.html">s_map</a></div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00052">cub3D.h:53</a></div></div>
+<div class="ttc" id="astructs__map_html_a50b07a6909effa731a1215b0515d2484"><div class="ttname"><a href="structs__map.html#a50b07a6909effa731a1215b0515d2484">s_map::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00055">cub3D.h:55</a></div></div>
+<div class="ttc" id="astructs__map_html_ad4768adacc3ab19724a77cee481cd105"><div class="ttname"><a href="structs__map.html#ad4768adacc3ab19724a77cee481cd105">s_map::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00056">cub3D.h:56</a></div></div>
+<div class="ttc" id="astructs__map_html_af6220ec05504a768f925bf41236b4532"><div class="ttname"><a href="structs__map.html#af6220ec05504a768f925bf41236b4532">s_map::map_array</a></div><div class="ttdeci">char ** map_array</div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00054">cub3D.h:54</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['has_5finvalid_5fmap_5fextension_0',['has_invalid_map_extension',['../cub3D_8h.html#ae82ab44de3b7db5df0474efb78347c37',1,'has_invalid_map_extension(char *filename):&#160;error_handling.c'],['../error__handling_8c.html#ae82ab44de3b7db5df0474efb78347c37',1,'has_invalid_map_extension(char *filename):&#160;error_handling.c']]],
-  ['height_1',['height',['../structs__map__data.html#a3dc97c8f3b6eaa17bf4e5fe4467d9b98',1,'s_map_data']]],
-  ['hello_5ftest_2ecc_2',['hello_test.cc',['../hello__test_8cc.html',1,'']]]
+  ['game_5finit_2ec_0',['game_init.c',['../game__init_8c.html',1,'']]],
+  ['get_5ftotal_5fbytes_1',['get_total_bytes',['../cub3_d_8h.html#a973f5273453bacdf37c27ef24bdd540d',1,'get_total_bytes(char *filename):&#160;read_map.c'],['../read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d',1,'get_total_bytes(char *filename):&#160;read_map.c']]],
+  ['grid_2ec_2',['grid.c',['../grid_8c.html',1,'']]]
 ];

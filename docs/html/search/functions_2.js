@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['free_5farray_5fof_5fmemory_0',['free_array_of_memory',['../cub3D_8h.html#a8034e3c8d12267f763e14f44c8da3d43',1,'free_array_of_memory(char **string_array):&#160;draw_map_utils.c'],['../draw__map__utils_8c.html#a8034e3c8d12267f763e14f44c8da3d43',1,'free_array_of_memory(char **string_array):&#160;draw_map_utils.c']]],
-  ['ft_5fhook_1',['ft_hook',['../draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e',1,'draw_map.c']]],
-  ['ft_5fputstr_5ffd_2',['ft_putstr_fd',['../libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469',1,'ft_putstr_fd(char *s, int fd):&#160;ft_putstring_fd.c'],['../ft__putstring__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469',1,'ft_putstr_fd(char *s, int fd):&#160;ft_putstring_fd.c']]],
-  ['ft_5fsplit_3',['ft_split',['../libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4',1,'ft_split(char const *s, char c):&#160;ft_split.c'],['../ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4',1,'ft_split(char const *s, char c):&#160;ft_split.c']]],
-  ['ft_5fstrlcpy_4',['ft_strlcpy',['../libft_8h.html#a12f759eb9793cf306fede66d0b7de0fc',1,'ft_strlcpy(char *dst, const char *src, size_t dstsize):&#160;ft_strlcpy.c'],['../ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc',1,'ft_strlcpy(char *dst, const char *src, size_t dstsize):&#160;ft_strlcpy.c']]],
-  ['ft_5fstrlen_5',['ft_strlen',['../libft_8h.html#a828402378653640f545a4be2e00e92f9',1,'ft_strlen(const char *str):&#160;ft_strlen.c'],['../ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9',1,'ft_strlen(const char *str):&#160;ft_strlen.c']]],
-  ['ft_5fstrncmp_6',['ft_strncmp',['../libft_8h.html#a9d2fe792187aa4ed08e5864fb2c4d6dc',1,'ft_strncmp(const char *s1, const char *s2, size_t n):&#160;ft_strncmp.c'],['../ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc',1,'ft_strncmp(const char *s1, const char *s2, size_t n):&#160;ft_strncmp.c']]]
+  ['destroy_5fgame_5fdata_0',['destroy_game_data',['../cub3_d_8h.html#a4742c3e8fdf7e08d4b94889136e7161c',1,'destroy_game_data(t_game *game_data):&#160;game_init.c'],['../game__init_8c.html#a4742c3e8fdf7e08d4b94889136e7161c',1,'destroy_game_data(t_game *game_data):&#160;game_init.c']]],
+  ['destroy_5fmap_5fdata_1',['destroy_map_data',['../cub3_d_8h.html#a3324efc071ce4b896ac6759b3f359b24',1,'destroy_map_data(t_map *map_data):&#160;map_init.c'],['../map__init_8c.html#a3324efc071ce4b896ac6759b3f359b24',1,'destroy_map_data(t_map *map_data):&#160;map_init.c']]],
+  ['draw_5fgrid_2',['draw_grid',['../cub3_d_8h.html#ae914fc944001699592e064479b3442df',1,'draw_grid(t_map *map_data, mlx_image_t *image):&#160;grid.c'],['../grid_8c.html#ae914fc944001699592e064479b3442df',1,'draw_grid(t_map *map_data, mlx_image_t *image):&#160;grid.c']]],
+  ['draw_5fhorizontal_5fline_3',['draw_horizontal_line',['../grid_8c.html#a2e96121d859f30b5609ef9bd9d4b9416',1,'grid.c']]],
+  ['draw_5fmap_4',['draw_map',['../cub3_d_8h.html#a503c2906050453b79fab37a3149cbe9b',1,'draw_map(t_map *map_data):&#160;draw_map.c'],['../draw__map_8c.html#a503c2906050453b79fab37a3149cbe9b',1,'draw_map(t_map *map_data):&#160;draw_map.c']]],
+  ['draw_5fplayer_5',['draw_player',['../draw__map_8c.html#a71bac51cfa90c1339b54d02cc53514fd',1,'draw_map.c']]],
+  ['draw_5fvertical_5fline_6',['draw_vertical_line',['../grid_8c.html#ad214eee00b31cc04dacd5e4bfbd25df9',1,'grid.c']]],
+  ['draw_5fwalls_7',['draw_walls',['../draw__map_8c.html#a554099133a957e84d50486d968eb4f15',1,'draw_map.c']]]
 ];

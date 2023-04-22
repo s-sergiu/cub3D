@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['yaxis_0',['yAxis',['../structs__position.html#aea370833455884f9b66282a89c22b879',1,'s_position::yAxis()'],['../structs__static__position.html#ad51368021113b9b493e9d0304a6db900',1,'s_static_position::yAxis()']]]
+  ['y_5faxis_0',['y_axis',['../structs__position.html#a6db08e70ac0ca6ad13a6f538aebab5be',1,'s_position::y_axis()'],['../structs__static__position.html#a9fddbebad707944e86799f9f35d771e2',1,'s_static_position::y_axis()']]]
 ];

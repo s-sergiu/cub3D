@@ -1,8 +1,14 @@
-\hypertarget{error__handling_8c}{}\doxysection{/home/ssergiu/projects/cub3d/src/error\+\_\+handling.c File Reference}
-\label{error__handling_8c}\index{/home/ssergiu/projects/cub3d/src/error\_handling.c@{/home/ssergiu/projects/cub3d/src/error\_handling.c}}
-{\ttfamily \#include \char`\"{}../include/cub3\+D.\+h\char`\"{}}\newline
+\hypertarget{error__handling_8c}{}\doxysection{/\+Users/ssergiu/projects/cub3\+D/src/error\+\_\+handling.c File Reference}
+\label{error__handling_8c}\index{/Users/ssergiu/projects/cub3D/src/error\_handling.c@{/Users/ssergiu/projects/cub3D/src/error\_handling.c}}
+{\ttfamily \#include \char`\"{}cub3\+D.\+h\char`\"{}}\newline
 Include dependency graph for error\+\_\+handling.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error__handling_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,9 +63,21 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00022}{22}} of fi
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{error__handling_8c_ad12f49185b9cfb483605a617c9484f25_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 2
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error__handling_8c_ad12f49185b9cfb483605a617c9484f25_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{error__handling_8c_ae82ab44de3b7db5df0474efb78347c37}\label{error__handling_8c_ae82ab44de3b7db5df0474efb78347c37}} 
 \index{error\_handling.c@{error\_handling.c}!has\_invalid\_map\_extension@{has\_invalid\_map\_extension}}
 \index{has\_invalid\_map\_extension@{has\_invalid\_map\_extension}!error\_handling.c@{error\_handling.c}}
@@ -89,17 +107,21 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00031}{31}} of fi
 \DoxyCodeLine{00032\ \{}
 \DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ filename\_length;}
 \DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ filename\_length\ =\ \mbox{\hyperlink{libft_8h_a828402378653640f545a4be2e00e92f9}{ft\_strlen}}(filename);}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{libft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\_strncmp}}(filename\ +\ (filename\_length\ -\/\ 4),\ \textcolor{stringliteral}{"{}.cub\(\backslash\)0"{}},\ 5))}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}(\mbox{\hyperlink{cub3D_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}(\mbox{\hyperlink{cub3D_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}});}
+\DoxyCodeLine{00035\ \ \ \ \ filename\_length\ =\ ft\_strlen(filename);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (ft\_strncmp(filename\ +\ (filename\_length\ -\/\ 4),\ \textcolor{stringliteral}{"{}.cub\(\backslash\)0"{}},\ 5))}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3_d_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3_d_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}});}
 \DoxyCodeLine{00039\ \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-% FIG 3
 Here is the caller graph for this function\+:
-% FIG 4
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error__handling_8c_ae82ab44de3b7db5df0474efb78347c37_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{error__handling_8c_a708cb4d96afdb85180287f9fe26a9076}\label{error__handling_8c_a708cb4d96afdb85180287f9fe26a9076}} 
 \index{error\_handling.c@{error\_handling.c}!is\_directory@{is\_directory}}
 \index{is\_directory@{is\_directory}!error\_handling.c@{error\_handling.c}}
@@ -117,14 +139,20 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00041}{41}} of fi
 \DoxyCodeLine{00044\ }
 \DoxyCodeLine{00045\ \ \ \ \ file\ =\ open(filename,\ O\_DIRECTORY);}
 \DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ ==\ -\/1)}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3D_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}});}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3_d_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}});}
 \DoxyCodeLine{00048\ \ \ \ \ close(file);}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3D_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3_d_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
 \DoxyCodeLine{00050\ \}}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
-% FIG 5
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{error__handling_8c_a708cb4d96afdb85180287f9fe26a9076_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{error__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1}\label{error__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1}} 
 \index{error\_handling.c@{error\_handling.c}!is\_valid\_filename@{is\_valid\_filename}}
 \index{is\_valid\_filename@{is\_valid\_filename}!error\_handling.c@{error\_handling.c}}
@@ -153,17 +181,29 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00052}{52}} of fi
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00053\ \{}
 \DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{error__handling_8c_a708cb4d96afdb85180287f9fe26a9076}{is\_directory}}(filename))}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{error__handling_8c_a968801b6df4daa98b46851157bfbacab}{print\_error}}(\mbox{\hyperlink{cub3D_8h_ae9c7e3e493aaf9541c7dc341111be1f9}{IS\_DIRECTORY}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{error__handling_8c_a968801b6df4daa98b46851157bfbacab}{print\_error}}(\mbox{\hyperlink{cub3_d_8h_ae9c7e3e493aaf9541c7dc341111be1f9}{IS\_DIRECTORY}});}
 \DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{error__handling_8c_ae82ab44de3b7db5df0474efb78347c37}{has\_invalid\_map\_extension}}(filename))}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{error__handling_8c_a968801b6df4daa98b46851157bfbacab}{print\_error}}(\mbox{\hyperlink{cub3D_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\_MAP\_FILE}});}
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3D_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{error__handling_8c_a968801b6df4daa98b46851157bfbacab}{print\_error}}(\mbox{\hyperlink{cub3_d_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\_MAP\_FILE}});}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3_d_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
 \DoxyCodeLine{00059\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 6
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{error__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 7
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{error__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{error__handling_8c_a968801b6df4daa98b46851157bfbacab}\label{error__handling_8c_a968801b6df4daa98b46851157bfbacab}} 
 \index{error\_handling.c@{error\_handling.c}!print\_error@{print\_error}}
 \index{print\_error@{print\_error}!error\_handling.c@{error\_handling.c}}
@@ -189,24 +229,28 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00004}{4}} of fil
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00005\ \{}
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordflow}{if}\ (error\ ==\ \mbox{\hyperlink{cub3D_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}})}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordflow}{if}\ (error\ ==\ \mbox{\hyperlink{cub3_d_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}})}
 \DoxyCodeLine{00007\ \ \ \ \ \{}
 \DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ Empty\ map\(\backslash\)n"{}},\ 17);}
 \DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ exit(error);}
 \DoxyCodeLine{00010\ \ \ \ \ \}}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (error\ ==\ \mbox{\hyperlink{cub3D_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\_MAP\_FILE}})}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (error\ ==\ \mbox{\hyperlink{cub3_d_8h_a8e0ad1ba0b05ba2af8e7fcd8f02c12ed}{BAD\_MAP\_FILE}})}
 \DoxyCodeLine{00012\ \ \ \ \ \{}
 \DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ Bad\ map\ file\(\backslash\)n"{}},\ 20);}
 \DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ exit(error);}
 \DoxyCodeLine{00015\ \ \ \ \ \}}
 \DoxyCodeLine{00016\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ "{}},\ 7);}
-\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}(strerror(error),\ 2);}
+\DoxyCodeLine{00017\ \ \ \ \ ft\_putstr\_fd(strerror(error),\ 2);}
 \DoxyCodeLine{00018\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ 1);}
 \DoxyCodeLine{00019\ \ \ \ \ exit(error);}
 \DoxyCodeLine{00020\ \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-% FIG 8
 Here is the caller graph for this function\+:
-% FIG 9
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{error__handling_8c_a968801b6df4daa98b46851157bfbacab_icgraph}
+\end{center}
+\end{figure}

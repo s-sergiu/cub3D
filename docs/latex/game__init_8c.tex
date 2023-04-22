@@ -1,0 +1,193 @@
+\hypertarget{game__init_8c}{}\doxysection{/\+Users/ssergiu/projects/cub3\+D/src/init/game\+\_\+init.c File Reference}
+\label{game__init_8c}\index{/Users/ssergiu/projects/cub3D/src/init/game\_init.c@{/Users/ssergiu/projects/cub3D/src/init/game\_init.c}}
+{\ttfamily \#include \char`\"{}cub3\+D.\+h\char`\"{}}\newline
+Include dependency graph for game\+\_\+init.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game__init_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game__init_8c_a9c0871c61cbc49661f12864d518bb64a}{malloc\+\_\+game\+\_\+struct}} (\mbox{\hyperlink{cub3_d_8h_a581c914ca5b062bb811c5204f2bf58ff}{t\+\_\+game}} $\ast$$\ast$game\+\_\+data, void($\ast$f)(\mbox{\hyperlink{cub3_d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$), void $\ast$data)
+\item 
+void \mbox{\hyperlink{game__init_8c_a13350d37b122b6455e86a2a9eeb0c7e2}{init\+\_\+mlx}} (mlx\+\_\+t $\ast$$\ast$mlx, int width, int height)
+\item 
+void \mbox{\hyperlink{game__init_8c_aac9ff83d4670c2e40935bf939f0e9be1}{create\+\_\+img}} (mlx\+\_\+image\+\_\+t $\ast$$\ast$img, mlx\+\_\+t $\ast$mlx, int width, int height)
+\item 
+void \mbox{\hyperlink{game__init_8c_a4742c3e8fdf7e08d4b94889136e7161c}{destroy\+\_\+game\+\_\+data}} (\mbox{\hyperlink{cub3_d_8h_a581c914ca5b062bb811c5204f2bf58ff}{t\+\_\+game}} $\ast$game\+\_\+data)
+\item 
+void \mbox{\hyperlink{game__init_8c_a11f7064e48a9cb662f0a3d67a706e922}{init\+\_\+game\+\_\+data}} (\mbox{\hyperlink{cub3_d_8h_a581c914ca5b062bb811c5204f2bf58ff}{t\+\_\+game}} $\ast$$\ast$game\+\_\+data, \mbox{\hyperlink{cub3_d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map\+\_\+data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{game__init_8c_aac9ff83d4670c2e40935bf939f0e9be1}\label{game__init_8c_aac9ff83d4670c2e40935bf939f0e9be1}} 
+\index{game\_init.c@{game\_init.c}!create\_img@{create\_img}}
+\index{create\_img@{create\_img}!game\_init.c@{game\_init.c}}
+\doxysubsubsection{\texorpdfstring{create\_img()}{create\_img()}}
+{\footnotesize\ttfamily void create\+\_\+img (\begin{DoxyParamCaption}\item[{mlx\+\_\+image\+\_\+t $\ast$$\ast$}]{img,  }\item[{mlx\+\_\+t $\ast$}]{mlx,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__init_8c_source_l00021}{21}} of file \mbox{\hyperlink{game__init_8c_source}{game\+\_\+init.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ (*img)\ =\ mlx\_new\_image(mlx,\ width,\ height);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (!img)}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ mlx\_close\_window(mlx);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ ft\_putstr\_fd((\textcolor{keywordtype}{char}\ *)mlx\_strerror(mlx\_errno),\ 2);}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game__init_8c_aac9ff83d4670c2e40935bf939f0e9be1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__init_8c_a4742c3e8fdf7e08d4b94889136e7161c}\label{game__init_8c_a4742c3e8fdf7e08d4b94889136e7161c}} 
+\index{game\_init.c@{game\_init.c}!destroy\_game\_data@{destroy\_game\_data}}
+\index{destroy\_game\_data@{destroy\_game\_data}!game\_init.c@{game\_init.c}}
+\doxysubsubsection{\texorpdfstring{destroy\_game\_data()}{destroy\_game\_data()}}
+{\footnotesize\ttfamily void destroy\+\_\+game\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3_d_8h_a581c914ca5b062bb811c5204f2bf58ff}{t\+\_\+game}} $\ast$}]{game\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__init_8c_source_l00031}{31}} of file \mbox{\hyperlink{game__init_8c_source}{game\+\_\+init.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ free(game\_data);}
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game__init_8c_a4742c3e8fdf7e08d4b94889136e7161c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__init_8c_a11f7064e48a9cb662f0a3d67a706e922}\label{game__init_8c_a11f7064e48a9cb662f0a3d67a706e922}} 
+\index{game\_init.c@{game\_init.c}!init\_game\_data@{init\_game\_data}}
+\index{init\_game\_data@{init\_game\_data}!game\_init.c@{game\_init.c}}
+\doxysubsubsection{\texorpdfstring{init\_game\_data()}{init\_game\_data()}}
+{\footnotesize\ttfamily void init\+\_\+game\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3_d_8h_a581c914ca5b062bb811c5204f2bf58ff}{t\+\_\+game}} $\ast$$\ast$}]{game\+\_\+data,  }\item[{\mbox{\hyperlink{cub3_d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__init_8c_source_l00036}{36}} of file \mbox{\hyperlink{game__init_8c_source}{game\+\_\+init.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ mlx\_t\ \ \ \ \ \ \ \ \ \ \ *mlx;}
+\DoxyCodeLine{00039\ \ \ \ \ mlx\_image\_t\ \ \ \ \ *background;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ width;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ height;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ width\ =\ map\_data-\/>\mbox{\hyperlink{structs__map_ad4768adacc3ab19724a77cee481cd105}{width}};}
+\DoxyCodeLine{00044\ \ \ \ \ height\ =\ map\_data-\/>\mbox{\hyperlink{structs__map_a50b07a6909effa731a1215b0515d2484}{height}};}
+\DoxyCodeLine{00045\ \ \ \ \ mlx\ =\ NULL;}
+\DoxyCodeLine{00046\ \ \ \ \ background\ =\ NULL;}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{game__init_8c_a9c0871c61cbc49661f12864d518bb64a}{malloc\_game\_struct}}(game\_data,\ *\mbox{\hyperlink{cub3_d_8h_a3324efc071ce4b896ac6759b3f359b24}{destroy\_map\_data}},\ map\_data);}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{game__init_8c_a13350d37b122b6455e86a2a9eeb0c7e2}{init\_mlx}}(\&mlx,\ width,\ height);}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{game__init_8c_aac9ff83d4670c2e40935bf939f0e9be1}{create\_img}}(\&background,\ mlx,\ width,\ height);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (!background\ ||\ !mlx)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{game__init_8c_a4742c3e8fdf7e08d4b94889136e7161c}{destroy\_game\_data}}(*game\_data);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_a3324efc071ce4b896ac6759b3f359b24}{destroy\_map\_data}}(map\_data);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ exit(errno);}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ (*game\_data)-\/>mlx\_handle\ =\ mlx;}
+\DoxyCodeLine{00057\ \ \ \ \ (*game\_data)-\/>mlx\_background\_image\ =\ background;}
+\DoxyCodeLine{00058\ \ \ \ \ (*game\_data)-\/>map\_data\ =\ map\_data;}
+\DoxyCodeLine{00059\ \ \ \ \ (*game\_data)-\/>player\_data.player\_image\ =\ NULL;}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{game__init_8c_a11f7064e48a9cb662f0a3d67a706e922_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{game__init_8c_a11f7064e48a9cb662f0a3d67a706e922_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__init_8c_a13350d37b122b6455e86a2a9eeb0c7e2}\label{game__init_8c_a13350d37b122b6455e86a2a9eeb0c7e2}} 
+\index{game\_init.c@{game\_init.c}!init\_mlx@{init\_mlx}}
+\index{init\_mlx@{init\_mlx}!game\_init.c@{game\_init.c}}
+\doxysubsubsection{\texorpdfstring{init\_mlx()}{init\_mlx()}}
+{\footnotesize\ttfamily void init\+\_\+mlx (\begin{DoxyParamCaption}\item[{mlx\+\_\+t $\ast$$\ast$}]{mlx,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__init_8c_source_l00014}{14}} of file \mbox{\hyperlink{game__init_8c_source}{game\+\_\+init.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ (*mlx)\ =\ mlx\_init(width,\ height,\ \textcolor{stringliteral}{"{}cub3D"{}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (!mlx)}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ ft\_putstr\_fd((\textcolor{keywordtype}{char}\ *)mlx\_strerror(mlx\_errno),\ 2);}
+\DoxyCodeLine{00019\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game__init_8c_a13350d37b122b6455e86a2a9eeb0c7e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__init_8c_a9c0871c61cbc49661f12864d518bb64a}\label{game__init_8c_a9c0871c61cbc49661f12864d518bb64a}} 
+\index{game\_init.c@{game\_init.c}!malloc\_game\_struct@{malloc\_game\_struct}}
+\index{malloc\_game\_struct@{malloc\_game\_struct}!game\_init.c@{game\_init.c}}
+\doxysubsubsection{\texorpdfstring{malloc\_game\_struct()}{malloc\_game\_struct()}}
+{\footnotesize\ttfamily void malloc\+\_\+game\+\_\+struct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3_d_8h_a581c914ca5b062bb811c5204f2bf58ff}{t\+\_\+game}} $\ast$$\ast$}]{game\+\_\+data,  }\item[{void($\ast$)(\mbox{\hyperlink{cub3_d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$)}]{f,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__init_8c_source_l00004}{4}} of file \mbox{\hyperlink{game__init_8c_source}{game\+\_\+init.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ *game\_data\ =\ (\mbox{\hyperlink{structs__game}{t\_game}}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structs__game}{s\_game}}));}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (game\_data\ ==\ NULL)}
+\DoxyCodeLine{00008\ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ f(data);}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ exit(errno);}
+\DoxyCodeLine{00011\ \ \ \ \ \}}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game__init_8c_a9c0871c61cbc49661f12864d518bb64a_icgraph}
+\end{center}
+\end{figure}

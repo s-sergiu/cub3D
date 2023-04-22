@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cub3D: /home/ssergiu/projects/cub3d/tests/hello_test.cc Source File</title>
+<title>cub3D: /Users/ssergiu/projects/cub3D/tests/hello_test.cc Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,13 +82,31 @@ $(function() {
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../include/cub3D.h&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>}</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// Demonstrate some basic assertions.</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="hello__test_8cc.html#a830efcea470539cf966af5e1ca1d484e">    7</a></span><a class="code hl_function" href="hello__test_8cc.html#a830efcea470539cf966af5e1ca1d484e">TEST</a>(Sergiu, TestFilename) {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  <span class="comment">// Expect equality.</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  EXPECT_DEATH( <a class="code hl_function" href="cub3D_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a>(0) , <span class="stringliteral">&quot;Error:*&quot;</span>);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="comment">//EXPECT_EXIT( read_map(0) , ::testing::ExitedWithCode(14), &quot;Error:*&quot;);</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
-<div class="ttc" id="acub3D_8h_html_a953ff0338bfa5e5863fc98056025e303"><div class="ttname"><a href="cub3D_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a></div><div class="ttdeci">char * read_map(char *filename)</div><div class="ttdoc">Reads the contents of the file with the given name into a dynamically allocated buffer.</div><div class="ttdef"><b>Definition:</b> <a href="read__map_8c_source.html#l00033">read_map.c:33</a></div></div>
-<div class="ttc" id="ahello__test_8cc_html_a830efcea470539cf966af5e1ca1d484e"><div class="ttname"><a href="hello__test_8cc.html#a830efcea470539cf966af5e1ca1d484e">TEST</a></div><div class="ttdeci">TEST(Sergiu, TestFilename)</div><div class="ttdef"><b>Definition:</b> <a href="hello__test_8cc_source.html#l00007">hello_test.cc:7</a></div></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="hello__test_8cc.html#a4c207754cb4c7512185a61eee22262db">    7</a></span><a class="code hl_function" href="hello__test_8cc.html#a4c207754cb4c7512185a61eee22262db">TEST</a>(<a class="code hl_function" href="cub3_d_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a>, zero_number) {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  EXPECT_EXIT( <a class="code hl_function" href="cub3_d_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a>(0) , ::testing::ExitedWithCode(14), <span class="stringliteral">&quot;Error:*&quot;</span>);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="hello__test_8cc.html#a8bdfb9e696628b0a34a5a39326402092">   11</a></span><a class="code hl_function" href="hello__test_8cc.html#a4c207754cb4c7512185a61eee22262db">TEST</a>(<a class="code hl_function" href="cub3_d_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a>, NULL) {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  EXPECT_EXIT( <a class="code hl_function" href="cub3_d_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a>(NULL) , ::testing::ExitedWithCode(14), <span class="stringliteral">&quot;Error:*&quot;</span>);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="hello__test_8cc.html#af23e7a65775b85cb4228cd04f8b03b85">   15</a></span><a class="code hl_function" href="hello__test_8cc.html#a4c207754cb4c7512185a61eee22262db">TEST</a>(<a class="code hl_function" href="cub3_d_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a>, normal_map) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keywordtype">char</span> filename[] = <span class="stringliteral">&quot;../data/maps/test1.cub&quot;</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  EXPECT_STREQ(<a class="code hl_function" href="cub3_d_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a>(filename), <span class="stringliteral">&quot;maptest1\n&quot;</span>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="hello__test_8cc.html#a73594bfee57f41995339b509e34116a4">   20</a></span><a class="code hl_function" href="hello__test_8cc.html#a4c207754cb4c7512185a61eee22262db">TEST</a>(<a class="code hl_function" href="cub3_d_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a>, no_extension) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">char</span> filename[] = <span class="stringliteral">&quot;../data/maps/test2&quot;</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  EXPECT_STREQ(<a class="code hl_function" href="cub3_d_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a>(filename), <span class="stringliteral">&quot;noextension\n&quot;</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="hello__test_8cc.html#ad7b6b1b7110cf3899b87ca22f8d6d1a0">   25</a></span><a class="code hl_function" href="hello__test_8cc.html#a4c207754cb4c7512185a61eee22262db">TEST</a>(getTotalBytes, filename) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">char</span> filename[] = <span class="stringliteral">&quot;../data/maps/test2&quot;</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  EXPECT_EQ(<a class="code hl_function" href="cub3_d_8h.html#a973f5273453bacdf37c27ef24bdd540d">get_total_bytes</a>(filename), 12);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="ttc" id="acub3_d_8h_html_a953ff0338bfa5e5863fc98056025e303"><div class="ttname"><a href="cub3_d_8h.html#a953ff0338bfa5e5863fc98056025e303">read_map</a></div><div class="ttdeci">char * read_map(char *filename)</div><div class="ttdoc">Reads the contents of the file with the given name into a dynamically allocated buffer.</div><div class="ttdef"><b>Definition:</b> <a href="read__map_8c_source.html#l00033">read_map.c:33</a></div></div>
+<div class="ttc" id="acub3_d_8h_html_a973f5273453bacdf37c27ef24bdd540d"><div class="ttname"><a href="cub3_d_8h.html#a973f5273453bacdf37c27ef24bdd540d">get_total_bytes</a></div><div class="ttdeci">int get_total_bytes(char *filename)</div><div class="ttdoc">Returns the total number of bytes in the file with the given filename.</div><div class="ttdef"><b>Definition:</b> <a href="read__map_8c_source.html#l00004">read_map.c:4</a></div></div>
+<div class="ttc" id="ahello__test_8cc_html_a4c207754cb4c7512185a61eee22262db"><div class="ttname"><a href="hello__test_8cc.html#a4c207754cb4c7512185a61eee22262db">TEST</a></div><div class="ttdeci">TEST(read_map, zero_number)</div><div class="ttdef"><b>Definition:</b> <a href="hello__test_8cc_source.html#l00007">hello_test.cc:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

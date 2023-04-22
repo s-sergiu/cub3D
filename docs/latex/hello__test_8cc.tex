@@ -1,22 +1,139 @@
-\hypertarget{hello__test_8cc}{}\doxysection{/home/ssergiu/projects/cub3d/tests/hello\+\_\+test.cc File Reference}
-\label{hello__test_8cc}\index{/home/ssergiu/projects/cub3d/tests/hello\_test.cc@{/home/ssergiu/projects/cub3d/tests/hello\_test.cc}}
+\hypertarget{hello__test_8cc}{}\doxysection{/\+Users/ssergiu/projects/cub3\+D/tests/hello\+\_\+test.cc File Reference}
+\label{hello__test_8cc}\index{/Users/ssergiu/projects/cub3D/tests/hello\_test.cc@{/Users/ssergiu/projects/cub3D/tests/hello\_test.cc}}
 {\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}../include/cub3\+D.\+h\char`\"{}}\newline
 Include dependency graph for hello\+\_\+test.\+cc\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hello__test_8cc__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{hello__test_8cc_a830efcea470539cf966af5e1ca1d484e}{TEST}} (Sergiu, Test\+Filename)
+\mbox{\hyperlink{hello__test_8cc_a4c207754cb4c7512185a61eee22262db}{TEST}} (\mbox{\hyperlink{cub3_d_8h_a953ff0338bfa5e5863fc98056025e303}{read\+\_\+map}}, zero\+\_\+number)
+\item 
+\mbox{\hyperlink{hello__test_8cc_a8bdfb9e696628b0a34a5a39326402092}{TEST}} (\mbox{\hyperlink{cub3_d_8h_a953ff0338bfa5e5863fc98056025e303}{read\+\_\+map}}, NULL)
+\item 
+\mbox{\hyperlink{hello__test_8cc_af23e7a65775b85cb4228cd04f8b03b85}{TEST}} (\mbox{\hyperlink{cub3_d_8h_a953ff0338bfa5e5863fc98056025e303}{read\+\_\+map}}, normal\+\_\+map)
+\item 
+\mbox{\hyperlink{hello__test_8cc_a73594bfee57f41995339b509e34116a4}{TEST}} (\mbox{\hyperlink{cub3_d_8h_a953ff0338bfa5e5863fc98056025e303}{read\+\_\+map}}, no\+\_\+extension)
+\item 
+\mbox{\hyperlink{hello__test_8cc_ad7b6b1b7110cf3899b87ca22f8d6d1a0}{TEST}} (get\+Total\+Bytes, filename)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{hello__test_8cc_a830efcea470539cf966af5e1ca1d484e}\label{hello__test_8cc_a830efcea470539cf966af5e1ca1d484e}} 
+\mbox{\Hypertarget{hello__test_8cc_ad7b6b1b7110cf3899b87ca22f8d6d1a0}\label{hello__test_8cc_ad7b6b1b7110cf3899b87ca22f8d6d1a0}} 
 \index{hello\_test.cc@{hello\_test.cc}!TEST@{TEST}}
 \index{TEST@{TEST}!hello\_test.cc@{hello\_test.cc}}
-\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}}
-{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{Sergiu}]{,  }\item[{Test\+Filename}]{ }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{get\+Total\+Bytes}]{,  }\item[{filename}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{hello__test_8cc_source_l00025}{25}} of file \mbox{\hyperlink{hello__test_8cc_source}{hello\+\_\+test.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{char}\ filename[]\ =\ \textcolor{stringliteral}{"{}../data/maps/test2"{}};}
+\DoxyCodeLine{00027\ \ \ EXPECT\_EQ(\mbox{\hyperlink{cub3_d_8h_a973f5273453bacdf37c27ef24bdd540d}{get\_total\_bytes}}(filename),\ 12);}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hello__test_8cc_ad7b6b1b7110cf3899b87ca22f8d6d1a0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{hello__test_8cc_a73594bfee57f41995339b509e34116a4}\label{hello__test_8cc_a73594bfee57f41995339b509e34116a4}} 
+\index{hello\_test.cc@{hello\_test.cc}!TEST@{TEST}}
+\index{TEST@{TEST}!hello\_test.cc@{hello\_test.cc}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3_d_8h_a953ff0338bfa5e5863fc98056025e303}{read\+\_\+map}}}]{,  }\item[{no\+\_\+extension}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{hello__test_8cc_source_l00020}{20}} of file \mbox{\hyperlink{hello__test_8cc_source}{hello\+\_\+test.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{char}\ filename[]\ =\ \textcolor{stringliteral}{"{}../data/maps/test2"{}};}
+\DoxyCodeLine{00022\ \ \ EXPECT\_STREQ(\mbox{\hyperlink{cub3_d_8h_a953ff0338bfa5e5863fc98056025e303}{read\_map}}(filename),\ \textcolor{stringliteral}{"{}noextension\(\backslash\)n"{}});}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hello__test_8cc_a73594bfee57f41995339b509e34116a4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{hello__test_8cc_af23e7a65775b85cb4228cd04f8b03b85}\label{hello__test_8cc_af23e7a65775b85cb4228cd04f8b03b85}} 
+\index{hello\_test.cc@{hello\_test.cc}!TEST@{TEST}}
+\index{TEST@{TEST}!hello\_test.cc@{hello\_test.cc}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3_d_8h_a953ff0338bfa5e5863fc98056025e303}{read\+\_\+map}}}]{,  }\item[{normal\+\_\+map}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{hello__test_8cc_source_l00015}{15}} of file \mbox{\hyperlink{hello__test_8cc_source}{hello\+\_\+test.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{char}\ filename[]\ =\ \textcolor{stringliteral}{"{}../data/maps/test1.cub"{}};}
+\DoxyCodeLine{00017\ \ \ EXPECT\_STREQ(\mbox{\hyperlink{cub3_d_8h_a953ff0338bfa5e5863fc98056025e303}{read\_map}}(filename),\ \textcolor{stringliteral}{"{}maptest1\(\backslash\)n"{}});}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hello__test_8cc_af23e7a65775b85cb4228cd04f8b03b85_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{hello__test_8cc_a8bdfb9e696628b0a34a5a39326402092}\label{hello__test_8cc_a8bdfb9e696628b0a34a5a39326402092}} 
+\index{hello\_test.cc@{hello\_test.cc}!TEST@{TEST}}
+\index{TEST@{TEST}!hello\_test.cc@{hello\_test.cc}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3_d_8h_a953ff0338bfa5e5863fc98056025e303}{read\+\_\+map}}}]{,  }\item[{NULL}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{hello__test_8cc_source_l00011}{11}} of file \mbox{\hyperlink{hello__test_8cc_source}{hello\+\_\+test.\+cc}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ EXPECT\_EXIT(\ \mbox{\hyperlink{cub3_d_8h_a953ff0338bfa5e5863fc98056025e303}{read\_map}}(NULL)\ ,\ ::testing::ExitedWithCode(14),\ \textcolor{stringliteral}{"{}Error:*"{}});}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hello__test_8cc_a8bdfb9e696628b0a34a5a39326402092_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{hello__test_8cc_a4c207754cb4c7512185a61eee22262db}\label{hello__test_8cc_a4c207754cb4c7512185a61eee22262db}} 
+\index{hello\_test.cc@{hello\_test.cc}!TEST@{TEST}}
+\index{TEST@{TEST}!hello\_test.cc@{hello\_test.cc}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3_d_8h_a953ff0338bfa5e5863fc98056025e303}{read\+\_\+map}}}]{,  }\item[{zero\+\_\+number}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -24,12 +141,16 @@ Definition at line \mbox{\hyperlink{hello__test_8cc_source_l00007}{7}} of file \
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00008\ \ \ \textcolor{comment}{//\ Expect\ equality.}}
-\DoxyCodeLine{00009\ \ \ EXPECT\_DEATH(\ \mbox{\hyperlink{cub3D_8h_a953ff0338bfa5e5863fc98056025e303}{read\_map}}(0)\ ,\ \textcolor{stringliteral}{"{}Error:*"{}});}
-\DoxyCodeLine{00010\ \ \ \textcolor{comment}{//EXPECT\_EXIT(\ read\_map(0)\ ,\ ::testing::ExitedWithCode(14),\ "{}Error:*"{});}}
-\DoxyCodeLine{00011\ \}}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ EXPECT\_EXIT(\ \mbox{\hyperlink{cub3_d_8h_a953ff0338bfa5e5863fc98056025e303}{read\_map}}(0)\ ,\ ::testing::ExitedWithCode(14),\ \textcolor{stringliteral}{"{}Error:*"{}});}
+\DoxyCodeLine{00009\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hello__test_8cc_a4c207754cb4c7512185a61eee22262db_cgraph}
+\end{center}
+\end{figure}
