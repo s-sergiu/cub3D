@@ -48,14 +48,16 @@ void	draw_player(t_game **game_data)
 	int			y;
 
 	mlx = (*game_data)->mlx_handle;
+	player = NULL;
 	//create new player image;
-	(*game_data)->player_data.player_image = mlx_new_image(mlx, 10, 10);
-	player = (*game_data)->player_data.player_image;
+	create_img(&player, mlx, 10, 10);
+	//assign player image in my struct the pointer I created;
+	(*game_data)->player_data.player_image = player;
 	//get_player initial position;
 	x = (*game_data)->player_data.initial_position.x_axis;
 	y = (*game_data)->player_data.initial_position.y_axis;
 	// place player to window;
-	mlx_image_to_window(mlx, player, (x * TILE) + 28, (y * TILE) + 28);
+	place_image(player, mlx, (x * TILE) + 28, (y * TILE) + 28);
 	//get player current position;
 	(*game_data)->player_data.current_position.x_axis = &player->instances[0].x;
 	(*game_data)->player_data.current_position.y_axis = &player->instances[0].y;
@@ -82,7 +84,7 @@ void	add_bg_image(t_game **game_data)
 	mlx = (*game_data)->mlx_handle;
 	image = (*game_data)->mlx_background_image;
 	place_image(image, mlx, 0, 0);
-	memset(image->pixels, 255, width * height * sizeof(int));
+	memset(image->pixels, 255, image->width * image->height * sizeof(int));
 }
 
 void	game_setup(char *argv)

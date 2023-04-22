@@ -35,7 +35,7 @@ void	place_wall_or_player(char **map, t_game *game_data, int x, int y)
 	if (map[y][x] == '1')
 	{
 		draw_new_image(&img, mlx, x, y);
-		memset(img->pixels, 120, TILE * TILE * sizeof(int));
+		memset(img->pixels, 120, img->width * img->height * sizeof(int));
 	}
 	if (map[y][x] == 'P')
 	{
