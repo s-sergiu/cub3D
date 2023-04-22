@@ -48,13 +48,18 @@ void	draw_player(t_game **game_data)
 	int			y;
 
 	mlx = (*game_data)->mlx_handle;
+	//create new player image;
 	(*game_data)->player_data.player_image = mlx_new_image(mlx, 10, 10);
 	player = (*game_data)->player_data.player_image;
+	//get_player initial position;
 	x = (*game_data)->player_data.initial_position.x_axis;
 	y = (*game_data)->player_data.initial_position.y_axis;
+	// place player to window;
 	mlx_image_to_window(mlx, player, (x * TILE) + 28, (y * TILE) + 28);
+	//get player current position;
 	(*game_data)->player_data.current_position.x_axis = &player->instances[0].x;
 	(*game_data)->player_data.current_position.y_axis = &player->instances[0].y;
+	//draw player box;
 	x = -1;
 	y = 0;
 	while (++x < (int)player->width)
