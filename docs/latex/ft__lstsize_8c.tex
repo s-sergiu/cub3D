@@ -1,0 +1,46 @@
+\hypertarget{ft__lstsize_8c}{}\doxysection{/\+Users/ssergiu/projects/cub3\+D/libs/\+Libft/src/ft\+\_\+lstsize.c File Reference}
+\label{ft__lstsize_8c}\index{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_lstsize.c@{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_lstsize.c}}
+{\ttfamily \#include \char`\"{}libft.\+h\char`\"{}}\newline
+Include dependency graph for ft\+\_\+lstsize.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__lstsize_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ft__lstsize_8c_a9da614988ac99446db9df99d2c773fc1}{ft\+\_\+lstsize}} (\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$lst)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ft__lstsize_8c_a9da614988ac99446db9df99d2c773fc1}\label{ft__lstsize_8c_a9da614988ac99446db9df99d2c773fc1}} 
+\index{ft\_lstsize.c@{ft\_lstsize.c}!ft\_lstsize@{ft\_lstsize}}
+\index{ft\_lstsize@{ft\_lstsize}!ft\_lstsize.c@{ft\_lstsize.c}}
+\doxysubsubsection{\texorpdfstring{ft\_lstsize()}{ft\_lstsize()}}
+{\footnotesize\ttfamily int ft\+\_\+lstsize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__lstsize_8c_source_l00004}{4}} of file \mbox{\hyperlink{ft__lstsize_8c_source}{ft\+\_\+lstsize.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ i;}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{structs__list}{t\_list}}\ \ \ \ *tmp;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ tmp\ =\ lst;}
+\DoxyCodeLine{00010\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{while}\ (tmp)}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ tmp\ =\ tmp-\/>\mbox{\hyperlink{structs__list_a4586dc4198372dd0c0621981ef05d196}{next}};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{return}\ (i);}
+\DoxyCodeLine{00017\ \}}
+
+\end{DoxyCode}

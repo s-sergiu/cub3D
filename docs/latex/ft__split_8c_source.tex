@@ -1,0 +1,90 @@
+\hypertarget{ft__split_8c_source}{}\doxysection{ft\+\_\+split.\+c}
+\label{ft__split_8c_source}\index{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_split.c@{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_split.c}}
+\mbox{\hyperlink{ft__split_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{libft_8h}{libft.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00004}00004\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ *trim\_string(\textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{char}\ c)}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00006}00006\ \ \ \ \ \textcolor{keywordflow}{while}\ (s[0]\ ==\ c\ \&\&\ c)}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00007}00007\ \ \ \ \ \ \ \ \ s++;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{return}\ (s);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00011}00011\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \ get\_words(\textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *s,\ \textcolor{keywordtype}{char}\ c)}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00013}00013\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{int}\ wc;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00016}00016\ \ \ \ \ i\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00017}00017\ \ \ \ \ wc\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s\ ||\ !s[0])}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{while}\ (s[++i])}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s[i]\ !=\ c)}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (s[i]\ !=\ c\ \&\&\ s[i])}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ wc++;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{return}\ (wc);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00033}00033\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \ get\_letters(\textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{char}\ c)}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00037}00037\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{while}\ (s[i]\ !=\ c\ \&\&\ s[i])}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ (i);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00043}00043\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ **free\_rest(\textcolor{keywordtype}{char}\ **str,\ \textcolor{keywordtype}{int}\ index)}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00044}00044\ \{}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (!index)}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00046}00046\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ free(str);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (index\ >=\ 0)}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ free(str[index-\/-\/]);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00053}00053\ \ \ \ \ free(str);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00057}\mbox{\hyperlink{libft_8h_aa65c9de65051c8c589286cf133c4a1f4}{00057}}\ \textcolor{keywordtype}{char}\ \ \ \ **\mbox{\hyperlink{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4}{ft\_split}}(\textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *s,\ \textcolor{keywordtype}{char}\ c)}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00058}00058\ \{}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ **str;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ index;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ lc;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s)}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00067}00067\ \ \ \ \ str\ =\ (\textcolor{keywordtype}{char}\ **)malloc((get\_words((\textcolor{keywordtype}{char}\ *)s,\ c)\ +\ 1)\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *));}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (!str)}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (free\_rest(str,\ 0));}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (s[0])}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00071}00071\ \ \ \ \ \ \ \ \ s\ =\ trim\_string((\textcolor{keywordtype}{char}\ *)s,\ c);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00072}00072\ \ \ \ \ index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}{ft\_strlen}}(s))}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00074}00074\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00075}00075\ \ \ \ \ \ \ \ \ lc\ =\ get\_letters((\textcolor{keywordtype}{char}\ *)s,\ c);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00076}00076\ \ \ \ \ \ \ \ \ str[index]\ =\ (\textcolor{keywordtype}{char}\ *)malloc((lc\ +\ 1)\ *\ \textcolor{keyword}{sizeof}(char));}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!str[index])}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (free\_rest(str,\ index));}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_a12f759eb9793cf306fede66d0b7de0fc}{ft\_strlcpy}}(str[index++],\ s,\ lc\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00080}00080\ \ \ \ \ \ \ \ \ s\ =\ trim\_string((\textcolor{keywordtype}{char}\ *)s\ +\ lc,\ c);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00082}00082\ \ \ \ \ str[index]\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{return}\ (str);}
+\DoxyCodeLine{\Hypertarget{ft__split_8c_source_l00084}00084\ \}}
+
+\end{DoxyCode}

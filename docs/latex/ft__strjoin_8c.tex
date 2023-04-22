@@ -1,0 +1,63 @@
+\hypertarget{ft__strjoin_8c}{}\doxysection{/\+Users/ssergiu/projects/cub3\+D/libs/\+Libft/src/ft\+\_\+strjoin.c File Reference}
+\label{ft__strjoin_8c}\index{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_strjoin.c@{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_strjoin.c}}
+{\ttfamily \#include \char`\"{}libft.\+h\char`\"{}}\newline
+Include dependency graph for ft\+\_\+strjoin.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strjoin_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}{ft\+\_\+strjoin}} (char const $\ast$s1, char const $\ast$s2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}\label{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}} 
+\index{ft\_strjoin.c@{ft\_strjoin.c}!ft\_strjoin@{ft\_strjoin}}
+\index{ft\_strjoin@{ft\_strjoin}!ft\_strjoin.c@{ft\_strjoin.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strjoin()}{ft\_strjoin()}}
+{\footnotesize\ttfamily char $\ast$ ft\+\_\+strjoin (\begin{DoxyParamCaption}\item[{char const $\ast$}]{s1,  }\item[{char const $\ast$}]{s2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__strjoin_8c_source_l00004}{4}} of file \mbox{\hyperlink{ft__strjoin_8c_source}{ft\+\_\+strjoin.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *str;}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ i;}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ s1\_length;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ s2\_length;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s1\ ||\ !s2)}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00013\ \ \ \ \ s1\_length\ =\ \mbox{\hyperlink{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}{ft\_strlen}}(s1);}
+\DoxyCodeLine{00014\ \ \ \ \ s2\_length\ =\ \mbox{\hyperlink{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}{ft\_strlen}}(s2);}
+\DoxyCodeLine{00015\ \ \ \ \ i\ =\ -\/1;}
+\DoxyCodeLine{00016\ \ \ \ \ str\ =\ malloc(s1\_length\ +\ s2\_length\ +\ 1);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (!str)}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{while}\ (++i\ <\ (\textcolor{keywordtype}{int})s1\_length)}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ str[i]\ =\ s1[i];}
+\DoxyCodeLine{00021\ \ \ \ \ i\ =\ -\/1;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{while}\ (++i\ <\ (\textcolor{keywordtype}{int})s2\_length)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ str[i\ +\ s1\_length]\ =\ s2[i];}
+\DoxyCodeLine{00024\ \ \ \ \ str[i\ +\ s1\_length]\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ (str);}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b_cgraph}
+\end{center}
+\end{figure}

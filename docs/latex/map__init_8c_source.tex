@@ -19,7 +19,7 @@
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00015}00015\ \{}
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ **map\_array;}
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{map__init_8c_source_l00018}00018\ \ \ \ \ map\_array\ =\ ft\_split(\textcolor{keywordtype}{string},\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{map__init_8c_source_l00018}00018\ \ \ \ \ map\_array\ =\ \mbox{\hyperlink{libft_8h_aa65c9de65051c8c589286cf133c4a1f4}{ft\_split}}(\textcolor{keywordtype}{string},\ \textcolor{charliteral}{'\(\backslash\)n'});}
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (map\_array\ ==\ NULL)}
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00020}00020\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00021}00021\ \ \ \ \ \ \ \ \ free(\textcolor{keywordtype}{string});}
@@ -43,7 +43,7 @@
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00039}\mbox{\hyperlink{cub3_d_8h_a3324efc071ce4b896ac6759b3f359b24}{00039}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{map__init_8c_a3324efc071ce4b896ac6759b3f359b24}{destroy\_map\_data}}(\mbox{\hyperlink{structs__map}{t\_map}}\ *map\_data)}
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00040}00040\ \{}
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (map\_data-\/>\mbox{\hyperlink{structs__map_af6220ec05504a768f925bf41236b4532}{map\_array}})}
-\DoxyCodeLine{\Hypertarget{map__init_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ arrtools\_free(map\_data-\/>\mbox{\hyperlink{structs__map_af6220ec05504a768f925bf41236b4532}{map\_array}});}
+\DoxyCodeLine{\Hypertarget{map__init_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libarrtools_8h_ab8162d8bc5f15754961d965f512c26a1}{arrtools\_free}}(map\_data-\/>\mbox{\hyperlink{structs__map_af6220ec05504a768f925bf41236b4532}{map\_array}});}
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00043}00043\ \ \ \ \ free(map\_data);}
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00044}00044\ \}}
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00045}00045\ }
@@ -54,8 +54,8 @@
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00050}00050\ \ \ \ \ map\_string\ =\ \mbox{\hyperlink{map__init_8c_aba4bf581fa8aff77fa3f349abdae106e}{try\_read\_map}}(map\_file);}
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{map__init_8c_a60c83f965f5cfc6543d7a3bb7c7da5a0}{malloc\_map\_struct}}(map\_data,\ free,\ map\_string);}
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00052}00052\ \ \ \ \ (*map\_data)-\/>map\_array\ =\ \mbox{\hyperlink{map__init_8c_a3b8ca9dd1270ef2b35d8198413a8723a}{try\_split\_string}}(map\_string,\ *map\_data);}
-\DoxyCodeLine{\Hypertarget{map__init_8c_source_l00053}00053\ \ \ \ \ (*map\_data)-\/>width\ =\ ft\_strlen((*map\_data)-\/>map\_array[0])\ *\ \mbox{\hyperlink{cub3_d_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
-\DoxyCodeLine{\Hypertarget{map__init_8c_source_l00054}00054\ \ \ \ \ (*map\_data)-\/>height\ =\ arrtools\_arrlen((*map\_data)-\/>map\_array)\ *\ \mbox{\hyperlink{cub3_d_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
+\DoxyCodeLine{\Hypertarget{map__init_8c_source_l00053}00053\ \ \ \ \ (*map\_data)-\/>width\ =\ \mbox{\hyperlink{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}{ft\_strlen}}((*map\_data)-\/>map\_array[0])\ *\ \mbox{\hyperlink{cub3_d_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
+\DoxyCodeLine{\Hypertarget{map__init_8c_source_l00054}00054\ \ \ \ \ (*map\_data)-\/>height\ =\ \mbox{\hyperlink{libarrtools_8h_a2cf5f03f29d7bacfee52ff8446349190}{arrtools\_arrlen}}((*map\_data)-\/>map\_array)\ *\ \mbox{\hyperlink{cub3_d_8h_a2706e5298e357ffb64b22c7e7fc1b3e9}{TILE}};}
 \DoxyCodeLine{\Hypertarget{map__init_8c_source_l00055}00055\ \}}
 
 \end{DoxyCode}

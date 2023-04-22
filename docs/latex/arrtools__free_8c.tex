@@ -1,0 +1,52 @@
+\hypertarget{arrtools__free_8c}{}\doxysection{/\+Users/ssergiu/projects/cub3\+D/libs/libarrtools/src/arrtools\+\_\+free.c File Reference}
+\label{arrtools__free_8c}\index{/Users/ssergiu/projects/cub3D/libs/libarrtools/src/arrtools\_free.c@{/Users/ssergiu/projects/cub3D/libs/libarrtools/src/arrtools\_free.c}}
+{\ttfamily \#include \char`\"{}libarrtools.\+h\char`\"{}}\newline
+Include dependency graph for arrtools\+\_\+free.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{arrtools__free_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{arrtools__free_8c_aba037ab1fa733cadac33d9c696623ce9}{arrtools\+\_\+free}} (char $\ast$$\ast$string\+\_\+array)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{arrtools__free_8c_aba037ab1fa733cadac33d9c696623ce9}\label{arrtools__free_8c_aba037ab1fa733cadac33d9c696623ce9}} 
+\index{arrtools\_free.c@{arrtools\_free.c}!arrtools\_free@{arrtools\_free}}
+\index{arrtools\_free@{arrtools\_free}!arrtools\_free.c@{arrtools\_free.c}}
+\doxysubsubsection{\texorpdfstring{arrtools\_free()}{arrtools\_free()}}
+{\footnotesize\ttfamily void arrtools\+\_\+free (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{string\+\_\+array }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{arrtools__free_8c_source_l00004}{4}} of file \mbox{\hyperlink{arrtools__free_8c_source}{arrtools\+\_\+free.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{int}\ index;\ \ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ index\ =\ -\/1;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (string\_array)}
+\DoxyCodeLine{00010\ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (string\_array[++index])}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ free(string\_array[index]);}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ free(string\_array);}
+\DoxyCodeLine{00014\ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arrtools__free_8c_aba037ab1fa733cadac33d9c696623ce9_icgraph}
+\end{center}
+\end{figure}

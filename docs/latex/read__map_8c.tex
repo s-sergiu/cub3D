@@ -120,18 +120,20 @@ Definition at line \mbox{\hyperlink{read__map_8c_source_l00033}{33}} of file \mb
 \DoxyCodeLine{00039\ \ \ \ \ bytes\_read\ =\ \mbox{\hyperlink{read__map_8c_a973f5273453bacdf37c27ef24bdd540d}{get\_total\_bytes}}(filename);}
 \DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (!bytes\_read)}
 \DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_a968801b6df4daa98b46851157bfbacab}{print\_error}}(\mbox{\hyperlink{cub3_d_8h_a4635f2163efe937e76598aff306d35d1}{EMPTY\_MAP}});}
-\DoxyCodeLine{00042\ \ \ \ \ map\_string\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ bytes\_read\ +\ 1);}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (!map\_string)}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
-\DoxyCodeLine{00045\ \ \ \ \ file\ =\ open(filename,\ O\_RDONLY);}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ ==\ -\/1)}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ 0,\ map\_string);}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (read(file,\ map\_string,\ bytes\_read)\ ==\ -\/1)}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ file,\ map\_string);}
-\DoxyCodeLine{00050\ \ \ \ \ map\_string[bytes\_read]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00051\ \ \ \ \ close(file);}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{return}\ (map\_string);}
-\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (bytes\_read\ ==\ -\/1)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00044\ \ \ \ \ map\_string\ =\ (\textcolor{keywordtype}{char}\ *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ bytes\_read\ +\ 1);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (!map\_string)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00047\ \ \ \ \ file\ =\ open(filename,\ O\_RDONLY);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ ==\ -\/1)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ 0,\ map\_string);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (read(file,\ map\_string,\ bytes\_read)\ ==\ -\/1)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_ad12f49185b9cfb483605a617c9484f25}{cleanup\_and\_exit}}(errno,\ file,\ map\_string);}
+\DoxyCodeLine{00052\ \ \ \ \ map\_string[bytes\_read]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00053\ \ \ \ \ close(file);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ (map\_string);}
+\DoxyCodeLine{00055\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:

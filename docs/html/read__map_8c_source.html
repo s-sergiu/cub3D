@@ -117,20 +117,22 @@ $(function() {
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    bytes_read = <a class="code hl_function" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d">get_total_bytes</a>(filename);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (!bytes_read)</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_function" href="cub3_d_8h.html#a968801b6df4daa98b46851157bfbacab">print_error</a>(<a class="code hl_define" href="cub3_d_8h.html#a4635f2163efe937e76598aff306d35d1">EMPTY_MAP</a>);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    map_string = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * bytes_read + 1);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (!map_string)</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    file = open(filename, O_RDONLY);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span> (file == -1)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_function" href="cub3_d_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a>(errno, 0, map_string);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (read(file, map_string, bytes_read) == -1)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_function" href="cub3_d_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a>(errno, file, map_string);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    map_string[bytes_read] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    close(file);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> (map_string);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span> (bytes_read == -1)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    map_string = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * bytes_read + 1);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (!map_string)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    file = open(filename, O_RDONLY);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (file == -1)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_function" href="cub3_d_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a>(errno, 0, map_string);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">if</span> (read(file, map_string, bytes_read) == -1)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_function" href="cub3_d_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a>(errno, file, map_string);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    map_string[bytes_read] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    close(file);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> (map_string);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
 <div class="ttc" id="acub3_d_8h_html"><div class="ttname"><a href="cub3_d_8h.html">cub3D.h</a></div></div>
-<div class="ttc" id="acub3_d_8h_html_a4635f2163efe937e76598aff306d35d1"><div class="ttname"><a href="cub3_d_8h.html#a4635f2163efe937e76598aff306d35d1">EMPTY_MAP</a></div><div class="ttdeci">#define EMPTY_MAP</div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00016">cub3D.h:16</a></div></div>
+<div class="ttc" id="acub3_d_8h_html_a4635f2163efe937e76598aff306d35d1"><div class="ttname"><a href="cub3_d_8h.html#a4635f2163efe937e76598aff306d35d1">EMPTY_MAP</a></div><div class="ttdeci">#define EMPTY_MAP</div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00014">cub3D.h:14</a></div></div>
 <div class="ttc" id="acub3_d_8h_html_a968801b6df4daa98b46851157bfbacab"><div class="ttname"><a href="cub3_d_8h.html#a968801b6df4daa98b46851157bfbacab">print_error</a></div><div class="ttdeci">void print_error(int error)</div><div class="ttdoc">Prints an error message to the standard error output and exits with the function parameter passed err...</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00004">error_handling.c:4</a></div></div>
 <div class="ttc" id="acub3_d_8h_html_ad12f49185b9cfb483605a617c9484f25"><div class="ttname"><a href="cub3_d_8h.html#ad12f49185b9cfb483605a617c9484f25">cleanup_and_exit</a></div><div class="ttdeci">void cleanup_and_exit(int error, int file, char *buffer)</div><div class="ttdoc">Frees any allocated memory and exits the program with the given error number.</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00022">error_handling.c:22</a></div></div>
 <div class="ttc" id="aread__map_8c_html_a953ff0338bfa5e5863fc98056025e303"><div class="ttname"><a href="read__map_8c.html#a953ff0338bfa5e5863fc98056025e303">read_map</a></div><div class="ttdeci">char * read_map(char *filename)</div><div class="ttdoc">Reads the contents of the file with the given name into a dynamically allocated buffer.</div><div class="ttdef"><b>Definition:</b> <a href="read__map_8c_source.html#l00033">read_map.c:33</a></div></div>

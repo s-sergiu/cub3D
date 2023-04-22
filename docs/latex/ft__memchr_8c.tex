@@ -1,0 +1,42 @@
+\hypertarget{ft__memchr_8c}{}\doxysection{/\+Users/ssergiu/projects/cub3\+D/libs/\+Libft/src/ft\+\_\+memchr.c File Reference}
+\label{ft__memchr_8c}\index{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_memchr.c@{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_memchr.c}}
+{\ttfamily \#include \char`\"{}libft.\+h\char`\"{}}\newline
+Include dependency graph for ft\+\_\+memchr.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__memchr_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{ft__memchr_8c_abf633e8e48a8afbe61947f61de5ac695}{ft\+\_\+memchr}} (const void $\ast$s, int c, size\+\_\+t n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ft__memchr_8c_abf633e8e48a8afbe61947f61de5ac695}\label{ft__memchr_8c_abf633e8e48a8afbe61947f61de5ac695}} 
+\index{ft\_memchr.c@{ft\_memchr.c}!ft\_memchr@{ft\_memchr}}
+\index{ft\_memchr@{ft\_memchr}!ft\_memchr.c@{ft\_memchr.c}}
+\doxysubsubsection{\texorpdfstring{ft\_memchr()}{ft\_memchr()}}
+{\footnotesize\ttfamily void $\ast$ ft\+\_\+memchr (\begin{DoxyParamCaption}\item[{const void $\ast$}]{s,  }\item[{int}]{c,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__memchr_8c_source_l00004}{4}} of file \mbox{\hyperlink{ft__memchr_8c_source}{ft\+\_\+memchr.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ i;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{while}\ (i++\ <\ n)}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*((\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *)s\ +\ i\ -\/\ 1)\ ==\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char})(c))}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keywordtype}{char}\ *)(s\ +\ i\ -\/\ 1));}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}

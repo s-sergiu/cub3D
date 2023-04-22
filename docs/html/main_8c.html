@@ -84,16 +84,19 @@ Include dependency graph for main.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c__incl.png" border="0" usemap="#a_2_users_2ssergiu_2projects_2cub3_d_2src_2main_8c" alt=""/></div>
 <map name="a_2_users_2ssergiu_2projects_2cub3_d_2src_2main_8c" id="a_2_users_2ssergiu_2projects_2cub3_d_2src_2main_8c">
-<area shape="rect" title=" " alt="" coords="261,5,418,46"/>
-<area shape="rect" href="cub3_d_8h.html" title=" " alt="" coords="304,94,375,120"/>
-<area shape="rect" title=" " alt="" coords="5,168,66,193"/>
-<area shape="rect" title=" " alt="" coords="89,168,158,193"/>
-<area shape="rect" title=" " alt="" coords="182,168,244,193"/>
-<area shape="rect" title=" " alt="" coords="268,168,326,193"/>
-<area shape="rect" title=" " alt="" coords="350,168,414,193"/>
-<area shape="rect" title=" " alt="" coords="438,168,492,193"/>
-<area shape="rect" title=" " alt="" coords="515,168,633,193"/>
-<area shape="rect" title=" " alt="" coords="658,168,746,193"/>
+<area shape="rect" title=" " alt="" coords="175,5,331,46"/>
+<area shape="rect" href="cub3_d_8h.html" title=" " alt="" coords="218,94,288,120"/>
+<area shape="rect" title=" " alt="" coords="5,168,74,193"/>
+<area shape="rect" title=" " alt="" coords="98,168,160,193"/>
+<area shape="rect" title=" " alt="" coords="184,168,242,193"/>
+<area shape="rect" href="libft_8h.html" title=" " alt="" coords="266,168,320,193"/>
+<area shape="rect" title=" " alt="" coords="343,168,461,193"/>
+<area shape="rect" href="libarrtools_8h.html" title=" " alt="" coords="486,168,574,193"/>
+<area shape="rect" title=" " alt="" coords="101,241,162,267"/>
+<area shape="rect" title=" " alt="" coords="186,241,250,267"/>
+<area shape="rect" title=" " alt="" coords="485,241,549,267"/>
+<area shape="rect" title=" " alt="" coords="274,241,341,267"/>
+<area shape="rect" title=" " alt="" coords="365,241,434,267"/>
 </map>
 </div>
 </div>
@@ -133,62 +136,60 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00004">4</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>{</div>
-<div class="line"><span class="lineno">    6</span>    <a class="code hl_struct" href="structs__map.html">t_map</a>   *map_data;</div>
-<div class="line"><span class="lineno">    7</span> </div>
-<div class="line"><span class="lineno">    8</span>    map_data = NULL;</div>
-<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">if</span> (argc != 2)</div>
-<div class="line"><span class="lineno">   10</span>        write(1, <span class="stringliteral">&quot;Usage: ./cub3D &lt;map.cub&gt;\n&quot;</span>, 25);</div>
-<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   12</span>    {</div>
-<div class="line"><span class="lineno">   13</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="cub3_d_8h.html#a28722e35659ad0e59ef9d1f1c09e23f1">is_valid_filename</a>(argv[1]))</div>
-<div class="line"><span class="lineno">   14</span>        {</div>
-<div class="line"><span class="lineno">   15</span>            <a class="code hl_function" href="cub3_d_8h.html#aeb0c09fe0094c8e26a44baa4418bf647">init_map_data</a>(&amp;map_data, argv[1]);</div>
-<div class="line"><span class="lineno">   16</span>            <a class="code hl_function" href="cub3_d_8h.html#a503c2906050453b79fab37a3149cbe9b">draw_map</a>(map_data);</div>
-<div class="line"><span class="lineno">   17</span>        }</div>
-<div class="line"><span class="lineno">   18</span>    }</div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">return</span> (0);</div>
-<div class="line"><span class="lineno">   20</span>}</div>
+<div class="line"><span class="lineno">    6</span>    <span class="keywordflow">if</span> (argc != 2)</div>
+<div class="line"><span class="lineno">    7</span>        write(1, <span class="stringliteral">&quot;Usage: ./cub3D &lt;map.cub&gt;\n&quot;</span>, 25);</div>
+<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">    9</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="cub3_d_8h.html#a28722e35659ad0e59ef9d1f1c09e23f1">is_valid_filename</a>(argv[1]))</div>
+<div class="line"><span class="lineno">   10</span>            <a class="code hl_function" href="cub3_d_8h.html#a08c8a769852cee2c3bc61a372ade4d28">game_setup</a>(argv[1]);</div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">   12</span>}</div>
+<div class="ttc" id="acub3_d_8h_html_a08c8a769852cee2c3bc61a372ade4d28"><div class="ttname"><a href="cub3_d_8h.html#a08c8a769852cee2c3bc61a372ade4d28">game_setup</a></div><div class="ttdeci">void game_setup(char *argv)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00083">draw_map.c:83</a></div></div>
 <div class="ttc" id="acub3_d_8h_html_a28722e35659ad0e59ef9d1f1c09e23f1"><div class="ttname"><a href="cub3_d_8h.html#a28722e35659ad0e59ef9d1f1c09e23f1">is_valid_filename</a></div><div class="ttdeci">int is_valid_filename(char *filename)</div><div class="ttdoc">Checks if the given filename is valid.</div><div class="ttdef"><b>Definition:</b> <a href="error__handling_8c_source.html#l00052">error_handling.c:52</a></div></div>
-<div class="ttc" id="acub3_d_8h_html_a503c2906050453b79fab37a3149cbe9b"><div class="ttname"><a href="cub3_d_8h.html#a503c2906050453b79fab37a3149cbe9b">draw_map</a></div><div class="ttdeci">void draw_map(t_map *map_data)</div><div class="ttdef"><b>Definition:</b> <a href="draw__map_8c_source.html#l00083">draw_map.c:83</a></div></div>
-<div class="ttc" id="acub3_d_8h_html_aeb0c09fe0094c8e26a44baa4418bf647"><div class="ttname"><a href="cub3_d_8h.html#aeb0c09fe0094c8e26a44baa4418bf647">init_map_data</a></div><div class="ttdeci">void init_map_data(t_map **map_data, char *map_file)</div><div class="ttdoc">Initializes map data.</div><div class="ttdef"><b>Definition:</b> <a href="map__init_8c_source.html#l00046">map_init.c:46</a></div></div>
-<div class="ttc" id="astructs__map_html"><div class="ttname"><a href="structs__map.html">s_map</a></div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00052">cub3D.h:53</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#amain_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="amain_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="amain_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" title=" " alt="" coords="5,647,55,672"/>
-<area shape="rect" href="draw__map_8c.html#a503c2906050453b79fab37a3149cbe9b" title=" " alt="" coords="123,203,204,228"/>
-<area shape="rect" href="map__init_8c.html#aeb0c09fe0094c8e26a44baa4418bf647" title="Initializes map data." alt="" coords="112,647,215,672"/>
-<area shape="rect" href="error__handling_8c.html#a28722e35659ad0e59ef9d1f1c09e23f1" title="Checks if the given filename is valid." alt="" coords="103,772,224,798"/>
-<area shape="rect" href="draw__map_8c.html#a31c296079f8f4ddfd732fa4a82cbae6d" title=" " alt="" coords="310,31,415,56"/>
-<area shape="rect" href="grid_8c.html#ae914fc944001699592e064479b3442df" title=" " alt="" coords="324,104,401,130"/>
-<area shape="rect" href="draw__map_8c.html#a71bac51cfa90c1339b54d02cc53514fd" title=" " alt="" coords="317,153,408,179"/>
-<area shape="rect" href="draw__map_8c.html#a554099133a957e84d50486d968eb4f15" title=" " alt="" coords="320,203,406,228"/>
-<area shape="rect" href="draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e" title=" " alt="" coords="331,252,395,278"/>
-<area shape="rect" href="game__init_8c.html#a11f7064e48a9cb662f0a3d67a706e922" title=" " alt="" coords="308,473,417,499"/>
-<area shape="rect" href="mlx__wrappers_8c.html#a150e6241c0bff245cf7b1d418b6ef251" title=" " alt="" coords="537,5,608,31"/>
-<area shape="rect" href="grid_8c.html#a2e96121d859f30b5609ef9bd9d4b9416" title=" " alt="" coords="503,104,642,130"/>
-<area shape="rect" href="grid_8c.html#ad214eee00b31cc04dacd5e4bfbd25df9" title=" " alt="" coords="510,55,635,80"/>
-<area shape="rect" href="mlx__wrappers_8c.html#a2154a52d790968e915c0bf680f0f9f7d" title=" " alt="" coords="501,153,644,179"/>
-<area shape="rect" href="hook__movements_8c.html#a23d77dc915419830147ffded05fbbb79" title=" " alt="" coords="532,351,613,376"/>
-<area shape="rect" href="hook__movements_8c.html#a2e8bbe16d9940195bd0809cfee562230" title=" " alt="" coords="538,203,607,228"/>
-<area shape="rect" href="hook__movements_8c.html#a2500c0e1d515fb8494bcad43210675e5" title=" " alt="" coords="535,252,610,278"/>
-<area shape="rect" href="hook__movements_8c.html#a99fb742061411522c5ed3e1c0ca5c69e" title=" " alt="" coords="540,301,605,327"/>
-<area shape="rect" href="game__init_8c.html#aac9ff83d4670c2e40935bf939f0e9be1" title=" " alt="" coords="530,400,615,426"/>
-<area shape="rect" href="game__init_8c.html#a4742c3e8fdf7e08d4b94889136e7161c" title=" " alt="" coords="505,449,640,475"/>
-<area shape="rect" href="map__init_8c.html#a3324efc071ce4b896ac6759b3f359b24" title="Destroys map data." alt="" coords="508,499,637,524"/>
-<area shape="rect" href="game__init_8c.html#a13350d37b122b6455e86a2a9eeb0c7e2" title=" " alt="" coords="539,548,606,574"/>
-<area shape="rect" href="game__init_8c.html#a9c0871c61cbc49661f12864d518bb64a" title=" " alt="" coords="503,597,642,623"/>
-<area shape="rect" href="map__init_8c.html#a60c83f965f5cfc6543d7a3bb7c7da5a0" title=" " alt="" coords="297,597,428,623"/>
-<area shape="rect" href="map__init_8c.html#aba4bf581fa8aff77fa3f349abdae106e" title=" " alt="" coords="313,647,413,672"/>
-<area shape="rect" href="map__init_8c.html#a3b8ca9dd1270ef2b35d8198413a8723a" title=" " alt="" coords="310,696,416,722"/>
-<area shape="rect" href="read__map_8c.html#a953ff0338bfa5e5863fc98056025e303" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="533,647,612,672"/>
-<area shape="rect" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="850,645,972,671"/>
-<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="1020,671,1100,696"/>
-<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="692,595,802,620"/>
-<area shape="rect" href="error__handling_8c.html#ae82ab44de3b7db5df0474efb78347c37" title="Checks if the given filename has a valid extension." alt="" coords="272,797,453,823"/>
-<area shape="rect" href="error__handling_8c.html#a708cb4d96afdb85180287f9fe26a9076" title=" " alt="" coords="319,847,407,872"/>
+<area shape="rect" title=" " alt="" coords="5,572,55,598"/>
+<area shape="rect" href="draw__map_8c.html#a08c8a769852cee2c3bc61a372ade4d28" title=" " alt="" coords="103,232,195,258"/>
+<area shape="rect" href="error__handling_8c.html#a28722e35659ad0e59ef9d1f1c09e23f1" title="Checks if the given filename is valid." alt="" coords="584,811,706,836"/>
+<area shape="rect" href="draw__map_8c.html#ace2d72d1137fe658fe89cea621a3ca83" title=" " alt="" coords="592,40,698,66"/>
+<area shape="rect" href="grid_8c.html#ae914fc944001699592e064479b3442df" title=" " alt="" coords="256,83,333,108"/>
+<area shape="rect" href="draw__map_8c.html#a71bac51cfa90c1339b54d02cc53514fd" title=" " alt="" coords="249,157,340,183"/>
+<area shape="rect" href="draw__map_8c.html#a554099133a957e84d50486d968eb4f15" title=" " alt="" coords="251,207,337,232"/>
+<area shape="rect" href="draw__map_8c.html#a4b7144f73d9e8c25ca55c890584b5c0e" title=" " alt="" coords="262,256,326,282"/>
+<area shape="rect" href="game__init_8c.html#a11f7064e48a9cb662f0a3d67a706e922" title=" " alt="" coords="590,331,700,356"/>
+<area shape="rect" href="map__init_8c.html#aeb0c09fe0094c8e26a44baa4418bf647" title="Initializes map data." alt="" coords="243,507,345,532"/>
+<area shape="rect" href="mlx__wrappers_8c.html#aad64464e3479eedac302b710920c2d38" title=" " alt="" coords="798,145,892,171"/>
+<area shape="rect" href="ft__putstr__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="1281,273,1368,299"/>
+<area shape="rect" href="grid_8c.html#a2e96121d859f30b5609ef9bd9d4b9416" title=" " alt="" coords="395,33,534,59"/>
+<area shape="rect" href="grid_8c.html#ad214eee00b31cc04dacd5e4bfbd25df9" title=" " alt="" coords="402,83,527,108"/>
+<area shape="rect" href="mlx__wrappers_8c.html#a2154a52d790968e915c0bf680f0f9f7d" title=" " alt="" coords="393,132,536,158"/>
+<area shape="rect" href="mlx__wrappers_8c.html#aca03288899f154b648fff32bb5982fa4" title=" " alt="" coords="584,145,706,171"/>
+<area shape="rect" href="mlx__wrappers_8c.html#aac9ff83d4670c2e40935bf939f0e9be1" title=" " alt="" coords="802,207,887,232"/>
+<area shape="rect" href="hook__movements_8c.html#a23d77dc915419830147ffded05fbbb79" title=" " alt="" coords="424,181,505,207"/>
+<area shape="rect" href="hook__movements_8c.html#a2e8bbe16d9940195bd0809cfee562230" title=" " alt="" coords="430,231,499,256"/>
+<area shape="rect" href="hook__movements_8c.html#a2500c0e1d515fb8494bcad43210675e5" title=" " alt="" coords="427,280,502,306"/>
+<area shape="rect" href="hook__movements_8c.html#a99fb742061411522c5ed3e1c0ca5c69e" title=" " alt="" coords="432,329,497,355"/>
+<area shape="rect" href="game__init_8c.html#a4742c3e8fdf7e08d4b94889136e7161c" title=" " alt="" coords="777,256,912,282"/>
+<area shape="rect" href="map__init_8c.html#a3324efc071ce4b896ac6759b3f359b24" title="Destroys map data." alt="" coords="781,305,909,331"/>
+<area shape="rect" href="game__init_8c.html#a13350d37b122b6455e86a2a9eeb0c7e2" title=" " alt="" coords="1160,324,1227,350"/>
+<area shape="rect" href="game__init_8c.html#a9c0871c61cbc49661f12864d518bb64a" title=" " alt="" coords="776,407,914,432"/>
+<area shape="rect" href="arrtools__free_8c.html#aba037ab1fa733cadac33d9c696623ce9" title=" " alt="" coords="998,305,1091,331"/>
+<area shape="rect" href="arrtools__get__height_8c.html#a25aca2c7b7479be1e117ea9372ecfea2" title=" " alt="" coords="413,431,516,456"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="1010,709,1079,735"/>
+<area shape="rect" href="map__init_8c.html#a60c83f965f5cfc6543d7a3bb7c7da5a0" title=" " alt="" coords="399,532,530,558"/>
+<area shape="rect" href="map__init_8c.html#aba4bf581fa8aff77fa3f349abdae106e" title=" " alt="" coords="414,581,515,607"/>
+<area shape="rect" href="map__init_8c.html#a3b8ca9dd1270ef2b35d8198413a8723a" title=" " alt="" coords="411,657,518,683"/>
+<area shape="rect" href="read__map_8c.html#a953ff0338bfa5e5863fc98056025e303" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="606,583,684,608"/>
+<area shape="rect" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="983,532,1106,558"/>
+<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="1154,583,1233,608"/>
+<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="790,633,900,659"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title=" " alt="" coords="615,684,675,710"/>
+<area shape="rect" href="ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc" title=" " alt="" coords="807,735,882,760"/>
+<area shape="rect" href="error__handling_8c.html#ae82ab44de3b7db5df0474efb78347c37" title="Checks if the given filename has a valid extension." alt="" coords="754,836,935,862"/>
+<area shape="rect" href="error__handling_8c.html#a708cb4d96afdb85180287f9fe26a9076" title=" " alt="" coords="801,885,889,911"/>
+<area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="1003,836,1086,862"/>
 </map>
 </div>
 

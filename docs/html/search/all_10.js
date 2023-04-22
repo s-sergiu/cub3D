@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['y_5faxis_0',['y_axis',['../structs__position.html#a6db08e70ac0ca6ad13a6f538aebab5be',1,'s_position::y_axis()'],['../structs__static__position.html#a9fddbebad707944e86799f9f35d771e2',1,'s_static_position::y_axis()']]]
+  ['wall_0',['WALL',['../cub3_d_8h.html#ac749b87dd5d843e4add3eb8e8a130f62',1,'cub3D.h']]],
+  ['width_1',['width',['../structs__map.html#ad4768adacc3ab19724a77cee481cd105',1,'s_map']]]
 ];

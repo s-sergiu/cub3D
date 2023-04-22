@@ -1,0 +1,76 @@
+\hypertarget{ft__split_8c}{}\doxysection{/\+Users/ssergiu/projects/cub3\+D/libs/\+Libft/src/ft\+\_\+split.c File Reference}
+\label{ft__split_8c}\index{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_split.c@{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_split.c}}
+{\ttfamily \#include \char`\"{}libft.\+h\char`\"{}}\newline
+Include dependency graph for ft\+\_\+split.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__split_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$$\ast$ \mbox{\hyperlink{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4}{ft\+\_\+split}} (char const $\ast$s, char c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4}\label{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4}} 
+\index{ft\_split.c@{ft\_split.c}!ft\_split@{ft\_split}}
+\index{ft\_split@{ft\_split}!ft\_split.c@{ft\_split.c}}
+\doxysubsubsection{\texorpdfstring{ft\_split()}{ft\_split()}}
+{\footnotesize\ttfamily char $\ast$$\ast$ ft\+\_\+split (\begin{DoxyParamCaption}\item[{char const $\ast$}]{s,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__split_8c_source_l00057}{57}} of file \mbox{\hyperlink{ft__split_8c_source}{ft\+\_\+split.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ **str;}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ index;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ lc;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s)}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ str\ =\ (\textcolor{keywordtype}{char}\ **)malloc((get\_words((\textcolor{keywordtype}{char}\ *)s,\ c)\ +\ 1)\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *));}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (!str)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (free\_rest(str,\ 0));}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (s[0])}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ s\ =\ trim\_string((\textcolor{keywordtype}{char}\ *)s,\ c);}
+\DoxyCodeLine{00072\ \ \ \ \ index\ =\ 0;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}{ft\_strlen}}(s))}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ lc\ =\ get\_letters((\textcolor{keywordtype}{char}\ *)s,\ c);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ str[index]\ =\ (\textcolor{keywordtype}{char}\ *)malloc((lc\ +\ 1)\ *\ \textcolor{keyword}{sizeof}(char));}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!str[index])}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (free\_rest(str,\ index));}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_a12f759eb9793cf306fede66d0b7de0fc}{ft\_strlcpy}}(str[index++],\ s,\ lc\ +\ 1);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ s\ =\ trim\_string((\textcolor{keywordtype}{char}\ *)s\ +\ lc,\ c);}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ str[index]\ =\ NULL;}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{return}\ (str);}
+\DoxyCodeLine{00084\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__split_8c_aa65c9de65051c8c589286cf133c4a1f4_icgraph}
+\end{center}
+\end{figure}

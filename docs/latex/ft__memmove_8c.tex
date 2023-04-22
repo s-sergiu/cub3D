@@ -1,0 +1,51 @@
+\hypertarget{ft__memmove_8c}{}\doxysection{/\+Users/ssergiu/projects/cub3\+D/libs/\+Libft/src/ft\+\_\+memmove.c File Reference}
+\label{ft__memmove_8c}\index{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_memmove.c@{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_memmove.c}}
+{\ttfamily \#include \char`\"{}libft.\+h\char`\"{}}\newline
+Include dependency graph for ft\+\_\+memmove.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__memmove_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{ft__memmove_8c_a07d99898951de275e74a11d3ee00077a}{ft\+\_\+memmove}} (void $\ast$dst, const void $\ast$src, size\+\_\+t n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ft__memmove_8c_a07d99898951de275e74a11d3ee00077a}\label{ft__memmove_8c_a07d99898951de275e74a11d3ee00077a}} 
+\index{ft\_memmove.c@{ft\_memmove.c}!ft\_memmove@{ft\_memmove}}
+\index{ft\_memmove@{ft\_memmove}!ft\_memmove.c@{ft\_memmove.c}}
+\doxysubsubsection{\texorpdfstring{ft\_memmove()}{ft\_memmove()}}
+{\footnotesize\ttfamily void $\ast$ ft\+\_\+memmove (\begin{DoxyParamCaption}\item[{void $\ast$}]{dst,  }\item[{const void $\ast$}]{src,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__memmove_8c_source_l00004}{4}} of file \mbox{\hyperlink{ft__memmove_8c_source}{ft\+\_\+memmove.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordflow}{if}\ (!dst\ \&\&\ !src)}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (src\ <\ dst)}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (n-\/-\/\ >\ 0)}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ *(\textcolor{keywordtype}{char}\ *)(dst\ +\ n)\ =\ *(\textcolor{keywordtype}{char}\ *)(src\ +\ n);}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libft_8h_a5f5c5d19b1f0355d9768c75d30ed5559}{ft\_memcpy}}(dst,\ src,\ n);}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{return}\ (dst);}
+\DoxyCodeLine{00014\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{ft__memmove_8c_a07d99898951de275e74a11d3ee00077a_cgraph}
+\end{center}
+\end{figure}

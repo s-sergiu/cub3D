@@ -84,16 +84,19 @@ Include dependency graph for map_init.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="map__init_8c__incl.png" border="0" usemap="#a_2_users_2ssergiu_2projects_2cub3_d_2src_2init_2map__init_8c" alt=""/></div>
 <map name="a_2_users_2ssergiu_2projects_2cub3_d_2src_2init_2map__init_8c" id="a_2_users_2ssergiu_2projects_2cub3_d_2src_2init_2map__init_8c">
-<area shape="rect" title=" " alt="" coords="254,5,425,46"/>
-<area shape="rect" href="cub3_d_8h.html" title=" " alt="" coords="304,94,375,120"/>
-<area shape="rect" title=" " alt="" coords="5,168,66,193"/>
-<area shape="rect" title=" " alt="" coords="89,168,158,193"/>
-<area shape="rect" title=" " alt="" coords="182,168,244,193"/>
-<area shape="rect" title=" " alt="" coords="268,168,326,193"/>
-<area shape="rect" title=" " alt="" coords="350,168,414,193"/>
-<area shape="rect" title=" " alt="" coords="438,168,492,193"/>
-<area shape="rect" title=" " alt="" coords="515,168,633,193"/>
-<area shape="rect" title=" " alt="" coords="658,168,746,193"/>
+<area shape="rect" title=" " alt="" coords="168,5,338,46"/>
+<area shape="rect" href="cub3_d_8h.html" title=" " alt="" coords="218,94,288,120"/>
+<area shape="rect" title=" " alt="" coords="5,168,74,193"/>
+<area shape="rect" title=" " alt="" coords="98,168,160,193"/>
+<area shape="rect" title=" " alt="" coords="184,168,242,193"/>
+<area shape="rect" href="libft_8h.html" title=" " alt="" coords="266,168,320,193"/>
+<area shape="rect" title=" " alt="" coords="343,168,461,193"/>
+<area shape="rect" href="libarrtools_8h.html" title=" " alt="" coords="486,168,574,193"/>
+<area shape="rect" title=" " alt="" coords="101,241,162,267"/>
+<area shape="rect" title=" " alt="" coords="186,241,250,267"/>
+<area shape="rect" title=" " alt="" coords="485,241,549,267"/>
+<area shape="rect" title=" " alt="" coords="274,241,341,267"/>
+<area shape="rect" title=" " alt="" coords="365,241,434,267"/>
 </map>
 </div>
 </div>
@@ -143,18 +146,28 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="map__init_8c_source.html#l00039">39</a> of file <a class="el" href="map__init_8c_source.html">map_init.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   40</span>{</div>
 <div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (map_data-&gt;<a class="code hl_variable" href="structs__map.html#af6220ec05504a768f925bf41236b4532">map_array</a>)</div>
-<div class="line"><span class="lineno">   42</span>        arrtools_free(map_data-&gt;<a class="code hl_variable" href="structs__map.html#af6220ec05504a768f925bf41236b4532">map_array</a>);</div>
+<div class="line"><span class="lineno">   42</span>        <a class="code hl_function" href="libarrtools_8h.html#ab8162d8bc5f15754961d965f512c26a1">arrtools_free</a>(map_data-&gt;<a class="code hl_variable" href="structs__map.html#af6220ec05504a768f925bf41236b4532">map_array</a>);</div>
 <div class="line"><span class="lineno">   43</span>    free(map_data);</div>
 <div class="line"><span class="lineno">   44</span>}</div>
-<div class="ttc" id="astructs__map_html_af6220ec05504a768f925bf41236b4532"><div class="ttname"><a href="structs__map.html#af6220ec05504a768f925bf41236b4532">s_map::map_array</a></div><div class="ttdeci">char ** map_array</div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00054">cub3D.h:54</a></div></div>
+<div class="ttc" id="alibarrtools_8h_html_ab8162d8bc5f15754961d965f512c26a1"><div class="ttname"><a href="libarrtools_8h.html#ab8162d8bc5f15754961d965f512c26a1">arrtools_free</a></div><div class="ttdeci">void arrtools_free(char **map_array)</div><div class="ttdef"><b>Definition:</b> <a href="arrtools__free_8c_source.html#l00004">arrtools_free.c:4</a></div></div>
+<div class="ttc" id="astructs__map_html_af6220ec05504a768f925bf41236b4532"><div class="ttname"><a href="structs__map.html#af6220ec05504a768f925bf41236b4532">s_map::map_array</a></div><div class="ttdeci">char ** map_array</div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00052">cub3D.h:52</a></div></div>
 </div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="map__init_8c_a3324efc071ce4b896ac6759b3f359b24_cgraph.png" border="0" usemap="#amap__init_8c_a3324efc071ce4b896ac6759b3f359b24_cgraph" alt=""/></div>
+<map name="amap__init_8c_a3324efc071ce4b896ac6759b3f359b24_cgraph" id="amap__init_8c_a3324efc071ce4b896ac6759b3f359b24_cgraph">
+<area shape="rect" title="Destroys map data." alt="" coords="5,5,134,31"/>
+<area shape="rect" href="arrtools__free_8c.html#aba037ab1fa733cadac33d9c696623ce9" title=" " alt="" coords="182,5,275,31"/>
+</map>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="map__init_8c_a3324efc071ce4b896ac6759b3f359b24_icgraph.png" border="0" usemap="#amap__init_8c_a3324efc071ce4b896ac6759b3f359b24_icgraph" alt=""/></div>
 <map name="amap__init_8c_a3324efc071ce4b896ac6759b3f359b24_icgraph" id="amap__init_8c_a3324efc071ce4b896ac6759b3f359b24_icgraph">
-<area shape="rect" title="Destroys map data." alt="" coords="389,5,518,31"/>
-<area shape="rect" href="game__init_8c.html#a11f7064e48a9cb662f0a3d67a706e922" title=" " alt="" coords="232,5,341,31"/>
-<area shape="rect" href="draw__map_8c.html#a503c2906050453b79fab37a3149cbe9b" title=" " alt="" coords="103,5,184,31"/>
+<area shape="rect" title="Destroys map data." alt="" coords="400,5,529,31"/>
+<area shape="rect" href="game__init_8c.html#a11f7064e48a9cb662f0a3d67a706e922" title=" " alt="" coords="243,5,352,31"/>
+<area shape="rect" href="draw__map_8c.html#a08c8a769852cee2c3bc61a372ade4d28" title=" " alt="" coords="103,5,195,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,55,31"/>
 </map>
 </div>
@@ -204,10 +217,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   50</span>    map_string = <a class="code hl_function" href="map__init_8c.html#aba4bf581fa8aff77fa3f349abdae106e">try_read_map</a>(map_file);</div>
 <div class="line"><span class="lineno">   51</span>    <a class="code hl_function" href="map__init_8c.html#a60c83f965f5cfc6543d7a3bb7c7da5a0">malloc_map_struct</a>(map_data, free, map_string);</div>
 <div class="line"><span class="lineno">   52</span>    (*map_data)-&gt;map_array = <a class="code hl_function" href="map__init_8c.html#a3b8ca9dd1270ef2b35d8198413a8723a">try_split_string</a>(map_string, *map_data);</div>
-<div class="line"><span class="lineno">   53</span>    (*map_data)-&gt;width = ft_strlen((*map_data)-&gt;map_array[0]) * <a class="code hl_define" href="cub3_d_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
-<div class="line"><span class="lineno">   54</span>    (*map_data)-&gt;height = arrtools_arrlen((*map_data)-&gt;map_array) * <a class="code hl_define" href="cub3_d_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
+<div class="line"><span class="lineno">   53</span>    (*map_data)-&gt;width = <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>((*map_data)-&gt;map_array[0]) * <a class="code hl_define" href="cub3_d_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
+<div class="line"><span class="lineno">   54</span>    (*map_data)-&gt;height = <a class="code hl_function" href="libarrtools_8h.html#a2cf5f03f29d7bacfee52ff8446349190">arrtools_arrlen</a>((*map_data)-&gt;map_array) * <a class="code hl_define" href="cub3_d_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a>;</div>
 <div class="line"><span class="lineno">   55</span>}</div>
-<div class="ttc" id="acub3_d_8h_html_a2706e5298e357ffb64b22c7e7fc1b3e9"><div class="ttname"><a href="cub3_d_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a></div><div class="ttdeci">#define TILE</div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00015">cub3D.h:15</a></div></div>
+<div class="ttc" id="acub3_d_8h_html_a2706e5298e357ffb64b22c7e7fc1b3e9"><div class="ttname"><a href="cub3_d_8h.html#a2706e5298e357ffb64b22c7e7fc1b3e9">TILE</a></div><div class="ttdeci">#define TILE</div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00013">cub3D.h:13</a></div></div>
+<div class="ttc" id="alibarrtools_8h_html_a2cf5f03f29d7bacfee52ff8446349190"><div class="ttname"><a href="libarrtools_8h.html#a2cf5f03f29d7bacfee52ff8446349190">arrtools_arrlen</a></div><div class="ttdeci">int arrtools_arrlen(char **string_array)</div><div class="ttdef"><b>Definition:</b> <a href="arrtools__get__height_8c_source.html#l00004">arrtools_get_height.c:4</a></div></div>
+<div class="ttc" id="alibft_8h_html_abbb8c6c4ed85d892e7f1509f65f5768a"><div class="ttname"><a href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="ft__strlen_8c_source.html#l00004">ft_strlen.c:4</a></div></div>
 <div class="ttc" id="amap__init_8c_html_a3b8ca9dd1270ef2b35d8198413a8723a"><div class="ttname"><a href="map__init_8c.html#a3b8ca9dd1270ef2b35d8198413a8723a">try_split_string</a></div><div class="ttdeci">char ** try_split_string(char *string, t_map *map_data)</div><div class="ttdef"><b>Definition:</b> <a href="map__init_8c_source.html#l00014">map_init.c:14</a></div></div>
 <div class="ttc" id="amap__init_8c_html_a60c83f965f5cfc6543d7a3bb7c7da5a0"><div class="ttname"><a href="map__init_8c.html#a60c83f965f5cfc6543d7a3bb7c7da5a0">malloc_map_struct</a></div><div class="ttdeci">void malloc_map_struct(t_map **map_data, void(*f)(void *), void *data)</div><div class="ttdef"><b>Definition:</b> <a href="map__init_8c_source.html#l00029">map_init.c:29</a></div></div>
 <div class="ttc" id="amap__init_8c_html_aba4bf581fa8aff77fa3f349abdae106e"><div class="ttname"><a href="map__init_8c.html#aba4bf581fa8aff77fa3f349abdae106e">try_read_map</a></div><div class="ttdeci">char * try_read_map(char *map_file)</div><div class="ttdef"><b>Definition:</b> <a href="map__init_8c_source.html#l00004">map_init.c:4</a></div></div>
@@ -216,14 +231,19 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="map__init_8c_aeb0c09fe0094c8e26a44baa4418bf647_cgraph.png" border="0" usemap="#amap__init_8c_aeb0c09fe0094c8e26a44baa4418bf647_cgraph" alt=""/></div>
 <map name="amap__init_8c_aeb0c09fe0094c8e26a44baa4418bf647_cgraph" id="amap__init_8c_aeb0c09fe0094c8e26a44baa4418bf647_cgraph">
-<area shape="rect" title="Initializes map data." alt="" coords="5,55,108,80"/>
-<area shape="rect" href="map__init_8c.html#a60c83f965f5cfc6543d7a3bb7c7da5a0" title=" " alt="" coords="156,5,287,31"/>
-<area shape="rect" href="map__init_8c.html#aba4bf581fa8aff77fa3f349abdae106e" title=" " alt="" coords="171,55,272,80"/>
-<area shape="rect" href="map__init_8c.html#a3b8ca9dd1270ef2b35d8198413a8723a" title=" " alt="" coords="168,104,275,130"/>
-<area shape="rect" href="read__map_8c.html#a953ff0338bfa5e5863fc98056025e303" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="335,55,413,80"/>
-<area shape="rect" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="620,55,742,80"/>
-<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="790,55,869,80"/>
-<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="461,105,572,131"/>
+<area shape="rect" title="Initializes map data." alt="" coords="5,107,108,132"/>
+<area shape="rect" href="arrtools__get__height_8c.html#a25aca2c7b7479be1e117ea9372ecfea2" title=" " alt="" coords="170,8,273,34"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="647,208,715,234"/>
+<area shape="rect" href="map__init_8c.html#a60c83f965f5cfc6543d7a3bb7c7da5a0" title=" " alt="" coords="156,107,287,132"/>
+<area shape="rect" href="map__init_8c.html#aba4bf581fa8aff77fa3f349abdae106e" title=" " alt="" coords="171,57,272,83"/>
+<area shape="rect" href="map__init_8c.html#a3b8ca9dd1270ef2b35d8198413a8723a" title=" " alt="" coords="168,208,275,234"/>
+<area shape="rect" href="read__map_8c.html#a953ff0338bfa5e5863fc98056025e303" title="Reads the contents of the file with the given name into a dynamically allocated buffer." alt="" coords="335,57,413,83"/>
+<area shape="rect" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="620,56,742,82"/>
+<area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="790,56,869,82"/>
+<area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="461,5,572,31"/>
+<area shape="rect" href="ft__putstr__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="917,56,1005,82"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title=" " alt="" coords="344,208,404,234"/>
+<area shape="rect" href="ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc" title=" " alt="" coords="479,259,554,284"/>
 </map>
 </div>
 <div class="dynheader">
@@ -231,7 +251,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="map__init_8c_aeb0c09fe0094c8e26a44baa4418bf647_icgraph.png" border="0" usemap="#amap__init_8c_aeb0c09fe0094c8e26a44baa4418bf647_icgraph" alt=""/></div>
 <map name="amap__init_8c_aeb0c09fe0094c8e26a44baa4418bf647_icgraph" id="amap__init_8c_aeb0c09fe0094c8e26a44baa4418bf647_icgraph">
-<area shape="rect" title="Initializes map data." alt="" coords="103,5,205,31"/>
+<area shape="rect" title="Initializes map data." alt="" coords="243,5,345,31"/>
+<area shape="rect" href="draw__map_8c.html#a08c8a769852cee2c3bc61a372ade4d28" title=" " alt="" coords="103,5,195,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,55,31"/>
 </map>
 </div>
@@ -279,14 +300,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   35</span>        exit(errno);</div>
 <div class="line"><span class="lineno">   36</span>    }</div>
 <div class="line"><span class="lineno">   37</span>}</div>
-<div class="ttc" id="astructs__map_html"><div class="ttname"><a href="structs__map.html">s_map</a></div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00052">cub3D.h:53</a></div></div>
+<div class="ttc" id="astructs__map_html"><div class="ttname"><a href="structs__map.html">s_map</a></div><div class="ttdef"><b>Definition:</b> <a href="cub3_d_8h_source.html#l00050">cub3D.h:51</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="map__init_8c_a60c83f965f5cfc6543d7a3bb7c7da5a0_icgraph.png" border="0" usemap="#amap__init_8c_a60c83f965f5cfc6543d7a3bb7c7da5a0_icgraph" alt=""/></div>
 <map name="amap__init_8c_a60c83f965f5cfc6543d7a3bb7c7da5a0_icgraph" id="amap__init_8c_a60c83f965f5cfc6543d7a3bb7c7da5a0_icgraph">
-<area shape="rect" title=" " alt="" coords="253,5,384,31"/>
-<area shape="rect" href="map__init_8c.html#aeb0c09fe0094c8e26a44baa4418bf647" title="Initializes map data." alt="" coords="103,5,205,31"/>
+<area shape="rect" title=" " alt="" coords="393,5,525,31"/>
+<area shape="rect" href="map__init_8c.html#aeb0c09fe0094c8e26a44baa4418bf647" title="Initializes map data." alt="" coords="243,5,345,31"/>
+<area shape="rect" href="draw__map_8c.html#a08c8a769852cee2c3bc61a372ade4d28" title=" " alt="" coords="103,5,195,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,55,31"/>
 </map>
 </div>
@@ -329,6 +351,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="error__handling_8c.html#ad12f49185b9cfb483605a617c9484f25" title="Frees any allocated memory and exits the program with the given error number." alt="" coords="438,28,561,54"/>
 <area shape="rect" href="error__handling_8c.html#a968801b6df4daa98b46851157bfbacab" title="Prints an error message to the standard error output and exits with the function parameter passed err..." alt="" coords="609,28,688,54"/>
 <area shape="rect" href="read__map_8c.html#a973f5273453bacdf37c27ef24bdd540d" title="Returns the total number of bytes in the file with the given filename." alt="" coords="280,79,390,104"/>
+<area shape="rect" href="ft__putstr__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="736,28,823,54"/>
 </map>
 </div>
 <div class="dynheader">
@@ -336,8 +359,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="map__init_8c_aba4bf581fa8aff77fa3f349abdae106e_icgraph.png" border="0" usemap="#amap__init_8c_aba4bf581fa8aff77fa3f349abdae106e_icgraph" alt=""/></div>
 <map name="amap__init_8c_aba4bf581fa8aff77fa3f349abdae106e_icgraph" id="amap__init_8c_aba4bf581fa8aff77fa3f349abdae106e_icgraph">
-<area shape="rect" title=" " alt="" coords="253,5,353,31"/>
-<area shape="rect" href="map__init_8c.html#aeb0c09fe0094c8e26a44baa4418bf647" title="Initializes map data." alt="" coords="103,5,205,31"/>
+<area shape="rect" title=" " alt="" coords="393,5,494,31"/>
+<area shape="rect" href="map__init_8c.html#aeb0c09fe0094c8e26a44baa4418bf647" title="Initializes map data." alt="" coords="243,5,345,31"/>
+<area shape="rect" href="draw__map_8c.html#a08c8a769852cee2c3bc61a372ade4d28" title=" " alt="" coords="103,5,195,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,55,31"/>
 </map>
 </div>
@@ -374,7 +398,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   15</span>{</div>
 <div class="line"><span class="lineno">   16</span>    <span class="keywordtype">char</span>    **map_array;</div>
 <div class="line"><span class="lineno">   17</span> </div>
-<div class="line"><span class="lineno">   18</span>    map_array = ft_split(<span class="keywordtype">string</span>, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   18</span>    map_array = <a class="code hl_function" href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a>(<span class="keywordtype">string</span>, <span class="charliteral">&#39;\n&#39;</span>);</div>
 <div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (map_array == NULL)</div>
 <div class="line"><span class="lineno">   20</span>    {</div>
 <div class="line"><span class="lineno">   21</span>        free(<span class="keywordtype">string</span>);</div>
@@ -384,13 +408,26 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   25</span>    free(<span class="keywordtype">string</span>);</div>
 <div class="line"><span class="lineno">   26</span>    <span class="keywordflow">return</span> (map_array);</div>
 <div class="line"><span class="lineno">   27</span>}</div>
+<div class="ttc" id="alibft_8h_html_aa65c9de65051c8c589286cf133c4a1f4"><div class="ttname"><a href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a></div><div class="ttdeci">char ** ft_split(char const *s, char c)</div><div class="ttdef"><b>Definition:</b> <a href="ft__split_8c_source.html#l00057">ft_split.c:57</a></div></div>
 </div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="map__init_8c_a3b8ca9dd1270ef2b35d8198413a8723a_cgraph.png" border="0" usemap="#amap__init_8c_a3b8ca9dd1270ef2b35d8198413a8723a_cgraph" alt=""/></div>
+<map name="amap__init_8c_a3b8ca9dd1270ef2b35d8198413a8723a_cgraph" id="amap__init_8c_a3b8ca9dd1270ef2b35d8198413a8723a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,112,56"/>
+<area shape="rect" href="ft__split_8c.html#aa65c9de65051c8c589286cf133c4a1f4" title=" " alt="" coords="160,31,220,56"/>
+<area shape="rect" href="ft__strlcpy_8c.html#a12f759eb9793cf306fede66d0b7de0fc" title=" " alt="" coords="268,5,343,31"/>
+<area shape="rect" href="ft__strlen_8c.html#a828402378653640f545a4be2e00e92f9" title=" " alt="" coords="391,31,460,56"/>
+</map>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="map__init_8c_a3b8ca9dd1270ef2b35d8198413a8723a_icgraph.png" border="0" usemap="#amap__init_8c_a3b8ca9dd1270ef2b35d8198413a8723a_icgraph" alt=""/></div>
 <map name="amap__init_8c_a3b8ca9dd1270ef2b35d8198413a8723a_icgraph" id="amap__init_8c_a3b8ca9dd1270ef2b35d8198413a8723a_icgraph">
-<area shape="rect" title=" " alt="" coords="253,5,359,31"/>
-<area shape="rect" href="map__init_8c.html#aeb0c09fe0094c8e26a44baa4418bf647" title="Initializes map data." alt="" coords="103,5,205,31"/>
+<area shape="rect" title=" " alt="" coords="393,5,500,31"/>
+<area shape="rect" href="map__init_8c.html#aeb0c09fe0094c8e26a44baa4418bf647" title="Initializes map data." alt="" coords="243,5,345,31"/>
+<area shape="rect" href="draw__map_8c.html#a08c8a769852cee2c3bc61a372ade4d28" title=" " alt="" coords="103,5,195,31"/>
 <area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,55,31"/>
 </map>
 </div>

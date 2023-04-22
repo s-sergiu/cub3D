@@ -67,7 +67,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=267pt]{error__handling_8c_ad12f49185b9cfb483605a617c9484f25_cgraph}
+\includegraphics[width=350pt]{error__handling_8c_ad12f49185b9cfb483605a617c9484f25_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -107,15 +107,22 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00031}{31}} of fi
 \DoxyCodeLine{00032\ \{}
 \DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ filename\_length;}
 \DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ filename\_length\ =\ ft\_strlen(filename);}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (ft\_strncmp(filename\ +\ (filename\_length\ -\/\ 4),\ \textcolor{stringliteral}{"{}.cub\(\backslash\)0"{}},\ 5))}
+\DoxyCodeLine{00035\ \ \ \ \ filename\_length\ =\ \mbox{\hyperlink{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}{ft\_strlen}}(filename);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{libft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\_strncmp}}(filename\ +\ (filename\_length\ -\/\ 4),\ \textcolor{stringliteral}{"{}.cub\(\backslash\)0"{}},\ 5))}
 \DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3_d_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
 \DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3_d_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}});}
 \DoxyCodeLine{00039\ \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
+Here is the call graph for this function\+:
 \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{error__handling_8c_ae82ab44de3b7db5df0474efb78347c37_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -145,8 +152,7 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00041}{41}} of fi
 \DoxyCodeLine{00050\ \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -193,11 +199,10 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=343pt]{error__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1_cgraph}
+\includegraphics[width=350pt]{error__handling_8c_a28722e35659ad0e59ef9d1f1c09e23f1_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -240,12 +245,20 @@ Definition at line \mbox{\hyperlink{error__handling_8c_source_l00004}{4}} of fil
 \DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ exit(error);}
 \DoxyCodeLine{00015\ \ \ \ \ \}}
 \DoxyCodeLine{00016\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ "{}},\ 7);}
-\DoxyCodeLine{00017\ \ \ \ \ ft\_putstr\_fd(strerror(error),\ 2);}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}(strerror(error),\ 2);}
 \DoxyCodeLine{00018\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ 1);}
 \DoxyCodeLine{00019\ \ \ \ \ exit(error);}
 \DoxyCodeLine{00020\ \}}
 
 \end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{error__handling_8c_a968801b6df4daa98b46851157bfbacab_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]

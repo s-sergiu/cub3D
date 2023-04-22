@@ -1,0 +1,57 @@
+\hypertarget{ft__strlcat_8c}{}\doxysection{/\+Users/ssergiu/projects/cub3\+D/libs/\+Libft/src/ft\+\_\+strlcat.c File Reference}
+\label{ft__strlcat_8c}\index{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_strlcat.c@{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_strlcat.c}}
+{\ttfamily \#include \char`\"{}libft.\+h\char`\"{}}\newline
+Include dependency graph for ft\+\_\+strlcat.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ft__strlcat_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{ft__strlcat_8c_a7531453313e0cbfde6fe51662c9c3208}{ft\+\_\+strlcat}} (char $\ast$dst, const char $\ast$src, size\+\_\+t dstsize)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ft__strlcat_8c_a7531453313e0cbfde6fe51662c9c3208}\label{ft__strlcat_8c_a7531453313e0cbfde6fe51662c9c3208}} 
+\index{ft\_strlcat.c@{ft\_strlcat.c}!ft\_strlcat@{ft\_strlcat}}
+\index{ft\_strlcat@{ft\_strlcat}!ft\_strlcat.c@{ft\_strlcat.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strlcat()}{ft\_strlcat()}}
+{\footnotesize\ttfamily size\+\_\+t ft\+\_\+strlcat (\begin{DoxyParamCaption}\item[{char $\ast$}]{dst,  }\item[{const char $\ast$}]{src,  }\item[{size\+\_\+t}]{dstsize }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ft__strlcat_8c_source_l00004}{4}} of file \mbox{\hyperlink{ft__strlcat_8c_source}{ft\+\_\+strlcat.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ i;}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ dstlen;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ dstlen\ =\ \mbox{\hyperlink{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}{ft\_strlen}}(dst);}
+\DoxyCodeLine{00010\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (dstsize\ <=\ dstlen)}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}{ft\_strlen}}(src)\ +\ dstsize);}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{while}\ (src[i]\ \&\&\ i\ <\ (dstsize\ -\/\ 1\ -\/\ dstlen))}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ dst[i\ +\ dstlen]\ =\ src[i];}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+\DoxyCodeLine{00018\ \ \ \ \ dst[i\ +\ dstlen]\ =\ 0;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{return}\ (dstlen\ +\ \mbox{\hyperlink{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}{ft\_strlen}}(src));}
+\DoxyCodeLine{00020\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{ft__strlcat_8c_a7531453313e0cbfde6fe51662c9c3208_cgraph}
+\end{center}
+\end{figure}

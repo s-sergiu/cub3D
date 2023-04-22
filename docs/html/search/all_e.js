@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['wall_0',['WALL',['../cub3_d_8h.html#ac749b87dd5d843e4add3eb8e8a130f62',1,'cub3D.h']]],
-  ['width_1',['width',['../structs__map.html#ad4768adacc3ab19724a77cee481cd105',1,'s_map']]]
+  ['s_5fgame_0',['s_game',['../structs__game.html',1,'']]],
+  ['s_5flist_1',['s_list',['../structs__list.html',1,'']]],
+  ['s_5fmap_2',['s_map',['../structs__map.html',1,'']]],
+  ['s_5fplayer_5fdata_3',['s_player_data',['../structs__player__data.html',1,'']]],
+  ['s_5fposition_4',['s_position',['../structs__position.html',1,'']]],
+  ['s_5fstatic_5fposition_5',['s_static_position',['../structs__static__position.html',1,'']]]
 ];

@@ -1,0 +1,21 @@
+\hypertarget{arrtools__free_8c_source}{}\doxysection{arrtools\+\_\+free.\+c}
+\label{arrtools__free_8c_source}\index{/Users/ssergiu/projects/cub3D/libs/libarrtools/src/arrtools\_free.c@{/Users/ssergiu/projects/cub3D/libs/libarrtools/src/arrtools\_free.c}}
+\mbox{\hyperlink{arrtools__free_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{libarrtools_8h}{libarrtools.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00004}\mbox{\hyperlink{libarrtools_8h_ab8162d8bc5f15754961d965f512c26a1}{00004}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{arrtools__free_8c_aba037ab1fa733cadac33d9c696623ce9}{arrtools\_free}}(\textcolor{keywordtype}{char}\ **string\_array)}
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{int}\ index;\ \ }
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00008}00008\ \ \ \ \ index\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (string\_array)}
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (string\_array[++index])}
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ free(string\_array[index]);}
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00013}00013\ \ \ \ \ \ \ \ \ free(string\_array);}
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00014}00014\ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{arrtools__free_8c_source_l00015}00015\ \}}
+
+\end{DoxyCode}

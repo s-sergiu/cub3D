@@ -18,18 +18,18 @@ void \mbox{\hyperlink{draw__map_8c_a554099133a957e84d50486d968eb4f15}{draw\+\_\+
 \item 
 void \mbox{\hyperlink{draw__map_8c_a71bac51cfa90c1339b54d02cc53514fd}{draw\+\_\+player}} (\mbox{\hyperlink{cub3_d_8h_a581c914ca5b062bb811c5204f2bf58ff}{t\+\_\+game}} $\ast$$\ast$game\+\_\+data)
 \item 
-void \mbox{\hyperlink{draw__map_8c_a31c296079f8f4ddfd732fa4a82cbae6d}{add\+\_\+bg\+\_\+image}} (\mbox{\hyperlink{cub3_d_8h_a581c914ca5b062bb811c5204f2bf58ff}{t\+\_\+game}} $\ast$$\ast$game\+\_\+data, \mbox{\hyperlink{cub3_d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map\+\_\+data)
+void \mbox{\hyperlink{draw__map_8c_ace2d72d1137fe658fe89cea621a3ca83}{add\+\_\+bg\+\_\+image}} (\mbox{\hyperlink{cub3_d_8h_a581c914ca5b062bb811c5204f2bf58ff}{t\+\_\+game}} $\ast$$\ast$game\+\_\+data)
 \item 
-void \mbox{\hyperlink{draw__map_8c_a503c2906050453b79fab37a3149cbe9b}{draw\+\_\+map}} (\mbox{\hyperlink{cub3_d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map\+\_\+data)
+void \mbox{\hyperlink{draw__map_8c_a08c8a769852cee2c3bc61a372ade4d28}{game\+\_\+setup}} (char $\ast$argv)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{draw__map_8c_a31c296079f8f4ddfd732fa4a82cbae6d}\label{draw__map_8c_a31c296079f8f4ddfd732fa4a82cbae6d}} 
+\mbox{\Hypertarget{draw__map_8c_ace2d72d1137fe658fe89cea621a3ca83}\label{draw__map_8c_ace2d72d1137fe658fe89cea621a3ca83}} 
 \index{draw\_map.c@{draw\_map.c}!add\_bg\_image@{add\_bg\_image}}
 \index{add\_bg\_image@{add\_bg\_image}!draw\_map.c@{draw\_map.c}}
 \doxysubsubsection{\texorpdfstring{add\_bg\_image()}{add\_bg\_image()}}
-{\footnotesize\ttfamily void add\+\_\+bg\+\_\+image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3_d_8h_a581c914ca5b062bb811c5204f2bf58ff}{t\+\_\+game}} $\ast$$\ast$}]{game\+\_\+data,  }\item[{\mbox{\hyperlink{cub3_d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map\+\_\+data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void add\+\_\+bg\+\_\+image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3_d_8h_a581c914ca5b062bb811c5204f2bf58ff}{t\+\_\+game}} $\ast$$\ast$}]{game\+\_\+data }\end{DoxyParamCaption})}
 
 
 
@@ -43,11 +43,11 @@ Definition at line \mbox{\hyperlink{draw__map_8c_source_l00068}{68}} of file \mb
 \DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ width;}
 \DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ height;}
 \DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ width\ =\ map\_data-\/>\mbox{\hyperlink{structs__map_ad4768adacc3ab19724a77cee481cd105}{width}};}
-\DoxyCodeLine{00076\ \ \ \ \ height\ =\ map\_data-\/>\mbox{\hyperlink{structs__map_a50b07a6909effa731a1215b0515d2484}{height}};}
+\DoxyCodeLine{00075\ \ \ \ \ width\ =\ (*game\_data)-\/>map\_data-\/>width;}
+\DoxyCodeLine{00076\ \ \ \ \ height\ =\ (*game\_data)-\/>map\_data-\/>height;}
 \DoxyCodeLine{00077\ \ \ \ \ mlx\ =\ (*game\_data)-\/>mlx\_handle;}
 \DoxyCodeLine{00078\ \ \ \ \ image\ =\ (*game\_data)-\/>mlx\_background\_image;}
-\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_a150e6241c0bff245cf7b1d418b6ef251}{add\_img}}(image,\ mlx,\ 0,\ 0);}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_aad64464e3479eedac302b710920c2d38}{place\_image}}(image,\ mlx,\ 0,\ 0);}
 \DoxyCodeLine{00080\ \ \ \ \ memset(image-\/>pixels,\ 255,\ width\ *\ height\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
 \DoxyCodeLine{00081\ \}}
 
@@ -57,7 +57,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=248pt]{draw__map_8c_a31c296079f8f4ddfd732fa4a82cbae6d_cgraph}
+\includegraphics[width=350pt]{draw__map_8c_ace2d72d1137fe658fe89cea621a3ca83_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -65,50 +65,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=329pt]{draw__map_8c_a31c296079f8f4ddfd732fa4a82cbae6d_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{draw__map_8c_a503c2906050453b79fab37a3149cbe9b}\label{draw__map_8c_a503c2906050453b79fab37a3149cbe9b}} 
-\index{draw\_map.c@{draw\_map.c}!draw\_map@{draw\_map}}
-\index{draw\_map@{draw\_map}!draw\_map.c@{draw\_map.c}}
-\doxysubsubsection{\texorpdfstring{draw\_map()}{draw\_map()}}
-{\footnotesize\ttfamily void draw\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3_d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map\+\_\+data }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{draw__map_8c_source_l00083}{83}} of file \mbox{\hyperlink{draw__map_8c_source}{draw\+\_\+map.\+c}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00084\ \{}
-\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{structs__game}{t\_game}}\ \ \ \ *game\_data;}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \ \ \ \ game\_data\ =\ NULL;}
-\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_a11f7064e48a9cb662f0a3d67a706e922}{init\_game\_data}}(\&game\_data,\ map\_data);}
-\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a31c296079f8f4ddfd732fa4a82cbae6d}{add\_bg\_image}}(\&game\_data,\ map\_data);}
-\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_ae914fc944001699592e064479b3442df}{draw\_grid}}(map\_data,\ game\_data-\/>\mbox{\hyperlink{structs__game_af8e7eda669e14c113ac05e94dc6fcff8}{mlx\_background\_image}});}
-\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a554099133a957e84d50486d968eb4f15}{draw\_walls}}(game\_data);}
-\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a71bac51cfa90c1339b54d02cc53514fd}{draw\_player}}(\&game\_data);}
-\DoxyCodeLine{00093\ \ \ \ \ mlx\_loop\_hook(game\_data-\/>\mbox{\hyperlink{structs__game_a678a8acab0bcbf093a03c5fc65246d2a}{mlx\_handle}},\ \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\_hook}},\ game\_data);}
-\DoxyCodeLine{00094\ \ \ \ \ mlx\_loop(game\_data-\/>\mbox{\hyperlink{structs__game_a678a8acab0bcbf093a03c5fc65246d2a}{mlx\_handle}});}
-\DoxyCodeLine{00095\ \ \ \ \ mlx\_terminate(game\_data-\/>\mbox{\hyperlink{structs__game_a678a8acab0bcbf093a03c5fc65246d2a}{mlx\_handle}});}
-\DoxyCodeLine{00096\ \}}
-
-\end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{draw__map_8c_a503c2906050453b79fab37a3149cbe9b_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=214pt]{draw__map_8c_a503c2906050453b79fab37a3149cbe9b_icgraph}
+\includegraphics[width=337pt]{draw__map_8c_ace2d72d1137fe658fe89cea621a3ca83_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{draw__map_8c_a71bac51cfa90c1339b54d02cc53514fd}\label{draw__map_8c_a71bac51cfa90c1339b54d02cc53514fd}} 
@@ -153,7 +110,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=319pt]{draw__map_8c_a71bac51cfa90c1339b54d02cc53514fd_icgraph}
+\includegraphics[width=327pt]{draw__map_8c_a71bac51cfa90c1339b54d02cc53514fd_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{draw__map_8c_a554099133a957e84d50486d968eb4f15}\label{draw__map_8c_a554099133a957e84d50486d968eb4f15}} 
@@ -191,7 +148,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=288pt]{draw__map_8c_a554099133a957e84d50486d968eb4f15_cgraph}
+\includegraphics[width=350pt]{draw__map_8c_a554099133a957e84d50486d968eb4f15_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -199,7 +156,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=315pt]{draw__map_8c_a554099133a957e84d50486d968eb4f15_icgraph}
+\includegraphics[width=323pt]{draw__map_8c_a554099133a957e84d50486d968eb4f15_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}\label{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}} 
@@ -235,8 +192,7 @@ Definition at line \mbox{\hyperlink{draw__map_8c_source_l00004}{4}} of file \mbo
 \DoxyCodeLine{00023\ \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -248,6 +204,52 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=298pt]{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e_icgraph}
+\includegraphics[width=307pt]{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{draw__map_8c_a08c8a769852cee2c3bc61a372ade4d28}\label{draw__map_8c_a08c8a769852cee2c3bc61a372ade4d28}} 
+\index{draw\_map.c@{draw\_map.c}!game\_setup@{game\_setup}}
+\index{game\_setup@{game\_setup}!draw\_map.c@{draw\_map.c}}
+\doxysubsubsection{\texorpdfstring{game\_setup()}{game\_setup()}}
+{\footnotesize\ttfamily void game\+\_\+setup (\begin{DoxyParamCaption}\item[{char $\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__map_8c_source_l00083}{83}} of file \mbox{\hyperlink{draw__map_8c_source}{draw\+\_\+map.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{structs__game}{t\_game}}\ \ \ \ *game\_data;}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{structs__map}{t\_map}}\ \ *map\_data;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ game\_data\ =\ NULL;}
+\DoxyCodeLine{00089\ \ \ \ \ map\_data\ =\ NULL;}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_aeb0c09fe0094c8e26a44baa4418bf647}{init\_map\_data}}(\&map\_data,\ argv);}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_a11f7064e48a9cb662f0a3d67a706e922}{init\_game\_data}}(\&game\_data,\ map\_data);}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_ace2d72d1137fe658fe89cea621a3ca83}{add\_bg\_image}}(\&game\_data);}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_ae914fc944001699592e064479b3442df}{draw\_grid}}(map\_data,\ game\_data-\/>\mbox{\hyperlink{structs__game_af8e7eda669e14c113ac05e94dc6fcff8}{mlx\_background\_image}});}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a554099133a957e84d50486d968eb4f15}{draw\_walls}}(game\_data);}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{draw__map_8c_a71bac51cfa90c1339b54d02cc53514fd}{draw\_player}}(\&game\_data);}
+\DoxyCodeLine{00096\ \ \ \ \ mlx\_loop\_hook(game\_data-\/>\mbox{\hyperlink{structs__game_a678a8acab0bcbf093a03c5fc65246d2a}{mlx\_handle}},\ \mbox{\hyperlink{draw__map_8c_a4b7144f73d9e8c25ca55c890584b5c0e}{ft\_hook}},\ game\_data);}
+\DoxyCodeLine{00097\ \ \ \ \ mlx\_loop(game\_data-\/>\mbox{\hyperlink{structs__game_a678a8acab0bcbf093a03c5fc65246d2a}{mlx\_handle}});}
+\DoxyCodeLine{00098\ \ \ \ \ mlx\_terminate(game\_data-\/>\mbox{\hyperlink{structs__game_a678a8acab0bcbf093a03c5fc65246d2a}{mlx\_handle}});}
+\DoxyCodeLine{00099\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw__map_8c_a08c8a769852cee2c3bc61a372ade4d28_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{draw__map_8c_a08c8a769852cee2c3bc61a372ade4d28_icgraph}
 \end{center}
 \end{figure}

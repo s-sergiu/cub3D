@@ -30,21 +30,13 @@ Definition at line \mbox{\hyperlink{main_8c_source_l00004}{4}} of file \mbox{\hy
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00005\ \{}
-\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{structs__map}{t\_map}}\ \ *map\_data;}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \ \ \ \ map\_data\ =\ NULL;}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ !=\ 2)}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ write(1,\ \textcolor{stringliteral}{"{}Usage:\ ./cub3D\ <map.cub>\(\backslash\)n"{}},\ 25);}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00012\ \ \ \ \ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{cub3_d_8h_a28722e35659ad0e59ef9d1f1c09e23f1}{is\_valid\_filename}}(argv[1]))}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_aeb0c09fe0094c8e26a44baa4418bf647}{init\_map\_data}}(\&map\_data,\ argv[1]);}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_a503c2906050453b79fab37a3149cbe9b}{draw\_map}}(map\_data);}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00018\ \ \ \ \ \}}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
-\DoxyCodeLine{00020\ \}}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ !=\ 2)}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ write(1,\ \textcolor{stringliteral}{"{}Usage:\ ./cub3D\ <map.cub>\(\backslash\)n"{}},\ 25);}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{cub3_d_8h_a28722e35659ad0e59ef9d1f1c09e23f1}{is\_valid\_filename}}(argv[1]))}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cub3_d_8h_a08c8a769852cee2c3bc61a372ade4d28}{game\_setup}}(argv[1]);}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00012\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:

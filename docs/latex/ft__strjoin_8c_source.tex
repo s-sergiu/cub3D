@@ -1,0 +1,32 @@
+\hypertarget{ft__strjoin_8c_source}{}\doxysection{ft\+\_\+strjoin.\+c}
+\label{ft__strjoin_8c_source}\index{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_strjoin.c@{/Users/ssergiu/projects/cub3D/libs/Libft/src/ft\_strjoin.c}}
+\mbox{\hyperlink{ft__strjoin_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{libft_8h}{libft.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00004}\mbox{\hyperlink{libft_8h_a91e6e3e428bcc9f2291b700e1829b82b}{00004}}\ \textcolor{keywordtype}{char}\ \ \ \ *\mbox{\hyperlink{ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b}{ft\_strjoin}}(\textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *s1,\ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *s2)}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *str;}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00007}00007\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ i;}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00008}00008\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ s1\_length;}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ s2\_length;}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s1\ ||\ !s2)}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00013}00013\ \ \ \ \ s1\_length\ =\ \mbox{\hyperlink{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}{ft\_strlen}}(s1);}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00014}00014\ \ \ \ \ s2\_length\ =\ \mbox{\hyperlink{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}{ft\_strlen}}(s2);}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00015}00015\ \ \ \ \ i\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00016}00016\ \ \ \ \ str\ =\ malloc(s1\_length\ +\ s2\_length\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (!str)}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (NULL);}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{while}\ (++i\ <\ (\textcolor{keywordtype}{int})s1\_length)}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00020}00020\ \ \ \ \ \ \ \ \ str[i]\ =\ s1[i];}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00021}00021\ \ \ \ \ i\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{while}\ (++i\ <\ (\textcolor{keywordtype}{int})s2\_length)}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00023}00023\ \ \ \ \ \ \ \ \ str[i\ +\ s1\_length]\ =\ s2[i];}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00024}00024\ \ \ \ \ str[i\ +\ s1\_length]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{return}\ (str);}
+\DoxyCodeLine{\Hypertarget{ft__strjoin_8c_source_l00026}00026\ \}}
+
+\end{DoxyCode}

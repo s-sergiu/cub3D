@@ -18,7 +18,7 @@
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00014}00014\ \ \ \ \ \ \ \ \ exit(error);}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00015}00015\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00016}00016\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}Error:\ "{}},\ 7);}
-\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00017}00017\ \ \ \ \ ft\_putstr\_fd(strerror(error),\ 2);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\_putstr\_fd}}(strerror(error),\ 2);}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00018}00018\ \ \ \ \ write(2,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ 1);}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00019}00019\ \ \ \ \ exit(error);}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00020}00020\ \}}
@@ -36,8 +36,8 @@
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00032}00032\ \{}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{int}\ filename\_length;}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00035}00035\ \ \ \ \ filename\_length\ =\ ft\_strlen(filename);}
-\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (ft\_strncmp(filename\ +\ (filename\_length\ -\/\ 4),\ \textcolor{stringliteral}{"{}.cub\(\backslash\)0"{}},\ 5))}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00035}00035\ \ \ \ \ filename\_length\ =\ \mbox{\hyperlink{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}{ft\_strlen}}(filename);}
+\DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{libft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\_strncmp}}(filename\ +\ (filename\_length\ -\/\ 4),\ \textcolor{stringliteral}{"{}.cub\(\backslash\)0"{}},\ 5))}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3_d_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}});}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{cub3_d_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}});}
 \DoxyCodeLine{\Hypertarget{error__handling_8c_source_l00039}00039\ \}}
