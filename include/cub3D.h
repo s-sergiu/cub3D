@@ -2,11 +2,9 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include <stdio.h>
 # include <assert.h>
 # include <errno.h>
 # include <fcntl.h>
-# include <string.h>
 # include "libft.h"
 # include "MLX42/MLX42.h"
 # include "libarrtools.h"
@@ -56,7 +54,7 @@ struct s_map
 	int		width;
 };
 
-void		draw_map(t_map *map_data);
+void		game_setup(char *argv);
 
 /**
  * @brief Initializes map data.
@@ -148,7 +146,7 @@ void		protected_malloc(void **parameter, size_t size_of_parameter);
 void		init_game_data(t_game **game_data,
 				t_map *map_data);
 void		destroy_game_data(t_game *game_data);
-void		add_img(mlx_image_t *img, mlx_t *mlx, int width, int height);
+void		place_image(mlx_image_t *img, mlx_t *mlx, int width, int height);
 void		create_img(mlx_image_t **img, mlx_t *mlx, int width, int height);
 void		turn_right(char **map, t_game *game_data);
 void		turn_left(char **map, t_game *game_data);

@@ -39,6 +39,8 @@ char	*read_map(char *filename)
 	bytes_read = get_total_bytes(filename);
 	if (!bytes_read)
 		print_error(EMPTY_MAP);
+	if (bytes_read == -1)
+		return (NULL);
 	map_string = (char *)malloc(sizeof(char) * bytes_read + 1);
 	if (!map_string)
 		return (NULL);
