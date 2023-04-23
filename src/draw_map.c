@@ -9,7 +9,7 @@ void	ft_hook(void *param)
 
 	game_data = param;
 	map = game_data->map_data->map_array;
-	mlx = game_data->mlx_handle;
+	mlx = game_data->mlx;
 	if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(mlx);
 	if (mlx_is_key_down(mlx, MLX_KEY_W))
@@ -47,7 +47,7 @@ void	draw_player(t_game **game_data)
 	int			x;
 	int			y;
 
-	mlx = (*game_data)->mlx_handle;
+	mlx = (*game_data)->mlx;
 	player = NULL;
 	//create new player image;
 	create_img(&player, mlx, 10, 10);
@@ -81,8 +81,8 @@ void	add_bg_image(t_game **game_data)
 
 	width = (*game_data)->map_data->width;
 	height = (*game_data)->map_data->height;
-	mlx = (*game_data)->mlx_handle;
-	image = (*game_data)->mlx_background_image;
+	mlx = (*game_data)->mlx;
+	image = (*game_data)->bg_img;
 	place_image(image, mlx, 0, 0);
 	memset(image->pixels, 255, image->width * image->height * sizeof(int));
 }
@@ -97,10 +97,12 @@ void	game_setup(char *argv)
 	init_map_data(&map_data, argv);
 	init_game_data(&game_data, map_data);
 	add_bg_image(&game_data);
-	draw_grid(map_data, game_data->mlx_background_image);
+	draw_grid(map_data, game_data->bg_img);
 	draw_walls(game_data);
 	draw_player(&game_data);
-	mlx_loop_hook(game_data->mlx_handle, ft_hook, game_data);
-	mlx_loop(game_data->mlx_handle);
-	mlx_terminate(game_data->mlx_handle);
+	mlx_loop_hook(game_data->mlx, ft_hook, game_data);
+	mlx_loop(game_data->mlx);
+	mlx_terminate(game_data->mlx);
+	destroy_map_data(map_data);
+	free(game_data);
 }

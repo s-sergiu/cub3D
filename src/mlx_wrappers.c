@@ -31,7 +31,7 @@ void	place_wall_or_player(char **map, t_game *game_data, int x, int y)
 	mlx_image_t	*img;
 	mlx_t		*mlx;
 
-	mlx = game_data->mlx_handle;
+	mlx = game_data->mlx;
 	if (map[y][x] == '1')
 	{
 		draw_new_image(&img, mlx, x, y);

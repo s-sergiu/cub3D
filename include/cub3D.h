@@ -41,8 +41,8 @@ struct s_player_data
 
 struct s_game
 {
-	mlx_t					*mlx_handle;
-	mlx_image_t				*mlx_background_image;
+	mlx_t					*mlx;
+	mlx_image_t				*bg_img;
 	struct s_map			*map_data;
 	struct s_player_data	player_data;
 };
