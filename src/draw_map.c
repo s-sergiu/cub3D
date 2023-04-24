@@ -20,6 +20,8 @@ void	ft_hook(void *param)
 		turn_left(map, game_data);
 	if (mlx_is_key_down(mlx, MLX_KEY_D))
 		turn_right(map, game_data);
+	printf("X: %d, Y: %d\n", (*game_data->player_data.current_position.x_axis + 10) / TILE,(*game_data->player_data.current_position.y_axis + 10) / TILE);
+	printf("ss X: %d, Y: %d\n", (*game_data->player_data.current_position.x_axis) / TILE,(*game_data->player_data.current_position.y_axis + 10) / TILE);
 }
 
 void	draw_walls(t_game *game_data)
@@ -76,11 +78,7 @@ void	add_bg_image(t_game **game_data)
 {
 	mlx_t		*mlx;
 	mlx_image_t	*image;
-	int			width;
-	int			height;
 
-	width = (*game_data)->map_data->width;
-	height = (*game_data)->map_data->height;
 	mlx = (*game_data)->mlx;
 	image = (*game_data)->bg_img;
 	place_image(image, mlx, 0, 0);
