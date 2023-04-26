@@ -26,25 +26,22 @@ void	destroy_game_data(t_game *game_data)
 void	init_game_data(t_game **game_data, t_map *map_data)
 {
 	mlx_t			*mlx;
-	mlx_image_t		*bg;
 	int				width;
 	int				height;
 
 	width = map_data->width;
 	height = map_data->height;
 	mlx = NULL;
-	bg = NULL;
 	malloc_game_struct(game_data, *destroy_map_data, map_data);
 	init_mlx(&mlx, width, height);
-	create_img(&bg, mlx, width, height);
-	if (!bg || !mlx)
+	if (!mlx)
 	{
 		destroy_game_data(*game_data);
 		destroy_map_data(map_data);
 		exit(errno);
 	}
 	(*game_data)->mlx = mlx;
-	(*game_data)->bg_img = bg;
+	(*game_data)->bg_img = NULL;
 	(*game_data)->map_data = map_data;
 	(*game_data)->player_data.player_image = NULL;
 }

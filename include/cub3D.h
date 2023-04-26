@@ -154,5 +154,7 @@ void		turn_down(char **map, t_game *game_data);
 void		turn_up(char **map, t_game *game_data);
 void		place_wall_or_player(char **map, t_game *game_data, int x, int y);
 void		draw_grid(t_map *map_data, mlx_image_t *image);
+void		set_img_color(mlx_image_t *img, int color_value);
+void		draw_new_image(mlx_image_t **img, mlx_t *mlx, int x, int y);
 
 #endif

@@ -20,8 +20,6 @@ void	ft_hook(void *param)
 		turn_left(map, game_data);
 	if (mlx_is_key_down(mlx, MLX_KEY_D))
 		turn_right(map, game_data);
-	printf("X: %d, Y: %d\n", (*game_data->player_data.current_position.x_axis + 10) / TILE,(*game_data->player_data.current_position.y_axis + 10) / TILE);
-	printf("ss X: %d, Y: %d\n", (*game_data->player_data.current_position.x_axis) / TILE,(*game_data->player_data.current_position.y_axis + 10) / TILE);
 }
 
 void	draw_walls(t_game *game_data)
@@ -52,14 +50,14 @@ void	draw_player(t_game **game_data)
 	mlx = (*game_data)->mlx;
 	player = NULL;
 	//create new player image;
-	create_img(&player, mlx, 10, 10);
+	create_img(&player, mlx, 1, 1);
 	//assign player image in my struct the pointer I created;
 	(*game_data)->player_data.player_image = player;
 	//get_player initial position;
 	x = (*game_data)->player_data.initial_position.x_axis;
 	y = (*game_data)->player_data.initial_position.y_axis;
 	// place player to window;
-	place_image(player, mlx, (x * TILE) + 28, (y * TILE) + 28);
+	place_image(player, mlx, (x * TILE) + 32, (y * TILE) + 32);
 	//get player current position;
 	(*game_data)->player_data.current_position.x_axis = &player->instances[0].x;
 	(*game_data)->player_data.current_position.y_axis = &player->instances[0].y;
@@ -78,11 +76,14 @@ void	add_bg_image(t_game **game_data)
 {
 	mlx_t		*mlx;
 	mlx_image_t	*image;
+	t_map		*map_data;
 
 	mlx = (*game_data)->mlx;
-	image = (*game_data)->bg_img;
+	map_data = (*game_data)->map_data;
+	create_img(&image, mlx, map_data->width, map_data->height);
+	(*game_data)->bg_img = image;
 	place_image(image, mlx, 0, 0);
-	memset(image->pixels, 255, image->width * image->height * sizeof(int));
+	set_img_color(image, 255);
 }
 
 void	game_setup(char *argv)
