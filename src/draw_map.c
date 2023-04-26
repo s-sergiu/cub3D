@@ -40,6 +40,54 @@ void	draw_walls(t_game *game_data)
 	}
 }
 
+void	draw_line(struct s_position *pointA, struct s_static_position *pointB, mlx_image_t* y_img)
+{
+	double dX;
+	double dY;
+	double p;
+	double x;
+	double y;
+
+	//bresenham algorithm
+	x = pointA->x_axis;
+	y = pointA->y_axis;
+	dX = pointB->x_axis - x;
+	dY = pointB->y_axis - y;
+	p = 2 * dY- dX;
+	printf("x is %f\n", x);
+	printf("y is %f\n", y);
+	printf("pointB->x is %f\n", pointB->x_axis);
+	printf("pointB->y is %f\n", pointB->y_axis);
+	while (x < pointB->x_axis)
+	{
+		if (p >= 0)
+		{
+			mlx_put_pixel(y_img, x++, y++, 0xFAFABB);
+			p = p + (2 * dY) - (2 * dX);
+		}
+		else if (p < 0)
+		{
+			mlx_put_pixel(y_img, x++, y, 0xFAFABB);
+			p = p + (2 * dY);
+		}
+	}
+}
+
+void	draw_ray(t_game *game_data)
+{
+	struct s_position			*origin;
+	struct s_static_position	point;
+	double x;
+	double y;
+
+	origin = &game_data->player_data.current_position;
+	point.x_axis = origin->x_axis + 10;
+	point.y_axis = origin->y_axis + 10;
+	x = point.x_axis;
+	y = point.y_axis;
+	draw_line(origin, &point, game_data->bg_img);
+}
+
 void	draw_player(t_game **game_data)
 {
 	mlx_image_t	*player;
@@ -59,8 +107,8 @@ void	draw_player(t_game **game_data)
 	// place player to window;
 	place_image(player, mlx, (x * TILE) + 32, (y * TILE) + 32);
 	//get player current position;
-	(*game_data)->player_data.current_position.x_axis = &player->instances[0].x;
-	(*game_data)->player_data.current_position.y_axis = &player->instances[0].y;
+	(*game_data)->player_data.current_position.x_axis = player->instances[0].x;
+	(*game_data)->player_data.current_position.y_axis = player->instances[0].y;
 	//draw player box;
 	x = -1;
 	y = 0;

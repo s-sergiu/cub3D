@@ -12,6 +12,7 @@ void	turn_right(char **map, t_game *game_data)
 	posy = (player->instances[0].y )/ TILE;
 	if (map[posy][posx] != '1') 
 		player->instances[0].x += 1;
+	draw_ray(game_data);
 }
 
 void	turn_left(char **map, t_game *game_data)
@@ -25,6 +26,7 @@ void	turn_left(char **map, t_game *game_data)
 	posy = (player->instances[0].y)/ TILE;
 	if (map[posy][posx] != '1') 
 		player->instances[0].x -= 1;
+	draw_ray(game_data);
 }
 
 void	turn_down(char **map, t_game *game_data)
@@ -38,6 +40,7 @@ void	turn_down(char **map, t_game *game_data)
 	posy = (player->instances[0].y + 1)/ TILE;
 	if (map[posy][posx] != '1') 
 		player->instances[0].y += 1;
+	draw_ray(game_data);
 }
 
 void	turn_up(char **map, t_game *game_data)
@@ -51,4 +54,5 @@ void	turn_up(char **map, t_game *game_data)
 	posy = (player->instances[0].y - 2)/ TILE;
 	if (map[posy][posx] != '1') 
 		player->instances[0].y -= 1;
+	draw_ray(game_data);
 }
