@@ -22,14 +22,14 @@ typedef struct s_map	t_map;
 
 struct s_position
 {
-	int	*x_axis;
-	int	*y_axis;
+	double	x_axis;
+	double	y_axis;
 };
 
 struct s_static_position
 {
-	int	x_axis;
-	int	y_axis;
+	double	x_axis;
+	double	y_axis;
 };
 
 struct s_player_data
@@ -154,5 +154,8 @@ void		turn_down(char **map, t_game *game_data);
 void		turn_up(char **map, t_game *game_data);
 void		place_wall_or_player(char **map, t_game *game_data, int x, int y);
 void		draw_grid(t_map *map_data, mlx_image_t *image);
+void		set_img_color(mlx_image_t *img, int color_value);
+void		draw_new_image(mlx_image_t **img, mlx_t *mlx, int x, int y);
+void		draw_ray(t_game *game_data);
 
 #endif
