@@ -5,6 +5,7 @@
 # include <assert.h>
 # include <errno.h>
 # include <fcntl.h>
+# include <math.h>
 # include "libft.h"
 # include "MLX42/MLX42.h"
 # include "libarrtools.h"
@@ -16,9 +17,19 @@
 # define BAD_MAP_FILE 255
 # define PLAYER 'P'
 # define WALL '1'
+# define SPEED 10.0
+# define ANGLE_SPEED 0.07
 
 typedef struct s_game	t_game;
+typedef struct s_player	t_player;
 typedef struct s_map	t_map;
+typedef struct s_vector	t_vector;
+
+struct s_vector
+{
+	double	x;
+	double	y;
+};
 
 struct s_position
 {
@@ -32,10 +43,12 @@ struct s_static_position
 	double	y_axis;
 };
 
-struct s_player_data
+struct s_player
 {
 	struct s_static_position	initial_position;
 	struct s_position			current_position;
+	struct s_position			end_position;
+	double						angle;
 	mlx_image_t					*player_image;
 };
 
@@ -44,7 +57,7 @@ struct s_game
 	mlx_t					*mlx;
 	mlx_image_t				*bg_img;
 	struct s_map			*map_data;
-	struct s_player_data	player_data;
+	struct s_player			player_data;
 };
 
 struct s_map
@@ -148,14 +161,16 @@ void		init_game_data(t_game **game_data,
 void		destroy_game_data(t_game *game_data);
 void		place_image(mlx_image_t *img, mlx_t *mlx, int width, int height);
 void		create_img(mlx_image_t **img, mlx_t *mlx, int width, int height);
-void		turn_right(char **map, t_game *game_data);
-void		turn_left(char **map, t_game *game_data);
-void		turn_down(char **map, t_game *game_data);
-void		turn_up(char **map, t_game *game_data);
+void		press_d(char **map, t_game *game_data);
+void		press_a(char **map, t_game *game_data);
+void		press_s(char **map, t_game *game_data);
+void		press_w(char **map, t_game *game_data);
 void		place_wall_or_player(char **map, t_game *game_data, int x, int y);
 void		draw_grid(t_map *map_data, mlx_image_t *image);
 void		set_img_color(mlx_image_t *img, int color_value);
 void		draw_new_image(mlx_image_t **img, mlx_t *mlx, int x, int y);
 void		draw_ray(t_game *game_data);
+void		press_right(t_game **data);
+void		press_left(t_game **data);
 
 #endif

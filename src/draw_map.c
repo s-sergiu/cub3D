@@ -3,23 +3,35 @@
 
 void	ft_hook(void *param)
 {
-	t_game				*game_data;
-	mlx_t				*mlx;
-	char				**map;
+	t_game	*game_data;
+	mlx_t	*mlx;
+	char	**map;
+	static double	sum;
 
 	game_data = param;
 	map = game_data->map_data->map_array;
 	mlx = game_data->mlx;
-	if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(mlx);
-	if (mlx_is_key_down(mlx, MLX_KEY_W))
-		turn_up(map, game_data);
-	if (mlx_is_key_down(mlx, MLX_KEY_S))
-		turn_down(map, game_data);
-	if (mlx_is_key_down(mlx, MLX_KEY_A))
-		turn_left(map, game_data);
-	if (mlx_is_key_down(mlx, MLX_KEY_D))
-		turn_right(map, game_data);
+	sum += mlx->delta_time;
+
+	if (sum > 0.4)
+	{
+		if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
+			mlx_close_window(mlx);
+		if (mlx_is_key_down(mlx, MLX_KEY_W))
+			press_w(map, game_data);
+		if (mlx_is_key_down(mlx, MLX_KEY_S))
+			press_s(map, game_data);
+		if (mlx_is_key_down(mlx, MLX_KEY_A))
+			press_a(map, game_data);
+		if (mlx_is_key_down(mlx, MLX_KEY_D))
+			press_d(map, game_data);
+		if (mlx_is_key_down(mlx, MLX_KEY_LEFT))
+			press_left(&game_data);
+		if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
+			press_right(&game_data);
+		sum = 0;
+		printf("angle player: %lf\n", game_data->player_data.angle);
+	}
 }
 
 void	draw_walls(t_game *game_data)
@@ -40,52 +52,44 @@ void	draw_walls(t_game *game_data)
 	}
 }
 
-void	draw_line(struct s_position *pointA, struct s_static_position *pointB, mlx_image_t* y_img)
+void	draw_line(struct s_position *pointA, struct s_position *pointB, mlx_image_t* y_img)
 {
 	double dX;
 	double dY;
-	double p;
-	double x;
-	double y;
+	double m;
+	double error;
+	int x;
+	int y;
 
 	//bresenham algorithm
+	error = 0.5;
 	x = pointA->x_axis;
 	y = pointA->y_axis;
 	dX = pointB->x_axis - x;
 	dY = pointB->y_axis - y;
-	p = 2 * dY- dX;
-	printf("x is %f\n", x);
-	printf("y is %f\n", y);
-	printf("pointB->x is %f\n", pointB->x_axis);
-	printf("pointB->y is %f\n", pointB->y_axis);
+	m = dY/dX;
 	while (x < pointB->x_axis)
 	{
-		if (p >= 0)
+		mlx_put_pixel(y_img, x, y, 0xFAFABB);
+		x++;
+		error += m;
+		if (error > 0.5)
 		{
-			mlx_put_pixel(y_img, x++, y++, 0xFAFABB);
-			p = p + (2 * dY) - (2 * dX);
-		}
-		else if (p < 0)
-		{
-			mlx_put_pixel(y_img, x++, y, 0xFAFABB);
-			p = p + (2 * dY);
+			y++;
+			error += -1;
 		}
 	}
 }
 
 void	draw_ray(t_game *game_data)
 {
-	struct s_position			*origin;
-	struct s_static_position	point;
-	double x;
-	double y;
+	struct s_position	*origin;
+	struct s_position	*point;
 
 	origin = &game_data->player_data.current_position;
-	point.x_axis = origin->x_axis + 10;
-	point.y_axis = origin->y_axis + 10;
-	x = point.x_axis;
-	y = point.y_axis;
-	draw_line(origin, &point, game_data->bg_img);
+	point = &game_data->player_data.end_position;
+	draw_line(origin, point, game_data->bg_img);
+	printf("yes\n");
 }
 
 void	draw_player(t_game **game_data)
@@ -109,6 +113,8 @@ void	draw_player(t_game **game_data)
 	//get player current position;
 	(*game_data)->player_data.current_position.x_axis = player->instances[0].x;
 	(*game_data)->player_data.current_position.y_axis = player->instances[0].y;
+	(*game_data)->player_data.end_position.x_axis = 100;
+	(*game_data)->player_data.end_position.y_axis = 0;
 	//draw player box;
 	x = -1;
 	y = 0;
