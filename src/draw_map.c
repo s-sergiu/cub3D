@@ -82,15 +82,41 @@ void	draw_line(struct s_position *pointA, struct s_position *pointB, mlx_image_t
 	}
 }
 
+void	update_origin(t_game **game_data)
+{
+	struct s_position	*origin;	
+	mlx_image_t			*player;
+
+	player = (*game_data)->player_data.player_image;
+	origin = &(*game_data)->player_data.current_position;
+	origin->x_axis = player->instances[0].x;
+	origin->y_axis = player->instances[0].y;
+}
+
+void	update_end(t_game **game_data)
+{
+	struct s_position	*end;	
+	mlx_image_t			*player;
+
+	player = (*game_data)->player_data.player_image;
+	end = &(*game_data)->player_data.end_position;
+	end->x_axis = player->instances[0].x + 100 * cos((*game_data)->player_data.angle);
+	end->y_axis = player->instances[0].y + 100 * sin((*game_data)->player_data.angle);
+}
+
 void	draw_ray(t_game **game_data)
 {
 	struct s_position	*origin;
 	struct s_position	*point;
+	mlx_image_t			*img;
 
-	origin = (*game_data)->player_data.current_position;
-	point = (*game_data)->player_data.end_position;
+	img = (*game_data)->bg_img;
+	origin = &(*game_data)->player_data.current_position;
+	point = &(*game_data)->player_data.end_position;
+	ft_bzero(img->pixels, img->width * img->height * 4);
 	line_draw(origin, point, (*game_data)->bg_img);
-	printf("yes\n");
+	update_origin(game_data);
+	update_end(game_data);
 }
 
 void	draw_player(t_game **game_data)
@@ -114,8 +140,8 @@ void	draw_player(t_game **game_data)
 	//get player current position;
 	(*game_data)->player_data.current_position.x_axis = player->instances[0].x;
 	(*game_data)->player_data.current_position.y_axis = player->instances[0].y;
-	(*game_data)->player_data.end_position.x_axis = 10;
-	(*game_data)->player_data.end_position.y_axis = 10;
+	(*game_data)->player_data.end_position.x_axis = player->instances[0].x;
+	(*game_data)->player_data.end_position.y_axis = player->instances[0].y + 100;
 	//draw player box;
 	x = -1;
 	y = 0;
