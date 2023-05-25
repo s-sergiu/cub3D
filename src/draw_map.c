@@ -100,8 +100,8 @@ void	update_end(t_game **game_data)
 
 	player = (*game_data)->player_data.player_image;
 	end = &(*game_data)->player_data.end_position;
-	end->x_axis = player->instances[0].x + 100 * cos((*game_data)->player_data.angle);
-	end->y_axis = player->instances[0].y + 100 * sin((*game_data)->player_data.angle);
+	end->x_axis = player->instances[0].x + INT_MAX * cos((*game_data)->player_data.angle);
+	end->y_axis = player->instances[0].y + INT_MAX * sin((*game_data)->player_data.angle);
 }
 
 void	draw_ray(t_game **game_data)
@@ -114,7 +114,7 @@ void	draw_ray(t_game **game_data)
 	origin = &(*game_data)->player_data.current_position;
 	point = &(*game_data)->player_data.end_position;
 	ft_bzero(img->pixels, img->width * img->height * 4);
-	line_draw(origin, point, (*game_data)->bg_img);
+	line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map_array);
 	update_origin(game_data);
 	update_end(game_data);
 }

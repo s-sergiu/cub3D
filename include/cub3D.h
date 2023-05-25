@@ -5,6 +5,7 @@
 # include <assert.h>
 # include <errno.h>
 # include <fcntl.h>
+# include <limits.h>
 # include <math.h>
 # include <stdlib.h>
 # include "libft.h"
@@ -173,6 +174,6 @@ void		draw_new_image(mlx_image_t **img, mlx_t *mlx, int x, int y);
 void		draw_ray(t_game **game_data);
 void		press_right(t_game **data);
 void		press_left(t_game **data);
-void		line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t* y_img);
+void		line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t * y_img, char **map);
 
 #endif
