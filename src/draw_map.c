@@ -6,31 +6,29 @@ void	ft_hook(void *param)
 	t_game	*game_data;
 	mlx_t	*mlx;
 	char	**map;
-	static double	sum;
 
 	game_data = param;
 	map = game_data->map_data->map_array;
 	mlx = game_data->mlx;
-	sum += mlx->delta_time;
 
-	if (sum > 0.1)
+	if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
+		mlx_close_window(mlx);
+	if (mlx_is_key_down(mlx, MLX_KEY_W))
+		press_w(map, game_data);
+	if (mlx_is_key_down(mlx, MLX_KEY_S))
+		press_s(map, game_data);
+	if (mlx_is_key_down(mlx, MLX_KEY_A))
+		press_a(map, game_data);
+	if (mlx_is_key_down(mlx, MLX_KEY_D))
+		press_d(map, game_data);
+	if (mlx_is_key_down(mlx, MLX_KEY_LEFT))
+		press_left(&game_data);
+	if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
+		press_right(&game_data);
+	if (game_data->wall)
 	{
-		if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
-			mlx_close_window(mlx);
-		if (mlx_is_key_down(mlx, MLX_KEY_W))
-			press_w(map, game_data);
-		if (mlx_is_key_down(mlx, MLX_KEY_S))
-			press_s(map, game_data);
-		if (mlx_is_key_down(mlx, MLX_KEY_A))
-			press_a(map, game_data);
-		if (mlx_is_key_down(mlx, MLX_KEY_D))
-			press_d(map, game_data);
-		if (mlx_is_key_down(mlx, MLX_KEY_LEFT))
-			press_left(&game_data);
-		if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
-			press_right(&game_data);
-		sum = 0;
-		printf("angle player: %lf\n", game_data->player_data.angle);
+		mlx_delete_image(game_data->mlx, game_data->wall);
+		game_data->wall = NULL;
 	}
 	draw_ray(&game_data);
 }
@@ -161,16 +159,38 @@ void	add_bg_image(t_game **game_data)
 	set_img_color(image, 255);
 }
 
+void	add_floor(t_game **game_data)
+{
+	mlx_t		*mlx;
+	mlx_texture_t	*texture;
+
+	mlx = (*game_data)->mlx;
+	texture = mlx_load_png("data/textures/blue.png");
+	(*game_data)->floor = mlx_texture_to_image(mlx, texture);
+	place_image((*game_data)->floor, mlx, 0, 512);
+}
+
+void	add_ceiling(t_game **game_data)
+{
+	mlx_t		*mlx;
+	mlx_texture_t	*texture;
+
+	mlx = (*game_data)->mlx;
+	texture = mlx_load_png("data/textures/yellow.png");
+	(*game_data)->floor = mlx_texture_to_image(mlx, texture);
+	place_image((*game_data)->ceiling, mlx, 0, 0);
+}
+
 void	add_game_screen(t_game **game_data)
 {
 	mlx_t		*mlx;
 	mlx_image_t	*image;
 
 	mlx = (*game_data)->mlx;
-	create_img(&image, mlx, 1600, 900);
-	(*game_data)->bg_img = image;
-	place_image(image, mlx, 256, 256);
-	set_img_color(image, 100);
+	create_img(&image, mlx, SCREEN_HEIGHT, SCREEN_WIDTH);
+	(*game_data)->game_screen = image;
+	place_image(image, mlx, 0, 0);
+	set_img_color(image, 200);
 }
 
 void	game_setup(char *argv)
