@@ -20,7 +20,7 @@
 # define PLAYER 'P'
 # define WALL '1'
 # define SPEED 10.0
-# define ANGLE_SPEED 0.7
+# define ANGLE_SPEED 0.07
 
 typedef struct s_game	t_game;
 typedef struct s_player	t_player;
@@ -175,5 +175,8 @@ void		draw_ray(t_game **game_data);
 void		press_right(t_game **data);
 void		press_left(t_game **data);
 void		line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t * y_img, char **map);
+void	draw_fov(t_game **game_data);
+void	update_origin(t_game **game_data);
+void	update_end(t_game **game_data, double fov_angle);
 
 #endif

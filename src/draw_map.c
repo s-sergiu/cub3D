@@ -93,30 +93,24 @@ void	update_origin(t_game **game_data)
 	origin->y_axis = player->instances[0].y;
 }
 
-void	update_end(t_game **game_data)
+void	update_end(t_game **game_data, double fov_angle)
 {
 	struct s_position	*end;	
 	mlx_image_t			*player;
 
 	player = (*game_data)->player_data.player_image;
 	end = &(*game_data)->player_data.end_position;
-	end->x_axis = player->instances[0].x + INT_MAX * cos((*game_data)->player_data.angle);
-	end->y_axis = player->instances[0].y + INT_MAX * sin((*game_data)->player_data.angle);
+	end->x_axis = player->instances[0].x + INT_MAX * cos(fov_angle);
+	end->y_axis = player->instances[0].y + INT_MAX * sin(fov_angle);
 }
 
 void	draw_ray(t_game **game_data)
 {
-	struct s_position	*origin;
-	struct s_position	*point;
 	mlx_image_t			*img;
 
 	img = (*game_data)->bg_img;
-	origin = &(*game_data)->player_data.current_position;
-	point = &(*game_data)->player_data.end_position;
 	ft_bzero(img->pixels, img->width * img->height * 4);
-	line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map_array);
-	update_origin(game_data);
-	update_end(game_data);
+	draw_fov(game_data);
 }
 
 void	draw_player(t_game **game_data)
@@ -167,6 +161,18 @@ void	add_bg_image(t_game **game_data)
 	set_img_color(image, 255);
 }
 
+void	add_game_screen(t_game **game_data)
+{
+	mlx_t		*mlx;
+	mlx_image_t	*image;
+
+	mlx = (*game_data)->mlx;
+	create_img(&image, mlx, 1600, 900);
+	(*game_data)->bg_img = image;
+	place_image(image, mlx, 256, 256);
+	set_img_color(image, 100);
+}
+
 void	game_setup(char *argv)
 {
 	t_game	*game_data;
@@ -180,6 +186,7 @@ void	game_setup(char *argv)
 	draw_grid(map_data, game_data->bg_img);
 	draw_walls(game_data);
 	draw_player(&game_data);
+	add_bg_image(&game_data);
 	mlx_loop_hook(game_data->mlx, ft_hook, game_data);
 	mlx_loop(game_data->mlx);
 	mlx_terminate(game_data->mlx);
