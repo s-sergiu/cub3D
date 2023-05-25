@@ -6,6 +6,7 @@
 # include <errno.h>
 # include <fcntl.h>
 # include <math.h>
+# include <stdlib.h>
 # include "libft.h"
 # include "MLX42/MLX42.h"
 # include "libarrtools.h"
@@ -18,7 +19,7 @@
 # define PLAYER 'P'
 # define WALL '1'
 # define SPEED 10.0
-# define ANGLE_SPEED 0.07
+# define ANGLE_SPEED 0.7
 
 typedef struct s_game	t_game;
 typedef struct s_player	t_player;
@@ -169,8 +170,9 @@ void		place_wall_or_player(char **map, t_game *game_data, int x, int y);
 void		draw_grid(t_map *map_data, mlx_image_t *image);
 void		set_img_color(mlx_image_t *img, int color_value);
 void		draw_new_image(mlx_image_t **img, mlx_t *mlx, int x, int y);
-void		draw_ray(t_game *game_data);
+void		draw_ray(t_game **game_data);
 void		press_right(t_game **data);
 void		press_left(t_game **data);
+void		line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t* y_img);
 
 #endif
