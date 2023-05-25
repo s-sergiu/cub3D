@@ -13,7 +13,7 @@ void	ft_hook(void *param)
 	mlx = game_data->mlx;
 	sum += mlx->delta_time;
 
-	if (sum > 0.4)
+	if (sum > 0.1)
 	{
 		if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
 			mlx_close_window(mlx);
@@ -32,6 +32,7 @@ void	ft_hook(void *param)
 		sum = 0;
 		printf("angle player: %lf\n", game_data->player_data.angle);
 	}
+	draw_ray(&game_data);
 }
 
 void	draw_walls(t_game *game_data)
@@ -81,14 +82,14 @@ void	draw_line(struct s_position *pointA, struct s_position *pointB, mlx_image_t
 	}
 }
 
-void	draw_ray(t_game *game_data)
+void	draw_ray(t_game **game_data)
 {
 	struct s_position	*origin;
 	struct s_position	*point;
 
-	origin = &game_data->player_data.current_position;
-	point = &game_data->player_data.end_position;
-	draw_line(origin, point, game_data->bg_img);
+	origin = (*game_data)->player_data.current_position;
+	point = (*game_data)->player_data.end_position;
+	line_draw(origin, point, (*game_data)->bg_img);
 	printf("yes\n");
 }
 
@@ -113,8 +114,8 @@ void	draw_player(t_game **game_data)
 	//get player current position;
 	(*game_data)->player_data.current_position.x_axis = player->instances[0].x;
 	(*game_data)->player_data.current_position.y_axis = player->instances[0].y;
-	(*game_data)->player_data.end_position.x_axis = 100;
-	(*game_data)->player_data.end_position.y_axis = 0;
+	(*game_data)->player_data.end_position.x_axis = 10;
+	(*game_data)->player_data.end_position.y_axis = 10;
 	//draw player box;
 	x = -1;
 	y = 0;
