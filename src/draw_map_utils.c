@@ -55,3 +55,32 @@ void	line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t
 		}
 	}
 }
+
+void	draw_fov(t_game **game_data)
+{
+//	double	delta_angle;
+//	double	player_angle;
+	struct s_position	*origin;
+	struct s_position	*point;
+	double				fov_angle;
+
+	
+	fov_angle = (*game_data)->player_data.angle;
+//	player_angle = (*game_data)->player_data.angle;
+//	delta_angle = 0.1;
+	origin = &(*game_data)->player_data.current_position;
+	point = &(*game_data)->player_data.end_position;
+	update_origin(game_data);
+	while (fov_angle < (*game_data)->player_data.angle + M_PI / 6)
+	{
+		line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map_array);
+		fov_angle += 0.005;
+		update_end(game_data, fov_angle);
+	}
+	while (fov_angle > (*game_data)->player_data.angle - M_PI / 6)
+	{
+		line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map_array);
+		fov_angle -= 0.005;
+		update_end(game_data, fov_angle);
+	}
+}
