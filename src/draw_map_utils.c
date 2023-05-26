@@ -6,7 +6,6 @@ void	draw_wall(t_game *game_data, int width, int height)
 	int x;
 	int y;
 
-	
 	if (game_data->wall == NULL)
 		create_img(&game_data->wall, game_data->mlx, width, height);
 	y = (SCREEN_WIDTH / 2) - (height / 2);
@@ -66,12 +65,14 @@ void	line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t
 			//draw the wall from origin to x and y;
 			distance = sqrt(pow(x1 - x, 2) + pow(y1 - y, 2));
 			if (distance == 0)
-				printf("erorr\n");
+				height = WALL_HEIGHT;
 			else
 				height = WALL_HEIGHT / distance;
 			//printf("distance %d\n", distance);
 			printf("height %d\n", height);
 			width = SCREEN_WIDTH / (((M_PI / 3) / DELTA_FOV));
+			if (height < 0)
+				height = 100;
 			draw_wall(game_data, width, height);
 			(void)width;
 			(void)height;
