@@ -6,25 +6,31 @@ void	ft_hook(void *param)
 	t_game	*game_data;
 	mlx_t	*mlx;
 	char	**map;
+	static double sum;
 
 	game_data = param;
 	map = game_data->map_data->map_array;
 	mlx = game_data->mlx;
 
-	if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(mlx);
-	if (mlx_is_key_down(mlx, MLX_KEY_W))
-		press_w(map, game_data);
-	if (mlx_is_key_down(mlx, MLX_KEY_S))
-		press_s(map, game_data);
-	if (mlx_is_key_down(mlx, MLX_KEY_A))
-		press_a(map, game_data);
-	if (mlx_is_key_down(mlx, MLX_KEY_D))
-		press_d(map, game_data);
-	if (mlx_is_key_down(mlx, MLX_KEY_LEFT))
-		press_left(&game_data);
-	if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
-		press_right(&game_data);
+	sum += mlx->delta_time;
+	if (sum > 0.05)
+	{
+		if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
+			mlx_close_window(mlx);
+		if (mlx_is_key_down(mlx, MLX_KEY_W))
+			press_w(map, game_data);
+		if (mlx_is_key_down(mlx, MLX_KEY_S))
+			press_s(map, game_data);
+		if (mlx_is_key_down(mlx, MLX_KEY_A))
+			press_a(map, game_data);
+		if (mlx_is_key_down(mlx, MLX_KEY_D))
+			press_d(map, game_data);
+		if (mlx_is_key_down(mlx, MLX_KEY_LEFT))
+			press_left(&game_data);
+		if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
+			press_right(&game_data);
+		sum = 0;
+	}
 	if (game_data->wall)
 	{
 		mlx_delete_image(game_data->mlx, game_data->wall);
