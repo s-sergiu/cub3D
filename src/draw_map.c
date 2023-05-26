@@ -7,13 +7,15 @@ void	ft_hook(void *param)
 	mlx_t	*mlx;
 	char	**map;
 	static double sum;
+	int		i;
 
 	game_data = param;
 	map = game_data->map_data->map_array;
 	mlx = game_data->mlx;
+	i = -1;
 
 	sum += mlx->delta_time;
-	if (sum > 0.05)
+	if (sum > 0.02)
 	{
 		if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
 			mlx_close_window(mlx);
@@ -29,14 +31,14 @@ void	ft_hook(void *param)
 			press_left(&game_data);
 		if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
 			press_right(&game_data);
+		if (game_data->rays)
+		{
+			while (++i < game_data->n)
+				mlx_delete_image(game_data->mlx, game_data->rays[i]);
+		}
+		draw_ray(&game_data);
 		sum = 0;
 	}
-	if (game_data->wall)
-	{
-		mlx_delete_image(game_data->mlx, game_data->wall);
-		game_data->wall = NULL;
-	}
-	draw_ray(&game_data);
 }
 
 void	draw_walls(t_game *game_data)
