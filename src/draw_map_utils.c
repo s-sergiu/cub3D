@@ -1,19 +1,28 @@
 
 #include "cub3D.h"
 
-void	draw_wall(mlx_image_t **img, t_game *game_data, int x)
+void	draw_wall(t_game *game_data, int x)
 {
 	int y;
-	int	width;
 	int	height;
+	int	width;
 
-	width = game_data->width;
+	printf("x inside function %d\n", x);
 	height = game_data->height;
-	(*img) = mlx_new_image(game_data->mlx, width, height);
-	y = (SCREEN_WIDTH / 2) - (height / 2);
-	place_image((*img), game_data->mlx, x, y);
-	set_img_color((*img), 200);
-	printf("address1 : %p\n", (*img));
+	width = (SCREEN_WIDTH / 2) - (height / 2);
+	x = 100;
+	y = 200;
+	
+	while (x < height)
+	{
+		while (y < width)
+		{
+			mlx_put_pixel(game_data->bg_img, x , y, 0xFFFFBA);
+			y++;
+		}
+		y = 0;
+		x++;
+	}
 }
 
 void	player_angle(t_game *data, char orientation)
@@ -93,7 +102,6 @@ void	draw_fov(t_game **game_data)
 	int x;
 	int	width;
 	double				fov_angle;
-	int					i;
 
 	
 	width = (*game_data)->width;
@@ -104,22 +112,22 @@ void	draw_fov(t_game **game_data)
 	origin = &(*game_data)->player_data.current_position;
 	point = &(*game_data)->player_data.end_position;
 	update_origin(game_data);
-	i = -1;
 	while (fov_angle < (*game_data)->player_data.angle + M_PI / 6)
 	{
+		printf("inside before x %d\n", x);
 		line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map_array, (*game_data));
-		draw_wall(&(*game_data)->rays[++i], (*game_data), x);
-		printf("address2 : %p\n", (*game_data)->rays[i]);
-		printf("x: %d\n", x);
+		draw_wall((*game_data), x);
 		x += width;
+		printf("inside after x %d\n", x);
 		fov_angle += DELTA_FOV;
 		update_end(game_data, fov_angle);
 	}
+	x = 0;
+		printf("outside x %d\n", x);
 	while (fov_angle > (*game_data)->player_data.angle - M_PI / 6)
 	{
 		line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map_array, (*game_data));
-		draw_wall(&(*game_data)->rays[++i], (*game_data), x);
-		x -= width;
+		x += width;
 		fov_angle -= DELTA_FOV;
 		update_end(game_data, fov_angle);
 	}
