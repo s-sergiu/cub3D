@@ -36,9 +36,11 @@ void	init_game_data(t_game **game_data, t_map *map_data)
 		destroy_map_data(map_data);
 		exit(errno);
 	}
+	(*game_data)->n = SCREEN_WIDTH / (((M_PI / 3) / DELTA_FOV));
 	(*game_data)->mlx = mlx;
 	(*game_data)->bg_img = NULL;
 	(*game_data)->wall = NULL;
+	(*game_data)->rays = (mlx_image_t **)malloc(sizeof(mlx_image_t *) * (*game_data)->n);
 	(*game_data)->game_screen = NULL;
 	(*game_data)->floor = NULL;
 	(*game_data)->ceiling = NULL;

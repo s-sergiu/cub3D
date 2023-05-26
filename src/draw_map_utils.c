@@ -1,17 +1,19 @@
 
 #include "cub3D.h"
 
-void	draw_wall(t_game *game_data, int width, int height)
+void	draw_wall(mlx_image_t **img, t_game *game_data, int x)
 {
-	int x;
 	int y;
+	int	width;
+	int	height;
 
-	if (game_data->wall == NULL)
-		create_img(&game_data->wall, game_data->mlx, width, height);
+	width = game_data->width;
+	height = game_data->height;
+	(*img) = mlx_new_image(game_data->mlx, width, height);
 	y = (SCREEN_WIDTH / 2) - (height / 2);
-	x = (SCREEN_HEIGHT / 2) - (width / 2);
-	place_image(game_data->wall, game_data->mlx, x, y);
-	set_img_color(game_data->wall, 200);
+	place_image((*img), game_data->mlx, x, y);
+	set_img_color((*img), 200);
+	printf("address1 : %p\n", (*img));
 }
 
 void	player_angle(t_game *data, char orientation)
@@ -36,8 +38,6 @@ void	line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t
 	double y;
 	double x1, y1;
 	double x2, y2, dx, dy, step;
-	int	width;
-	int	height;
 	int i;
 	int	distance;
 
@@ -65,18 +65,13 @@ void	line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t
 			//draw the wall from origin to x and y;
 			distance = sqrt(pow(x1 - x, 2) + pow(y1 - y, 2));
 			if (distance == 0)
-				height = WALL_HEIGHT;
+				game_data->height = WALL_HEIGHT;
 			else
-				height = WALL_HEIGHT / distance;
+				game_data->height = WALL_HEIGHT / distance;
 			//printf("distance %d\n", distance);
-			printf("height %d\n", height);
-			width = SCREEN_WIDTH / (((M_PI / 3) / DELTA_FOV));
-			if (height < 0)
-				height = 100;
-			draw_wall(game_data, width, height);
-			(void)width;
-			(void)height;
-			
+			game_data->width = SCREEN_WIDTH / (((M_PI / 3) / DELTA_FOV));
+			if (game_data->height < 0)
+				game_data->height = 100;
 			return ;
 		}
 		else
@@ -95,24 +90,36 @@ void	draw_fov(t_game **game_data)
 //	double	player_angle;
 	struct s_position	*origin;
 	struct s_position	*point;
+	int x;
+	int	width;
 	double				fov_angle;
+	int					i;
 
 	
+	width = (*game_data)->width;
+	x = (SCREEN_HEIGHT / 2) - (width / 2);
 	fov_angle = (*game_data)->player_data.angle;
 //	player_angle = (*game_data)->player_data.angle;
 //	delta_angle = 0.1;
 	origin = &(*game_data)->player_data.current_position;
 	point = &(*game_data)->player_data.end_position;
 	update_origin(game_data);
+	i = -1;
 	while (fov_angle < (*game_data)->player_data.angle + M_PI / 6)
 	{
 		line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map_array, (*game_data));
+		draw_wall(&(*game_data)->rays[++i], (*game_data), x);
+		printf("address2 : %p\n", (*game_data)->rays[i]);
+		printf("x: %d\n", x);
+		x += width;
 		fov_angle += DELTA_FOV;
 		update_end(game_data, fov_angle);
 	}
 	while (fov_angle > (*game_data)->player_data.angle - M_PI / 6)
 	{
 		line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map_array, (*game_data));
+		draw_wall(&(*game_data)->rays[++i], (*game_data), x);
+		x -= width;
 		fov_angle -= DELTA_FOV;
 		update_end(game_data, fov_angle);
 	}
