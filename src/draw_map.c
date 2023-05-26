@@ -6,17 +6,10 @@ void	ft_hook(void *param)
 	t_game	*game_data;
 	mlx_t	*mlx;
 	char	**map;
-	static double sum;
-	int		i;
 
 	game_data = param;
 	map = game_data->map_data->map_array;
 	mlx = game_data->mlx;
-	i = -1;
-
-	sum += mlx->delta_time;
-	if (sum > 0.02)
-	{
 		if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
 			mlx_close_window(mlx);
 		if (mlx_is_key_down(mlx, MLX_KEY_W))
@@ -31,14 +24,7 @@ void	ft_hook(void *param)
 			press_left(&game_data);
 		if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
 			press_right(&game_data);
-		if (game_data->rays)
-		{
-			while (++i < game_data->n)
-				mlx_delete_image(game_data->mlx, game_data->rays[i]);
-		}
 		draw_ray(&game_data);
-		sum = 0;
-	}
 }
 
 void	draw_walls(t_game *game_data)
@@ -157,11 +143,9 @@ void	add_bg_image(t_game **game_data)
 {
 	mlx_t		*mlx;
 	mlx_image_t	*image;
-	t_map		*map_data;
 
 	mlx = (*game_data)->mlx;
-	map_data = (*game_data)->map_data;
-	create_img(&image, mlx, map_data->width, map_data->height);
+	create_img(&image, mlx, 1920, 1080);
 	(*game_data)->bg_img = image;
 	place_image(image, mlx, 0, 0);
 	set_img_color(image, 255);
@@ -214,7 +198,6 @@ void	game_setup(char *argv)
 	draw_grid(map_data, game_data->bg_img);
 	draw_walls(game_data);
 	draw_player(&game_data);
-	add_bg_image(&game_data);
 	mlx_loop_hook(game_data->mlx, ft_hook, game_data);
 	mlx_loop(game_data->mlx);
 	mlx_terminate(game_data->mlx);
