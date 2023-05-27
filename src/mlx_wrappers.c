@@ -1,7 +1,7 @@
 
 #include "cub3D.h"
 
-void	set_img_color(mlx_image_t *img, int color_value)
+void	set_img_color(mlx_image_t *img, uint32_t color_value)
 {
 	memset(img->pixels, color_value, img->width * img->height * sizeof(img->width));
 }
@@ -35,7 +35,7 @@ void	place_wall_or_player(char **map, t_game *game_data, int x, int y)
 	{
 		create_img(&img, mlx, TILE, TILE);
 		place_image(img, mlx, x * TILE, y * TILE);
-		set_img_color(img, 120);
+		set_img_color(img, 40);
 	}
 	if (map[y][x] == 'P')
 	{
