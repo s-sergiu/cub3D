@@ -75,6 +75,7 @@ struct s_game
 	mlx_image_t				*wall;
 	double					width;
 	int						height;
+	double					distance;
 	int						n;
 	struct s_map			*map_data;
 	struct s_player			player_data;
@@ -196,7 +197,7 @@ void		line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_
 void	draw_fov(t_game **game_data);
 void	update_origin(t_game **game_data);
 void	update_end(t_game **game_data, double fov_angle);
-void	draw_wall(t_game *game_data, t_int_vector center);
+void	draw_wall(t_game *game_data, t_int_vector center, double fov);
 void	add_bg_image(t_game **game_data);
 
 #endif

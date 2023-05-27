@@ -1,7 +1,7 @@
 
 #include "cub3D.h"
 
-void	draw_wall(t_game *game_data, t_int_vector center)
+void	draw_wall(t_game *game_data, t_int_vector center, double fov)
 {
 	int	height;
 	int	width;
@@ -10,7 +10,11 @@ void	draw_wall(t_game *game_data, t_int_vector center)
 	unsigned int color;
 	int distance;
 
-	height = game_data->height;
+	distance = game_data->distance;
+	// this is the formulae
+	distance *= cos(M_PI / 6 - fov);
+	height = WALL_HEIGHT / distance;
+	(void)fov;
 	width = (SCREEN_WIDTH / ((((M_PI / 3) / DELTA_FOV))));
 	x0 = center.x;
 	y0 = center.y - (height / 2);
@@ -76,7 +80,7 @@ void	line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t
 			if (distance == 0)
 				game_data->height = WALL_HEIGHT;
 			else
-				game_data->height = WALL_HEIGHT / distance;
+				game_data->distance = distance;
 			//printf("distance %d\n", distance);
 			if (game_data->height < 0)
 				game_data->height = 100;
@@ -98,20 +102,22 @@ void	draw_fov(t_game **game_data)
 	struct s_position	*origin;
 	struct s_position	*point;
 	double				fov_angle;
+	double				fov_shit;
 	t_int_vector		center;
 	
 	center = (t_int_vector) {0 , SCREEN_HEIGHT / 2};
 	fov_angle = (*game_data)->player_data.angle - M_PI / 6;
+	fov_shit = 0;
 	origin = &(*game_data)->player_data.current_position;
 	point = &(*game_data)->player_data.end_position;
 	update_origin(game_data);
-	fov_angle -= 872 * DELTA_FOV;
 	while (fov_angle < (*game_data)->player_data.angle + M_PI / 6)
 	{
 		update_end(game_data, fov_angle);
 		line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map_array, (*game_data));
-		draw_wall((*game_data), center);
+		draw_wall((*game_data), center, fov_shit);
 		fov_angle += DELTA_FOV;
+		fov_shit += DELTA_FOV;
 		center.x += SCREEN_WIDTH / ((((M_PI / 3) / DELTA_FOV)));
 		if (center.x >= SCREEN_WIDTH)
 			break ;
