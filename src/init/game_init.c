@@ -29,7 +29,7 @@ void	init_game_data(t_game **game_data, t_map *map_data)
 
 	mlx = NULL;
 	malloc_game_struct(game_data, *destroy_map_data, map_data);
-	init_mlx(&mlx, 1920, 1080);
+	init_mlx(&mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
 	if (!mlx)
 	{
 		destroy_game_data(*game_data);

@@ -21,20 +21,27 @@
 # define WALL '1'
 # define SPEED 10.0
 # define ANGLE_SPEED 0.07
-# define DELTA_FOV 0.01
-# define SCREEN_WIDTH 1080
-# define SCREEN_HEIGHT 1920
-# define WALL_HEIGHT 5000
+# define DELTA_FOV 0.04
+# define SCREEN_WIDTH 1920
+# define SCREEN_HEIGHT 1080
+# define WALL_HEIGHT 15000
 
-typedef struct s_game	t_game;
-typedef struct s_player	t_player;
-typedef struct s_map	t_map;
-typedef struct s_vector	t_vector;
+typedef struct s_game		t_game;
+typedef struct s_player		t_player;
+typedef struct s_map		t_map;
+typedef struct s_vector		t_vector;
+typedef struct s_int_vector	t_int_vector;
 
 struct s_vector
 {
 	double	x;
 	double	y;
+};
+
+struct s_int_vector
+{
+	unsigned int	x;
+	unsigned int	y;
 };
 
 struct s_position
@@ -189,7 +196,7 @@ void		line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_
 void	draw_fov(t_game **game_data);
 void	update_origin(t_game **game_data);
 void	update_end(t_game **game_data, double fov_angle);
-void	draw_wall(t_game *game_data, int x);
+void	draw_wall(t_game *game_data, t_int_vector center);
 void	add_bg_image(t_game **game_data);
 
 #endif
