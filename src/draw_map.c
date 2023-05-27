@@ -10,21 +10,21 @@ void	ft_hook(void *param)
 	game_data = param;
 	map = game_data->map_data->map_array;
 	mlx = game_data->mlx;
-		if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
-			mlx_close_window(mlx);
-		if (mlx_is_key_down(mlx, MLX_KEY_W))
-			press_w(map, game_data);
-		if (mlx_is_key_down(mlx, MLX_KEY_S))
-			press_s(map, game_data);
-		if (mlx_is_key_down(mlx, MLX_KEY_A))
-			press_a(map, game_data);
-		if (mlx_is_key_down(mlx, MLX_KEY_D))
-			press_d(map, game_data);
-		if (mlx_is_key_down(mlx, MLX_KEY_LEFT))
-			press_left(&game_data);
-		if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
-			press_right(&game_data);
-		draw_ray(&game_data);
+	if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
+		mlx_close_window(mlx);
+	if (mlx_is_key_down(mlx, MLX_KEY_W))
+		press_w(map, game_data);
+	if (mlx_is_key_down(mlx, MLX_KEY_S))
+		press_s(map, game_data);
+	if (mlx_is_key_down(mlx, MLX_KEY_A))
+		press_a(map, game_data);
+	if (mlx_is_key_down(mlx, MLX_KEY_D))
+		press_d(map, game_data);
+	if (mlx_is_key_down(mlx, MLX_KEY_LEFT))
+		press_left(&game_data);
+	if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
+		press_right(&game_data);
+	draw_ray(&game_data);
 }
 
 void	draw_walls(t_game *game_data)
@@ -145,7 +145,7 @@ void	add_bg_image(t_game **game_data)
 	mlx_image_t	*image;
 
 	mlx = (*game_data)->mlx;
-	create_img(&image, mlx, 1920, 1080);
+	create_img(&image, mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
 	(*game_data)->bg_img = image;
 	place_image(image, mlx, 0, 0);
 	set_img_color(image, 255);
@@ -179,7 +179,7 @@ void	add_game_screen(t_game **game_data)
 	mlx_image_t	*image;
 
 	mlx = (*game_data)->mlx;
-	create_img(&image, mlx, SCREEN_HEIGHT, SCREEN_WIDTH);
+	create_img(&image, mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
 	(*game_data)->game_screen = image;
 	place_image(image, mlx, 0, 0);
 	set_img_color(image, 200);
@@ -198,6 +198,7 @@ void	game_setup(char *argv)
 	draw_grid(map_data, game_data->bg_img);
 	draw_walls(game_data);
 	draw_player(&game_data);
+	add_bg_image(&game_data);
 	mlx_loop_hook(game_data->mlx, ft_hook, game_data);
 	mlx_loop(game_data->mlx);
 	mlx_terminate(game_data->mlx);
