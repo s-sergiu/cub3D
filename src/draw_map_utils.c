@@ -5,23 +5,22 @@ void	draw_wall(t_game *game_data, t_int_vector center)
 {
 	int	height;
 	int	width;
-	unsigned int x0;
-	unsigned int y0;
+	int x0;
+	int y0;
+	unsigned int color;
+	int distance;
 
 	height = game_data->height;
-	width = ceil(SCREEN_WIDTH / ceil(((M_PI / 3) / DELTA_FOV)));
-	printf("insidneidne  %d\n", width);
-	printf("insidneidne  %d\n", SCREEN_WIDTH);
-	x0 = center.x - ceil(width / 2);
+	width = (SCREEN_WIDTH / ((((M_PI / 3) / DELTA_FOV))));
+	x0 = center.x;
 	y0 = center.y - (height / 2);
+	distance = WALL_HEIGHT / height;
+	color = 255 / pow(distance, 0.3) * 2;
 	while (y0 < center.y + (height / 2))
 	{
-		while (x0 < center.x + ceil(width / 2))
-		{
-			mlx_put_pixel(game_data->bg_img, x0 , y0, 0xFAFAFA);
-			x0++;
-		}
-		x0 = center.x - ceil(width / 2);
+		while (x0 < center.x + (width))
+			mlx_put_pixel(game_data->bg_img, x0++ , y0, color);
+		x0 = center.x;
 		y0++;
 	}
 }
@@ -79,14 +78,14 @@ void	line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t
 			else
 				game_data->height = WALL_HEIGHT / distance;
 			//printf("distance %d\n", distance);
-			game_data->width = SCREEN_WIDTH / ceil((((M_PI / 3) / DELTA_FOV)));
 			if (game_data->height < 0)
 				game_data->height = 100;
 			return ;
 		}
 		else
 		{
-			mlx_put_pixel(y_img, x, y, 0xFAFABB);
+			mlx_put_pixel(y_img, x, y, 0xFAFAFA);
+			(void)y_img;
 			x = x + dx;
 			y = y + dy;
 			i = i + 1;
@@ -100,21 +99,21 @@ void	draw_fov(t_game **game_data)
 	struct s_position	*point;
 	double				fov_angle;
 	t_int_vector		center;
-
 	
-	center = (t_int_vector) {0 + (*game_data)->width / 2, SCREEN_HEIGHT / 2};
-	printf("rays %f\n", ceil(((M_PI / 3) / DELTA_FOV)));
-	printf("debug %d\n", (*game_data)->width );
+	center = (t_int_vector) {0 , SCREEN_HEIGHT / 2};
 	fov_angle = (*game_data)->player_data.angle - M_PI / 6;
 	origin = &(*game_data)->player_data.current_position;
 	point = &(*game_data)->player_data.end_position;
 	update_origin(game_data);
+	fov_angle -= 872 * DELTA_FOV;
 	while (fov_angle < (*game_data)->player_data.angle + M_PI / 6)
 	{
+		update_end(game_data, fov_angle);
 		line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map_array, (*game_data));
 		draw_wall((*game_data), center);
-		center.x += (*game_data)->width;
 		fov_angle += DELTA_FOV;
-		update_end(game_data, fov_angle);
+		center.x += SCREEN_WIDTH / ((((M_PI / 3) / DELTA_FOV)));
+		if (center.x >= SCREEN_WIDTH)
+			break ;
 	}
 }

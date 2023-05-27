@@ -21,10 +21,10 @@
 # define WALL '1'
 # define SPEED 10.0
 # define ANGLE_SPEED 0.07
-# define DELTA_FOV 0.04
+# define DELTA_FOV 0.001
 # define SCREEN_WIDTH 1920
 # define SCREEN_HEIGHT 1080
-# define WALL_HEIGHT 15000
+# define WALL_HEIGHT 25000
 
 typedef struct s_game		t_game;
 typedef struct s_player		t_player;
@@ -40,8 +40,8 @@ struct s_vector
 
 struct s_int_vector
 {
-	unsigned int	x;
-	unsigned int	y;
+	int	x;
+	int	y;
 };
 
 struct s_position
@@ -73,7 +73,7 @@ struct s_game
 	mlx_image_t				*floor;
 	mlx_image_t				*ceiling;
 	mlx_image_t				*wall;
-	int						width;
+	double					width;
 	int						height;
 	int						n;
 	struct s_map			*map_data;
@@ -187,7 +187,7 @@ void		press_s(char **map, t_game *game_data);
 void		press_w(char **map, t_game *game_data);
 void		place_wall_or_player(char **map, t_game *game_data, int x, int y);
 void		draw_grid(t_map *map_data, mlx_image_t *image);
-void		set_img_color(mlx_image_t *img, int color_value);
+void		set_img_color(mlx_image_t *img, uint32_t color_value);
 void		draw_new_image(mlx_image_t **img, mlx_t *mlx, int x, int y);
 void		draw_ray(t_game **game_data);
 void		press_right(t_game **data);
