@@ -21,10 +21,10 @@
 # define WALL '1'
 # define SPEED 10.0
 # define ANGLE_SPEED 0.07
-# define DELTA_FOV 0.001
-# define SCREEN_WIDTH 1920
+# define DELTA_FOV 0.0005
+# define SCREEN_WIDTH 2096
 # define SCREEN_HEIGHT 1080
-# define WALL_HEIGHT 25000
+# define WALL_HEIGHT 30000
 
 typedef struct s_game		t_game;
 typedef struct s_player		t_player;
@@ -40,8 +40,8 @@ struct s_vector
 
 struct s_int_vector
 {
-	int	x;
-	int	y;
+	unsigned int	x;
+	unsigned int	y;
 };
 
 struct s_position
