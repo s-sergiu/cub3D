@@ -78,7 +78,7 @@ void	line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t
 			//draw the wall from origin to x and y;
 			distance = sqrt(pow(x1 - x, 2) + pow(y1 - y, 2));
 			if (distance < 32)
-				game_data->distance = 28;
+				game_data->distance = 27.8 ;
 			else
 				game_data->distance = distance;
 			return ;

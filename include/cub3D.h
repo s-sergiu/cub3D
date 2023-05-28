@@ -2,7 +2,6 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include <assert.h>
 # include <errno.h>
 # include <fcntl.h>
 # include <limits.h>
