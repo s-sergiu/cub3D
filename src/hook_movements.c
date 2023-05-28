@@ -70,8 +70,6 @@ void	press_w(char **map, t_game *game_data)
 	posy = (player_img->instances[0].y + (int)d.y)/ TILE;
 	if (map[posy][posx] != '1') 
 	{
-		printf("dx: %f\n", d.x);
-		printf("dy: %f\n", d.y);
 		player_img->instances[0].x += d.x;
 		player_img->instances[0].y += d.y;
 	}

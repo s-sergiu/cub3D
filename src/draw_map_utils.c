@@ -3,7 +3,7 @@
 
 void	draw_wall(t_game *game_data, t_int_vector center, double fov)
 {
-	int	height;
+	double	height;
 	unsigned int x0;
 	unsigned int y0;
 	unsigned int color;
@@ -11,7 +11,8 @@ void	draw_wall(t_game *game_data, t_int_vector center, double fov)
 
 	distance = game_data->distance;
 	// this is the formulae
-	distance *= (cos(M_PI / 6 - fov));
+	if (distance >= 32)
+		distance *= (cos(M_PI / 6 - fov));
 	height = WALL_HEIGHT / distance;
 	x0 = center.x;
 	y0 = center.y - (height / 2);
@@ -72,30 +73,19 @@ void	line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t
 	i = -1;
 	//check if hit a wall
 	while (++i <= step) {
-		if (map[(int)y / TILE][(int)x / TILE] == '1')
+		if (map[(int)(y / TILE)][(int)(x / TILE)] == '1')
 		{
 			//draw the wall from origin to x and y;
 			distance = sqrt(pow(x1 - x, 2) + pow(y1 - y, 2));
-			if (distance == 0)
-				game_data->height = WALL_HEIGHT;
+			if (distance < 32)
+				game_data->distance = 28;
 			else
 				game_data->distance = distance;
-			//printf("distance %d\n", distance);
-			if (game_data->height < 0)
-				game_data->height = 100;
 			return ;
 		}
 		else
 			mlx_put_pixel(y_img, x = x + dx, y = y + dy, 0xFAFAFA);
 	}
-}
-
-int	rad_to_degrees(double radian)
-{
-	int degrees;
-
-	degrees = (radian * 360) / (M_PI * 2);
-	return (degrees);
 }
 
 void	draw_fov(t_game **game_data)
