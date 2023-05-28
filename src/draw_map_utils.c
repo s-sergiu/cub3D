@@ -7,7 +7,7 @@ void	draw_wall(t_game *game_data, t_int_vector center, double fov)
 	unsigned int x0;
 	unsigned int y0;
 	unsigned int color;
-	int distance;
+	double		distance;
 
 	distance = game_data->distance;
 	// this is the formulae
@@ -51,7 +51,7 @@ void	line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t
 	double x1, y1;
 	double x2, y2, dx, dy, step;
 	int i;
-	int	distance;
+	double	distance;
 
 	x1 = pointA->x_axis;
 	y1 = pointA->y_axis;
