@@ -74,7 +74,7 @@ struct s_game
 	mlx_image_t				*ceiling;
 	mlx_image_t				*wall;
 	double					width;
-	int						height;
+	double					height;
 	double					distance;
 	int						n;
 	struct s_map			*map_data;
