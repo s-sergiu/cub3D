@@ -11,7 +11,7 @@ void	ft_hook(void *param)
 	game_data = param;
 	map = game_data->map_data->map_array;
 	mlx = game_data->mlx;
-	if (sum < 0.9)
+	if (sum < 0.4)
 	{
 		if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
 			mlx_close_window(mlx);
@@ -27,8 +27,8 @@ void	ft_hook(void *param)
 			press_left(&game_data);
 		if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
 			press_right(&game_data);
-		draw_ray(&game_data);
 		sum = 0;
+		draw_ray(&game_data);
 	}
 	sum += mlx->delta_time;
 }
