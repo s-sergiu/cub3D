@@ -51,35 +51,6 @@ void	draw_walls(t_game *game_data)
 	}
 }
 
-void	draw_line(struct s_position *pointA, struct s_position *pointB, mlx_image_t* y_img)
-{
-	double dX;
-	double dY;
-	double m;
-	double error;
-	int x;
-	int y;
-
-	//bresenham algorithm
-	error = 0.5;
-	x = pointA->x_axis;
-	y = pointA->y_axis;
-	dX = pointB->x_axis - x;
-	dY = pointB->y_axis - y;
-	m = dY/dX;
-	while (x < pointB->x_axis)
-	{
-		mlx_put_pixel(y_img, x, y, 0xFAFABB);
-		x++;
-		error += m;
-		if (error > 0.5)
-		{
-			y++;
-			error += -1;
-		}
-	}
-}
-
 void	update_origin(t_game **game_data)
 {
 	struct s_position	*origin;	
@@ -132,17 +103,7 @@ void	draw_player(t_game **game_data)
 	//get player current position;
 	(*game_data)->player_data.current_position.x_axis = player->instances[0].x;
 	(*game_data)->player_data.current_position.y_axis = player->instances[0].y;
-	(*game_data)->player_data.end_position.x_axis = player->instances[0].x;
-	(*game_data)->player_data.end_position.y_axis = player->instances[0].y + 100;
 	//draw player box;
-	x = -1;
-	y = 0;
-	while (++x < (int)player->width)
-	{
-		while (y < (int)player->height)
-			mlx_put_pixel(player, x, y++, 0);
-		y = 0;
-	}
 }
 
 void	add_bg_image(t_game **game_data)
