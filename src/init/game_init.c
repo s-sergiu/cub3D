@@ -36,6 +36,7 @@ void	init_game_data(t_game **game_data, t_map *map_data)
 		destroy_map_data(map_data);
 		exit(errno);
 	}
+	mlx_set_setting(MLX_STRETCH_IMAGE, 1);
 	(*game_data)->n = (((M_PI / 3) / DELTA_FOV));
 	(*game_data)->mlx = mlx;
 	(*game_data)->bg_img = NULL;
@@ -45,5 +46,6 @@ void	init_game_data(t_game **game_data, t_map *map_data)
 	(*game_data)->ceiling = NULL;
 	(*game_data)->map_data = map_data;
 	(*game_data)->player_data.player_image = NULL;
-	(*game_data)->player_data.angle = 0;
+	(*game_data)->player_data.angle = 3 * M_PI / 2;
+	(*game_data)->distance = 8;
 }

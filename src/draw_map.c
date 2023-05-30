@@ -11,7 +11,7 @@ void	ft_hook(void *param)
 	game_data = param;
 	map = game_data->map_data->map_array;
 	mlx = game_data->mlx;
-	if (sum < 0.4)
+	if (sum > 0.0700)
 	{
 		if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
 			mlx_close_window(mlx);
@@ -28,9 +28,9 @@ void	ft_hook(void *param)
 		if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
 			press_right(&game_data);
 		sum = 0;
-		draw_ray(&game_data);
 	}
 	sum += mlx->delta_time;
+	draw_ray(&game_data);
 }
 
 void	draw_walls(t_game *game_data)
@@ -99,7 +99,7 @@ void	draw_player(t_game **game_data)
 	x = (*game_data)->player_data.initial_position.x_axis;
 	y = (*game_data)->player_data.initial_position.y_axis;
 	// place player to window;
-	place_image(player, mlx, (x * TILE) + 32, (y * TILE) + 32);
+	place_image(player, mlx, (x * TILE) + 16, (y * TILE) + 16);
 	//get player current position;
 	(*game_data)->player_data.current_position.x_axis = player->instances[0].x;
 	(*game_data)->player_data.current_position.y_axis = player->instances[0].y;
@@ -109,35 +109,66 @@ void	draw_player(t_game **game_data)
 void	add_bg_image(t_game **game_data)
 {
 	mlx_t		*mlx;
-	mlx_image_t	*image;
+	unsigned int x0;
+	unsigned int y0;
+	int color;
 
 	mlx = (*game_data)->mlx;
-	create_img(&image, mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
-	(*game_data)->bg_img = image;
-	place_image(image, mlx, 0, 0);
-	set_img_color(image, 255);
+	create_img(&(*game_data)->bg_img, mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
+	x0 = 0;
+	y0 = 0;
+	place_image((*game_data)->bg_img, mlx, 0, 0);
+	color = get_rgba(0, 0, 0, 100);
+	while (y0 < SCREEN_HEIGHT)
+	{
+		while (x0 < SCREEN_WIDTH)
+		{
+			mlx_put_pixel((*game_data)->bg_img, x0, y0, color);
+			x0++;
+		}
+		x0 = 0;
+		y0++;
+	}
 }
 
 void	add_floor(t_game **game_data)
 {
 	mlx_t		*mlx;
-	mlx_texture_t	*texture;
+	mlx_image_t	*image;
+	int color;
 
 	mlx = (*game_data)->mlx;
-	texture = mlx_load_png("data/textures/blue.png");
-	(*game_data)->floor = mlx_texture_to_image(mlx, texture);
-	place_image((*game_data)->floor, mlx, 0, 512);
+	create_img(&image, mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
+	(*game_data)->floor = image;
+	place_image((*game_data)->floor, mlx, 0, 0);
+	color = get_rgba(0, 0, 255, 1);
+	set_img_color((*game_data)->floor, color);
 }
 
 void	add_ceiling(t_game **game_data)
 {
 	mlx_t		*mlx;
-	mlx_texture_t	*texture;
+	mlx_image_t	*image;
+	unsigned int x0;
+	unsigned int y0;
 
 	mlx = (*game_data)->mlx;
-	texture = mlx_load_png("data/textures/yellow.png");
-	(*game_data)->floor = mlx_texture_to_image(mlx, texture);
-	place_image((*game_data)->ceiling, mlx, 0, 0);
+	create_img(&image, mlx, SCREEN_WIDTH, SCREEN_HEIGHT / 2);
+	(*game_data)->ceiling = image;
+	x0 = 0;
+	y0 = 540;
+	place_image(image, mlx, x0, y0);
+	while (y0 < SCREEN_HEIGHT)
+	{
+		while (x0 < SCREEN_WIDTH)
+		{
+			mlx_put_pixel(image, x0, y0, 0xFAFAFA);
+			x0++;
+		}
+		x0 = 0;
+		y0++;
+	}
+	set_img_color(image, 100);
 }
 
 void	add_game_screen(t_game **game_data)
@@ -162,7 +193,6 @@ void	game_setup(char *argv)
 	init_map_data(&map_data, argv);
 	init_game_data(&game_data, map_data);
 	add_bg_image(&game_data);
-	draw_grid(map_data, game_data->bg_img);
 	draw_walls(game_data);
 	draw_player(&game_data);
 	add_bg_image(&game_data);

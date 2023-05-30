@@ -12,7 +12,7 @@
 # include "libarrtools.h"
 # define TRUE 1
 # define FALSE 0
-# define TILE 64
+# define TILE 32
 # define EMPTY_MAP 254
 # define IS_DIRECTORY 21
 # define BAD_MAP_FILE 255
@@ -23,7 +23,7 @@
 # define DELTA_FOV 0.0005
 # define SCREEN_WIDTH 2096
 # define SCREEN_HEIGHT 1080
-# define WALL_HEIGHT 30000
+# define WALL_HEIGHT 25000
 
 typedef struct s_game		t_game;
 typedef struct s_player		t_player;
@@ -197,6 +197,8 @@ void	draw_fov(t_game **game_data);
 void	update_origin(t_game **game_data);
 void	update_end(t_game **game_data, double fov_angle);
 void	draw_wall(t_game *game_data, t_int_vector center, double fov);
+void	draw_sin(t_game **game_data);
+int		get_rgba(int r, int g, int b, int a);
 void	add_bg_image(t_game **game_data);
 
 #endif
