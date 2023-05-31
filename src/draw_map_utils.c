@@ -1,5 +1,27 @@
 
 #include "cub3D.h"
+
+int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
+{
+	int texture_x;
+	int texture_y;
+	int position;
+	int color;
+	int x;
+
+	x = game_data->player_data.end_ray.x_axis;
+	printf("x: %d\n", x);
+	texture_y = 10; 
+	(void)topy;
+	texture_x = tex->width / (x % TILE) + 1;
+	
+	printf("texture y: %d\n", texture_y);
+	printf("texture x: %d\n", texture_x);
+	position = (texture_y * tex->width + texture_x) * tex->bytes_per_pixel;
+	color = get_rgba(tex->pixels[position], tex->pixels[position + 1], tex->pixels[position + 2], tex->pixels[position + 3]);
+	return (color);
+}
+
 int get_rgba(int r, int g, int b, int a)
 {
     return (r << 24 | g << 16 | b << 8 | a);
@@ -22,7 +44,6 @@ void	draw_wall(t_game *game_data, t_int_vector center, double fov)
 	unsigned int x0;
 	//unsigned int y0;
 	int topy;
-	int color;
 	int alpha;
 	double	distance;
 
@@ -38,11 +59,10 @@ void	draw_wall(t_game *game_data, t_int_vector center, double fov)
 	//y0 = center.y - (height / 2);
 	//alpha = 255 / pow(distance, 0.3) * 2;
 	(void)alpha;
-	color = get_rgba(0, 255, 0, 255);
 	while (topy <= center.y + (height / 2) && topy <= SCREEN_HEIGHT)
 	{
 		while (x0 < center.x + 2)
-			mlx_put_pixel(game_data->bg_img, x0++, topy, color);
+			mlx_put_pixel(game_data->bg_img, x0++, topy, get_color_texture(game_data->wall, game_data, topy));
 		x0 = center.x;
 		topy++;
 	}
@@ -96,10 +116,9 @@ void	line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t
 		{
 			//draw the wall from origin to x and y;
 			distance = sqrt(pow(x1 - x, 2) + pow(y1 - y, 2));
-			if (distance < TILE / 2)
-				game_data->distance = 22;
-			else
-				game_data->distance = distance;
+			game_data->distance = distance;
+			game_data->player_data.end_ray.x_axis= x;
+			game_data->player_data.end_ray.y_axis= y;
 			return ;
 		}
 		else
