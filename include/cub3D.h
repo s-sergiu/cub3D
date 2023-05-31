@@ -60,6 +60,7 @@ struct s_player
 	struct s_static_position	initial_position;
 	struct s_position			current_position;
 	struct s_position			end_position;
+	struct s_position			end_ray;
 	double						angle;
 	mlx_image_t					*player_image;
 };
@@ -71,7 +72,7 @@ struct s_game
 	mlx_image_t				*game_screen;
 	mlx_image_t				*floor;
 	mlx_image_t				*ceiling;
-	mlx_image_t				*wall;
+	mlx_texture_t			*wall;
 	double					width;
 	double					height;
 	double					distance;
@@ -200,5 +201,6 @@ void	draw_wall(t_game *game_data, t_int_vector center, double fov);
 void	draw_sin(t_game **game_data);
 int		get_rgba(int r, int g, int b, int a);
 void	add_bg_image(t_game **game_data);
+int		get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy);
 
 #endif
