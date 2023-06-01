@@ -72,7 +72,10 @@ struct s_game
 	mlx_image_t				*game_screen;
 	mlx_image_t				*floor;
 	mlx_image_t				*ceiling;
-	mlx_texture_t			*wall;
+	mlx_texture_t			*south;
+	mlx_texture_t			*north;
+	mlx_texture_t			*east;
+	mlx_texture_t			*west;
 	double					width;
 	double					height;
 	double					distance;
