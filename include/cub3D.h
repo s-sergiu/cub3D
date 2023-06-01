@@ -197,7 +197,7 @@ void		line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_
 void	draw_fov(t_game **game_data);
 void	update_origin(t_game **game_data);
 void	update_end(t_game **game_data, double fov_angle);
-void	draw_wall(t_game *game_data, t_int_vector center, double fov);
+void	draw_wall(t_game **game_data, t_int_vector center, double fov);
 void	draw_sin(t_game **game_data);
 int		get_rgba(int r, int g, int b, int a);
 void	add_bg_image(t_game **game_data);
