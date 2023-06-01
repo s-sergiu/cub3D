@@ -36,24 +36,22 @@ int get_rgba_a(char r, char g, char b, char a, double distance)
     return (r << 24 | g << 16 | b << 8 | a);
 }
 
-void	draw_wall(t_game *game_data, t_int_vector center, double fov)
+void	draw_wall(t_game **game_data, t_int_vector center, double fov)
 {
 	double	height;
 	unsigned int x0;
 	//unsigned int y0;
 	int topy;
 	int alpha;
-	double	distance;
+	//double	distance;
 	int posy;
 
 	(void)fov;
-	distance = game_data->distance;
+	//distance = game_data->distance;
 	// this is the formulae
-	/*
-	if (distance >= TILE / 2)
-		distance *= (cos(M_PI / 6 - fov));
-	*/
-	height = WALL_HEIGHT / distance;
+	if ((*game_data)->distance >= TILE / 2)
+		(*game_data)->distance *= (cos(M_PI / 6 - fov));
+	height = WALL_HEIGHT / (*game_data)->distance;
 	topy = SCREEN_HEIGHT / 2 - height / 2;
 	if (topy < 0)
 		topy = 0;
@@ -66,7 +64,7 @@ void	draw_wall(t_game *game_data, t_int_vector center, double fov)
 	while (topy <= center.y + (height / 2) && topy <= SCREEN_HEIGHT)
 	{
 		while (x0 < center.x + 2)
-			mlx_put_pixel(game_data->bg_img, x0++, topy, get_color_texture(game_data->wall, game_data, topy - posy));
+			mlx_put_pixel((*game_data)->bg_img, x0++, topy, get_color_texture((*game_data)->wall, (*game_data), topy - posy));
 		x0 = center.x;
 		topy++;
 	}
@@ -148,7 +146,7 @@ void	draw_fov(t_game **game_data)
 	{
 		update_end(game_data, fov_angle);
 		line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map_array, (*game_data));
-		draw_wall((*game_data), center, fov_shit);
+		draw_wall(game_data, center, fov_shit);
 		fov_angle += DELTA_FOV;
 		fov_shit += DELTA_FOV;
 		//center.x += SCREEN_WIDTH / ((((M_PI / 3) / DELTA_FOV)));
