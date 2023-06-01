@@ -1,5 +1,13 @@
 
 #include "cub3D.h"
+/*
+void	draw_texture(t_game **game_data)
+{
+	mlx_texture_t *tex;
+
+//	(*game_data)->tex = tex;
+}
+*/
 
 void	ft_hook(void *param)
 {
@@ -31,6 +39,7 @@ void	ft_hook(void *param)
 	}
 	sum += mlx->delta_time;
 	draw_ray(&game_data);
+	//draw_texture(&game_data);
 }
 
 void	draw_walls(t_game *game_data)
