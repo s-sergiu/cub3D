@@ -39,7 +39,10 @@ void	init_game_data(t_game **game_data, t_map *map_data)
 	mlx_set_setting(MLX_STRETCH_IMAGE, 1);
 	(*game_data)->n = (((M_PI / 3) / DELTA_FOV));
 	(*game_data)->mlx = mlx;
-	(*game_data)->wall = mlx_load_png("data/textures/wall.png");
+	(*game_data)->south = mlx_load_png("data/textures/tex_south.png");
+	(*game_data)->north = mlx_load_png("data/textures/tex_north.png");
+	(*game_data)->east = mlx_load_png("data/textures/tex_east.png");
+	(*game_data)->west = mlx_load_png("data/textures/tex_west.png");
 	(*game_data)->bg_img = NULL;
 	(*game_data)->game_screen = NULL;
 	(*game_data)->floor = NULL;
