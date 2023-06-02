@@ -1,7 +1,10 @@
 
 #include "cub3D.h"
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 4e951312f7dfad148c22b45da0e6cb70d32fefa2
 
 int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
 {
@@ -13,7 +16,10 @@ int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
 	double y;
 	int	difference;
 	double height;
+<<<<<<< HEAD
 	double new_angle;
+=======
+>>>>>>> 4e951312f7dfad148c22b45da0e6cb70d32fefa2
 	mlx_texture_t *north;
 	mlx_texture_t *south;
 	mlx_texture_t *west;
@@ -34,6 +40,7 @@ int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
 	(void)tex;
 	y = game_data->player_data.end_ray.y_axis;
 	x = game_data->player_data.end_ray.x_axis;
+<<<<<<< HEAD
 	(void)x;
 	difference = SCREEN_HEIGHT / 2 - height / 2;
 	new_angle = game_data->player_data.angle;
@@ -99,6 +106,33 @@ int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
 	color = get_rgba(north->pixels[position], north->pixels[position + 1], north->pixels[position + 2], north->pixels[position + 3]);
 	*/
 	return (0xfafafa);
+=======
+	difference = SCREEN_HEIGHT / 2 - height / 2;
+	if (difference < 0)
+		topy += -difference;
+	texture_y = (topy) * ((double)north->height - 1) / height;  
+	texture_x = fmod((x / TILE), 1.0) * north->width;
+	//alpha = 255 / pow(game_data->distance, 0.3) * 2;
+	if ((int)x % TILE == 0)
+	{
+		if ((int)game_data->player_data.angle % 2 * M_PI >= 3 * M_PI_2 && (int)game_data->player_data.angle % 2 * M_PI <= M_PI_2)
+		{
+			texture_x= (topy) * ((double)east->height - 1) / height;  
+			texture_y = fmod((y / TILE), 1.0) * east->width;
+			position = ((texture_x) * east->height + (east->width - 1 - texture_y)) * west->bytes_per_pixel;
+			color = get_rgba(east->pixels[position], east->pixels[position + 1], east->pixels[position + 2], east->pixels[position + 3]);
+			return (color);
+		}
+		texture_x= (topy) * ((double)west->height - 1) / height;  
+		texture_y = fmod((y / TILE), 1.0) * west->width;
+		position = ((texture_x) * west->height + (west->width - 1 - texture_y)) * west->bytes_per_pixel;
+		color = get_rgba(west->pixels[position], west->pixels[position + 1], west->pixels[position + 2], west->pixels[position + 3]);
+		return (color);
+	}
+	position = (texture_y * north->width + texture_x) * north->bytes_per_pixel;
+	color = get_rgba(north->pixels[position], north->pixels[position + 1], north->pixels[position + 2], north->pixels[position + 3]);
+	return (color);
+>>>>>>> 4e951312f7dfad148c22b45da0e6cb70d32fefa2
 }
 
 int get_rgba(int r, int g, int b, int a)
@@ -230,4 +264,7 @@ void	draw_fov(t_game **game_data)
 		center.x++;
 	}
 }
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 4e951312f7dfad148c22b45da0e6cb70d32fefa2
