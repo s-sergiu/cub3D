@@ -44,4 +44,9 @@ void	init_game_data(t_game **game_data, t_map *map_data)
 	(*game_data)->bg_img = NULL;
 	(*game_data)->map_data = map_data;
 	(*game_data)->player_data.player_image = NULL;
+<<<<<<< Updated upstream
+=======
+	(*game_data)->player_data.angle = M_PI / 2;
+	(*game_data)->distance = 8;
+>>>>>>> Stashed changes
 }
