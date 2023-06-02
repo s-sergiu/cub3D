@@ -83,10 +83,10 @@ int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
 		{
 			if ((int)x % TILE == 1)
 			{
-				texture_x= (topy) * ((double)west->height - 1) / height;  
-				texture_y = fmod((y / TILE), 1.0) * west->width;
-				position = ((texture_x) * west->height + (west->width - 1 - texture_y)) * west->bytes_per_pixel;
-				color = get_rgba(west->pixels[position], west->pixels[position + 1], west->pixels[position + 2], west->pixels[position + 3]);
+				texture_x= (topy) * ((double)east->height - 1) / height;  
+				texture_y = fmod((y / TILE), 1.0) * east->width;
+				position = ((texture_x) * east->height + (east->width - 1 - texture_y)) * east->bytes_per_pixel;
+				color = get_rgba(east->pixels[position], east->pixels[position + 1], east->pixels[position + 2], east->pixels[position + 3]);
 				return (color);
 			}
 		}
