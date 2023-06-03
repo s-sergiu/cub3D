@@ -82,9 +82,9 @@ int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
 		{
 			if ((fov_start > 3 * M_PI_2 || fov_start < 2 * M_PI) || (fov_end < M_PI_2))
 			{
-				texture_x= (topy) * ((double)east->height - 1) / height;  
-				texture_y = fmod((y / TILE), 1.0) * east->width;
-				position = ((texture_x) * east->height + (east->width - 1 - texture_y)) * east->bytes_per_pixel;
+				texture_y = (topy) * ((double)east->height - 1) / height;  
+				texture_x = fmod((y / TILE), 1.0) * east->width;
+				position = (texture_y * east->width + texture_x) * east->bytes_per_pixel;
 				color = get_rgba(east->pixels[position], east->pixels[position + 1], east->pixels[position + 2], east->pixels[position + 3]);
 				return (color);
 			}
