@@ -9,6 +9,61 @@ void	draw_texture(t_game **game_data)
 }
 */
 
+void	draw_ceiling(t_game **game_data)
+{
+
+
+	unsigned int x0;
+	unsigned int y0;
+	int color;
+
+	x0 = 0;
+	y0 = 0;
+	color = get_rgba(0, 0, 255, 255);
+	while (y0 < SCREEN_HEIGHT / 2)
+	{
+		while (x0 < SCREEN_WIDTH)
+		{
+			mlx_put_pixel((*game_data)->ceiling, x0, y0, color);
+			x0++;
+		}
+		x0 = 0;
+		y0++;
+	}
+}
+
+void	draw_floor(t_game **game_data)
+{
+
+
+	unsigned int x0;
+	unsigned int y0;
+	int color;
+
+	x0 = 0;
+	y0 = 0;
+	color = get_rgba(102, 51, 0, 255);
+	while (y0 < SCREEN_HEIGHT / 2)
+	{
+		while (x0 < SCREEN_WIDTH)
+		{
+			mlx_put_pixel((*game_data)->floor, x0, y0, color);
+			x0++;
+		}
+		x0 = 0;
+		y0++;
+	}
+}
+
+void	mouse_hook(t_game **game_data)
+{
+	int x;
+	int y;
+
+	mlx_get_mouse_pos((*game_data)->mlx, &x, &y);	
+	mlx_set_mouse_pos((*game_data)->mlx, x, y);
+}
+
 void	ft_hook(void *param)
 {
 	t_game	*game_data;
@@ -35,9 +90,12 @@ void	ft_hook(void *param)
 			press_left(&game_data);
 		if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
 			press_right(&game_data);
-		draw_ray(&game_data);
 		sum = 0;
 	}
+	mouse_hook(&game_data);
+	draw_ray(&game_data);
+	draw_ceiling(&game_data);
+	draw_floor(&game_data);
 	sum += mlx->delta_time;
 	//draw_texture(&game_data);
 }
@@ -97,11 +155,12 @@ void	draw_player(t_game **game_data)
 	mlx_t		*mlx;
 	int			x;
 	int			y;
+	int			color;
 
 	mlx = (*game_data)->mlx;
 	player = NULL;
 	//create new player image;
-	create_img(&player, mlx, 1, 1);
+	create_img(&player, mlx, 5, 5);
 	//assign player image in my struct the pointer I created;
 	(*game_data)->player_data.player_image = player;
 	//get_player initial position;
@@ -113,45 +172,42 @@ void	draw_player(t_game **game_data)
 	(*game_data)->player_data.current_position.x_axis = player->instances[0].x;
 	(*game_data)->player_data.current_position.y_axis = player->instances[0].y;
 	//draw player box;
+	color = get_rgba(0, 0, 0, 255);
+	while (y < 5)
+	{
+		while (x < 5)
+		{
+			mlx_put_pixel(player, x, y, color);
+			x++;
+		}
+		x = 0;
+		y++;
+	}
 }
 
 void	add_bg_image(t_game **game_data)
 {
 	mlx_t		*mlx;
-	unsigned int x0;
-	unsigned int y0;
-	int color;
 
 	mlx = (*game_data)->mlx;
 	create_img(&(*game_data)->bg_img, mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
-	x0 = 0;
-	y0 = 0;
 	place_image((*game_data)->bg_img, mlx, 0, 0);
-	color = get_rgba(0, 0, 0, 100);
-	while (y0 < SCREEN_HEIGHT)
-	{
-		while (x0 < SCREEN_WIDTH)
-		{
-			mlx_put_pixel((*game_data)->bg_img, x0, y0, color);
-			x0++;
-		}
-		x0 = 0;
-		y0++;
-	}
 }
 
 void	add_floor(t_game **game_data)
 {
 	mlx_t		*mlx;
 	mlx_image_t	*image;
-	int color;
+	unsigned int x0;
+	unsigned int y0;
 
 	mlx = (*game_data)->mlx;
-	create_img(&image, mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
+	create_img(&image, mlx, SCREEN_WIDTH, SCREEN_HEIGHT / 2);
 	(*game_data)->floor = image;
-	place_image((*game_data)->floor, mlx, 0, 0);
-	color = get_rgba(0, 0, 255, 1);
-	set_img_color((*game_data)->floor, color);
+	x0 = 0;
+	y0 = SCREEN_HEIGHT / 2;
+	place_image(image, mlx, x0, y0);
+	set_img_color(image, 255);
 }
 
 void	add_ceiling(t_game **game_data)
@@ -165,19 +221,9 @@ void	add_ceiling(t_game **game_data)
 	create_img(&image, mlx, SCREEN_WIDTH, SCREEN_HEIGHT / 2);
 	(*game_data)->ceiling = image;
 	x0 = 0;
-	y0 = 540;
+	y0 = 0;
 	place_image(image, mlx, x0, y0);
-	while (y0 < SCREEN_HEIGHT)
-	{
-		while (x0 < SCREEN_WIDTH)
-		{
-			mlx_put_pixel(image, x0, y0, 0xFAFAFA);
-			x0++;
-		}
-		x0 = 0;
-		y0++;
-	}
-	set_img_color(image, 100);
+	set_img_color(image, 255);
 }
 
 void	add_game_screen(t_game **game_data)
@@ -201,10 +247,12 @@ void	game_setup(char *argv)
 	map_data = NULL;
 	init_map_data(&map_data, argv);
 	init_game_data(&game_data, map_data);
+	add_ceiling(&game_data);
+	add_floor(&game_data);
 	add_bg_image(&game_data);
 	draw_walls(game_data);
 	draw_player(&game_data);
-	add_bg_image(&game_data);
+	mlx_set_mouse_pos(game_data->mlx, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 	mlx_loop_hook(game_data->mlx, ft_hook, game_data);
 	mlx_loop(game_data->mlx);
 	mlx_terminate(game_data->mlx);

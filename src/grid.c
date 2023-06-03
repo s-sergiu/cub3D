@@ -11,7 +11,7 @@ void	draw_horizontal_line(int height, int width, mlx_image_t *image)
 	while (y < height)
 	{
 		while (x < width)
-			mlx_put_pixel(image, x++, y, 0xFFFF);
+			mlx_put_pixel(image, x++, y, 0xFAFAFA);
 		y += TILE;
 		x = 0;
 	}
@@ -27,7 +27,7 @@ void	draw_vertical_line(int height, int width, mlx_image_t *image)
 	while (x < width)
 	{
 		while (y < height)
-			mlx_put_pixel(image, x, y++, 0xFFFF);
+			mlx_put_pixel(image, x, y++, 0xFAFAFA);
 		x += TILE;
 		y = 0;
 	}
