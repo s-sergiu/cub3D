@@ -42,22 +42,9 @@ int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
 	if (fov_end < 0)
         fov_end += 2 * M_PI;
 	//alpha = 255 / pow(game_data->distance, 0.3) * 2;
-		if ((fov_start > 0) || (fov_end < M_PI))
+		if ((int)y % TILE == 0)
 		{
-			//printf("y: %d", (int)y % TILE);
-			if ((int)y % TILE == 1)
-			{
-				//south
-				texture_y = (topy) * ((double)south->height - 1) / height;  
-				texture_x = fmod((x / TILE), 1.0) * south->width;
-				position = ((texture_y) * south->width + (south->width - 1 - texture_x)) * south->bytes_per_pixel;
-				color = get_rgba(south->pixels[position], south->pixels[position + 1], south->pixels[position + 2], south->pixels[position + 3]);
-				return (color);
-			}
-		}
-		if (((fov_end >= M_PI) || fov_start >= M_PI) &&  (fov_end < M_PI * 2))
-		{
-			if ((int)y % TILE == 0)
+			if (((fov_end >= M_PI) || fov_start >= M_PI) ||  ((fov_end <= M_PI * 2 || fov_start >= 0) || (fov_start < M_PI / 6)))
 			{
 				//north
 				texture_y = (topy) * ((double)north->height - 1) / height;  
@@ -67,11 +54,11 @@ int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
 				return (color);
 			}
 		}
-		if ((fov_end < 3 * M_PI_2) || (fov_start > M_PI_2))
+		if ((int)x % TILE == 0)
 		{
-			//east
-			if ((int)x % TILE == 0)
+			if ((fov_end < 3 * M_PI_2) || (fov_start > M_PI_2))
 			{
+			//west
 				texture_x= (topy) * ((double)west->height - 1) / height;  
 				texture_y = fmod((y / TILE), 1.0) * west->width;
 				position = ((texture_x) * west->height + (west->width - 1 - texture_y)) * west->bytes_per_pixel;
@@ -79,9 +66,21 @@ int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
 				return (color);
 			}
 		}
-		if ((fov_start > 3 * M_PI_2 || fov_start < 2 * M_PI) || (fov_end < M_PI_2))
+		if ((int)y % TILE == 1)
 		{
-			if ((int)x % TILE == 1)
+			if ((fov_end <= 3 * M_PI_2) || (fov_start >= 3 * M_PI_2) || (fov_end >= 0) || ((fov_start >= 0) && (fov_start > 11 * M_PI / 6)))
+			{
+				//south
+				texture_y = (topy) * ((double)south->height - 1) / height;  
+				texture_x = fmod((x / TILE), 1.0) * south->width;
+				position = ((texture_y) * south->width + (south->width - 1 - texture_x)) * south->bytes_per_pixel;
+				color = get_rgba(south->pixels[position], south->pixels[position + 1], south->pixels[position + 2], south->pixels[position + 3]);
+				return (color);
+			}
+		}
+		if ((int)x % TILE == 1)
+		{
+			if ((fov_start > 3 * M_PI_2 || fov_start < 2 * M_PI) || (fov_end < M_PI_2))
 			{
 				texture_x= (topy) * ((double)east->height - 1) / height;  
 				texture_y = fmod((y / TILE), 1.0) * east->width;
@@ -224,7 +223,6 @@ void	draw_fov(t_game **game_data)
 		draw_wall(game_data, center, fov_shit);
 		fov_angle += DELTA_FOV;
 		fov_shit += DELTA_FOV;
-		//center.x += SCREEN_WIDTH / ((((M_PI / 3) / DELTA_FOV)));
 		center.x++;
 	}
 }

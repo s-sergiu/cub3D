@@ -19,7 +19,7 @@ void	draw_ceiling(t_game **game_data)
 
 	x0 = 0;
 	y0 = 0;
-	color = get_rgba(0, 0, 255, 255);
+	color = get_rgba(74, 96, 100, 255);
 	while (y0 < SCREEN_HEIGHT / 2)
 	{
 		while (x0 < SCREEN_WIDTH)
@@ -42,7 +42,7 @@ void	draw_floor(t_game **game_data)
 
 	x0 = 0;
 	y0 = 0;
-	color = get_rgba(102, 51, 0, 255);
+	color = get_rgba(91, 87, 61, 255);
 	while (y0 < SCREEN_HEIGHT / 2)
 	{
 		while (x0 < SCREEN_WIDTH)
@@ -252,6 +252,7 @@ void	game_setup(char *argv)
 	add_bg_image(&game_data);
 	draw_walls(game_data);
 	draw_player(&game_data);
+	add_bg_image(&game_data);
 	mlx_set_mouse_pos(game_data->mlx, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 	mlx_loop_hook(game_data->mlx, ft_hook, game_data);
 	mlx_loop(game_data->mlx);
