@@ -219,7 +219,7 @@ void	draw_fov(t_game **game_data)
 	while (fov_angle < (*game_data)->player_data.angle + M_PI / 6)
 	{
 		update_end(game_data, fov_angle);
-		line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map_array, (*game_data));
+		line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map, (*game_data));
 		draw_wall(game_data, center, fov_shit);
 		fov_angle += DELTA_FOV;
 		fov_shit += DELTA_FOV;

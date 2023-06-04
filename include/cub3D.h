@@ -63,6 +63,7 @@ struct s_player
 	struct s_position			end_ray;
 	double						angle;
 	mlx_image_t					*player_image;
+	mlx_image_t					*map_player;
 };
 
 struct s_game
@@ -87,6 +88,7 @@ struct s_game
 struct s_map
 {
 	char	**map_array;
+	char	**map;
 	int		height;
 	int		width;
 };
@@ -205,5 +207,6 @@ void	draw_sin(t_game **game_data);
 int		get_rgba(int r, int g, int b, int a);
 void	add_bg_image(t_game **game_data);
 int		get_color_texture(mlx_texture_t *tex, t_game *game_data, int y);
+void	print_array(char **array);
 
 #endif

@@ -34,22 +34,6 @@ int	is_valid_element(char *map)
 	return (0);
 }
 
-void	parse_map(char **map)
-{
-	int i;
-
-	i = -1;
-	while (i < 6)	
-	{
-		if (ft_strlen(map[i]))
-		{
-			if (is_valid_element(map[i]))
-				printf("yes! element %s\n", map[i]);
-		}
-		i++;
-	}
-}
-
 char	*try_read_map(char *map_file)
 {
 	char	*pointer;
@@ -73,6 +57,47 @@ char	**try_split_string(char *string, t_map *map_data)
 	}
 	free(string);
 	return (map_array);
+}
+
+void	parse_map(t_map **map_data)
+{
+	int i;
+	char **map;
+	int	sequence;
+
+	i = -1;
+	map = (*map_data)->map_array;
+	sequence = 0;
+	while (map[++i])	
+	{
+		if (ft_strlen(map[i]))
+		{
+			if (sequence < 6)
+			{
+				//parse the things above the map
+				if (is_valid_element(map[i]))
+				{
+					printf("yes! element %s\n", map[i]);
+					sequence++;
+				}
+				else
+				{
+					printf("eror else: ");
+					printf("sequence %d\n", sequence);
+					exit(1);
+				}
+			}
+			else
+			{
+				//parse the map
+				//start storing map in struct	
+				(*map_data)->map = map + sequence;
+				(*map_data)->width =ft_strlen(map[0]) * TILE;
+				(*map_data)->height = arrtools_arrlen(map) * TILE;
+				break;
+			}
+		}
+	}
 }
 
 void	malloc_map_struct(t_map **map_data, void (*f)(void *), void *data)
@@ -101,5 +126,5 @@ void	init_map_data(t_map **map_data, char *map_file)
 	(*map_data)->map_array = try_split_string(map_string, *map_data);
 	(*map_data)->width = ft_strlen((*map_data)->map_array[0]) * TILE;
 	(*map_data)->height = arrtools_arrlen((*map_data)->map_array) * TILE;
-	parse_map((*map_data)->map_array);
+	parse_map(map_data);
 }
