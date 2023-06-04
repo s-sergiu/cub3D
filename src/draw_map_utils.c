@@ -110,7 +110,7 @@ int get_rgba_a(char r, char g, char b, char a, double distance)
 	r = 255 / distance;
 	g = 255 / distance;
 	b = 255 / distance;
-	a = 255;
+	a = 0;
     return (r << 24 | g << 16 | b << 8 | a);
 }
 
@@ -132,7 +132,7 @@ void	draw_wall(t_game **game_data, t_int_vector center, double fov)
 	x0 = center.x;
 	//y0 = center.y - (height / 2);
 	posy = topy;
-	while (topy <= center.y + (height / 2) && topy <= SCREEN_HEIGHT)
+	while (topy <= center.y + (height / 2) && topy <= SCREEN_HEIGHT - 1)
 	{
 		while (x0 < center.x + 1)
 		{
