@@ -1,34 +1,17 @@
-
 #include "cub3D.h"
-/*
-void	draw_texture(t_game **game_data)
-{
-	mlx_texture_t *tex;
-
-//	(*game_data)->tex = tex;
-}
-*/
 
 void	draw_ceiling(t_game **game_data)
 {
-
-
 	unsigned int x0;
 	unsigned int y0;
-	int color;
 
 	x0 = 0;
-	y0 = 0;
-	color = get_rgba(74, 96, 100, 255);
-	while (y0 < SCREEN_HEIGHT / 2)
+	y0 = -1;
+	while (++y0 < SCREEN_HEIGHT / 2)
 	{
 		while (x0 < SCREEN_WIDTH)
-		{
-			mlx_put_pixel((*game_data)->ceiling, x0, y0, color);
-			x0++;
-		}
+			mlx_put_pixel((*game_data)->ceiling, x0++, y0, (*game_data)->ceiling_color);
 		x0 = 0;
-		y0++;
 	}
 }
 
@@ -38,20 +21,14 @@ void	draw_floor(t_game **game_data)
 
 	unsigned int x0;
 	unsigned int y0;
-	int color;
 
 	x0 = 0;
-	y0 = 0;
-	color = get_rgba(91, 87, 61, 255);
-	while (y0 < SCREEN_HEIGHT / 2)
+	y0 = -1;
+	while (++y0 < SCREEN_HEIGHT / 2)
 	{
 		while (x0 < SCREEN_WIDTH)
-		{
-			mlx_put_pixel((*game_data)->floor, x0, y0, color);
-			x0++;
-		}
+			mlx_put_pixel((*game_data)->floor, x0++, y0, (*game_data)->floor_color);
 		x0 = 0;
-		y0++;
 	}
 }
 
@@ -96,7 +73,6 @@ void	ft_hook(void *param)
 	draw_ceiling(&game_data);
 	draw_floor(&game_data);
 	sum += mlx->delta_time;
-	//draw_texture(&game_data);
 }
 
 void	draw_walls(t_game *game_data)
@@ -276,15 +252,14 @@ void	game_setup(char *argv)
 
 	game_data = NULL;
 	map_data = NULL;
-	init_map_data(&map_data, argv);
 	init_game_data(&game_data, map_data);
+	init_map_data(&game_data, &map_data, argv);
+	game_data->map_data = map_data;
 	add_ceiling(&game_data);
 	add_floor(&game_data);
-	add_bg_image(&game_data);
 	draw_walls(game_data);
 	draw_player(&game_data);
 	add_bg_image(&game_data);
-	draw_map_player(&game_data);
 	mlx_loop_hook(game_data->mlx, ft_hook, game_data);
 	mlx_loop(game_data->mlx);
 	mlx_terminate(game_data->mlx);
