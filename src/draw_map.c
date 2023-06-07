@@ -67,11 +67,11 @@ void	ft_hook(void *param)
 			press_left(&game_data);
 		if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
 			press_right(&game_data);
-		sum = 0;
-	}
 	draw_ray(&game_data);
 	draw_ceiling(&game_data);
 	draw_floor(&game_data);
+		sum = 0;
+	}
 	sum += mlx->delta_time;
 }
 

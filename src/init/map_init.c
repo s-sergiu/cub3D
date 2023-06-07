@@ -274,7 +274,6 @@ void	check_map_symbols(char **map, t_game **game_data)
 			{
 				player_angle(game_data, symbol);
 				player++;
-				printf("player angle: %lf\n", (*game_data)->player_data.angle);
 			}
 		}
 		j = -1;
