@@ -1,5 +1,14 @@
+NO ./data/textures/N.png
+SO ./data/textures/S.png
+
+WE ./data/textures/W.png
+EA ./data/textures/E.png
+
+F 220,100,0
+C 225,30,0
+
 111111111
-10P001001
+10N001001
 100100001
 100100101
 101100111

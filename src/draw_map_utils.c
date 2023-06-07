@@ -37,6 +37,8 @@ int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
 	new_angle = game_data->player_data.angle;
 	double fov_end = fmod(new_angle - (M_PI / 6), 2 * M_PI);
     double fov_start = fmod(new_angle + (M_PI / 6) , 2 * M_PI);
+	(void)fov_start;
+	color = 0;
 	if (difference < 0)
 		topy += -difference;
 	if (fov_end < 0)
@@ -44,50 +46,52 @@ int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
 	//alpha = 255 / pow(game_data->distance, 0.3) * 2;
 		if ((int)y % TILE == 0)
 		{
-			if (((fov_end >= M_PI) || fov_start >= M_PI) ||  ((fov_end <= M_PI * 2 || fov_start >= 0) || (fov_start < M_PI / 6)))
-			{
+		 if (((fov_end >= M_PI) || fov_start >= M_PI) ||  ((fov_end <= M_PI * 2 || fov_start >= 0) || (fov_start < M_PI / 6)))
+		{
 				//north
 				texture_y = (topy) * ((double)north->height - 1) / height;  
 				texture_x = fmod((x / TILE), 1.0) * north->width;
 				position = (texture_y * north->width + texture_x) * north->bytes_per_pixel;
 				color = get_rgba(north->pixels[position], north->pixels[position + 1], north->pixels[position + 2], north->pixels[position + 3]);
 				return (color);
-			}
+		}
 		}
 		if ((int)x % TILE == 0)
 		{
-			if ((fov_end < 3 * M_PI_2) || (fov_start > M_PI_2))
-			{
-			//west
-				texture_x= (topy) * ((double)west->height - 1) / height;  
-				texture_y = fmod((y / TILE), 1.0) * west->width;
-				position = ((texture_x) * west->height + (west->width - 1 - texture_y)) * west->bytes_per_pixel;
+		 if ((fov_end < 3 * M_PI_2) || (fov_start > M_PI_2))
+           {
+				//east
+				texture_y = (topy) * ((double)west->height - 1) / height;  
+				texture_x = fmod((y / TILE), 1.0) * west->width;
+				position = (texture_y * west->width + texture_x) * west->bytes_per_pixel;
 				color = get_rgba(west->pixels[position], west->pixels[position + 1], west->pixels[position + 2], west->pixels[position + 3]);
 				return (color);
+			//west
 			}
 		}
 		if ((int)y % TILE == 1)
 		{
-			if ((fov_end <= 3 * M_PI_2) || (fov_start >= 3 * M_PI_2) || (fov_end >= 0) || ((fov_start >= 0) && (fov_start > 11 * M_PI / 6)))
-			{
+  if ((fov_end <= 3 * M_PI_2) || (fov_start >= 3 * M_PI_2) || (fov_end >= 0) || ((fov_start >= 0) && (fov_start > 11 * M_PI / 6)))
+                       {
 				//south
 				texture_y = (topy) * ((double)south->height - 1) / height;  
 				texture_x = fmod((x / TILE), 1.0) * south->width;
 				position = ((texture_y) * south->width + (south->width - 1 - texture_x)) * south->bytes_per_pixel;
 				color = get_rgba(south->pixels[position], south->pixels[position + 1], south->pixels[position + 2], south->pixels[position + 3]);
 				return (color);
-			}
+		}
 		}
 		if ((int)x % TILE == 1)
 		{
-			if ((fov_start > 3 * M_PI_2 || fov_start < 2 * M_PI) || (fov_end < M_PI_2))
-			{
+		   if ((fov_start > 3 * M_PI_2 || fov_start < 2 * M_PI) || (fov_end < M_PI_2))
+                       {
+				//east
 				texture_y = (topy) * ((double)east->height - 1) / height;  
 				texture_x = fmod((y / TILE), 1.0) * east->width;
 				position = (texture_y * east->width + texture_x) * east->bytes_per_pixel;
 				color = get_rgba(east->pixels[position], east->pixels[position + 1], east->pixels[position + 2], east->pixels[position + 3]);
 				return (color);
-			}
+				}
 		}
 	/*
 	texture_y = (topy) * ((double)north->height - 1) / height;  
@@ -95,7 +99,7 @@ int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
 	position = (texture_y * north->width + texture_x) * north->bytes_per_pixel;
 	color = get_rgba(north->pixels[position], north->pixels[position + 1], north->pixels[position + 2], north->pixels[position + 3]);
 	*/
-	return (0xfafafa);
+	return (color);
 }
 
 int get_rgba(int r, int g, int b, int a)
@@ -144,20 +148,17 @@ void	draw_wall(t_game **game_data, t_int_vector center, double fov)
 	}
 }
 
-void	player_angle(t_game *data, char orientation)
+void	player_angle(t_game **data, char orientation)
 {
-	t_player	player;
-	player = data->player_data;
 
-	(void)player;
 	if (orientation == 'E')
-		player.angle = 0;
+		(*data)->player_data.angle = 0;
 	else if (orientation == 'S')
-		player.angle = M_PI_2;
+		(*data)->player_data.angle = M_PI_2;
 	else if (orientation == 'W')
-		player.angle = M_PI;
-	else 
-		player.angle = 3 * M_PI;
+		(*data)->player_data.angle = M_PI;
+	else if (orientation == 'N')
+		(*data)->player_data.angle = 3 * M_PI_2;
 }
 
 void	line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t* y_img, char **map, t_game *game_data)
@@ -219,7 +220,7 @@ void	draw_fov(t_game **game_data)
 	while (fov_angle < (*game_data)->player_data.angle + M_PI / 6)
 	{
 		update_end(game_data, fov_angle);
-		line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map_array, (*game_data));
+		line_draw(origin, point, (*game_data)->bg_img, (*game_data)->map_data->map, (*game_data));
 		draw_wall(game_data, center, fov_shit);
 		fov_angle += DELTA_FOV;
 		fov_shit += DELTA_FOV;

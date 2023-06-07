@@ -1,34 +1,17 @@
-
 #include "cub3D.h"
-/*
-void	draw_texture(t_game **game_data)
-{
-	mlx_texture_t *tex;
-
-//	(*game_data)->tex = tex;
-}
-*/
 
 void	draw_ceiling(t_game **game_data)
 {
-
-
 	unsigned int x0;
 	unsigned int y0;
-	int color;
 
 	x0 = 0;
-	y0 = 0;
-	color = get_rgba(74, 96, 100, 255);
-	while (y0 < SCREEN_HEIGHT / 2)
+	y0 = -1;
+	while (++y0 < SCREEN_HEIGHT / 2)
 	{
 		while (x0 < SCREEN_WIDTH)
-		{
-			mlx_put_pixel((*game_data)->ceiling, x0, y0, color);
-			x0++;
-		}
+			mlx_put_pixel((*game_data)->ceiling, x0++, y0, (*game_data)->ceiling_color);
 		x0 = 0;
-		y0++;
 	}
 }
 
@@ -38,20 +21,14 @@ void	draw_floor(t_game **game_data)
 
 	unsigned int x0;
 	unsigned int y0;
-	int color;
 
 	x0 = 0;
-	y0 = 0;
-	color = get_rgba(91, 87, 61, 255);
-	while (y0 < SCREEN_HEIGHT / 2)
+	y0 = -1;
+	while (++y0 < SCREEN_HEIGHT / 2)
 	{
 		while (x0 < SCREEN_WIDTH)
-		{
-			mlx_put_pixel((*game_data)->floor, x0, y0, color);
-			x0++;
-		}
+			mlx_put_pixel((*game_data)->floor, x0++, y0, (*game_data)->floor_color);
 		x0 = 0;
-		y0++;
 	}
 }
 
@@ -63,7 +40,7 @@ void	ft_hook(void *param)
 	static double sum;
 
 	game_data = param;
-	map = game_data->map_data->map_array;
+	map = game_data->map_data->map;
 	mlx = game_data->mlx;
 	if (sum > 0.0007)
 	{
@@ -81,13 +58,12 @@ void	ft_hook(void *param)
 			press_left(&game_data);
 		if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
 			press_right(&game_data);
+		draw_ray(&game_data);
+		draw_ceiling(&game_data);
+		draw_floor(&game_data);
 		sum = 0;
 	}
-	draw_ray(&game_data);
-	draw_ceiling(&game_data);
-	draw_floor(&game_data);
 	sum += mlx->delta_time;
-	//draw_texture(&game_data);
 }
 
 void	draw_walls(t_game *game_data)
@@ -98,7 +74,7 @@ void	draw_walls(t_game *game_data)
 
 	x = 0;
 	y = 0;
-	map = game_data->map_data->map_array;
+	map = game_data->map_data->map;
 	while (map[y])
 	{
 		while (map[y][x])
@@ -137,6 +113,38 @@ void	draw_ray(t_game **game_data)
 	img = (*game_data)->bg_img;
 	ft_bzero(img->pixels, img->width * img->height * 4);
 	draw_fov(game_data);
+}
+
+void	draw_map_player(t_game **game_data)
+{
+	mlx_image_t	*player;
+	mlx_t		*mlx;
+	int			x;
+	int			y;
+	int			color;
+
+	mlx = (*game_data)->mlx;
+	player = NULL;
+	//create new player image;
+	create_img(&player, mlx, 5, 5);
+	x = (*game_data)->player_data.initial_position.x_axis;
+	y = (*game_data)->player_data.initial_position.y_axis;
+	//assign player image in my struct the pointer I created;
+	(*game_data)->player_data.map_player = player;
+	// place player to window;
+	place_image(player, mlx, (x * 5), (y * 5));
+	//draw player box;
+	color = get_rgba(255, 0, 0, 255);
+	while (y < 5)
+	{
+		while (x < 5)
+		{
+			mlx_put_pixel(player, x, y, color);
+			x++;
+		}
+		x = 0;
+		y++;
+	}
 }
 
 void	draw_player(t_game **game_data)
@@ -235,11 +243,11 @@ void	game_setup(char *argv)
 
 	game_data = NULL;
 	map_data = NULL;
-	init_map_data(&map_data, argv);
 	init_game_data(&game_data, map_data);
+	init_map_data(&game_data, &map_data, argv);
+	game_data->map_data = map_data;
 	add_ceiling(&game_data);
 	add_floor(&game_data);
-	add_bg_image(&game_data);
 	draw_walls(game_data);
 	draw_player(&game_data);
 	add_bg_image(&game_data);
