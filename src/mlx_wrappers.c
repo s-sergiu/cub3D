@@ -70,7 +70,7 @@ void	place_wall_or_player(char **map, t_game *game_data, int x, int y)
 			y0++;
 		}
 	}
-	if (map[y][x] == 'P')
+	if (map[y][x] == 'N' || map[y][x] == 'S' || map[y][x] == 'W' || map[y][x] == 'E')
 	{
 		game_data->player_data.initial_position.x_axis = x;
 		game_data->player_data.initial_position.y_axis = y;

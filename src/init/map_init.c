@@ -202,12 +202,85 @@ char	**try_split_string(char *string, t_map *map_data)
 	map_array = ft_split(string, '\n');
 	if (map_array == NULL)
 	{
-		free(string);
 		free(map_data);
 		exit(errno);
 	}
-	free(string);
 	return (map_array);
+}
+
+void	check_neighbors(char **map, int x, int y)
+{
+	if (map[x + 1] == NULL || map[x + 1][y] == 32)
+		exit(1);
+	if (map[x - 1] == NULL || map[x - 1][y] == 32)
+		exit(1);
+	if (!map[x][y + 1] || map[x][y + 1] == 32)
+		exit(1);
+	if (!map[x][y - 1] || map[x][y - 1] == 32)
+		exit(1);
+}
+
+void	flood_fill(int x, int y, char **map)
+{
+	char wall;
+
+	if (x > 13 || x < 0)
+		return ;
+	wall = map[x][y];
+	if (wall == 0 || wall == 32 || wall == 'x' || wall == '1')
+		return ;
+	else
+	{
+		map[x][y] = 'x';
+		check_neighbors(map, x , y);
+		flood_fill(x - 1, y, map);
+		flood_fill(x, y -1, map);
+		flood_fill(x, y + 1, map);
+		flood_fill(x + 1, y, map);
+	}
+}
+
+void	check_borders(char **map)
+{
+	int i;
+
+	i = 0;
+	while(map[1][i++] != '0')
+		i++;
+	flood_fill(1, i, map);	
+}
+
+void	check_map_symbols(char **map, t_game **game_data)
+{
+	int i;
+	int j;
+	int player;
+	char symbol;
+
+	i = -1;
+	j = -1;
+	player = 0;
+	while (map[++i])
+	{
+		while(map[i][++j])
+		{
+			while (map[i][j] == 32)
+				j++;
+			symbol = map[i][j];
+			if (symbol != '0' && symbol != '1' && symbol != 'N' && symbol != 'S' 
+				&& symbol != 'E' && symbol != 'W')
+				exit(1);
+			else if (symbol == 'E' || symbol == 'W' || symbol == 'N' || symbol == 'S')
+			{
+				player_angle(game_data, symbol);
+				player++;
+				printf("player angle: %lf\n", (*game_data)->player_data.angle);
+			}
+		}
+		j = -1;
+	}
+	if (player > 1)
+		exit(1);
 }
 
 void	parse_map(t_game **game_data, t_map **map_data)
@@ -238,8 +311,11 @@ void	parse_map(t_game **game_data, t_map **map_data)
 			else
 			{
 				(*map_data)->map = map + sequence;
+				(*map_data)->map_copy = (*map_data)->map_copy + sequence;
 				(*map_data)->width =ft_strlen(map[0]) * TILE;
 				(*map_data)->height = arrtools_arrlen(map) * TILE;
+				check_borders((*map_data)->map_copy);
+				check_map_symbols((*map_data)->map, game_data);
 				break;
 			}
 		}
@@ -277,6 +353,7 @@ void	init_map_data(t_game **game_data, t_map **map_data, char *map_file)
 	(*map_data)->elements[5] = "F";
 	(*map_data)->elements[6] = NULL;
 	(*map_data)->map_array = try_split_string(map_string, *map_data);
+	(*map_data)->map_copy = try_split_string(map_string, *map_data);
 	(*map_data)->width = ft_strlen((*map_data)->map_array[0]) * TILE;
 	(*map_data)->height = arrtools_arrlen((*map_data)->map_array) * TILE;
 	parse_map(game_data, map_data);

@@ -54,6 +54,5 @@ void	init_game_data(t_game **game_data, t_map *map_data)
 	(*game_data)->floor = NULL;
 	(*game_data)->ceiling = NULL;
 	(*game_data)->player_data.player_image = NULL;
-	(*game_data)->player_data.angle = 3 * M_PI / 2;
 	(*game_data)->distance = 8;
 }

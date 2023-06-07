@@ -144,20 +144,17 @@ void	draw_wall(t_game **game_data, t_int_vector center, double fov)
 	}
 }
 
-void	player_angle(t_game *data, char orientation)
+void	player_angle(t_game **data, char orientation)
 {
-	t_player	player;
-	player = data->player_data;
 
-	(void)player;
 	if (orientation == 'E')
-		player.angle = 0;
+		(*data)->player_data.angle = 0;
 	else if (orientation == 'S')
-		player.angle = M_PI_2;
+		(*data)->player_data.angle = M_PI_2;
 	else if (orientation == 'W')
-		player.angle = M_PI;
-	else 
-		player.angle = 3 * M_PI;
+		(*data)->player_data.angle = M_PI;
+	else if (orientation == 'N')
+		(*data)->player_data.angle = 3 * M_PI_2;
 }
 
 void	line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t* y_img, char **map, t_game *game_data)

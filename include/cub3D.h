@@ -91,6 +91,7 @@ struct s_game
 struct s_map
 {
 	char	**map_array;
+	char	**map_copy;
 	char	**map;
 	int		height;
 	int		width;
@@ -133,5 +134,5 @@ int			get_rgba(int r, int g, int b, int a);
 void		add_bg_image(t_game **game_data);
 int			get_color_texture(mlx_texture_t *tex, t_game *game_data, int y);
 void		print_array(char **array);
-
+void		player_angle(t_game **data, char orientation);
 #endif
