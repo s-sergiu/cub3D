@@ -49,6 +49,10 @@ void	init_game_data(t_game **game_data, t_map *map_data)
 	(*game_data)->south = NULL;
 	(*game_data)->east = NULL;
 	(*game_data)->west = NULL;
+	(*game_data)->south = mlx_load_png("data/textures/S.png");
+	(*game_data)->north = mlx_load_png("data/textures/N.png");
+	(*game_data)->east = mlx_load_png("data/textures/E.png");
+	(*game_data)->west = mlx_load_png("data/textures/W.png");
 	(*game_data)->bg_img = NULL;
 	(*game_data)->game_screen = NULL;
 	(*game_data)->floor = NULL;
