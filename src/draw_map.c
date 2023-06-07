@@ -55,15 +55,6 @@ void	draw_floor(t_game **game_data)
 	}
 }
 
-void	mouse_hook(t_game **game_data)
-{
-	int x;
-	int y;
-
-	mlx_get_mouse_pos((*game_data)->mlx, &x, &y);	
-	mlx_set_mouse_pos((*game_data)->mlx, x, y);
-}
-
 void	ft_hook(void *param)
 {
 	t_game	*game_data;
@@ -92,7 +83,6 @@ void	ft_hook(void *param)
 			press_right(&game_data);
 		sum = 0;
 	}
-	mouse_hook(&game_data);
 	draw_ray(&game_data);
 	draw_ceiling(&game_data);
 	draw_floor(&game_data);
@@ -253,7 +243,6 @@ void	game_setup(char *argv)
 	draw_walls(game_data);
 	draw_player(&game_data);
 	add_bg_image(&game_data);
-	mlx_set_mouse_pos(game_data->mlx, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 	mlx_loop_hook(game_data->mlx, ft_hook, game_data);
 	mlx_loop(game_data->mlx);
 	mlx_terminate(game_data->mlx);
