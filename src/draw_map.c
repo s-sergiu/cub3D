@@ -2,42 +2,42 @@
 
 void	draw_ceiling(t_game **game_data)
 {
-	unsigned int x0;
-	unsigned int y0;
+	unsigned int	x0;
+	unsigned int	y0;
 
 	x0 = 0;
 	y0 = -1;
 	while (++y0 < SCREEN_HEIGHT / 2)
 	{
 		while (x0 < SCREEN_WIDTH)
-			mlx_put_pixel((*game_data)->ceiling, x0++, y0, (*game_data)->ceiling_color);
+			mlx_put_pixel((*game_data)->ceiling, x0++,
+				y0, (*game_data)->ceiling_color);
 		x0 = 0;
 	}
 }
 
 void	draw_floor(t_game **game_data)
 {
-
-
-	unsigned int x0;
-	unsigned int y0;
+	unsigned int	x0;
+	unsigned int	y0;
 
 	x0 = 0;
 	y0 = -1;
 	while (++y0 < SCREEN_HEIGHT / 2)
 	{
 		while (x0 < SCREEN_WIDTH)
-			mlx_put_pixel((*game_data)->floor, x0++, y0, (*game_data)->floor_color);
+			mlx_put_pixel((*game_data)->floor, x0++,
+				y0, (*game_data)->floor_color);
 		x0 = 0;
 	}
 }
 
 void	ft_hook(void *param)
 {
-	t_game	*game_data;
-	mlx_t	*mlx;
-	char	**map;
-	static double sum;
+	t_game			*game_data;
+	mlx_t			*mlx;
+	char			**map;
+	static double	sum;
 
 	game_data = param;
 	map = game_data->map_data->map;
@@ -125,15 +125,11 @@ void	draw_map_player(t_game **game_data)
 
 	mlx = (*game_data)->mlx;
 	player = NULL;
-	//create new player image;
 	create_img(&player, mlx, 5, 5);
 	x = (*game_data)->player_data.initial_position.x_axis;
 	y = (*game_data)->player_data.initial_position.y_axis;
-	//assign player image in my struct the pointer I created;
 	(*game_data)->player_data.map_player = player;
-	// place player to window;
 	place_image(player, mlx, (x * 5), (y * 5));
-	//draw player box;
 	color = get_rgba(255, 0, 0, 255);
 	while (y < 5)
 	{
@@ -157,19 +153,13 @@ void	draw_player(t_game **game_data)
 
 	mlx = (*game_data)->mlx;
 	player = NULL;
-	//create new player image;
 	create_img(&player, mlx, 5, 5);
-	//assign player image in my struct the pointer I created;
 	(*game_data)->player_data.player_image = player;
-	//get_player initial position;
 	x = (*game_data)->player_data.initial_position.x_axis;
 	y = (*game_data)->player_data.initial_position.y_axis;
-	// place player to window;
 	place_image(player, mlx, (x * TILE) + 16, (y * TILE) + 16);
-	//get player current position;
 	(*game_data)->player_data.current_position.x_axis = player->instances[0].x;
 	(*game_data)->player_data.current_position.y_axis = player->instances[0].y;
-	//draw player box;
 	color = get_rgba(0, 0, 0, 255);
 	while (y < 5)
 	{
@@ -194,10 +184,10 @@ void	add_bg_image(t_game **game_data)
 
 void	add_floor(t_game **game_data)
 {
-	mlx_t		*mlx;
-	mlx_image_t	*image;
-	unsigned int x0;
-	unsigned int y0;
+	mlx_t			*mlx;
+	mlx_image_t		*image;
+	unsigned int	x0;
+	unsigned int	y0;
 
 	mlx = (*game_data)->mlx;
 	create_img(&image, mlx, SCREEN_WIDTH, SCREEN_HEIGHT / 2);
@@ -210,10 +200,10 @@ void	add_floor(t_game **game_data)
 
 void	add_ceiling(t_game **game_data)
 {
-	mlx_t		*mlx;
-	mlx_image_t	*image;
-	unsigned int x0;
-	unsigned int y0;
+	mlx_t			*mlx;
+	mlx_image_t		*image;
+	unsigned int	x0;
+	unsigned int	y0;
 
 	mlx = (*game_data)->mlx;
 	create_img(&image, mlx, SCREEN_WIDTH, SCREEN_HEIGHT / 2);

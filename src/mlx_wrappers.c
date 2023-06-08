@@ -1,9 +1,9 @@
-
 #include "cub3D.h"
 
 void	set_img_color(mlx_image_t *img, uint32_t color_value)
 {
-	memset(img->pixels, color_value, img->width * img->height * sizeof(int32_t));
+	memset(img->pixels, color_value, img->width
+		* img->height * sizeof(int32_t));
 }
 
 void	create_img(mlx_image_t **img, mlx_t *mlx, int width, int height)
@@ -27,11 +27,11 @@ void	place_image(mlx_image_t *img, mlx_t *mlx, int width, int height)
 
 void	place_wall_or_player(char **map, t_game *game_data, int x, int y)
 {
-	mlx_image_t	*img;
-	mlx_t		*mlx;
-	unsigned int x0;
-	unsigned int y0;
-	int color;
+	mlx_image_t		*img;
+	mlx_t			*mlx;
+	unsigned int	x0;
+	unsigned int	y0;
+	int				color;
 
 	x0 = 0;
 	y0 = 0;
@@ -70,7 +70,8 @@ void	place_wall_or_player(char **map, t_game *game_data, int x, int y)
 			y0++;
 		}
 	}
-	if (map[y][x] == 'N' || map[y][x] == 'S' || map[y][x] == 'W' || map[y][x] == 'E')
+	if (map[y][x] == 'N' || map[y][x] == 'S'
+			|| map[y][x] == 'W' || map[y][x] == 'E')
 	{
 		game_data->player_data.initial_position.x_axis = x;
 		game_data->player_data.initial_position.y_axis = y;
