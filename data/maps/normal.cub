@@ -1,10 +1,8 @@
-	NO ./data/textures/N.png
-		   SO ./data/textures/S.png
+	NO ./data/textures/north.png
+		   SO ./data/textures/south.png
 
-                     WE ./data/textures/W.png
-EA										./data/textures/E.png
-
-
+                     WE ./data/textures/west.png
+EA										./data/textures/east.png
 
 
 
@@ -19,8 +17,10 @@ EA										./data/textures/E.png
 
 
 
-C 223,250,20
-F 255,29,49
+
+
+C 10,50,225
+F 100,80,120
 
 
 

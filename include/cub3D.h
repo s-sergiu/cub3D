@@ -57,7 +57,7 @@ struct s_static_position
 struct s_player
 {
 	struct s_static_position	initial_position;
-	struct s_position			current_position;
+	t_vector					current_position;
 	struct s_position			end_position;
 	struct s_position			end_ray;
 	double						angle;
@@ -84,6 +84,7 @@ struct s_game
 	unsigned char			color[4];
 	int						n;
 	struct s_map			*map_data;
+	int						hit;
 	struct s_player			player_data;
 };
 
@@ -96,6 +97,14 @@ struct s_map
 	int		width;
 	char	*elements[7];
 };
+
+typedef enum DIR
+{
+ NORTH,
+ EAST,
+ SOUTH,
+ WEST
+} t_direction;
 
 void		game_setup(char *argv);
 void		init_map_data(t_game **game_data, t_map **map_data, char *map_file);
@@ -123,8 +132,8 @@ void		draw_new_image(mlx_image_t **img, mlx_t *mlx, int x, int y);
 void		draw_ray(t_game **game_data);
 void		press_right(t_game **data);
 void		press_left(t_game **data);
-void		line_draw(struct s_position *pointA, struct s_position *pointB,
-				char **map, t_game *game_data);
+void		line_draw(t_vector *player, double angle, t_game **game_data);
+void		line_draw2(t_vector *pointA, struct s_position *pointB, char **map, t_game *game_data);
 void		draw_fov(t_game **game_data);
 void		update_origin(t_game **game_data);
 void		update_end(t_game **game_data, double fov_angle);
