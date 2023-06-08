@@ -86,7 +86,7 @@ void	draw_walls(t_game *game_data)
 
 void	update_origin(t_game **game_data)
 {
-	t_vector			*origin;	
+	t_vector *origin;	
 	mlx_image_t			*player;
 
 	player = (*game_data)->player_data.player_image;

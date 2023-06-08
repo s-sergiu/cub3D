@@ -84,8 +84,8 @@ struct s_game
 	unsigned char			color[4];
 	int						n;
 	struct s_map			*map_data;
-	struct s_player			player_data;
 	int						hit;
+	struct s_player			player_data;
 };
 
 struct s_map
@@ -133,6 +133,7 @@ void		draw_ray(t_game **game_data);
 void		press_right(t_game **data);
 void		press_left(t_game **data);
 void		line_draw(t_vector *player, double angle, t_game *game_data);
+void		line_draw2(t_vector *pointA, struct s_position *pointB, char **map, t_game *game_data);
 void		draw_fov(t_game **game_data);
 void		update_origin(t_game **game_data);
 void		update_end(t_game **game_data, double fov_angle);
