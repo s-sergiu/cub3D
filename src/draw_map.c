@@ -149,7 +149,6 @@ void	draw_player(t_game **game_data)
 	mlx_t		*mlx;
 	int			x;
 	int			y;
-	int			color;
 
 	mlx = (*game_data)->mlx;
 	player = NULL;
@@ -160,17 +159,6 @@ void	draw_player(t_game **game_data)
 	place_image(player, mlx, (x * TILE) + 16, (y * TILE) + 16);
 	(*game_data)->player_data.current_position.x_axis = player->instances[0].x;
 	(*game_data)->player_data.current_position.y_axis = player->instances[0].y;
-	color = get_rgba(0, 0, 0, 255);
-	while (y < 5)
-	{
-		while (x < 5)
-		{
-			mlx_put_pixel(player, x, y, color);
-			x++;
-		}
-		x = 0;
-		y++;
-	}
 }
 
 void	add_bg_image(t_game **game_data)

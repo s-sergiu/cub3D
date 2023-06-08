@@ -124,7 +124,7 @@ void		draw_ray(t_game **game_data);
 void		press_right(t_game **data);
 void		press_left(t_game **data);
 void		line_draw(struct s_position *pointA, struct s_position *pointB,
-				mlx_image_t *y_img, char **map, t_game *game_data);
+				char **map, t_game *game_data);
 void		draw_fov(t_game **game_data);
 void		update_origin(t_game **game_data);
 void		update_end(t_game **game_data, double fov_angle);

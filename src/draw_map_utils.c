@@ -153,7 +153,7 @@ void	player_angle(t_game **data, char orientation)
 }
 
 void	line_draw(struct s_position *pointA, struct s_position *pointB,
-			mlx_image_t *y_img, char **map, t_game *game_data)
+			char **map, t_game *game_data)
 {
 	double	x;
 	double	y;
@@ -193,7 +193,10 @@ void	line_draw(struct s_position *pointA, struct s_position *pointB,
 			return ;
 		}
 		else
-			mlx_put_pixel(y_img, x = x + dx, y = y + dy, 0xFAFAFA);
+		{
+			x += dx;
+			y += dy;
+		}
 	}
 }
 
@@ -214,8 +217,7 @@ void	draw_fov(t_game **game_data)
 	while (fov_angle < (*game_data)->player_data.angle + M_PI / 6)
 	{
 		update_end(game_data, fov_angle);
-		line_draw(origin, point, (*game_data)->bg_img,
-			(*game_data)->map_data->map, (*game_data));
+		line_draw(origin, point, (*game_data)->map_data->map, (*game_data));
 		draw_wall(game_data, center, fov_shit);
 		fov_angle += DELTA_FOV;
 		fov_shit += DELTA_FOV;
