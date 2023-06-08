@@ -86,13 +86,13 @@ void	draw_walls(t_game *game_data)
 
 void	update_origin(t_game **game_data)
 {
-	struct s_position	*origin;	
+	t_vector			*origin;	
 	mlx_image_t			*player;
 
 	player = (*game_data)->player_data.player_image;
 	origin = &(*game_data)->player_data.current_position;
-	origin->x_axis = player->instances[0].x;
-	origin->y_axis = player->instances[0].y;
+	origin->x = player->instances[0].x;
+	origin->y = player->instances[0].y;
 }
 
 void	update_end(t_game **game_data, double fov_angle)
@@ -157,8 +157,8 @@ void	draw_player(t_game **game_data)
 	x = (*game_data)->player_data.initial_position.x_axis;
 	y = (*game_data)->player_data.initial_position.y_axis;
 	place_image(player, mlx, (x * TILE) + 16, (y * TILE) + 16);
-	(*game_data)->player_data.current_position.x_axis = player->instances[0].x;
-	(*game_data)->player_data.current_position.y_axis = player->instances[0].y;
+	(*game_data)->player_data.current_position.x = player->instances[0].x;
+	(*game_data)->player_data.current_position.y = player->instances[0].y;
 }
 
 void	add_bg_image(t_game **game_data)
