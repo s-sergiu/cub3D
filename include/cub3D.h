@@ -1,4 +1,3 @@
-
 #ifndef CUB3D_H
 # define CUB3D_H
 
@@ -124,7 +123,8 @@ void		draw_new_image(mlx_image_t **img, mlx_t *mlx, int x, int y);
 void		draw_ray(t_game **game_data);
 void		press_right(t_game **data);
 void		press_left(t_game **data);
-void		line_draw(struct s_position *pointA, struct s_position *pointB, mlx_image_t * y_img, char **map, t_game *game_data);
+void		line_draw(struct s_position *pointA, struct s_position *pointB,
+				mlx_image_t *y_img, char **map, t_game *game_data);
 void		draw_fov(t_game **game_data);
 void		update_origin(t_game **game_data);
 void		update_end(t_game **game_data, double fov_angle);
@@ -135,4 +135,24 @@ void		add_bg_image(t_game **game_data);
 int			get_color_texture(mlx_texture_t *tex, t_game *game_data, int y);
 void		print_array(char **array);
 void		player_angle(t_game **data, char orientation);
+void		flood_fill(int x, int y, char **map);
+void		check_borders(char **map);
+void		check_map_symbols(char **map, t_game **game_data);
+void		parse_map(t_game **game_data, t_map **map_data);
+void		malloc_map_struct(t_map **map_data, void (*f)(void *), void *data);
+void		destroy_map_data(t_map *map_data);
+void		store_path(t_game **game_data, char *symbol, char *path);
+void		init_map_data(t_game **game_data, t_map **map_data, char *map_file);
+void		parse_color_code(char *string);
+int			get_decimals(char *string);
+void		register_color_in_struc(t_game **game_data, char *string);
+void		parse_color(t_game **game_data, char *string);
+void		parse_path(t_game **game_data, char *string);
+void		parse_element(t_game **game_data, char *string);
+void		print_array(char **array);
+int			is_valid_element(t_map **map_data, char *map);
+char		*try_read_map(char *map_file);
+char		**try_split_string(char *string, t_map *map_data);
+void		check_neighbors(char **map, int x, int y);
+
 #endif

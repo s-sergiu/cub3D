@@ -1,4 +1,3 @@
-
 #include "cub3D.h"
 
 void	draw_horizontal_line(int height, int width, mlx_image_t *image)
