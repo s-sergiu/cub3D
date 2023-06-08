@@ -126,6 +126,7 @@ void	draw_wall(t_game **game_data, t_int_vector center, double fov)
 	if (topy < 0)
 		topy = 0;
 	x0 = center.x;
+	posy = topy;
 	while (topy <= center.y + (height / 2) && topy <= SCREEN_HEIGHT - 1)
 	{
 		while (x0 < center.x + 1)
