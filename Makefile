@@ -33,15 +33,13 @@ MLX_FLAGS = -lglfw -L"$(BREW)/3.3.8/lib"
 endif
 
 
-all: update_submodules $(NAME)
+all: $(NAME)
 
-update_submodules: 
-ifeq ($(wildcard libs/*/include),)
+submodule_update: 
 	@git submodule init
 	@git submodule update
-endif
 
-$(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(LIBFT) $(LIBARRTOOLS) 
+$(NAME): submodule_update $(OBJ_DIR) $(MLX42) $(OBJ) $(LIBFT) $(LIBARRTOOLS) 
 	$(CC) $(FLAGS) $(OBJ) -lft -L$(LIBFT_OBJ_DIR) \
 	$(MLX42) -Iinclude -larrtools -L$(LIBARRTOOLS_OBJ) \
 	$(MLX_FLAGS) -o $@
