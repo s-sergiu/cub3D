@@ -38,6 +38,8 @@ void	parse_color_code(t_memory **block, char *string)
 				|| (digit == 3 && !ft_isdigit(string[i])))
 			{
 				free_all_memory_blocks(block);
+				printf("Error\n");
+				printf("Invalid color code!\n");
 				exit(1);
 			}
 		}
@@ -48,6 +50,8 @@ void	parse_color_code(t_memory **block, char *string)
 	if (string[i - 1] != '\0')
 	{
 		free_all_memory_blocks(block);
+		printf("Error\n");
+		printf("Invalid color code!\n");
 		exit(1);
 	}
 }

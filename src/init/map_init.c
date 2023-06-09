@@ -25,6 +25,8 @@ void	parse_map(t_memory **block, t_game **game_data, t_map **map_data)
 				else
 				{
 					free_all_memory_blocks(block);
+					printf("Error\n");
+					printf("Invalid element symbol!\n");
 					exit(1);
 				}
 			}
@@ -34,7 +36,7 @@ void	parse_map(t_memory **block, t_game **game_data, t_map **map_data)
 				(*map_data)->map_copy = (*map_data)->map_copy + sequence;
 				(*map_data)->width = ft_strlen(map[0]) * TILE;
 				(*map_data)->height = arrtools_arrlen(map) * TILE;
-				check_borders((*map_data)->map_copy);
+				check_borders(block, (*map_data)->map_copy);
 				check_map_symbols(block, (*map_data)->map, game_data);
 				break ;
 			}
@@ -47,6 +49,8 @@ void	malloc_map_struct(t_memory **block, t_map **map_data)
 	(*map_data) = malloc_to_block(block, sizeof(t_map));
 	if ((*map_data) == NULL)
 	{
+		printf("Error\n");
+		printf("Failed initializing map struct!\n");
 		free_all_memory_blocks(block);
 		exit(errno);
 	}

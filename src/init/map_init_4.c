@@ -35,6 +35,8 @@ char	*try_read_map(t_memory **block, char *map_file)
 	if (pointer == NULL)
 	{
 		free_all_memory_blocks(block);
+		printf("Error\n");
+		printf("Failed reading map file!\n");
 		exit(errno);
 	}
 	return (pointer);
@@ -48,21 +50,31 @@ char	**try_split_string(t_memory **block, char *string)
 	if (map_array == NULL)
 	{
 		free_all_memory_blocks(block);
+		printf("Error\n");
+		printf("Failed creating 2d map array!\n");
 		exit(errno);
 	}
 	return (map_array);
 }
 
-void	check_neighbors(char **map, int x, int y)
+void	error_and_exit(t_memory **block)
+{
+	printf("Error\n");
+	printf("Map is leaking\n");
+	free_all_memory_blocks(block);
+	exit(1);
+}
+
+void	check_neighbors(t_memory **block, char **map, int x, int y)
 {
 	if ((int)ft_strlen(map[x + 1]) < y)
-		exit(1);
+		error_and_exit(block);
 	if (map[x + 1] == NULL || map[x + 1][y] == 32 || map[x + 1][y] == 0)
-		exit(1);
+		error_and_exit(block);
 	if (map[x - 1] == NULL || map[x - 1][y] == 32 || map[x - 1][y] == 0)
-		exit(1);
+		error_and_exit(block);
 	if (!map[x][y + 1] || map[x][y + 1] == 32 || map[x][y + 1] == 0)
-		exit(1);
+		error_and_exit(block);
 	if (!map[x][y - 1] || map[x][y - 1] == 32 || map[x][y + 1] == 0)
-		exit(1);
+		error_and_exit(block);
 }

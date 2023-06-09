@@ -1,6 +1,6 @@
 #include "cub3D.h"
 
-void	flood_fill(int x, int y, char **map)
+void	flood_fill(t_memory **block, int x, int y, char **map)
 {
 	char	wall;
 	int		height;
@@ -14,22 +14,22 @@ void	flood_fill(int x, int y, char **map)
 	else
 	{
 		map[x][y] = 'x';
-		check_neighbors(map, x, y);
-		flood_fill(x - 1, y, map);
-		flood_fill(x, y -1, map);
-		flood_fill(x, y + 1, map);
-		flood_fill(x + 1, y, map);
+		check_neighbors(block, map, x, y);
+		flood_fill(block, x - 1, y, map);
+		flood_fill(block, x, y -1, map);
+		flood_fill(block, x, y + 1, map);
+		flood_fill(block, x + 1, y, map);
 	}
 }
 
-void	check_borders(char **map)
+void	check_borders(t_memory **block, char **map)
 {
 	int	i;
 
 	i = 0;
 	while (map[1][i++] != '0')
 		i++;
-	flood_fill(1, i, map);
+	flood_fill(block, 1, i, map);
 }
 
 void	check_map_symbols(t_memory **block, char **map, t_game **game_data)
@@ -54,6 +54,8 @@ void	check_map_symbols(t_memory **block, char **map, t_game **game_data)
 				&& symbol != 'E' && symbol != 'W')
 			{
 				free_all_memory_blocks(block);
+				printf("Error\n");
+				printf("Illegal map symbol!\n");
 				exit(1);
 			}
 			else if (symbol == 'E' || symbol == 'W'

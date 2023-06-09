@@ -18,6 +18,8 @@ void	parse_color(t_memory **block, t_game **game_data, char *string)
 	else
 	{
 		free_all_memory_blocks(block);
+		printf("Error\n");
+		printf("Invalid color element structure!\n");
 		exit(1);
 	}
 }
@@ -39,6 +41,8 @@ void	parse_path(t_memory **block, t_game **game_data, char *string)
 	else
 	{
 		free_all_memory_blocks(block);
+		printf("Error\n");
+		printf("Invalid path element structure!\n");
 		exit(1);
 	}
 	close(fd);

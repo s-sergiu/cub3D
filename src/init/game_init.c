@@ -6,7 +6,8 @@ void	malloc_game_struct(t_memory **block, t_game **game_data)
 	if ((*game_data) == NULL)
 	{
 		free_all_memory_blocks(block);
-		printf("Error initializing game data struct\n");
+		printf("Error\n");
+		printf("Failed initializing game data struct!\n");
 		exit(1);
 	}
 }
@@ -50,7 +51,8 @@ void	init_game_data(t_memory **block, t_game **game_data)
 	if (!mlx)
 	{
 		free_all_memory_blocks(block);
-		printf("Error initializing mlx engine\n");
+		printf("Error\n");
+		printf("Failed initializing mlx engine!\n");
 		exit(1);
 	}
 	init_game_data_values(game_data, mlx);
