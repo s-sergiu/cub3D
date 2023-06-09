@@ -108,14 +108,15 @@ struct s_memory
 
 typedef enum DIR
 {
- NORTH,
- EAST,
- SOUTH,
- WEST
-} t_direction;
+	NORTH,
+	EAST,
+	SOUTH,
+	WEST
+}	t_direction;
 
 void		game_setup(t_memory **block, char *argv);
-void		init_map_data(t_memory **block, t_game **game_data, t_map **map_data, char *map_file);
+void		init_map_data(t_memory **block, t_game **game_data,
+				t_map **map_data, char *map_file);
 void		print_error(int error);
 void		cleanup_and_exit(int error, int file, char *buffer);
 int			get_total_bytes(char *filename);
@@ -138,7 +139,8 @@ void		draw_ray(t_game **game_data);
 void		press_right(t_game **data);
 void		press_left(t_game **data);
 void		line_draw(t_vector *player, double angle, t_game **game_data);
-void		line_draw2(t_vector *pointA, struct s_position *pointB, char **map, t_game *game_data);
+void		line_draw2(t_vector *pointA, struct s_position *pointB,
+				char **map, t_game *game_data);
 void		draw_fov(t_game **game_data);
 void		update_origin(t_game **game_data);
 void		update_end(t_game **game_data, double fov_angle);
@@ -158,7 +160,8 @@ void		destroy_map_data(t_map *map_data);
 void		store_path(t_game **game_data, char *symbol, char *path);
 void		parse_color_code(t_memory **block, char *string);
 int			get_decimals(char *string);
-void		register_color_in_struc(t_memory **block, t_game **game_data, char *string);
+void		register_color_in_struc(t_memory **block,
+				t_game **game_data, char *string);
 void		parse_color(t_memory **block, t_game **game_data, char *string);
 void		parse_path(t_memory **block, t_game **game_data, char *string);
 void		parse_element(t_memory **block, t_game **game_data, char *string);
@@ -172,5 +175,10 @@ void		free_from_block(t_memory **head, void *address);
 void		*malloc_to_block(t_memory **head, size_t size);
 void		remove_memory_block(t_memory **head, void *ptr);
 void		add_memory_block(t_memory **head, void *ptr, size_t size);
+void		draw_ceiling(t_game **game_data);
+void		draw_floor(t_game **game_data);
+void		add_ceiling(t_game **game_data);
+void		add_floor(t_game **game_data);
+void		draw_walls(t_game *game_data);
 
 #endif

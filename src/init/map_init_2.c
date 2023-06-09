@@ -64,7 +64,8 @@ int	get_decimals(char *string)
 	return (m);
 }
 
-void	register_color_in_struc(t_memory **block, t_game **game_data, char *string)
+void	register_color_in_struc(t_memory **block, t_game **game_data,
+				char *string)
 {
 	int	i;
 	int	m;

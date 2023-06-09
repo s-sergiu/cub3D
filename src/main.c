@@ -1,16 +1,18 @@
-
 #include "cub3D.h"
 
-void leak_check () {
+void	leak_check(void)
+{
 	system("leaks cub3D");
 }
 
 int	main(int argc, char **argv)
 {
 	t_memory	*block;
-	if( atexit(leak_check) != 0 ) {
-			perror("Unable to set exit function\n");
-			return EXIT_FAILURE;
+
+	if (atexit(leak_check) != 0)
+	{
+		perror("Unable to set exit function\n");
+		return (EXIT_FAILURE);
 	}
 	block = NULL;
 	if (argc != 2)

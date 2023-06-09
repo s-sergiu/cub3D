@@ -2,7 +2,7 @@
 
 void	add_memory_block(t_memory **head, void *ptr, size_t size)
 {
-	t_memory *block;
+	t_memory	*block;
 
 	block = (t_memory *) malloc(sizeof(t_memory));
 	block->address = ptr;
@@ -13,8 +13,8 @@ void	add_memory_block(t_memory **head, void *ptr, size_t size)
 
 void	remove_memory_block(t_memory **head, void *ptr)
 {
-	t_memory *block;
-	t_memory *prev;
+	t_memory	*block;
+	t_memory	*prev;
 
 	block = *head;
 	prev = NULL;
@@ -27,7 +27,7 @@ void	remove_memory_block(t_memory **head, void *ptr)
 			else
 				prev->next = block->next;
 			free(block);
-			break;
+			break ;
 		}
 		prev = block;
 		block = block->next;

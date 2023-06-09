@@ -18,19 +18,8 @@ void	init_mlx(mlx_t **mlx, int width, int height)
 		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
 }
 
-void	init_game_data(t_memory **block, t_game **game_data)
+void	init_game_data_values(t_game **game_data, mlx_t *mlx)
 {
-	mlx_t			*mlx;
-
-	mlx = NULL;
-	malloc_game_struct(block, game_data);
-	init_mlx(&mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
-	if (!mlx)
-	{
-		free_all_memory_blocks(block);
-		printf("Error initializing mlx engine\n");
-		exit(1);
-	}
 	(*game_data)->n = (((M_PI / 3) / DELTA_FOV));
 	(*game_data)->mlx = mlx;
 	(*game_data)->ceiling_color = 0;
@@ -49,4 +38,20 @@ void	init_game_data(t_memory **block, t_game **game_data)
 	(*game_data)->ceiling = NULL;
 	(*game_data)->player_data.player_image = NULL;
 	(*game_data)->distance = 8;
+}
+
+void	init_game_data(t_memory **block, t_game **game_data)
+{
+	mlx_t			*mlx;
+
+	mlx = NULL;
+	malloc_game_struct(block, game_data);
+	init_mlx(&mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
+	if (!mlx)
+	{
+		free_all_memory_blocks(block);
+		printf("Error initializing mlx engine\n");
+		exit(1);
+	}
+	init_game_data_values(game_data, mlx);
 }

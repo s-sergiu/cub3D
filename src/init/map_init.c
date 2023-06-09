@@ -52,7 +52,8 @@ void	malloc_map_struct(t_memory **block, t_map **map_data)
 	}
 }
 
-void	init_map_data(t_memory **block, t_game **game_data, t_map **map_data, char *map_file)
+void	init_map_data(t_memory **block, t_game **game_data,
+				t_map **map_data, char *map_file)
 {
 	char	*map_string;
 
