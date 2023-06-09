@@ -29,6 +29,7 @@ typedef struct s_player		t_player;
 typedef struct s_map		t_map;
 typedef struct s_vector		t_vector;
 typedef struct s_int_vector	t_int_vector;
+typedef struct s_memory		t_memory;
 
 struct s_vector
 {
@@ -98,6 +99,13 @@ struct s_map
 	char	*elements[7];
 };
 
+struct s_memory
+{
+	void			*address;
+	size_t			size;
+	struct s_memory	*next;
+};
+
 typedef enum DIR
 {
  NORTH,
@@ -106,9 +114,8 @@ typedef enum DIR
  WEST
 } t_direction;
 
-void		game_setup(char *argv);
-void		init_map_data(t_game **game_data, t_map **map_data, char *map_file);
-void		destroy_map_data(t_map *map_data);
+void		game_setup(t_memory **block, char *argv);
+void		init_map_data(t_memory **block, t_game **game_data, t_map **map_data, char *map_file);
 void		print_error(int error);
 void		cleanup_and_exit(int error, int file, char *buffer);
 int			get_total_bytes(char *filename);
@@ -116,9 +123,7 @@ char		*read_map(char *filename);
 int			has_invalid_map_extension(char *filename);
 int			is_valid_filename(char *filename);
 void		protected_malloc(void **parameter, size_t size_of_parameter);
-void		init_game_data(t_game **game_data,
-				t_map *map_data);
-void		destroy_game_data(t_game *game_data);
+void		init_game_data(t_memory **block, t_game **game_data);
 void		place_image(mlx_image_t *img, mlx_t *mlx, int width, int height);
 void		create_img(mlx_image_t **img, mlx_t *mlx, int width, int height);
 void		press_d(char **map, t_game *game_data);
@@ -146,22 +151,26 @@ void		print_array(char **array);
 void		player_angle(t_game **data, char orientation);
 void		flood_fill(int x, int y, char **map);
 void		check_borders(char **map);
-void		check_map_symbols(char **map, t_game **game_data);
-void		parse_map(t_game **game_data, t_map **map_data);
-void		malloc_map_struct(t_map **map_data, void (*f)(void *), void *data);
+void		check_map_symbols(t_memory **block, char **map, t_game **game_data);
+void		parse_map(t_memory **block, t_game **game_data, t_map **map_data);
+void		malloc_game_struct(t_memory **block, t_game **game_data);
 void		destroy_map_data(t_map *map_data);
 void		store_path(t_game **game_data, char *symbol, char *path);
-void		init_map_data(t_game **game_data, t_map **map_data, char *map_file);
-void		parse_color_code(char *string);
+void		parse_color_code(t_memory **block, char *string);
 int			get_decimals(char *string);
-void		register_color_in_struc(t_game **game_data, char *string);
-void		parse_color(t_game **game_data, char *string);
-void		parse_path(t_game **game_data, char *string);
-void		parse_element(t_game **game_data, char *string);
+void		register_color_in_struc(t_memory **block, t_game **game_data, char *string);
+void		parse_color(t_memory **block, t_game **game_data, char *string);
+void		parse_path(t_memory **block, t_game **game_data, char *string);
+void		parse_element(t_memory **block, t_game **game_data, char *string);
 void		print_array(char **array);
 int			is_valid_element(t_map **map_data, char *map);
-char		*try_read_map(char *map_file);
-char		**try_split_string(char *string, t_map *map_data);
+char		*try_read_map(t_memory **block, char *map_file);
+char		**try_split_string(t_memory **block, char *string);
 void		check_neighbors(char **map, int x, int y);
+void		free_all_memory_blocks(t_memory **head);
+void		free_from_block(t_memory **head, void *address);
+void		*malloc_to_block(t_memory **head, size_t size);
+void		remove_memory_block(t_memory **head, void *ptr);
+void		add_memory_block(t_memory **head, void *ptr, size_t size);
 
 #endif

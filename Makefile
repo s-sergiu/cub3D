@@ -64,6 +64,7 @@ build/obj/%.o: %.c
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR) 
 	mkdir -p $(OBJ_DIR)/init
+	mkdir -p $(OBJ_DIR)/memory
 	mkdir -p $(LIBFT_OBJ_DIR)
 	mkdir -p $(LIBARRTOOLS_OBJ)
 

@@ -214,15 +214,15 @@ void	add_game_screen(t_game **game_data)
 	set_img_color(image, 255);
 }
 
-void	game_setup(char *argv)
+void	game_setup(t_memory **block, char *argv)
 {
 	t_game	*game_data;
 	t_map	*map_data;
 
 	game_data = NULL;
 	map_data = NULL;
-	init_game_data(&game_data, map_data);
-	init_map_data(&game_data, &map_data, argv);
+	init_game_data(block, &game_data);
+	init_map_data(block, &game_data, &map_data, argv);
 	game_data->map_data = map_data;
 	add_ceiling(&game_data);
 	add_floor(&game_data);
@@ -232,6 +232,4 @@ void	game_setup(char *argv)
 	mlx_loop_hook(game_data->mlx, ft_hook, game_data);
 	mlx_loop(game_data->mlx);
 	mlx_terminate(game_data->mlx);
-	destroy_map_data(map_data);
-	free(game_data);
 }

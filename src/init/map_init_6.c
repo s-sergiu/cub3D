@@ -32,7 +32,7 @@ void	check_borders(char **map)
 	flood_fill(1, i, map);
 }
 
-void	check_map_symbols(char **map, t_game **game_data)
+void	check_map_symbols(t_memory **block, char **map, t_game **game_data)
 {
 	int		i;
 	int		j;
@@ -52,7 +52,10 @@ void	check_map_symbols(char **map, t_game **game_data)
 			if (symbol != '0' && symbol != '1'
 				&& symbol != 'N' && symbol != 'S'
 				&& symbol != 'E' && symbol != 'W')
+			{
+				free_all_memory_blocks(block);
 				exit(1);
+			}
 			else if (symbol == 'E' || symbol == 'W'
 				|| symbol == 'N' || symbol == 'S')
 			{
@@ -64,6 +67,7 @@ void	check_map_symbols(char **map, t_game **game_data)
 	}
 	if (player != 1)
 	{
+		free_all_memory_blocks(block);
 		printf("No player or more than 1 players in the map\n");
 		exit(1);
 	}

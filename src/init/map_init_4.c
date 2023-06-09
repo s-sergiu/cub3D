@@ -27,24 +27,27 @@ int	is_valid_element(t_map **map_data, char *map)
 	return (-1);
 }
 
-char	*try_read_map(char *map_file)
+char	*try_read_map(t_memory **block, char *map_file)
 {
 	char	*pointer;
 
 	pointer = read_map(map_file);
 	if (pointer == NULL)
+	{
+		free_all_memory_blocks(block);
 		exit(errno);
+	}
 	return (pointer);
 }
 
-char	**try_split_string(char *string, t_map *map_data)
+char	**try_split_string(t_memory **block, char *string)
 {
 	char	**map_array;
 
-	map_array = ft_split(string, '\n');
+	map_array = ft_split(block, string, '\n');
 	if (map_array == NULL)
 	{
-		free(map_data);
+		free_all_memory_blocks(block);
 		exit(errno);
 	}
 	return (map_array);

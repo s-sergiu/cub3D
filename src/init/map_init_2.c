@@ -12,7 +12,7 @@ void	store_path(t_game **game_data, char *symbol, char *path)
 		(*game_data)->east = mlx_load_png(path);
 }
 
-void	parse_color_code(char *string)
+void	parse_color_code(t_memory **block, char *string)
 {
 	int	i;
 	int	digit;
@@ -28,19 +28,28 @@ void	parse_color_code(char *string)
 			if (ft_isdigit(string[i++]))
 				digit++;
 			else
+			{
+				free_all_memory_blocks(block);
 				exit(1);
+			}
 			if (string[i] == ',' || string[i] == '\0')
 				break ;
 			else if ((digit == 3 && ft_isdigit(string[i]))
 				|| (digit == 3 && !ft_isdigit(string[i])))
+			{
+				free_all_memory_blocks(block);
 				exit(1);
+			}
 		}
 		i++;
 		comma++;
 		digit = 0;
 	}
 	if (string[i - 1] != '\0')
+	{
+		free_all_memory_blocks(block);
 		exit(1);
+	}
 }
 
 int	get_decimals(char *string)
@@ -55,7 +64,7 @@ int	get_decimals(char *string)
 	return (m);
 }
 
-void	register_color_in_struc(t_game **game_data, char *string)
+void	register_color_in_struc(t_memory **block, t_game **game_data, char *string)
 {
 	int	i;
 	int	m;
@@ -82,6 +91,7 @@ void	register_color_in_struc(t_game **game_data, char *string)
 		}
 		if (color < 0 || color > 255)
 		{
+			free_all_memory_blocks(block);
 			printf("Color is not in 0 to 255 range\n");
 			exit(1);
 		}

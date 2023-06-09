@@ -1,12 +1,13 @@
 #include "cub3D.h"
 
-void	malloc_game_struct(t_game **game_data, void (*f)(t_map *), void *data)
+void	malloc_game_struct(t_memory **block, t_game **game_data)
 {
-	*game_data = (t_game *)malloc(sizeof(struct s_game));
-	if (game_data == NULL)
+	(*game_data) = malloc_to_block(block, sizeof(struct s_game));
+	if ((*game_data) == NULL)
 	{
-		f(data);
-		exit(errno);
+		free_all_memory_blocks(block);
+		printf("Error initializing game data struct\n");
+		exit(1);
 	}
 }
 
@@ -17,25 +18,19 @@ void	init_mlx(mlx_t **mlx, int width, int height)
 		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
 }
 
-void	destroy_game_data(t_game *game_data)
-{
-	free(game_data);
-}
-
-void	init_game_data(t_game **game_data, t_map *map_data)
+void	init_game_data(t_memory **block, t_game **game_data)
 {
 	mlx_t			*mlx;
 
 	mlx = NULL;
-	malloc_game_struct(game_data, *destroy_map_data, map_data);
+	malloc_game_struct(block, game_data);
 	init_mlx(&mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
 	if (!mlx)
 	{
-		destroy_game_data(*game_data);
-		destroy_map_data(map_data);
-		exit(errno);
+		free_all_memory_blocks(block);
+		printf("Error initializing mlx engine\n");
+		exit(1);
 	}
-	mlx_set_setting(MLX_STRETCH_IMAGE, 1);
 	(*game_data)->n = (((M_PI / 3) / DELTA_FOV));
 	(*game_data)->mlx = mlx;
 	(*game_data)->ceiling_color = 0;
