@@ -4,7 +4,6 @@ void	add_memory_block(t_memory **head, void *ptr, size_t size)
 {
 	t_memory *block;
 
-	printf("address: %p\n", ptr);
 	block = (t_memory *) malloc(sizeof(t_memory));
 	block->address = ptr;
 	block->size = size;

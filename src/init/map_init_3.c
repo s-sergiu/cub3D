@@ -41,6 +41,7 @@ void	parse_path(t_memory **block, t_game **game_data, char *string)
 		free_all_memory_blocks(block);
 		exit(1);
 	}
+	close(fd);
 }
 
 void	parse_element(t_memory **block, t_game **game_data, char *string)
