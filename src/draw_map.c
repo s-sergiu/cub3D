@@ -99,8 +99,4 @@ void	game_setup(t_memory **block, char *argv)
 	mlx_loop_hook(game_data->mlx, ft_hook, game_data);
 	mlx_loop(game_data->mlx);
 	mlx_terminate(game_data->mlx);
-	mlx_delete_texture(game_data->north);
-	mlx_delete_texture(game_data->south);
-	mlx_delete_texture(game_data->east);
-	mlx_delete_texture(game_data->west);
 }

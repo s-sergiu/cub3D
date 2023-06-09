@@ -37,7 +37,7 @@ void	parse_path(t_memory **block, t_game **game_data, char *string)
 		i++;
 	fd = open(string + i, O_RDONLY);
 	if (fd != -1 && ((symbol + 2)[0] == 9 || (symbol + 2)[0] == 32))
-		store_path(game_data, symbol, string + i);
+		store_path(block, game_data, symbol, string + i);
 	else
 	{
 		free_all_memory_blocks(block);

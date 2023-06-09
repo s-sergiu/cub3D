@@ -61,7 +61,10 @@ void	free_all_memory_blocks(t_memory **head)
 	while (node != NULL)
 	{
 		next = node->next;
-		free(node->address);
+		if (node->size == 69)
+			mlx_delete_texture(node->address);
+		else
+			free(node->address);
 		free(node);
 		node = next;
 	}

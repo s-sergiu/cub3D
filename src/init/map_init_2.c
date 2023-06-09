@@ -1,15 +1,28 @@
 #include "cub3D.h"
 
-void	store_path(t_game **game_data, char *symbol, char *path)
+void	store_path(t_memory **block, t_game **game_data,
+			char *symbol, char *path)
 {
 	if (!ft_strncmp(symbol, "NO", 2))
+	{
 		(*game_data)->north = mlx_load_png(path);
+		add_memory_block(block, (*game_data)->north, 69);
+	}
 	else if (!ft_strncmp(symbol, "SO", 2))
+	{
 		(*game_data)->south = mlx_load_png(path);
+		add_memory_block(block, (*game_data)->south, 69);
+	}
 	else if (!ft_strncmp(symbol, "WE", 2))
+	{
 		(*game_data)->west = mlx_load_png(path);
+		add_memory_block(block, (*game_data)->west, 69);
+	}
 	else if (!ft_strncmp(symbol, "EA", 2))
+	{
 		(*game_data)->east = mlx_load_png(path);
+		add_memory_block(block, (*game_data)->east, 69);
+	}
 }
 
 void	parse_color_code(t_memory **block, char *string)
@@ -29,6 +42,8 @@ void	parse_color_code(t_memory **block, char *string)
 				digit++;
 			else
 			{
+				printf("Error\n");
+				printf("Color code is not a digit\n");
 				free_all_memory_blocks(block);
 				exit(1);
 			}

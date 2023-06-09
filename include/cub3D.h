@@ -157,7 +157,8 @@ void		check_map_symbols(t_memory **block, char **map, t_game **game_data);
 void		parse_map(t_memory **block, t_game **game_data, t_map **map_data);
 void		malloc_game_struct(t_memory **block, t_game **game_data);
 void		destroy_map_data(t_map *map_data);
-void		store_path(t_game **game_data, char *symbol, char *path);
+void		store_path(t_memory **block, t_game **game_data,
+				char *symbol, char *path);
 void		parse_color_code(t_memory **block, char *string);
 int			get_decimals(char *string);
 void		register_color_in_struc(t_memory **block,
