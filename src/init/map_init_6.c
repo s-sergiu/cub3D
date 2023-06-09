@@ -1,27 +1,5 @@
 #include "cub3D.h"
 
-void	flood_fill(t_memory **block, int x, int y, char **map)
-{
-	char	wall;
-	int		height;
-
-	height = arrtools_arrlen(map);
-	if (x == height || x < 0)
-		return ;
-	wall = map[x][y];
-	if (wall == 0 || wall == 32 || wall == 'x' || wall == '1')
-		return ;
-	else
-	{
-		map[x][y] = 'x';
-		check_neighbors(block, map, x, y);
-		flood_fill(block, x - 1, y, map);
-		flood_fill(block, x, y -1, map);
-		flood_fill(block, x, y + 1, map);
-		flood_fill(block, x + 1, y, map);
-	}
-}
-
 void	check_borders(t_memory **block, char **map)
 {
 	int	i;
@@ -32,45 +10,49 @@ void	check_borders(t_memory **block, char **map)
 	flood_fill(block, 1, i, map);
 }
 
+void	illegal_map_symbol(t_memory **block)
+{
+	free_all_memory_blocks(block);
+	printf("Error\n");
+	printf("Illegal map symbol!\n");
+	exit(1);
+}
+
+void	player_number_eror(t_memory **block)
+{
+	free_all_memory_blocks(block);
+	printf("No player or more than 1 players in the map\n");
+	exit(1);
+}
+
+void	check_row_symbols(t_memory **block, t_game **game_data, char *map)
+{
+	int	j;
+
+	j = -1;
+	while (map[++j])
+	{
+		while (map[j] == 32)
+			j++;
+		if (map[j] != '0' && map[j] != '1' && map[j] != 'N' && map[j]
+			!= 'S' && map[j] != 'E' && map[j] != 'W')
+			illegal_map_symbol(block);
+		else if (map[j] == 'E' || map[j] == 'W'
+			|| map[j] == 'N' || map[j] == 'S')
+		{
+			player_angle(game_data, map[j]);
+			(*game_data)->player_count++;
+		}
+	}
+}
+
 void	check_map_symbols(t_memory **block, char **map, t_game **game_data)
 {
 	int		i;
-	int		j;
-	int		player;
-	char	symbol;
 
 	i = -1;
-	j = -1;
-	player = 0;
 	while (map[++i])
-	{
-		while (map[i][++j])
-		{
-			while (map[i][j] == 32)
-				j++;
-			symbol = map[i][j];
-			if (symbol != '0' && symbol != '1'
-				&& symbol != 'N' && symbol != 'S'
-				&& symbol != 'E' && symbol != 'W')
-			{
-				free_all_memory_blocks(block);
-				printf("Error\n");
-				printf("Illegal map symbol!\n");
-				exit(1);
-			}
-			else if (symbol == 'E' || symbol == 'W'
-				|| symbol == 'N' || symbol == 'S')
-			{
-				player_angle(game_data, symbol);
-				player++;
-			}
-		}
-		j = -1;
-	}
-	if (player != 1)
-	{
-		free_all_memory_blocks(block);
-		printf("No player or more than 1 players in the map\n");
-		exit(1);
-	}
+		check_row_symbols(block, game_data, map[i]);
+	if ((*game_data)->player_count != 1)
+		player_number_eror(block);
 }

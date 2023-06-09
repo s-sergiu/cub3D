@@ -1,155 +1,42 @@
 #include "cub3D.h"
 
-int	get_color_texture(mlx_texture_t *tex, t_game *game_data, int topy)
+int	get_color_texture(t_game **game_data, int topy)
 {
-	int				position;
 	int				color;
-	int				texture_x;
-	int				texture_y;
-	double			x;
-	double			y;
 	int				difference;
 	double			height;
 	double			new_angle;
 	double			fov_start;
 	double			fov_end;
-	mlx_texture_t	*north;
-	mlx_texture_t	*south;
-	mlx_texture_t	*west;
-	mlx_texture_t	*east;
 
-	north = game_data->north;
-	south = game_data->south;
-	east = game_data->east;
-	west = game_data->west;
-	(void)north;
-	(void)south;
-	(void)east;
-	(void)west;
-	(void)game_data;
-	(void)y;
-	height = (WALL_HEIGHT / game_data->distance);
-	(void)tex;
-	y = game_data->player_data.end_ray.y_axis;
-	x = game_data->player_data.end_ray.x_axis;
-	(void)x;
+	height = WALL_HEIGHT / (*game_data)->distance;
 	difference = SCREEN_HEIGHT / 2 - height / 2;
-	new_angle = game_data->player_data.angle;
+	new_angle = (*game_data)->player_data.angle;
 	fov_end = fmod(new_angle - (M_PI / 6), 2 * M_PI);
 	fov_start = fmod(new_angle + (M_PI / 6), 2 * M_PI);
-	(void)fov_start;
 	color = 0;
 	if (difference < 0)
 		topy += -difference;
 	if (fov_end < 0)
 		fov_end += 2 * M_PI;
-	if ((int)y % TILE == 0)
-	{
+	if ((int)((*game_data)->player_data.end_ray.y_axis) % TILE == 0)
 		if (((fov_end >= M_PI) || fov_start >= M_PI)
 			|| ((fov_end <= M_PI * 2 || fov_start >= 0)
 				|| (fov_start < M_PI / 6)))
-		{
-			texture_y = (topy) * ((double)north->height - 1) / height;
-			texture_x = fmod((x / TILE), 1.0) * north->width;
-			position = (texture_y * north->width + texture_x)
-				* north->bytes_per_pixel;
-			color = get_rgba(north->pixels[position],
-					north->pixels[position + 1], north->pixels[position + 2],
-					north->pixels[position + 3]);
-			return (color);
-		}
-	}
-	if ((int)x % TILE == 0)
-	{
+			return (return_north_texture(game_data, topy));
+	if ((int)((*game_data)->player_data.end_ray.x_axis) % TILE == 0)
 		if ((fov_end < 3 * M_PI_2) || (fov_start > M_PI_2))
-		{
-			texture_y = (topy) * ((double)west->height - 1) / height;
-			texture_x = fmod((y / TILE), 1.0) * west->width;
-			position = (texture_y * west->width + texture_x)
-				* west->bytes_per_pixel;
-			color = get_rgba(west->pixels[position],
-					west->pixels[position + 1], west->pixels[position + 2],
-					west->pixels[position + 3]);
-			return (color);
-		}
-	}
-	if ((int)y % TILE == 1)
-	{
+			return (return_west_texture(game_data, topy));
+	if ((int)((*game_data)->player_data.end_ray.y_axis) % TILE == 1)
 		if ((fov_end <= 3 * M_PI_2) || (fov_start >= 3 * M_PI_2)
 			|| (fov_end >= 0) || ((fov_start >= 0)
 				&& (fov_start > 11 * M_PI / 6)))
-		{
-			texture_y = (topy) * ((double)south->height - 1) / height;
-			texture_x = fmod((x / TILE), 1.0) * south->width;
-			position = ((texture_y) * south->width
-					+ (south->width - 1 - texture_x)) * south->bytes_per_pixel;
-			color = get_rgba(south->pixels[position],
-					south->pixels[position + 1], south->pixels[position + 2],
-					south->pixels[position + 3]);
-			return (color);
-		}
-	}
-	if ((int)x % TILE == 1)
-	{
+			return (return_south_texture(game_data, topy));
+	if ((int)((*game_data)->player_data.end_ray.x_axis) % TILE == 1)
 		if ((fov_start > 3 * M_PI_2 || fov_start < 2 * M_PI)
 			|| (fov_end < M_PI_2))
-		{
-			texture_y = (topy) * ((double)east->height - 1) / height;
-			texture_x = fmod((y / TILE), 1.0) * east->width;
-			position = (texture_y * east->width + texture_x)
-				* east->bytes_per_pixel;
-			color = get_rgba(east->pixels[position],
-					east->pixels[position + 1], east->pixels[position + 2],
-					east->pixels[position + 3]);
-			return (color);
-		}
-	}
+			return (return_east_texture(game_data, topy));
 	return (color);
-}
-
-int	get_rgba(int r, int g, int b, int a)
-{
-	return (r << 24 | g << 16 | b << 8 | a);
-}
-
-void	draw_wall(t_game **game_data, t_int_vector center, double fov)
-{
-	double			height;
-	unsigned int	x0;
-	int				topy;
-	int				posy;
-	int				color;
-
-	(*game_data)->distance *= (cos(M_PI / 6 - fov));
-	height = WALL_HEIGHT / (*game_data)->distance;
-	topy = SCREEN_HEIGHT / 2 - height / 2;
-	if (topy < 0)
-		topy = 0;
-	x0 = center.x;
-	posy = topy;
-	while (topy <= center.y + (height / 2) && topy <= SCREEN_HEIGHT - 1)
-	{
-		while (x0 < center.x + 1)
-		{
-			color = get_color_texture((*game_data)->north,
-					(*game_data), topy - posy);
-			mlx_put_pixel((*game_data)->bg_img, x0++, topy, color);
-		}
-		x0 = center.x;
-		topy++;
-	}
-}
-
-void	player_angle(t_game **data, char orientation)
-{
-	if (orientation == 'E')
-		(*data)->player_data.angle = 0;
-	else if (orientation == 'S')
-		(*data)->player_data.angle = M_PI_2;
-	else if (orientation == 'W')
-		(*data)->player_data.angle = M_PI;
-	else if (orientation == 'N')
-		(*data)->player_data.angle = 3 * M_PI_2;
 }
 
 void	line_draw(t_vector *player, double angle, t_game **game_data)

@@ -86,6 +86,7 @@ struct s_game
 	int						n;
 	struct s_map			*map_data;
 	int						hit;
+	int						player_count;
 	struct s_player			player_data;
 };
 
@@ -148,7 +149,7 @@ void		draw_wall(t_game **game_data, t_int_vector center, double fov);
 void		draw_sin(t_game **game_data);
 int			get_rgba(int r, int g, int b, int a);
 void		add_bg_image(t_game **game_data);
-int			get_color_texture(mlx_texture_t *tex, t_game *game_data, int y);
+int			get_color_texture(t_game **game_data, int topy);
 void		print_array(char **array);
 void		player_angle(t_game **data, char orientation);
 void		flood_fill(t_memory **block, int x, int y, char **map);
@@ -181,5 +182,9 @@ void		draw_floor(t_game **game_data);
 void		add_ceiling(t_game **game_data);
 void		add_floor(t_game **game_data);
 void		draw_walls(t_game *game_data);
+int			return_north_texture(t_game **game_data, int topy);
+int			return_west_texture(t_game **game_data, int topy);
+int			return_east_texture(t_game **game_data, int topy);
+int			return_south_texture(t_game **game_data, int topy);
 
 #endif

@@ -39,6 +39,7 @@ void	init_game_data_values(t_game **game_data, mlx_t *mlx)
 	(*game_data)->ceiling = NULL;
 	(*game_data)->player_data.player_image = NULL;
 	(*game_data)->distance = 8;
+	(*game_data)->player_count = 0;
 }
 
 void	init_game_data(t_memory **block, t_game **game_data)

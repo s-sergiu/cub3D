@@ -1,43 +1,50 @@
 #include "cub3D.h"
 
+void	invalid_element_symbol(t_memory **block)
+{
+	free_all_memory_blocks(block);
+	printf("Error\n");
+	printf("Invalid element symbol!\n");
+	exit(1);
+}
+
+void	map_check(t_memory **block, t_game **game_data, int sequence,
+		t_map **map_data)
+{
+	char	**map;
+
+	map = (*map_data)->map_array;
+	(*map_data)->map = map + sequence;
+	(*map_data)->map_copy = (*map_data)->map_copy + sequence;
+	(*map_data)->width = ft_strlen(map[0]) * TILE;
+	(*map_data)->height = arrtools_arrlen(map) * TILE;
+	check_borders(block, (*map_data)->map_copy);
+	check_map_symbols(block, (*map_data)->map, game_data);
+}
+
 void	parse_map(t_memory **block, t_game **game_data, t_map **map_data)
 {
 	int		i;
-	char	**map;
 	int		sequence;
 	int		index;
 
 	i = -1;
-	map = (*map_data)->map_array;
-	sequence = 0;
-	while (map[++i])
+	sequence = -1;
+	while ((*map_data)->map_array[++i])
 	{
-		if (ft_strlen(map[i]))
+		if (ft_strlen((*map_data)->map_array[i]))
 		{
-			if (sequence < 6)
+			if (++sequence < 6)
 			{
-				index = is_valid_element(map_data, map[i]);
-				if (index >= 0)
-				{
-					parse_element(block, game_data, (map[i]) + index);
-					sequence++;
-				}
-				else
-				{
-					free_all_memory_blocks(block);
-					printf("Error\n");
-					printf("Invalid element symbol!\n");
-					exit(1);
-				}
+				index = is_valid_element(map_data, (*map_data)->map_array[i]);
+				if (index < 0)
+					invalid_element_symbol(block);
+				parse_element(block, game_data, ((*map_data)->map_array[i])
+					+ index);
 			}
 			else
 			{
-				(*map_data)->map = map + sequence;
-				(*map_data)->map_copy = (*map_data)->map_copy + sequence;
-				(*map_data)->width = ft_strlen(map[0]) * TILE;
-				(*map_data)->height = arrtools_arrlen(map) * TILE;
-				check_borders(block, (*map_data)->map_copy);
-				check_map_symbols(block, (*map_data)->map, game_data);
+				map_check(block, game_data, sequence, map_data);
 				break ;
 			}
 		}

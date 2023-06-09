@@ -72,11 +72,49 @@ void	parse_element(t_memory **block, t_game **game_data, char *string)
 	}
 }
 
-void	print_array(char **array)
+void	store_path(t_memory **block, t_game **game_data,
+			char *symbol, char *path)
 {
-	int	i;
+	if (!ft_strncmp(symbol, "NO", 2))
+	{
+		(*game_data)->north = mlx_load_png(path);
+		add_memory_block(block, (*game_data)->north, 69);
+	}
+	else if (!ft_strncmp(symbol, "SO", 2))
+	{
+		(*game_data)->south = mlx_load_png(path);
+		add_memory_block(block, (*game_data)->south, 69);
+	}
+	else if (!ft_strncmp(symbol, "WE", 2))
+	{
+		(*game_data)->west = mlx_load_png(path);
+		add_memory_block(block, (*game_data)->west, 69);
+	}
+	else if (!ft_strncmp(symbol, "EA", 2))
+	{
+		(*game_data)->east = mlx_load_png(path);
+		add_memory_block(block, (*game_data)->east, 69);
+	}
+}
 
-	i = -1;
-	while (array[++i] != NULL)
-		printf("%s\n", array[i]);
+void	flood_fill(t_memory **block, int x, int y, char **map)
+{
+	char	wall;
+	int		height;
+
+	height = arrtools_arrlen(map);
+	if (x == height || x < 0)
+		return ;
+	wall = map[x][y];
+	if (wall == 0 || wall == 32 || wall == 'x' || wall == '1')
+		return ;
+	else
+	{
+		map[x][y] = 'x';
+		check_neighbors(block, map, x, y);
+		flood_fill(block, x - 1, y, map);
+		flood_fill(block, x, y -1, map);
+		flood_fill(block, x, y + 1, map);
+		flood_fill(block, x + 1, y, map);
+	}
 }
