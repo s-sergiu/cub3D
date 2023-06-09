@@ -36,8 +36,7 @@ endif
 all: $(NAME)
 
 submodule_update: 
-	@git submodule init
-	@git submodule update
+	@git submodule update --init --recursive
 
 $(NAME): $(OBJ_DIR) $(MLX42) $(OBJ) $(LIBFT) $(LIBARRTOOLS) 
 	$(CC) $(FLAGS) $(OBJ) -lft -L$(LIBFT_OBJ_DIR) \
