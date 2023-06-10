@@ -141,7 +141,7 @@ void		press_right(t_game **data);
 void		press_left(t_game **data);
 void		line_draw(t_vector *player, double angle, t_game **game_data);
 void		line_draw2(t_vector *pointA, struct s_position *pointB,
-				char **map, t_game *game_data);
+				char **map, t_game **game_data);
 void		draw_fov(t_game **game_data);
 void		update_origin(t_game **game_data);
 void		update_end(t_game **game_data, double fov_angle);

@@ -4,41 +4,31 @@ int	get_color_texture(t_game **game_data, int topy)
 {
 	int				color;
 	int				difference;
-	double			height;
-	double			new_angle;
-	double			fov_start;
-	double			fov_end;
+	int				x;
+	int				y;
+	char			**map;
 
-	height = WALL_HEIGHT / (*game_data)->distance;
-	difference = SCREEN_HEIGHT / 2 - height / 2;
-	new_angle = (*game_data)->player_data.angle;
-	fov_end = fmod(new_angle - (M_PI / 6), 2 * M_PI);
-	fov_start = fmod(new_angle + (M_PI / 6), 2 * M_PI);
-	color = 0;
+	map = (*game_data)->map_data->map;
+	difference = SCREEN_HEIGHT / 2 - (WALL_HEIGHT
+			/ (*game_data)->distance) / 2;
+	x = (int)(*game_data)->player_data.end_ray.x_axis;
+	y = (int)(*game_data)->player_data.end_ray.y_axis;
+	color = (return_south_texture(game_data, topy));
 	if (difference < 0)
 		topy += -difference;
-	if (fov_end < 0)
-		fov_end += 2 * M_PI;
-	if ((int)((*game_data)->player_data.end_ray.y_axis) % TILE == 0)
-		if (((fov_end >= M_PI) || fov_start >= M_PI)
-			|| ((fov_end <= M_PI * 2 || fov_start >= 0)
-				|| (fov_start < M_PI / 6)))
-			return (return_north_texture(game_data, topy));
-	if ((int)((*game_data)->player_data.end_ray.x_axis) % TILE == 0)
-		if ((fov_end < 3 * M_PI_2) || (fov_start > M_PI_2))
-			return (return_west_texture(game_data, topy));
-	if ((int)((*game_data)->player_data.end_ray.y_axis) % TILE == 1)
-		if ((fov_end <= 3 * M_PI_2) || (fov_start >= 3 * M_PI_2)
-			|| (fov_end >= 0) || ((fov_start >= 0)
-				&& (fov_start > 11 * M_PI / 6)))
-			return (return_south_texture(game_data, topy));
-	if ((int)((*game_data)->player_data.end_ray.x_axis) % TILE == 1)
-		if ((fov_start > 3 * M_PI_2 || fov_start < 2 * M_PI)
-			|| (fov_end < M_PI_2))
-			return (return_east_texture(game_data, topy));
+	if ((y % TILE == 0 && map[(y) / TILE][(x - 1) / TILE] != '1'))
+		color = (return_north_texture(game_data, topy));
+	else if ((y % TILE == 1 && map[(y + 1) / TILE][(x) / TILE] == '1')
+			&& x % TILE != 1)
+		color = (return_south_texture(game_data, topy));
+	else if (x % TILE == 0 && map[(y) / TILE][(x - 2) / TILE] == '1')
+		color = (return_west_texture(game_data, topy));
+	else if ((x % TILE == 1 && map[(y - 2) / TILE][(x) / TILE] == '1'))
+		color = (return_east_texture(game_data, topy));
 	return (color);
 }
 
+/*
 void	line_draw(t_vector *player, double angle, t_game **game_data)
 {
 	t_vector		d;
@@ -105,53 +95,36 @@ void	line_draw(t_vector *player, double angle, t_game **game_data)
 	(*game_data)->player_data.end_ray.x_axis = intersection.x;
 	(*game_data)->player_data.end_ray.y_axis = intersection.y;
 }
+*/
 
 void	line_draw2(t_vector *pointA, struct s_position *pointB,
-		char **map, t_game *game_data)
+		char **map, t_game **game_data)
 {
 	double	x;
 	double	y;
-	double	x1;
-	double	y1;
-	double	x2;
-	double	y2;
 	double	dx;
 	double	dy;
 	double	step;
-	int		i;
-	double	distance;
 
-	x1 = pointA->x;
-	y1 = pointA->y;
-	x2 = pointB->x_axis;
-	y2 = pointB->y_axis;
-	dx = (x2 - x1);
-	dy = (y2 - y1);
+	dx = (pointB->x_axis - pointA->x);
+	dy = (pointB->y_axis - pointA->y);
 	if (fabs(dx) >= fabs(dy))
 		step = fabs(dx);
 	else
 		step = fabs(dy);
 	dx = dx / step;
 	dy = dy / step;
-	x = x1;
-	y = y1;
-	i = -1;
-	while (++i <= step)
+	x = pointA->x;
+	y = pointA->y;
+	while (map[(int)(y / TILE)][(int)(x / TILE)] != '1')
 	{
-		if (map[(int)(y / TILE)][(int)(x / TILE)] == '1')
-		{
-			distance = sqrt(pow(x1 - x, 2) + pow(y1 - y, 2));
-			game_data->distance = distance;
-			game_data->player_data.end_ray.x_axis = x + 1;
-			game_data->player_data.end_ray.y_axis = y + 1;
-			return ;
-		}
-		else
-		{
-			x += dx;
-			y += dy;
-		}
+		x += dx;
+		y += dy;
 	}
+	(*game_data)->distance = sqrt(pow(pointA->x - x, 2)
+			+ pow(pointA->y - y, 2));
+	(*game_data)->player_data.end_ray.x_axis = x + 1;
+	(*game_data)->player_data.end_ray.y_axis = y + 1;
 }
 
 void	draw_fov(t_game **game_data)
@@ -173,7 +146,7 @@ void	draw_fov(t_game **game_data)
 	{
 		update_end(game_data, fov_angle);
 		//line_draw(origin, fov_angle, game_data);
-		line_draw2(origin, point, (*game_data)->map_data->map, (*game_data));
+		line_draw2(origin, point, (*game_data)->map_data->map, game_data);
 		draw_wall(game_data, center, fov_shit);
 		fov_angle += DELTA_FOV;
 		fov_shit += DELTA_FOV;
