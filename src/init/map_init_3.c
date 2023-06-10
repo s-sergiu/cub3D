@@ -12,8 +12,8 @@ void	parse_color(t_memory **block, t_game **game_data, char *string)
 		i++;
 	if ((symbol + 1)[0] == 9 || (symbol + 1)[0] == 32)
 	{
-		parse_color_code(block, string);
-		register_color_in_struc(block, game_data, string);
+		parse_color_code(block, string + i);
+		register_color_in_struc(block, game_data, string + i);
 	}
 	else
 	{
