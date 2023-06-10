@@ -13,7 +13,7 @@ void	ft_hook(void *param)
 	static double	sum;
 
 	game_data = param;
-	if (sum > 0.0007)
+	if (sum > 0.04)
 	{
 		if (mlx_is_key_down(game_data->mlx, MLX_KEY_ESCAPE))
 			mlx_close_window(game_data->mlx);

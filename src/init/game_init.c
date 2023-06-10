@@ -29,10 +29,6 @@ void	init_game_data_values(t_game **game_data, mlx_t *mlx)
 	(*game_data)->color[1] = 0;
 	(*game_data)->color[2] = 0;
 	(*game_data)->color[3] = 0;
-	(*game_data)->north = NULL;
-	(*game_data)->south = NULL;
-	(*game_data)->east = NULL;
-	(*game_data)->west = NULL;
 	(*game_data)->bg_img = NULL;
 	(*game_data)->game_screen = NULL;
 	(*game_data)->floor = NULL;
