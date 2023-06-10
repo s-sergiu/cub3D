@@ -154,7 +154,8 @@ void		print_array(char **array);
 void		player_angle(t_game **data, char orientation);
 void		flood_fill(t_memory **block, int x, int y, char **map);
 void		check_borders(t_memory **block, char **map);
-void		check_map_symbols(t_memory **block, char **map, t_game **game_data);
+void		check_map_symbols(t_memory **block, t_map **map_data,
+				t_game **game_data);
 void		parse_map(t_memory **block, t_game **game_data, t_map **map_data);
 void		malloc_game_struct(t_memory **block, t_game **game_data);
 void		destroy_map_data(t_map *map_data);
@@ -186,5 +187,6 @@ int			return_north_texture(t_game **game_data, int topy);
 int			return_west_texture(t_game **game_data, int topy);
 int			return_east_texture(t_game **game_data, int topy);
 int			return_south_texture(t_game **game_data, int topy);
+void		change_empty_space(t_map **map_data, int i, int j);
 
 #endif

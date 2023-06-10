@@ -18,8 +18,8 @@ void	map_check(t_memory **block, t_game **game_data, int sequence,
 	(*map_data)->map_copy = (*map_data)->map_copy + sequence;
 	(*map_data)->width = ft_strlen(map[0]) * TILE;
 	(*map_data)->height = arrtools_arrlen(map) * TILE;
+	check_map_symbols(block, map_data, game_data);
 	check_borders(block, (*map_data)->map_copy);
-	check_map_symbols(block, (*map_data)->map, game_data);
 }
 
 void	parse_map(t_memory **block, t_game **game_data, t_map **map_data)

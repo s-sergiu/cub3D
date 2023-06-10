@@ -42,3 +42,9 @@ void	draw_grid(t_map *map_data, mlx_image_t *image)
 	draw_horizontal_line(height, width, image);
 	draw_vertical_line(height, width, image);
 }
+
+void	change_empty_space(t_map **map_data, int i, int j)
+{
+	(*map_data)->map_copy[i][j] = '1';
+	(*map_data)->map[i][j] = '1';
+}

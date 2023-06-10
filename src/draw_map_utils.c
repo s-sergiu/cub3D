@@ -28,75 +28,6 @@ int	get_color_texture(t_game **game_data, int topy)
 	return (color);
 }
 
-/*
-void	line_draw(t_vector *player, double angle, t_game **game_data)
-{
-	t_vector		d;
-	t_vector		ray_direction;
-	t_int_vector	map;
-	t_vector		side_distance;
-	t_vector		intersection;
-	int				hit;
-	double			distance;
-
-	ray_direction.x = cos(angle);
-	ray_direction.y = -sin(angle);
-	player[0] = (t_vector)
-	{(*game_data)->player_data.player_image->instances[0].x,
-		(*game_data)->player_data.player_image->instances[0].y};
-	map = (t_int_vector){player[0].x / TILE, player[0].y / TILE};
-	if (ray_direction.x > 0)
-		side_distance.x = ((map.x + 1) * TILE - player[0].x) / ray_direction.x;
-	else if (ray_direction.x < 0)
-		side_distance.x = ((map.x * TILE - player[0].x) / ray_direction.x);
-	if (ray_direction.y > 0)
-		side_distance.y = ((map.y + 1) * TILE - player[0].y) / ray_direction.y;
-	else if (ray_direction.y < 0)
-		side_distance.y = (map.y * TILE - player[0].y) / ray_direction.y;
-	d.x = fabs(TILE / ray_direction.x);
-	d.y = fabs(TILE / ray_direction.y);
-	hit = 0;
-	while ((*game_data)->map_data->map_array[map.y][map.x] == '0')
-	{
-		if (side_distance.x < side_distance.y)
-		{
-			side_distance.x += d.x;
-			map.x += (ray_direction.x > 0) - (ray_direction.x < 0);
-			if (ray_direction.x > 0)
-				(*game_data)->hit = EAST;
-			else
-				(*game_data)->hit = WEST;
-		}
-		else
-		{
-			side_distance.y += d.y;
-			map.y = (ray_direction.y > 0) - (ray_direction.y < 0);
-			if (ray_direction.y > 0)
-				(*game_data)->hit = NORTH;
-			else
-				(*game_data)->hit = SOUTH;
-		}
-	}
-	if (hit == EAST || hit == WEST)
-	{
-		intersection.x = map.x * TILE + (ray_direction.x > 0 ? 0 : TILE);
-		intersection.y = player[0].y + (intersection.x
-				- player[0].x) * tan(angle);
-	}
-	else
-	{
-		intersection.y = map.y * TILE + (ray_direction.y > 0 ? 0 : TILE);
-		intersection.x = player[0].x + (intersection.y
-				- player[0].y) / tan(angle);
-	}
-	distance = sqrt(pow(intersection.x - player[0].x, 2)
-			+ pow(intersection.y - player[0].y, 2));
-	(*game_data)->distance = distance;
-	(*game_data)->player_data.end_ray.x_axis = intersection.x;
-	(*game_data)->player_data.end_ray.y_axis = intersection.y;
-}
-*/
-
 void	line_draw2(t_vector *pointA, struct s_position *pointB,
 		char **map, t_game **game_data)
 {
@@ -145,7 +76,6 @@ void	draw_fov(t_game **game_data)
 	while (fov_angle < (*game_data)->player_data.angle + M_PI / 6)
 	{
 		update_end(game_data, fov_angle);
-		//line_draw(origin, fov_angle, game_data);
 		line_draw2(origin, point, (*game_data)->map_data->map, game_data);
 		draw_wall(game_data, center, fov_shit);
 		fov_angle += DELTA_FOV;
