@@ -13,15 +13,16 @@ make a dynamic view inside a maze, in which you’ll have to find your way.
 
 #### Usage
 ```bash
-clone https://github.com/djedd1ne/so_long.git
+git clone https://github.com/s-sergiu/cub3D.git
 ```
 ```bash
-cd so_long
+cd cub3D
 ```
 ```bash
 make
 ```
-Choose one of the valid maps in the maps folder, do not include the path. Invalid maps are provided for testing during the evaluation.
+Choose one of the valid maps in the data/maps folder, Here is an example to use a valid map
 ```bash
-./so_long <map_name>
+./cub3D data/maps/rectangle.cub
 ```
+If the map is invalid, it was provided just to perform tests during the evaluation.
