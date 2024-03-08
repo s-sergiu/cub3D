@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="images/cub3d.jpeg" width="50" height="50"/>
+  <img src="images/cub3d.png" width="50" height="50"/>
   <h1>cub3d</h1>
 </div>
 <div align="center">
